@@ -2,7 +2,7 @@ import os
 import json
 import ipywidgets as widgets
 import functools
-
+from IPython.display import display
 
 def load_state():
     if os.path.exists("state.json"):
@@ -33,10 +33,10 @@ questions = [
         "answer": ['#3 heading title', '### headingtitle', '*** heading title']
     },
     {
-        'question': 'How do you represent this equation $\int_0^x e^x$? in Markdown',
+        'question': 'How do you represent this equation int0xex? in Markdown',
         'answer': ['int 0 x e(x)',
                   '¯\_(ツ)_/¯',
-                  '$\int_0^x e^x$']
+                  'int0xex']
     },
     {
      'question': 'What is the syntax for a link in Markdown?',
