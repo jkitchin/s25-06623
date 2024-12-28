@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction to automatic differentiation with jax &#8212; s23-06623</title>
+    <title>Introduction to automatic differentiation with jax &#8212; s25-06623</title>
   
   
   
@@ -148,8 +148,8 @@
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s25-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s25-06623 - Home"/>
   
   
 </a></div>
@@ -772,7 +772,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.62590075, 0.7074917 ]), array(56.64091516))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.63920426, 0.70509986]), array(5.54877274))
 </pre></div>
 </div>
 </div>
@@ -785,7 +785,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b2be261749fedc6410ca966e465117bb71cd784f2000ec9734ea086bc52748c6.png" src="../../_images/b2be261749fedc6410ca966e465117bb71cd784f2000ec9734ea086bc52748c6.png" />
+<img alt="../../_images/45d55fb9f9a462dfd15ca67b29a5adf7e42f03ac44f775f265afca859a163bb4.png" src="../../_images/45d55fb9f9a462dfd15ca67b29a5adf7e42f03ac44f775f265afca859a163bb4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -800,7 +800,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3235988455507bf9a762cff8467ae2bb633df619837e9ec75714311509c8b7ab.png" src="../../_images/3235988455507bf9a762cff8467ae2bb633df619837e9ec75714311509c8b7ab.png" />
+<img alt="../../_images/0b76a3c04caf1d60dd457ad02ec1cd52bec3a15a7bb322afa698aad61dd1ed44.png" src="../../_images/0b76a3c04caf1d60dd457ad02ec1cd52bec3a15a7bb322afa698aad61dd1ed44.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -810,7 +810,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ea46a016578355204a1fbca7c35931e3dafd3b84088e6e82eda16c4906099364.png" src="../../_images/ea46a016578355204a1fbca7c35931e3dafd3b84088e6e82eda16c4906099364.png" />
+<img alt="../../_images/1db771be05e24a65a9be462e6861969a019349cf9395cb8378db01059dcb046e.png" src="../../_images/1db771be05e24a65a9be462e6861969a019349cf9395cb8378db01059dcb046e.png" />
 </div>
 </div>
 </section>
@@ -1132,8 +1132,8 @@ example:</p>
 <p><span class="math notranslate nohighlight">\(f_1(x, y) = x^2 y\)</span></p>
 <p><span class="math notranslate nohighlight">\(f_2(x, y) = 5 x + \sin(y)\)</span></p>
 <p>The Jacobian of this system is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d48697c5-0ce4-4e47-a2b5-cab76eccadec">
-<span class="eqno">(4)<a class="headerlink" href="#equation-d48697c5-0ce4-4e47-a2b5-cab76eccadec" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
+<div class="amsmath math notranslate nohighlight" id="equation-dbf8aa22-ee2c-4821-b836-2dda36067fa1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-dbf8aa22-ee2c-4821-b836-2dda36067fa1" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
 \end{array}\right] \end{equation}\]</div>
 <p>There are two Jacobian functions, <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> and <code class="docutils literal notranslate"><span class="pre">jacref</span></code>. In theory they do the same thing, but one of them will usually be faster for some systems. <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> uses a forward pass through the code to compute the Jacobian, while <code class="docutils literal notranslate"><span class="pre">jacrev</span></code> uses a reverse pass. The <a class="reference external" href="https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html#jacobians-and-hessians-using-jacfwd-and-jacrev">documentation</a> recommends using jacfwd for “tall” Jacobians and jacref for “wide” jacobians. For square jacobians, it does not matter. It is fine to be practical, and try both to see if one is faster than other.</p>
 <div class="cell docutils container">
