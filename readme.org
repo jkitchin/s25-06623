@@ -1,0 +1,12 @@
+#+title: s25-06623 and 06-713
+
+* Canvas site
+:PROPERTIES:
+:URL:      https://canvas.cmu.edu/courses/45085
+:END:
+
+* GitHUB
+:PROPERTIES:
+:URL:      https://github.com/jkitchin/s25-06623
+:END:
+
