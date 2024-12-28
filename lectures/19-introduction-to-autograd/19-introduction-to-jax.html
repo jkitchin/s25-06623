@@ -166,7 +166,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../syllabus.html">
-                    Syllabus for  06-623 Mathematical Modeling of Chemical Engineering Processes
+                    Syllabus for  06-623 and 06-713 Mathematical Modeling of Chemical Engineering Processes
                 </a>
             </li>
         </ul>
@@ -772,7 +772,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.63238329, 0.71093389]), array(79.86153148))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.62602958, 0.71331516]), array(-29.68826073))
 </pre></div>
 </div>
 </div>
@@ -785,7 +785,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/968acb820b9619f4e2fefc51ce6a4999535f39d4d47ee632cadccdcd48631fb1.png" src="../../_images/968acb820b9619f4e2fefc51ce6a4999535f39d4d47ee632cadccdcd48631fb1.png" />
+<img alt="../../_images/0c07d55ad43fd81707eb0acd79ec77b1ac5cf0e9632c9cefb257aa2c35788f54.png" src="../../_images/0c07d55ad43fd81707eb0acd79ec77b1ac5cf0e9632c9cefb257aa2c35788f54.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -800,7 +800,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f2813929c69e4d8b2fe31974fac3083193eb8a6f3252cf6daf2bf296f725d2b7.png" src="../../_images/f2813929c69e4d8b2fe31974fac3083193eb8a6f3252cf6daf2bf296f725d2b7.png" />
+<img alt="../../_images/1528a098cd1eaed6dc3d4d0ea3a6b1ffe4c65fe16f9330c014e44b7c93a16c8a.png" src="../../_images/1528a098cd1eaed6dc3d4d0ea3a6b1ffe4c65fe16f9330c014e44b7c93a16c8a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -810,7 +810,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5dc2c2623f042b9156799ba88006fec14f93d51d61a19a7f87c33ea6a70caf4d.png" src="../../_images/5dc2c2623f042b9156799ba88006fec14f93d51d61a19a7f87c33ea6a70caf4d.png" />
+<img alt="../../_images/3520f28ac737b6a597e7b1d256e1d87349359559318383415ca1fd9803601df1.png" src="../../_images/3520f28ac737b6a597e7b1d256e1d87349359559318383415ca1fd9803601df1.png" />
 </div>
 </div>
 </section>
@@ -1132,8 +1132,8 @@ example:</p>
 <p><span class="math notranslate nohighlight">\(f_1(x, y) = x^2 y\)</span></p>
 <p><span class="math notranslate nohighlight">\(f_2(x, y) = 5 x + \sin(y)\)</span></p>
 <p>The Jacobian of this system is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41f59295-994f-4146-b65c-b6a9740aa2be">
-<span class="eqno">(4)<a class="headerlink" href="#equation-41f59295-994f-4146-b65c-b6a9740aa2be" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
+<div class="amsmath math notranslate nohighlight" id="equation-ce7bc888-9742-43ae-b165-ea1f33f40126">
+<span class="eqno">(4)<a class="headerlink" href="#equation-ce7bc888-9742-43ae-b165-ea1f33f40126" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
 \end{array}\right] \end{equation}\]</div>
 <p>There are two Jacobian functions, <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> and <code class="docutils literal notranslate"><span class="pre">jacref</span></code>. In theory they do the same thing, but one of them will usually be faster for some systems. <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> uses a forward pass through the code to compute the Jacobian, while <code class="docutils literal notranslate"><span class="pre">jacrev</span></code> uses a reverse pass. The <a class="reference external" href="https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html#jacobians-and-hessians-using-jacfwd-and-jacrev">documentation</a> recommends using jacfwd for “tall” Jacobians and jacref for “wide” jacobians. For square jacobians, it does not matter. It is fine to be practical, and try both to see if one is faster than other.</p>
 <div class="cell docutils container">
