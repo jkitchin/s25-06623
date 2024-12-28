@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction to nonlinear regression &#8212; f23-06623</title>
+    <title>Introduction to nonlinear regression &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/11-regression/11-regression';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Introduction to optimization" href="../10-min-max/10-min-max.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/11-regression/11-regression.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/11-regression/11-regression.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/11-regression/11-regression.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/11-regression/11-regression.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/11-regression/11-regression.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/11-regression/11-regression.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -523,18 +519,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-nonlinear-regression">
-<h1>Introduction to nonlinear regression<a class="headerlink" href="#introduction-to-nonlinear-regression" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to nonlinear regression<a class="headerlink" href="#introduction-to-nonlinear-regression" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>KEYWORDS: scipy.optimize.minimize, scipy.optimize.curve_fit, pycse.nlinfit</p></li>
 </ul>
 <p><img alt="curve-fitting" src="https://imgs.xkcd.com/comics/curve_fitting.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="regression-of-data-is-a-form-of-function-minimization">
-<h1>Regression of data is a form of function minimization<a class="headerlink" href="#regression-of-data-is-a-form-of-function-minimization" title="Permalink to this heading">#</a></h1>
+<h1>Regression of data is a form of function minimization<a class="headerlink" href="#regression-of-data-is-a-form-of-function-minimization" title="Link to this heading">#</a></h1>
 <p>When we say regression, we really mean find some parameters of a model that best reproduces some known data. By “best reproduces” we mean the sum of all the errors between the values predicted by the model, and the real data is minimized.</p>
 <p>Suppose we have the following data that shows how the energy of a material depends on the volume of the material.</p>
 <div class="cell docutils container">
@@ -552,13 +548,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c6cca4203301068625d7c7f38d7c3d0c5cc0a7e65782a8fd5b91e8cb78d1eb47.png" src="../../_images/c6cca4203301068625d7c7f38d7c3d0c5cc0a7e65782a8fd5b91e8cb78d1eb47.png" />
+<img alt="../../_images/db6d9c7c2dedd913c981a8fc79bbbe64926d33de2f845638f2bf521513e7168f.png" src="../../_images/db6d9c7c2dedd913c981a8fc79bbbe64926d33de2f845638f2bf521513e7168f.png" />
 </div>
 </div>
 <p>In Materials Science we often want to fit an equation of state to this data. We will use this equation:</p>
 <p><span class="math notranslate nohighlight">\(E = E_0 + \frac{B_0 V}{B_0'}\left(\frac{(V_0 / V)^{B_0'}}{B_0' - 1} + 1 \right) - \frac{V_0 B_0}{B_0' - 1}\)</span></p>
 <p>from <a class="reference external" href="https://journals.aps.org/prb/pdf/10.1103/PhysRevB.28.5480">https://journals.aps.org/prb/pdf/10.1103/PhysRevB.28.5480</a>. In this model there are four parameters:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>name</p></th>
 <th class="head"><p>desc</p></th>
@@ -579,6 +575,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>We would like to find the value of these parameters that best fits the data above. That means, find the set of parameters that minimize the sum of the squared errors between the model and data.</p>
 <p>First we need a function that will use the parameters and return the energy for a given volume.</p>
 <div class="cell docutils container">
@@ -623,7 +620,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/172eb538c9c3196e6d2aa170b54561591f4f0215d23389f1ca8915535cfce854.png" src="../../_images/172eb538c9c3196e6d2aa170b54561591f4f0215d23389f1ca8915535cfce854.png" />
+<img alt="../../_images/b7ea41cec34e855b59f314444932a929c5a44b542c4fce991c71b87bc5210144.png" src="../../_images/b7ea41cec34e855b59f314444932a929c5a44b542c4fce991c71b87bc5210144.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -636,7 +633,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.002715815228732874
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.002715815228732874)
 </pre></div>
 </div>
 </div>
@@ -654,7 +651,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.002715815228732874
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.002715815228732874)
 </pre></div>
 </div>
 </div>
@@ -682,7 +679,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-56.463, 0.02575384116153356, -0.00900405886406903, 17.23]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(-56.463),
+ np.float64(0.02575384116153356),
+ np.float64(-0.00900405886406903),
+ np.float64(17.23)]
 </pre></div>
 </div>
 </div>
@@ -695,7 +695,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a2f2b8d9dec08fa94f5903f2f52020473e9f81590abd1fa90991684ceb84c255.png" src="../../_images/a2f2b8d9dec08fa94f5903f2f52020473e9f81590abd1fa90991684ceb84c255.png" />
+<img alt="../../_images/d8133b609e2e7f41c6262634f05b0bf9918a5728b7a0a99b32c63a105d519f92.png" src="../../_images/d8133b609e2e7f41c6262634f05b0bf9918a5728b7a0a99b32c63a105d519f92.png" />
 </div>
 </div>
 <p>Finally, we are ready to fit our function. As usual, we also plot the data and the fit for visual inspection.</p>
@@ -731,7 +731,7 @@ document.write(`
      njev: 35
 </pre></div>
 </div>
-<img alt="../../_images/afcec7efdc2f1eda192b052b7092aa57cd837f84b9c4552169421c78c432e9b1.png" src="../../_images/afcec7efdc2f1eda192b052b7092aa57cd837f84b9c4552169421c78c432e9b1.png" />
+<img alt="../../_images/3d6492b075159b014a1b75e558cda2e303877145e6778c6f9c4157986026b91b.png" src="../../_images/3d6492b075159b014a1b75e558cda2e303877145e6778c6f9c4157986026b91b.png" />
 </div>
 </div>
 <p>That looks pretty good. We should ask ourselves, how do we know we got a minimum? We should see that the objective function is really at a minimum <em>for each of the parameters</em>. Here, we show that it is a minimum for the first parameter.</p>
@@ -742,7 +742,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.04197113028253255
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.04197113028253255)
 </pre></div>
 </div>
 </div>
@@ -763,7 +763,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ab4f87c97882110de0f83fce966f4aa0d6c9ce9b9ab6f0484ea1ecc487988552.png" src="../../_images/ab4f87c97882110de0f83fce966f4aa0d6c9ce9b9ab6f0484ea1ecc487988552.png" />
+<img alt="../../_images/5a0c2f2287f7ca4c77656dc08709755765c70f6a29931ca9aaf572ea41c1c1bc.png" src="../../_images/5a0c2f2287f7ca4c77656dc08709755765c70f6a29931ca9aaf572ea41c1c1bc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -782,7 +782,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/475080629c862c3ef51bb7bb783d47508a35093d92dd45f6270df262c0f2f02c.png" src="../../_images/475080629c862c3ef51bb7bb783d47508a35093d92dd45f6270df262c0f2f02c.png" />
+<img alt="../../_images/b5e577a41af21320efc1ba2964118fa92cc262b505e1907bf3bb3c58d928d3db.png" src="../../_images/b5e577a41af21320efc1ba2964118fa92cc262b505e1907bf3bb3c58d928d3db.png" />
 </div>
 </div>
 <p>You can see visually that the error goes up on each side of the parameter estimate.</p>
@@ -823,7 +823,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.02060957709869471, -4.1495524381492945e-13, -0.0426805050199939)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.02060957709869471),
+ np.float64(-4.1495524381492945e-13),
+ np.float64(-0.0426805050199939))
 </pre></div>
 </div>
 </div>
@@ -832,7 +834,7 @@ document.write(`
 <p>This example is just meant to illustrate what one can do with a model once you have it.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="parameter-confidence-intervals">
-<h1>Parameter confidence intervals<a class="headerlink" href="#parameter-confidence-intervals" title="Permalink to this heading">#</a></h1>
+<h1>Parameter confidence intervals<a class="headerlink" href="#parameter-confidence-intervals" title="Link to this heading">#</a></h1>
 <p>We have left out an important topic in the discussion above: How certain are we of the parameters we estimated? This is a complicated question that requires moderately sophisticated statistics to answer. We will build up to the solution in steps.</p>
 <p>First, we recall that in a statistical sense we are <em>estimating</em> the values of the parameters. Specifically, we estimate the <em>mean</em> of the parameters, from a fixed number of data points.</p>
 <p>Let’s say we have made 10 measurements that have an average of 16.1, and a standard deviation of 0.01. What is the range of values that we are 95% confident the next measurement will fall in?</p>
@@ -889,7 +891,7 @@ curve_fit<span class="o">?</span>
 </div>
 </div>
 <section id="an-example-with-curve-fit">
-<h2>An example with curve_fit<a class="headerlink" href="#an-example-with-curve-fit" title="Permalink to this heading">#</a></h2>
+<h2>An example with curve_fit<a class="headerlink" href="#an-example-with-curve-fit" title="Link to this heading">#</a></h2>
 <p>Given the data below, fit the following curve:</p>
 <p><span class="math notranslate nohighlight">\(y(x) = \frac{a x}{b + x}\)</span> to it.</p>
 <p>That means, estimate the values of <span class="math notranslate nohighlight">\(a, b\)</span> that best fit the data.</p>
@@ -907,7 +909,7 @@ curve_fit<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/eca4c24be611779f7ab30668a8b8b8316b46717a7fc8f6f72ddb647b03498614.png" src="../../_images/eca4c24be611779f7ab30668a8b8b8316b46717a7fc8f6f72ddb647b03498614.png" />
+<img alt="../../_images/dadc73cf3097c91609bfef0f1d99834baf595e457b95e09f00a2fa875ef38b14.png" src="../../_images/dadc73cf3097c91609bfef0f1d99834baf595e457b95e09f00a2fa875ef38b14.png" />
 </div>
 </div>
 <p>What should we use for an initial guess? At <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y = 0\)</span>, which isn’t that helpful. At large <span class="math notranslate nohighlight">\(x\)</span>, we have <span class="math notranslate nohighlight">\(y=a\)</span>. From the data, we can guess that <span class="math notranslate nohighlight">\(a \approx 1.2\)</span>. For small x, we have <span class="math notranslate nohighlight">\(y = (a/b) x\)</span>. So, if we estimate the slope, we can estimate b. We arrive at these guesses by thoughtful inspection of the data, and the model that we use to fit it.</p>
@@ -922,7 +924,7 @@ curve_fit<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.2, 0.0781156032363354, 13.137931034482758, 20.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.2, np.float64(0.0781156032363354), np.float64(13.137931034482758), 20.0)
 </pre></div>
 </div>
 </div>
@@ -961,13 +963,13 @@ curve_fit<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/32e69d23e6be85bc0fd56bca5d96cbb872c521e79e4255bc9051c8214dbade18.png" src="../../_images/32e69d23e6be85bc0fd56bca5d96cbb872c521e79e4255bc9051c8214dbade18.png" />
+<img alt="../../_images/4bef286938cf739455730cbf7dad7109ada55d2b6b54af640c6d9e3be4764b84.png" src="../../_images/4bef286938cf739455730cbf7dad7109ada55d2b6b54af640c6d9e3be4764b84.png" />
 </div>
 </div>
 <p><strong>exercise</strong> Try different initial guesses and find one that does not look this good. Try negative values (e.g. -0.1 for b). Explain what the problem is.</p>
 </section>
 <section id="uncertainty-estimation">
-<h2>Uncertainty estimation<a class="headerlink" href="#uncertainty-estimation" title="Permalink to this heading">#</a></h2>
+<h2>Uncertainty estimation<a class="headerlink" href="#uncertainty-estimation" title="Link to this heading">#</a></h2>
 <p>Recall from the documentation of curve_fit that the standard deviation of each parameter is defined by:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1057,7 +1059,7 @@ nlinfit<span class="o">??</span>
 </ol>
 </section>
 <section id="what-about-uncertainty-on-the-predictions">
-<h2>What about uncertainty on the predictions?<a class="headerlink" href="#what-about-uncertainty-on-the-predictions" title="Permalink to this heading">#</a></h2>
+<h2>What about uncertainty on the predictions?<a class="headerlink" href="#what-about-uncertainty-on-the-predictions" title="Link to this heading">#</a></h2>
 <p>Consider the fit again, and extrapolate it to larger <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1072,10 +1074,10 @@ nlinfit<span class="o">??</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.3205427044923441
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.3205427044923441)
 </pre></div>
 </div>
-<img alt="../../_images/4773df965d16a0aecae2ab7a421ba876429927cf9e91a62062fbb00e0752aa49.png" src="../../_images/4773df965d16a0aecae2ab7a421ba876429927cf9e91a62062fbb00e0752aa49.png" />
+<img alt="../../_images/c42961d1fc7dfbe1caa66f11d335afb77234a83037c9c1c6d9dcf101ceca76ec.png" src="../../_images/c42961d1fc7dfbe1caa66f11d335afb77234a83037c9c1c6d9dcf101ceca76ec.png" />
 </div>
 </div>
 <p>We estimate the model plateaus at about y=1.32, but what is an appropriate estimate of the error in this? There are uncertainties in the model parameters, so there must be uncertainty in the predictions. To estimate this, we first look at how to generate a distribution of random numbers with a normal distribution around some mean with some standard error.</p>
@@ -1090,7 +1092,7 @@ nlinfit<span class="o">??</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/34cd91fd9a5d83e2a699dc5f85f60666d455b5f703932c02a82cbfc89030ed1b.png" src="../../_images/34cd91fd9a5d83e2a699dc5f85f60666d455b5f703932c02a82cbfc89030ed1b.png" />
+<img alt="../../_images/0797963f2a2553fead86a8db22497f0ed5c8ffae5b8b688f2fecf97714db8a5f.png" src="../../_images/0797963f2a2553fead86a8db22497f0ed5c8ffae5b8b688f2fecf97714db8a5f.png" />
 </div>
 </div>
 <p>So the idea is we can generate a distribution of the parameters</p>
@@ -1106,10 +1108,10 @@ nlinfit<span class="o">??</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.3204738994513134, 0.009709154434597248)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(1.320482488325151), np.float64(0.009703640441457148))
 </pre></div>
 </div>
-<img alt="../../_images/4b6bb46dceceb5dc8d07aa89938664c096d12f9646ed48344400646d891207df.png" src="../../_images/4b6bb46dceceb5dc8d07aa89938664c096d12f9646ed48344400646d891207df.png" />
+<img alt="../../_images/db99b914cf2a455d171de683982271c365961a50a091e4c3d7bee476921b0069.png" src="../../_images/db99b914cf2a455d171de683982271c365961a50a091e4c3d7bee476921b0069.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1170,7 +1172,7 @@ nlpredict<span class="o">?</span>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <p>We covered a lot of ground today. The key points are:</p>
 <ol class="arabic simple">
 <li><p>Regression is a minimization of an accumulated error function.</p></li>
@@ -1185,13 +1187,13 @@ nlpredict<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="kUPvuWEFJIor" data-shufflequestions="False"
+<div class="output text_html"><div id="rauoDeErlxqp" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#kUPvuWEFJIor {
+#rauoDeErlxqp {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1211,8 +1213,8 @@ nlpredict<span class="o">?</span>
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
@@ -1230,18 +1232,48 @@ nlpredict<span class="o">?</span>
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -1268,7 +1300,7 @@ nlpredict<span class="o">?</span>
 }
 
 .Input-text:focus {
-    outline: none;
+    /*outline: none;*/
     background-color: var(--jq-numeric-input-bg);
     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
@@ -1277,6 +1309,7 @@ nlpredict<span class="o">?</span>
     background: var(--jq-mc-button-bg);
     border: 1px solid var(--jq-mc-button-border);
     border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -1305,10 +1338,10 @@ nlpredict<span class="o">?</span>
 }
 
 .NumericQn {
-    padding: 10px;
     background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
     border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
 }
 
 .NumericQn p {
@@ -1316,11 +1349,11 @@ nlpredict<span class="o">?</span>
 }
 
 .InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
     color: var(--jq-numeric-input-label);
+    float: left;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
@@ -1337,17 +1370,17 @@ nlpredict<span class="o">?</span>
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
@@ -1361,7 +1394,7 @@ nlpredict<span class="o">?</span>
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionskUPvuWEFJIor=[
+</style></div><script type="application/javascript">var questionsrauoDeErlxqp=[
   {
     "question": "When using minimize() for regression, which of the following objective functions would cause the model to shift towards the outliers to a greater extent than the rest:<br>a: (y_pred - y)^2<br>b: (y_pred - y)<br>c: |ypred - y|",
     "type": "multiple_choice",
@@ -1639,6 +1672,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -1660,17 +1696,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -1692,7 +1727,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -1704,9 +1739,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -1715,9 +1750,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -1725,7 +1760,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -1814,9 +1849,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -1836,7 +1871,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -1848,8 +1888,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -1932,9 +1970,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -1944,12 +1980,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -1960,9 +1996,9 @@ function check_numeric(ths, event) {
             if ('value' in answer) {
                 if (submission == answer.value) {
                     if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
+                        fb.innerHTML = jaxify(answer.feedback);
                     } else {
-                        fb.textContent = jaxify("Correct");
+                        fb.innerHTML = jaxify("Correct");
                     }
                     correct = answer.correct;
                     //console.log(answer.correct);
@@ -1970,15 +2006,18 @@ function check_numeric(ths, event) {
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -1986,6 +2025,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -2124,7 +2164,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -2192,6 +2232,10 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
+
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
 
     //console.log(mystring);
     return mystring;
@@ -2327,7 +2371,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -2336,12 +2399,40 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
 /* This is to handle asynchrony issues in loading Jupyter notebooks
@@ -2352,8 +2443,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("kUPvuWEFJIor")) {
-            show_questions(questionskUPvuWEFJIor,  kUPvuWEFJIor); 
+          if(document.getElementById("rauoDeErlxqp")) {
+            show_questions(questionsrauoDeErlxqp,  rauoDeErlxqp); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2362,8 +2453,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("kUPvuWEFJIor");
-        // console.log(document.getElementById("kUPvuWEFJIor"));
+        //console.log("rauoDeErlxqp");
+        // console.log(document.getElementById("rauoDeErlxqp"));
 
         try_show();
         }
@@ -2398,8 +2489,8 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../10-min-max/10-min-max.html"
@@ -2426,7 +2517,9 @@ if (typeof version == 'undefined') {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2465,9 +2558,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -2491,8 +2585,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

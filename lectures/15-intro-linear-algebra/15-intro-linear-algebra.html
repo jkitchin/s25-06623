@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction to Linear algebra &#8212; f23-06623</title>
+    <title>Introduction to Linear algebra &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/15-intro-linear-algebra/15-intro-linear-algebra';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Constrained minimization" href="../13-constrained-optimization/13-constrained-optimization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/15-intro-linear-algebra/15-intro-linear-algebra.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/15-intro-linear-algebra/15-intro-linear-algebra.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/15-intro-linear-algebra/15-intro-linear-algebra.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/15-intro-linear-algebra/15-intro-linear-algebra.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/15-intro-linear-algebra/15-intro-linear-algebra.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/15-intro-linear-algebra/15-intro-linear-algebra.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -535,11 +531,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-linear-algebra">
-<h1>Introduction to Linear algebra<a class="headerlink" href="#introduction-to-linear-algebra" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Linear algebra<a class="headerlink" href="#introduction-to-linear-algebra" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>KEYWORDS: numpy.transpose, numpy.eye, numpy.diag, numpy.tri, &#64;, numpy.allclose, numpy.linalg.det, numpy.linalg.inv, numpy.linalg.matrix_rank, numpy.linalg.cond, numpy.linalg.solve</p></li>
 </ul>
@@ -550,7 +546,7 @@ document.write(`
 <p><img alt="image" src="https://drive.google.com/uc?id=1kcH91Ew81vL4pQcrpFN5ExzLu8aNKHXy" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="multidimensional-arrays">
-<h1>Multidimensional arrays<a class="headerlink" href="#multidimensional-arrays" title="Permalink to this heading">#</a></h1>
+<h1>Multidimensional arrays<a class="headerlink" href="#multidimensional-arrays" title="Link to this heading">#</a></h1>
 <p>The foundation of linear algebra in Python is in multidimensional arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -613,7 +609,7 @@ document.write(`
 </div>
 </div>
 <section id="constructing-arrays">
-<h2>Constructing arrays<a class="headerlink" href="#constructing-arrays" title="Permalink to this heading">#</a></h2>
+<h2>Constructing arrays<a class="headerlink" href="#constructing-arrays" title="Link to this heading">#</a></h2>
 <p>You can always make arrays by typing them in. There are many convenient ways to make special ones though. For example, you can make an array of all ones or zeros with these:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -840,11 +836,11 @@ document.write(`
 </div>
 </div>
 <section id="regular-algebra-with-arrays">
-<h3>Regular Algebra with arrays<a class="headerlink" href="#regular-algebra-with-arrays" title="Permalink to this heading">#</a></h3>
+<h3>Regular Algebra with arrays<a class="headerlink" href="#regular-algebra-with-arrays" title="Link to this heading">#</a></h3>
 <p>It takes some practice getting use to how to use arrays with algebra. Python does not follow matrix algebra conventions strictly, and has some concepts of “DWIM” (do what I mean) that are convenient, but which can be confusing.</p>
 </section>
 <section id="addition-and-subtraction">
-<h3>Addition and subtraction<a class="headerlink" href="#addition-and-subtraction" title="Permalink to this heading">#</a></h3>
+<h3>Addition and subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
 <p>Let’s start with addition and subtraction. A good rule to remember that you can add and subtract arrays with the same shape.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1060,7 +1056,7 @@ document.write(`
 <p><strong>Exercise</strong> Use some algebra to get an array that is ones above the main diagonal, and zeros everywhere else.</p>
 </section>
 <section id="multiplication-and-division">
-<h3>Multiplication and division<a class="headerlink" href="#multiplication-and-division" title="Permalink to this heading">#</a></h3>
+<h3>Multiplication and division<a class="headerlink" href="#multiplication-and-division" title="Link to this heading">#</a></h3>
 <p>The default multiplication and division operators work <em>element-wise</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1183,7 +1179,7 @@ document.write(`
 </section>
 </section>
 <section id="matrix-algebra">
-<h2>Matrix algebra<a class="headerlink" href="#matrix-algebra" title="Permalink to this heading">#</a></h2>
+<h2>Matrix algebra<a class="headerlink" href="#matrix-algebra" title="Link to this heading">#</a></h2>
 <p>To do matrix multiplication you use the &#64; operator (This is new in Python 3.5), or the <code class="docutils literal notranslate"><span class="pre">numpy.dot</span></code> function. If you are not familiar with the idea of matrix multiplication you should review it at <a class="reference external" href="https://en.wikipedia.org/wiki/Matrix_multiplication">https://en.wikipedia.org/wiki/Matrix_multiplication</a>.</p>
 <p>We write matrix multiplication as: <span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{B}\)</span>. We cannot multiply any two arrays; their shapes must follow some rules. We can multiply any two arrays with these shapes:</p>
 <p>(m, c) * (c, n) = (m, n)</p>
@@ -1355,13 +1351,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="BAessLlQtBJb" data-shufflequestions="False"
+<div class="output text_html"><div id="AiXEWzuMJJBF" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#BAessLlQtBJb {
+#AiXEWzuMJJBF {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1381,8 +1377,8 @@ document.write(`
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
@@ -1400,18 +1396,48 @@ document.write(`
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -1438,7 +1464,7 @@ document.write(`
 }
 
 .Input-text:focus {
-    outline: none;
+    /*outline: none;*/
     background-color: var(--jq-numeric-input-bg);
     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
@@ -1447,6 +1473,7 @@ document.write(`
     background: var(--jq-mc-button-bg);
     border: 1px solid var(--jq-mc-button-border);
     border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -1475,10 +1502,10 @@ document.write(`
 }
 
 .NumericQn {
-    padding: 10px;
     background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
     border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
 }
 
 .NumericQn p {
@@ -1486,11 +1513,11 @@ document.write(`
 }
 
 .InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
     color: var(--jq-numeric-input-label);
+    float: left;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
@@ -1507,17 +1534,17 @@ document.write(`
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
@@ -1531,7 +1558,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsBAessLlQtBJb=[
+</style></div><script type="application/javascript">var questionsAiXEWzuMJJBF=[
   {
     "question": "<p>What will be the output of the following code:</p><br><p><code>x = np.array([4, 3, 2, 1])<br>for I in x:<br>    print(I)</code></p>",
     "type": "multiple_choice",
@@ -1809,6 +1836,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -1830,17 +1860,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -1862,7 +1891,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -1874,9 +1903,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -1885,9 +1914,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -1895,7 +1924,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -1984,9 +2013,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -2006,7 +2035,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -2018,8 +2052,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -2102,9 +2134,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -2114,12 +2144,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -2130,9 +2160,9 @@ function check_numeric(ths, event) {
             if ('value' in answer) {
                 if (submission == answer.value) {
                     if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
+                        fb.innerHTML = jaxify(answer.feedback);
                     } else {
-                        fb.textContent = jaxify("Correct");
+                        fb.innerHTML = jaxify("Correct");
                     }
                     correct = answer.correct;
                     //console.log(answer.correct);
@@ -2140,15 +2170,18 @@ function check_numeric(ths, event) {
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -2156,6 +2189,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -2294,7 +2328,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -2362,6 +2396,10 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
+
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
 
     //console.log(mystring);
     return mystring;
@@ -2497,7 +2535,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -2506,12 +2563,40 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
 /* This is to handle asynchrony issues in loading Jupyter notebooks
@@ -2522,8 +2607,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("BAessLlQtBJb")) {
-            show_questions(questionsBAessLlQtBJb,  BAessLlQtBJb); 
+          if(document.getElementById("AiXEWzuMJJBF")) {
+            show_questions(questionsAiXEWzuMJJBF,  AiXEWzuMJJBF); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2532,8 +2617,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("BAessLlQtBJb");
-        // console.log(document.getElementById("BAessLlQtBJb"));
+        //console.log("AiXEWzuMJJBF");
+        // console.log(document.getElementById("AiXEWzuMJJBF"));
 
         try_show();
         }
@@ -2542,9 +2627,9 @@ if (typeof version == 'undefined') {
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-functions-of-arrays">
-<h1>Linear algebra functions of arrays<a class="headerlink" href="#linear-algebra-functions-of-arrays" title="Permalink to this heading">#</a></h1>
+<h1>Linear algebra functions of arrays<a class="headerlink" href="#linear-algebra-functions-of-arrays" title="Link to this heading">#</a></h1>
 <section id="the-transpose">
-<h2>The transpose<a class="headerlink" href="#the-transpose" title="Permalink to this heading">#</a></h2>
+<h2>The transpose<a class="headerlink" href="#the-transpose" title="Link to this heading">#</a></h2>
 <p>In the transpose operation you swap the rows and columns of an array. The transpose of A is denoted <span class="math notranslate nohighlight">\(\mathbf{A}^T\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2658,7 +2743,7 @@ if (typeof version == 'undefined') {
 <p><strong>Exercise</strong> Come up with an example for each rule.</p>
 </section>
 <section id="the-determinant">
-<h2>The determinant<a class="headerlink" href="#the-determinant" title="Permalink to this heading">#</a></h2>
+<h2>The determinant<a class="headerlink" href="#the-determinant" title="Link to this heading">#</a></h2>
 <p>The determinant of a matrix is noted: det(A) or |A|. Many matrices are used to linearly transform vectors, and the determinant is related to the scaling magnitude.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2680,14 +2765,14 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.0000000000000004
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-2.0000000000000004)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="the-inverse">
-<h2>The inverse<a class="headerlink" href="#the-inverse" title="Permalink to this heading">#</a></h2>
+<h2>The inverse<a class="headerlink" href="#the-inverse" title="Link to this heading">#</a></h2>
 <p>A matrix is invertible if and only if the determinant of the matrix is non-zero.</p>
 <p>The inverse is defined by: <span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{A}^{-1} = \mathbf{I}\)</span>.</p>
 <p>We compute the inverse as:</p>
@@ -2781,7 +2866,7 @@ if (typeof version == 'undefined') {
 </div>
 </section>
 <section id="rank">
-<h2>Rank<a class="headerlink" href="#rank" title="Permalink to this heading">#</a></h2>
+<h2>Rank<a class="headerlink" href="#rank" title="Link to this heading">#</a></h2>
 <p>The rank of a matrix is equal to the number of linearly independent rows in it. Rows are linearly independent if and only if they cannot be made by constants times another row or linear combinations of other rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2810,7 +2895,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, -2.0000000000000004)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.int64(2), np.float64(-2.0000000000000004))
 </pre></div>
 </div>
 </div>
@@ -2825,7 +2910,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(2)
 </pre></div>
 </div>
 </div>
@@ -2850,7 +2935,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0)
 </pre></div>
 </div>
 </div>
@@ -2867,15 +2952,16 @@ if (typeof version == 'undefined') {
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">80</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A1</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/numpy/linalg/linalg.py:561,</span> in <span class="ni">inv</span><span class="nt">(a)</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;d&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span> <span class="n">extobj</span> <span class="o">=</span> <span class="n">get_linalg_error_extobj</span><span class="p">(</span><span class="n">_raise_linalgerror_singular</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">561</span> <span class="n">ainv</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">ainv</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/numpy/linalg/_linalg.py:609,</span> in <span class="ni">inv</span><span class="nt">(a)</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;d&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">with</span> <span class="n">errstate</span><span class="p">(</span><span class="n">call</span><span class="o">=</span><span class="n">_raise_linalgerror_singular</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;call&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>               <span class="n">over</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">609</span>     <span class="n">ainv</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">ainv</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/numpy/linalg/linalg.py:112,</span> in <span class="ni">_raise_linalgerror_singular</span><span class="nt">(err, flag)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">def</span> <span class="nf">_raise_linalgerror_singular</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">112</span>     <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s2">&quot;Singular matrix&quot;</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/numpy/linalg/_linalg.py:104,</span> in <span class="ni">_raise_linalgerror_singular</span><span class="nt">(err, flag)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="k">def</span> <span class="nf">_raise_linalgerror_singular</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">104</span>     <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s2">&quot;Singular matrix&quot;</span><span class="p">)</span>
 
 <span class="ne">LinAlgError</span>: Singular matrix
 </pre></div>
@@ -2892,7 +2978,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(2)
 </pre></div>
 </div>
 </div>
@@ -2905,7 +2991,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0)
 </pre></div>
 </div>
 </div>
@@ -2923,15 +3009,16 @@ if (typeof version == 'undefined') {
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">83</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A1</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/numpy/linalg/linalg.py:561,</span> in <span class="ni">inv</span><span class="nt">(a)</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;d&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span> <span class="n">extobj</span> <span class="o">=</span> <span class="n">get_linalg_error_extobj</span><span class="p">(</span><span class="n">_raise_linalgerror_singular</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">561</span> <span class="n">ainv</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">ainv</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/numpy/linalg/_linalg.py:609,</span> in <span class="ni">inv</span><span class="nt">(a)</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;d&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">with</span> <span class="n">errstate</span><span class="p">(</span><span class="n">call</span><span class="o">=</span><span class="n">_raise_linalgerror_singular</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;call&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>               <span class="n">over</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">609</span>     <span class="n">ainv</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">ainv</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/numpy/linalg/linalg.py:112,</span> in <span class="ni">_raise_linalgerror_singular</span><span class="nt">(err, flag)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">def</span> <span class="nf">_raise_linalgerror_singular</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">112</span>     <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s2">&quot;Singular matrix&quot;</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/numpy/linalg/_linalg.py:104,</span> in <span class="ni">_raise_linalgerror_singular</span><span class="nt">(err, flag)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="k">def</span> <span class="nf">_raise_linalgerror_singular</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">104</span>     <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s2">&quot;Singular matrix&quot;</span><span class="p">)</span>
 
 <span class="ne">LinAlgError</span>: Singular matrix
 </pre></div>
@@ -2946,7 +3033,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inf
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(inf)
 </pre></div>
 </div>
 </div>
@@ -2955,11 +3042,11 @@ if (typeof version == 'undefined') {
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="solving-linear-algebraic-equations">
-<h1>Solving linear algebraic equations<a class="headerlink" href="#solving-linear-algebraic-equations" title="Permalink to this heading">#</a></h1>
+<h1>Solving linear algebraic equations<a class="headerlink" href="#solving-linear-algebraic-equations" title="Link to this heading">#</a></h1>
 <p>One of the key reasons to develop the tools above is for solving linear equations. Let’s consider an example.</p>
 <p>Given these equations, find [x1, x2, x3]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cb369e07-2542-48c4-9158-484da2a5cf04">
-<span class="eqno">(3)<a class="headerlink" href="#equation-cb369e07-2542-48c4-9158-484da2a5cf04" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-27c40027-7434-41e9-9c56-1eb982785ab2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-27c40027-7434-41e9-9c56-1eb982785ab2" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 10 x_2 + 25 x_3 &amp;=&amp; 90 \\
 20 x_1 + 10 x_2 &amp;=&amp; 80
@@ -3041,7 +3128,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 3)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.int64(3), np.int64(3))
 </pre></div>
 </div>
 </div>
@@ -3054,7 +3141,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-950.0000000000001
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-950.0000000000001)
 </pre></div>
 </div>
 </div>
@@ -3137,7 +3224,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b78c5e3626ba80cf865c8e5536098c45b2bb541fe735725b04cf7036cb4310e0.png" src="../../_images/b78c5e3626ba80cf865c8e5536098c45b2bb541fe735725b04cf7036cb4310e0.png" />
+<img alt="../../_images/1b504ec37e2911f1bafa599257a178c3e24f9b0e2b1cebfb1dcc612c01dce85b.png" src="../../_images/1b504ec37e2911f1bafa599257a178c3e24f9b0e2b1cebfb1dcc612c01dce85b.png" />
 </div>
 </div>
 <p>As usual, there is a function we can use to solve this.</p>
@@ -3180,7 +3267,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/74e83e15988ba887613d9cd288e02b16253f0cea27acf2af98b0ff21da9f551f.png" src="../../_images/74e83e15988ba887613d9cd288e02b16253f0cea27acf2af98b0ff21da9f551f.png" />
+<img alt="../../_images/59bbc670999f5863e4041f45c925c452e45d053961fcbaf9cd5726010516390f.png" src="../../_images/59bbc670999f5863e4041f45c925c452e45d053961fcbaf9cd5726010516390f.png" />
 </div>
 </div>
 <p>You can see by inspection that solve must not be using an inverse to solve these equations; if it did, it would take much longer to solve them. It is remarkable that we can solve ~5000 simultaneous equations here in about 1-2 seconds!</p>
@@ -3194,13 +3281,13 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="RRYXbDCzcOMQ" data-shufflequestions="False"
+<div class="output text_html"><div id="RvKoBDWrbORu" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#RRYXbDCzcOMQ {
+#RvKoBDWrbORu {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3220,8 +3307,8 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
@@ -3239,18 +3326,48 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -3277,7 +3394,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 }
 
 .Input-text:focus {
-    outline: none;
+    /*outline: none;*/
     background-color: var(--jq-numeric-input-bg);
     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
@@ -3286,6 +3403,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
     background: var(--jq-mc-button-bg);
     border: 1px solid var(--jq-mc-button-border);
     border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -3314,10 +3432,10 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 }
 
 .NumericQn {
-    padding: 10px;
     background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
     border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
 }
 
 .NumericQn p {
@@ -3325,11 +3443,11 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 }
 
 .InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
     color: var(--jq-numeric-input-label);
+    float: left;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
@@ -3346,17 +3464,17 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
@@ -3370,7 +3488,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsRRYXbDCzcOMQ=[
+</style></div><script type="application/javascript">var questionsRvKoBDWrbORu=[
   {
     "question": "A = np.array([[1, 2, 3], [3, 2, 1]])<br>B = np.array([4, 5, 6])<br>A @ B  = C<br>We can say that",
     "type": "multiple_choice",
@@ -3552,6 +3670,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -3573,17 +3694,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -3605,7 +3725,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -3617,9 +3737,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -3628,9 +3748,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -3638,7 +3758,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -3727,9 +3847,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -3749,7 +3869,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -3761,8 +3886,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -3845,9 +3968,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -3857,12 +3978,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -3873,9 +3994,9 @@ function check_numeric(ths, event) {
             if ('value' in answer) {
                 if (submission == answer.value) {
                     if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
+                        fb.innerHTML = jaxify(answer.feedback);
                     } else {
-                        fb.textContent = jaxify("Correct");
+                        fb.innerHTML = jaxify("Correct");
                     }
                     correct = answer.correct;
                     //console.log(answer.correct);
@@ -3883,15 +4004,18 @@ function check_numeric(ths, event) {
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -3899,6 +4023,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -4037,7 +4162,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -4105,6 +4230,10 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
+
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
 
     //console.log(mystring);
     return mystring;
@@ -4240,7 +4369,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -4249,12 +4397,40 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
 /* This is to handle asynchrony issues in loading Jupyter notebooks
@@ -4265,8 +4441,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("RRYXbDCzcOMQ")) {
-            show_questions(questionsRRYXbDCzcOMQ,  RRYXbDCzcOMQ); 
+          if(document.getElementById("RvKoBDWrbORu")) {
+            show_questions(questionsRvKoBDWrbORu,  RvKoBDWrbORu); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -4275,8 +4451,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("RRYXbDCzcOMQ");
-        // console.log(document.getElementById("RRYXbDCzcOMQ"));
+        //console.log("RvKoBDWrbORu");
+        // console.log(document.getElementById("RvKoBDWrbORu"));
 
         try_show();
         }
@@ -4284,7 +4460,7 @@ if (typeof version == 'undefined') {
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <p>Today we introduced many functions used in linear algebra. One of the main applications of linear algebra is solving linear equations. These arise in many engineering applications like mass balances, reaction network analysis, etc. Because we can solve them directly (not iteratively with a guess like with non-linear algebra) it is highly desirable to formulate problems as linear ones where possible.</p>
 <p>There are many more specialized routines at <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.15.1/reference/routines.linalg.html">https://docs.scipy.org/doc/numpy-1.15.1/reference/routines.linalg.html</a>.</p>
 <div class="cell docutils container">
@@ -4294,13 +4470,13 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="JkSWFOSLJDye" data-shufflequestions="False"
+<div class="output text_html"><div id="zfZvMMRkTULr" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#JkSWFOSLJDye {
+#zfZvMMRkTULr {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -4320,8 +4496,8 @@ if (typeof version == 'undefined') {
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
@@ -4339,18 +4515,48 @@ if (typeof version == 'undefined') {
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -4377,7 +4583,7 @@ if (typeof version == 'undefined') {
 }
 
 .Input-text:focus {
-    outline: none;
+    /*outline: none;*/
     background-color: var(--jq-numeric-input-bg);
     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
@@ -4386,6 +4592,7 @@ if (typeof version == 'undefined') {
     background: var(--jq-mc-button-bg);
     border: 1px solid var(--jq-mc-button-border);
     border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -4414,10 +4621,10 @@ if (typeof version == 'undefined') {
 }
 
 .NumericQn {
-    padding: 10px;
     background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
     border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
 }
 
 .NumericQn p {
@@ -4425,11 +4632,11 @@ if (typeof version == 'undefined') {
 }
 
 .InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
     color: var(--jq-numeric-input-label);
+    float: left;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
@@ -4446,17 +4653,17 @@ if (typeof version == 'undefined') {
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
@@ -4470,7 +4677,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsJkSWFOSLJDye=[
+</style></div><script type="application/javascript">var questionszfZvMMRkTULr=[
   {
     "question": "np.tri(2, k = 1) + np.diag([1, 2]) = ?",
     "type": "multiple_choice",
@@ -4748,6 +4955,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -4769,17 +4979,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -4801,7 +5010,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -4813,9 +5022,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -4824,9 +5033,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -4834,7 +5043,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -4923,9 +5132,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -4945,7 +5154,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -4957,8 +5171,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -5041,9 +5253,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -5053,12 +5263,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -5069,9 +5279,9 @@ function check_numeric(ths, event) {
             if ('value' in answer) {
                 if (submission == answer.value) {
                     if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
+                        fb.innerHTML = jaxify(answer.feedback);
                     } else {
-                        fb.textContent = jaxify("Correct");
+                        fb.innerHTML = jaxify("Correct");
                     }
                     correct = answer.correct;
                     //console.log(answer.correct);
@@ -5079,15 +5289,18 @@ function check_numeric(ths, event) {
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -5095,6 +5308,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -5233,7 +5447,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -5301,6 +5515,10 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
+
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
 
     //console.log(mystring);
     return mystring;
@@ -5436,7 +5654,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -5445,12 +5682,40 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
 /* This is to handle asynchrony issues in loading Jupyter notebooks
@@ -5461,8 +5726,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("JkSWFOSLJDye")) {
-            show_questions(questionsJkSWFOSLJDye,  JkSWFOSLJDye); 
+          if(document.getElementById("zfZvMMRkTULr")) {
+            show_questions(questionszfZvMMRkTULr,  zfZvMMRkTULr); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -5471,8 +5736,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("JkSWFOSLJDye");
-        // console.log(document.getElementById("JkSWFOSLJDye"));
+        //console.log("zfZvMMRkTULr");
+        // console.log(document.getElementById("zfZvMMRkTULr"));
 
         try_show();
         }
@@ -5480,7 +5745,7 @@ if (typeof version == 'undefined') {
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="coding-questions">
-<h1>Coding Questions<a class="headerlink" href="#coding-questions" title="Permalink to this heading">#</a></h1>
+<h1>Coding Questions<a class="headerlink" href="#coding-questions" title="Link to this heading">#</a></h1>
 <p>Q1. Find the solution to the following set of equations:</p>
 <p><span class="math notranslate nohighlight">\(x_1 + x_2 - x_3 = 9\)</span></p>
 <p><span class="math notranslate nohighlight">\(3x_1 - x_2 + 2x_3 = 14\)</span></p>
@@ -5523,8 +5788,8 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../13-constrained-optimization/13-constrained-optimization.html"
@@ -5551,7 +5816,9 @@ if (typeof version == 'undefined') {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -5602,9 +5869,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -5628,8 +5896,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Solutions to first-order differential equations by integration &#8212; f23-06623</title>
+    <title>Solutions to first-order differential equations by integration &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/03-fode-1/03-fode-1';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Integration in Python" href="../02-integration-1/02-integration-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/03-fode-1/03-fode-1.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/03-fode-1/03-fode-1.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/03-fode-1/03-fode-1.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/03-fode-1/03-fode-1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/03-fode-1/03-fode-1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/03-fode-1/03-fode-1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -532,17 +528,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <ul class="simple">
 <li><p>KEYWORDS: integration, quad, zeros, shape, enumerate, solve_ivp</p></li>
 </ul>
 <section class="tex2jax_ignore mathjax_ignore" id="solutions-to-first-order-differential-equations-by-integration">
-<h1>Solutions to first-order differential equations by integration<a class="headerlink" href="#solutions-to-first-order-differential-equations-by-integration" title="Permalink to this heading">#</a></h1>
+<h1>Solutions to first-order differential equations by integration<a class="headerlink" href="#solutions-to-first-order-differential-equations-by-integration" title="Link to this heading">#</a></h1>
 <p>Adapted from Ch. 2 in Advanced Engineering Mathematics, 2<sup>nd</sup> Ed. by Michael Greenberg.</p>
 <section id="homogeneous-first-order-linear-differential-equations">
-<h2>Homogeneous, first-order linear differential equations<a class="headerlink" href="#homogeneous-first-order-linear-differential-equations" title="Permalink to this heading">#</a></h2>
+<h2>Homogeneous, first-order linear differential equations<a class="headerlink" href="#homogeneous-first-order-linear-differential-equations" title="Link to this heading">#</a></h2>
 <p>We first consider a homogeneous, first-order, linear differential equation of the form:</p>
 <p><span class="math notranslate nohighlight">\(y' + p(x) y = 0\)</span>, with <span class="math notranslate nohighlight">\(y(a) = b\)</span> as an initial value.</p>
 <p>You can derive a solution to this ODE as:</p>
@@ -599,7 +595,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.4666268199903243e-10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-1.4666268199903243e-10)
 </pre></div>
 </div>
 </div>
@@ -772,7 +768,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 3.5)
 </pre></div>
 </div>
-<img alt="../../_images/1d48fd3e62f44d8dca1e1ac9d2f874afaeb5549b0229795eac33350ff1e85ab6.png" src="../../_images/1d48fd3e62f44d8dca1e1ac9d2f874afaeb5549b0229795eac33350ff1e85ab6.png" />
+<img alt="../../_images/4081a08cdbe2dd4546f30c16c2be1d076b23160b855b3d3fe1151b8c3cdf42a4.png" src="../../_images/4081a08cdbe2dd4546f30c16c2be1d076b23160b855b3d3fe1151b8c3cdf42a4.png" />
 </div>
 </div>
 <p>We should ask, how can we tell this is correct? We can confirm the initial values, which we know are correct.</p>
@@ -783,7 +779,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 3.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.0), np.float64(3.0))
 </pre></div>
 </div>
 </div>
@@ -803,7 +799,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/53c205da0e60cb842d852cc7a72bd4f9be8c59b96457e221de99463902243bfe.png" src="../../_images/53c205da0e60cb842d852cc7a72bd4f9be8c59b96457e221de99463902243bfe.png" />
+<img alt="../../_images/15a59d6db97d52e217f09ba298632120464316993dce67757081580d84036ea6.png" src="../../_images/15a59d6db97d52e217f09ba298632120464316993dce67757081580d84036ea6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -813,13 +809,13 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/eb6b985b54523c9d5572a6a768f1ab18f1da911c8fc4bbe56a711d73d7b1b0bc.png" src="../../_images/eb6b985b54523c9d5572a6a768f1ab18f1da911c8fc4bbe56a711d73d7b1b0bc.png" />
+<img alt="../../_images/55e0ee51c73c4229977e69cfabfee8691286a29b2e87e8e8caa6d432bdc3aa5e.png" src="../../_images/55e0ee51c73c4229977e69cfabfee8691286a29b2e87e8e8caa6d432bdc3aa5e.png" />
 </div>
 </div>
 <p>Here you see good agreement over most of the range. The end-points are always less accurate because the derivatives there are approximated by a less accurate formula. We interpret the sum of this evidence to mean our solution to the ODE is good over this range of x values.</p>
 </section>
 <section id="optional-non-homogeneous-linear-first-order-odes">
-<h2>(Optional) Non-homogeneous linear first-order ODEs<a class="headerlink" href="#optional-non-homogeneous-linear-first-order-odes" title="Permalink to this heading">#</a></h2>
+<h2>(Optional) Non-homogeneous linear first-order ODEs<a class="headerlink" href="#optional-non-homogeneous-linear-first-order-odes" title="Link to this heading">#</a></h2>
 <p>A non-homogenous first order, linear differential equation has this form:</p>
 <p><span class="math notranslate nohighlight">\(y' + p(x) y = q(x), y(a)=b\)</span></p>
 <p>Equations of this form are typically solved with a method called variation of parameters. In the most general form, this leads to solutions of the form:</p>
@@ -902,27 +898,27 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.991276533834524
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(3.991276533834524)
 </pre></div>
 </div>
 </div>
 </div>
 <p>Note there is some conservation of effort here. If you can derive the solution above correctly (and you have all learned how to do this if you had a differential equations course), the code below is quite short to get the solution at some value of x. If you are unable to derive that solution, you can use the general solution we gave, but then it is a trickier solution to implement in code.</p>
 <section id="limitations-of-solutions-by-integration">
-<h3>Limitations of solutions by integration<a class="headerlink" href="#limitations-of-solutions-by-integration" title="Permalink to this heading">#</a></h3>
+<h3>Limitations of solutions by integration<a class="headerlink" href="#limitations-of-solutions-by-integration" title="Link to this heading">#</a></h3>
 <p>Solution by integration has some advantages. You get an estimate of the error in the solution from the <code class="docutils literal notranslate"><span class="pre">quad</span></code> function, which is helpful to know how good the solution is. However, the methods described above are limited to <em>linear</em> differential equations of the form described. If you have a nonlinear differential equation, or if you are unable to separate the equations into integrable form, the methods simply don’t work. Next, we consider how to approach equations where we cannot use integration to solve the problems.</p>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="numerical-solutions-to-differential-equations">
-<h1>Numerical solutions to differential equations<a class="headerlink" href="#numerical-solutions-to-differential-equations" title="Permalink to this heading">#</a></h1>
+<h1>Numerical solutions to differential equations<a class="headerlink" href="#numerical-solutions-to-differential-equations" title="Link to this heading">#</a></h1>
 <p>We begin with a brief review of first order differential equations. The equations we are concerned with here all have the form:</p>
 <p><span class="math notranslate nohighlight">\(\frac{dy}{dx} = f(x, y)\)</span></p>
 <p>And the value of the solution is known at some point, e.g. <span class="math notranslate nohighlight">\(y(x_0) = y_0\)</span>. <span class="math notranslate nohighlight">\(f(x, y)\)</span> can be linear or nonlinear. Our goal in this section is to motivate how numerical solutions are obtained.</p>
 <p>These notes were adapted from Chapter 6 in Advanced Engineering Mathematics 2<sup>nd</sup> ed. by Michael D. Greenberg.</p>
 <p>The basic idea behind these methods is that we know the initial value of the solution <em>and</em> the derivative of the solution (it is defined by the ODE definition above), and so we can estimate the solution a small distance away from the initial value. If you repeat this process with the newly estimated point, you can estimate the next point, and so on. There are many algorithms for performing the estimation, and we will consider a two of them. These algorithms differ in efficiency, ease of implementation, and accuracy.</p>
 <section id="euler-s-method">
-<h2>Euler’s method<a class="headerlink" href="#euler-s-method" title="Permalink to this heading">#</a></h2>
+<h2>Euler’s method<a class="headerlink" href="#euler-s-method" title="Link to this heading">#</a></h2>
 <p>The main idea of Euler’s method is that if you know the value of the solution at some point, and you know the derivative at that point, you can estimate the solution nearby at <span class="math notranslate nohighlight">\(x0 + h\)</span>, where <span class="math notranslate nohighlight">\(h\)</span> is a small number:</p>
 <p><span class="math notranslate nohighlight">\(y_{n+1} = y_n + f(x_n, y_n) h\)</span></p>
 <p>Now, you just repeat this until you get to the x-value that you want. For concreteness, consider:</p>
@@ -937,7 +933,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.  , 0.25, 0.5 , 0.75, 1.  ]), 0.25)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.  , 0.25, 0.5 , 0.75, 1.  ]), np.float64(0.25))
 </pre></div>
 </div>
 </div>
@@ -950,7 +946,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.25)
 </pre></div>
 </div>
 </div>
@@ -1003,7 +999,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/65869942b8f0953ea819965736dfb663efdf265e40d98a8c469cba7600efe0e7.png" src="../../_images/65869942b8f0953ea819965736dfb663efdf265e40d98a8c469cba7600efe0e7.png" />
+<img alt="../../_images/7ac9acd8735d161eb376d4bdfb94a44733a6826299e2f4fac5745aef0d011fa0.png" src="../../_images/7ac9acd8735d161eb376d4bdfb94a44733a6826299e2f4fac5745aef0d011fa0.png" />
 </div>
 </div>
 <p>This solution does not look that good until you increase the number of points (i.e. decrease the value of <span class="math notranslate nohighlight">\(h\)</span>, significantly). It is known the error decreases only linearly with <span class="math notranslate nohighlight">\(h\)</span>.</p>
@@ -1011,7 +1007,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 <p>This method is not used in practice; it is not very accurate, and you need quite small <span class="math notranslate nohighlight">\(h\)</span> to get a good solution. It is used here to illustrate the idea of how one integrates a differential equation. We will consider one more advanced method, the fourth-order Runge-Kutta method.</p>
 </section>
 <section id="fourth-order-runge-kutta-method">
-<h2>Fourth-order Runge-Kutta method<a class="headerlink" href="#fourth-order-runge-kutta-method" title="Permalink to this heading">#</a></h2>
+<h2>Fourth-order Runge-Kutta method<a class="headerlink" href="#fourth-order-runge-kutta-method" title="Link to this heading">#</a></h2>
 <p>The general idea of the more advanced methods is to use a weighted average of slopes at various points around a point to best estimate the next function value. Here we consider the fourth-order Runge-Kutta algorithm. The terms are tedious to derive, and we will not do it here as they can be looked up in several places (e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods#The_Runge%E2%80%93Kutta_method">https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods#The_Runge%E2%80%93Kutta_method</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1051,7 +1047,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/da2263988f8818934323a4d7b671f2b9507ea8a841ae775695043cefd031f10f.png" src="../../_images/da2263988f8818934323a4d7b671f2b9507ea8a841ae775695043cefd031f10f.png" />
+<img alt="../../_images/26b6f02edadf780879d6bac12234aae887efa389395e1af3472783b29f6928f5.png" src="../../_images/26b6f02edadf780879d6bac12234aae887efa389395e1af3472783b29f6928f5.png" />
 </div>
 </div>
 <p>Note you can get a much more accurate solution with a larger <span class="math notranslate nohighlight">\(h\)</span> with this method than you can with the Euler method.</p>
@@ -1067,7 +1063,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="scipy-integrate-solve-ivp">
-<h1>scipy.integrate.solve_ivp<a class="headerlink" href="#scipy-integrate-solve-ivp" title="Permalink to this heading">#</a></h1>
+<h1>scipy.integrate.solve_ivp<a class="headerlink" href="#scipy-integrate-solve-ivp" title="Link to this heading">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> library provides <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> to solve first order differential equations. It is not the only one available, but this function is recommended. You import the function like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1179,7 +1175,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c6976d4611ea4d2de58cc7c8e35734c401571d7b0c1db47104039703e2023f9a.png" src="../../_images/c6976d4611ea4d2de58cc7c8e35734c401571d7b0c1db47104039703e2023f9a.png" />
+<img alt="../../_images/c1cc3c5ac2194c03a5f0499407f1be86e3610d3b17a73bbdb06a3b7c26afb03a.png" src="../../_images/c1cc3c5ac2194c03a5f0499407f1be86e3610d3b17a73bbdb06a3b7c26afb03a.png" />
 </div>
 </div>
 <p>That doesn’t looks so great since there are only four data points. By default, the algorithm only uses as many points as it needs to achieve a specified tolerance. We can specify that we want the solution evaluated at other points using the optional <code class="docutils literal notranslate"><span class="pre">t_eval</span></code> keyword arg. It is important to remember that these points are an approximation to the solution.</p>
@@ -1218,12 +1214,12 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/20c85ec0dc333a7299ba7cbfbc31871806ed71477949ddadba166680e4f73afd.png" src="../../_images/20c85ec0dc333a7299ba7cbfbc31871806ed71477949ddadba166680e4f73afd.png" />
+<img alt="../../_images/ea2405d0a01957c239840c2251efc8e53ca09a0c593d6e529b6a7e5e5ce90cf7.png" src="../../_images/ea2405d0a01957c239840c2251efc8e53ca09a0c593d6e529b6a7e5e5ce90cf7.png" />
 </div>
 </div>
 <p>So far, <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> solves the issues with item 1 (we did not have to code the algorithm), and items 2 and 3 (it uses an adaptive step and converges to a tolerance for us). It will also help us solve for the inverse problem, i.e. for what value of <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(y=4\)</span>?</p>
 <section id="events">
-<h2>Events<a class="headerlink" href="#events" title="Permalink to this heading">#</a></h2>
+<h2>Events<a class="headerlink" href="#events" title="Link to this heading">#</a></h2>
 <p>To do this, we need a new concept of an “event function”. During each step of the integration, you can run a function that can detect an “event”. When an event is detected, the location of the event is stored, and if desired integration can be terminated. <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> can take a list of event functions. We consider only one for now.</p>
 <p>An event occurs when an event function is equal to zero. During integration, if the event function changes sign, then it is clear an event has occurred, and the algorithm determines where it occurred. Since we want to know when <span class="math notranslate nohighlight">\(y=4\)</span>, we will define a function that returns <span class="math notranslate nohighlight">\(y - 4\)</span>, because that will equal zero at that condition. We want the integration to terminate when that happens, so we set the “terminal” attribute on our function to True.</p>
 <p>An event function has a signature of f(x, y). Remember that <span class="math notranslate nohighlight">\(y\)</span> is going to be an array,</p>
@@ -1330,7 +1326,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/42411bc5144a6cc963ac8754b044faaaa0fb5a6e41dd6a8d3b2237a3a3fea941.png" src="../../_images/42411bc5144a6cc963ac8754b044faaaa0fb5a6e41dd6a8d3b2237a3a3fea941.png" />
+<img alt="../../_images/97a6d2fd27afd478a4529a5618bf7991391049df2ba0459cbbde3ccea26db5a3.png" src="../../_images/97a6d2fd27afd478a4529a5618bf7991391049df2ba0459cbbde3ccea26db5a3.png" />
 </div>
 </div>
 <p><strong>Reflective Questions</strong></p>
@@ -1342,13 +1338,13 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="DVyuFJlJpvWv" data-shufflequestions="False"
+<div class="output text_html"><div id="kaEMyxIkooJd" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#DVyuFJlJpvWv {
+#kaEMyxIkooJd {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1368,8 +1364,8 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
@@ -1387,18 +1383,48 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -1425,7 +1451,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 }
 
 .Input-text:focus {
-    outline: none;
+    /*outline: none;*/
     background-color: var(--jq-numeric-input-bg);
     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
@@ -1434,6 +1460,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
     background: var(--jq-mc-button-bg);
     border: 1px solid var(--jq-mc-button-border);
     border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -1462,10 +1489,10 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 }
 
 .NumericQn {
-    padding: 10px;
     background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
     border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
 }
 
 .NumericQn p {
@@ -1473,11 +1500,11 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
 }
 
 .InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
     color: var(--jq-numeric-input-label);
+    float: left;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
@@ -1494,17 +1521,17 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
@@ -1518,7 +1545,7 @@ After the loop new_arr = [0.   0.25 1.   2.25 4.  ]
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsDVyuFJlJpvWv=[{"question": "Which of the following is not a vectorized function?", "type": "multiple_choice", "answers": [{"answer": "np.sin()", "correct": false}, {"answer": "np.sqrt()", "correct": false}, {"answer": "np.sum()", "correct": false}, {"answer": "all are vectorized functions", "correct": true}], "tag": "numpy", "lecture_file": "03_fode_1"}, {"question": "Which of the following will give a 5 rows x 5 columns 2D array of zeros?", "type": "multiple_choice", "answers": [{"answer": "np.zeros(5, 5)", "correct": false}, {"answer": "np.zeros([5, 5])", "correct": true}, {"answer": "5*np.zeros(5)", "correct": false}, {"answer": "np.five(5)", "correct": false}], "tag": "numpy", "lecture_file": "03_fode_1"}, {"question": "If the first and second derivative of a function are zero, then we have a ", "type": "multiple_choice", "answers": [{"answer": "global maximum", "correct": false}, {"answer": "global minimum", "correct": false}, {"answer": "saddle point", "correct": false}, {"answer": "cannot say", "correct": true}], "tag": "derivative", "lecture_file": "03_fode_1"}, {"question": "How to plot the legend in the lower left corner of a matplotlib plot?", "type": "multiple_choice", "answers": [{"answer": "plt.legend(loc = 3)", "correct": true}, {"answer": "plt.lower_left('legend')", "correct": false}, {"answer": "plt.loc('lower left')", "correct": false}, {"answer": "plt.legend('3')", "correct": false}], "tag": "matplotlib", "lecture_file": "03_fode_1"}, {"question": "$5 dy/dx - y*e^x + 5*sin(x) = 0$ ; is a", "type": "multiple_choice", "answers": [{"answer": "homogeneous first-order linear equation", "correct": false}, {"answer": "non-homogeneous first order linear equation", "correct": true}, {"answer": "non-homogeneous first order non-linear equation", "correct": false}, {"answer": "homogeneous first-order non-linear equation", "correct": false}], "tag": "derivative", "lecture_file": "03_fode_1"}, {"question": "The values at which the function 'f' was evaluated when using sol = solve_ivp(f) can be read with", "type": "multiple_choice", "answers": [{"answer": "sol.x", "correct": false}, {"answer": "sol.X", "correct": false}, {"answer": "sol.t", "correct": true}, {"answer": "sol", "correct": false}], "tag": "scipy", "lecture_file": "03_fode_1"}, {"question": "Which of the following does not give an error?", "type": "multiple_choice", "answers": [{"answer": "solve_ivp(f, t_span = (0,1), y0 = y0, t_eval = np.linspace(0, 2))", "correct": false}, {"answer": "solve_ivp(f, t_span = (0,1), y0)", "correct": false}, {"answer": "solve_ivp(f, y0 = y0, t_eval = np.linspace(0,1))", "correct": false}, {"answer": "solve_ivp(f, t_span = [0,1], y0 = y0)", "correct": true}], "tag": "scipy", "lecture_file": "03_fode_1"}, {"question": "A solve_ivp() event occurs when the value the event function", "type": "multiple_choice", "answers": [{"answer": "becomes positive", "correct": false}, {"answer": "is equal to zero", "correct": true}, {"answer": "crosses the event value", "correct": false}, {"answer": "becomes negative", "correct": false}], "tag": "scipy", "lecture_file": "03_fode_1"}, {"question": "solve_ivp() makes solving first-order differential equations easier by", "type": "multiple_choice", "answers": [{"answer": "using an adaptive step size to increase the efficiency of the algorithm", "correct": false}, {"answer": "converging to an acceptable value", "correct": false}, {"answer": "helping to find the value of the independent variable at an instance of the dependent variable", "correct": false}, {"answer": "all of the above", "correct": true}], "tag": "scipy", "lecture_file": "03_fode_1"}, {"question": "Which of the following methods is not available in the solve_ivp() function?", "type": "multiple_choice", "answers": [{"answer": "Euler's Method", "correct": true}, {"answer": "Runge-Kutta", "correct": false}, {"answer": "Backward Differentiation", "correct": false}, {"answer": "LSODA", "correct": false}], "tag": "scipy", "lecture_file": "03_fode_1"}];
+</style></div><script type="application/javascript">var questionskaEMyxIkooJd=[{"question": "Which of the following is not a vectorized function?", "type": "multiple_choice", "answers": [{"answer": "np.sin()", "correct": false}, {"answer": "np.sqrt()", "correct": false}, {"answer": "np.sum()", "correct": false}, {"answer": "all are vectorized functions", "correct": true}], "tag": "numpy", "lecture_file": "03_fode_1"}, {"question": "Which of the following will give a 5 rows x 5 columns 2D array of zeros?", "type": "multiple_choice", "answers": [{"answer": "np.zeros(5, 5)", "correct": false}, {"answer": "np.zeros([5, 5])", "correct": true}, {"answer": "5*np.zeros(5)", "correct": false}, {"answer": "np.five(5)", "correct": false}], "tag": "numpy", "lecture_file": "03_fode_1"}, {"question": "If the first and second derivative of a function are zero, then we have a ", "type": "multiple_choice", "answers": [{"answer": "global maximum", "correct": false}, {"answer": "global minimum", "correct": false}, {"answer": "saddle point", "correct": false}, {"answer": "cannot say", "correct": true}], "tag": "derivative", "lecture_file": "03_fode_1"}, {"question": "How to plot the legend in the lower left corner of a matplotlib plot?", "type": "multiple_choice", "answers": [{"answer": "plt.legend(loc = 3)", "correct": true}, {"answer": "plt.lower_left('legend')", "correct": false}, {"answer": "plt.loc('lower left')", "correct": false}, {"answer": "plt.legend('3')", "correct": false}], "tag": "matplotlib", "lecture_file": "03_fode_1"}, {"question": "$5 dy/dx - y*e^x + 5*sin(x) = 0$ ; is a", "type": "multiple_choice", "answers": [{"answer": "homogeneous first-order linear equation", "correct": false}, {"answer": "non-homogeneous first order linear equation", "correct": true}, {"answer": "non-homogeneous first order non-linear equation", "correct": false}, {"answer": "homogeneous first-order non-linear equation", "correct": false}], "tag": "derivative", "lecture_file": "03_fode_1"}, {"question": "The values at which the function 'f' was evaluated when using sol = solve_ivp(f) can be read with", "type": "multiple_choice", "answers": [{"answer": "sol.x", "correct": false}, {"answer": "sol.X", "correct": false}, {"answer": "sol.t", "correct": true}, {"answer": "sol", "correct": false}], "tag": "scipy", "lecture_file": "03_fode_1"}, {"question": "Which of the following does not give an error?", "type": "multiple_choice", "answers": [{"answer": "solve_ivp(f, t_span = (0,1), y0 = y0, t_eval = np.linspace(0, 2))", "correct": false}, {"answer": "solve_ivp(f, t_span = (0,1), y0)", "correct": false}, {"answer": "solve_ivp(f, y0 = y0, t_eval = np.linspace(0,1))", "correct": false}, {"answer": "solve_ivp(f, t_span = [0,1], y0 = y0)", "correct": true}], "tag": "scipy", "lecture_file": "03_fode_1"}, {"question": "A solve_ivp() event occurs when the value the event function", "type": "multiple_choice", "answers": [{"answer": "becomes positive", "correct": false}, {"answer": "is equal to zero", "correct": true}, {"answer": "crosses the event value", "correct": false}, {"answer": "becomes negative", "correct": false}], "tag": "scipy", "lecture_file": "03_fode_1"}, {"question": "solve_ivp() makes solving first-order differential equations easier by", "type": "multiple_choice", "answers": [{"answer": "using an adaptive step size to increase the efficiency of the algorithm", "correct": false}, {"answer": "converging to an acceptable value", "correct": false}, {"answer": "helping to find the value of the independent variable at an instance of the dependent variable", "correct": false}, {"answer": "all of the above", "correct": true}], "tag": "scipy", "lecture_file": "03_fode_1"}, {"question": "Which of the following methods is not available in the solve_ivp() function?", "type": "multiple_choice", "answers": [{"answer": "Euler's Method", "correct": true}, {"answer": "Runge-Kutta", "correct": false}, {"answer": "Backward Differentiation", "correct": false}, {"answer": "LSODA", "correct": false}], "tag": "scipy", "lecture_file": "03_fode_1"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1554,6 +1581,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -1575,17 +1605,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -1607,7 +1636,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -1619,9 +1648,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -1630,9 +1659,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -1640,7 +1669,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -1729,9 +1758,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -1751,7 +1780,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -1763,8 +1797,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -1847,9 +1879,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -1859,12 +1889,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -1875,9 +1905,9 @@ function check_numeric(ths, event) {
             if ('value' in answer) {
                 if (submission == answer.value) {
                     if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
+                        fb.innerHTML = jaxify(answer.feedback);
                     } else {
-                        fb.textContent = jaxify("Correct");
+                        fb.innerHTML = jaxify("Correct");
                     }
                     correct = answer.correct;
                     //console.log(answer.correct);
@@ -1885,15 +1915,18 @@ function check_numeric(ths, event) {
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -1901,6 +1934,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -2039,7 +2073,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -2107,6 +2141,10 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
+
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
 
     //console.log(mystring);
     return mystring;
@@ -2242,7 +2280,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -2251,12 +2308,40 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
 /* This is to handle asynchrony issues in loading Jupyter notebooks
@@ -2267,8 +2352,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("DVyuFJlJpvWv")) {
-            show_questions(questionsDVyuFJlJpvWv,  DVyuFJlJpvWv); 
+          if(document.getElementById("kaEMyxIkooJd")) {
+            show_questions(questionskaEMyxIkooJd,  kaEMyxIkooJd); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2277,8 +2362,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("DVyuFJlJpvWv");
-        // console.log(document.getElementById("DVyuFJlJpvWv"));
+        //console.log("kaEMyxIkooJd");
+        // console.log(document.getElementById("kaEMyxIkooJd"));
 
         try_show();
         }
@@ -2287,7 +2372,7 @@ if (typeof version == 'undefined') {
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <p>We learned how to solve different types of first-order differential equations. Linear equations can be solved by integration, which has the benefit of providing an estimate of error if the <code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code> function is used.</p>
 <p>Most first-order differential equations can be solved numerically with <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp</span></code>. This solver allows you to specify the points the solution is evaluated on, and to define event functions that can terminate the integration, or record where events occur.</p>
 <div class="admonition tip">
@@ -2323,8 +2408,8 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../02-integration-1/02-integration-1.html"
@@ -2351,7 +2436,9 @@ if (typeof version == 'undefined') {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2399,9 +2486,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -2425,8 +2513,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

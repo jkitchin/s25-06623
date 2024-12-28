@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Linear regression &#8212; f23-06623</title>
+    <title>Linear regression &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/18-linear-regression/18-linear-regression';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Advanced topics in linear algebra" href="../17-linear-algebra-2/17-linear-algebra-2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/18-linear-regression/18-linear-regression.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/18-linear-regression/18-linear-regression.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/18-linear-regression/18-linear-regression.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/18-linear-regression/18-linear-regression.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/18-linear-regression/18-linear-regression.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/18-linear-regression/18-linear-regression.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -526,11 +522,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
-<h1>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">#</a></h1>
+<h1>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>KEYWORDS: numpy.linalg.solve</p></li>
 </ul>
@@ -556,7 +552,7 @@ document.write(`
 <p>An alternative form is called the normal equation: <span class="math notranslate nohighlight">\(\mathbf{a} = (\mathbf{X}^T\cdot\mathbf{X})^{-1}\mathbf{X}^T \mathbf{y}\)</span>. This is symbolically correct, but relies on the inverse which is expensive to compute for large systems. It is not used practically, instead the equations are solved efficiently using a different algorithm.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="an-example-of-polynomial-fitting">
-<h1>An example of polynomial fitting<a class="headerlink" href="#an-example-of-polynomial-fitting" title="Permalink to this heading">#</a></h1>
+<h1>An example of polynomial fitting<a class="headerlink" href="#an-example-of-polynomial-fitting" title="Link to this heading">#</a></h1>
 <p>Our goal in this example is to fit a polynomial to some time-dependent concentration data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -648,7 +644,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b75394bb53c30276a759e237c395f90e0953a2e3817b0c82084b9bc449d54516.png" src="../../_images/b75394bb53c30276a759e237c395f90e0953a2e3817b0c82084b9bc449d54516.png" />
+<img alt="../../_images/d1bc2e60d2b76d0a9769da8e6e95eddea2e0b0c8cd3d5b7688ce329c9d9f7672.png" src="../../_images/d1bc2e60d2b76d0a9769da8e6e95eddea2e0b0c8cd3d5b7688ce329c9d9f7672.png" />
 </div>
 </div>
 <p>We previously claimed that solving this equation was equivalent to minimizing the summed squared errors. Here we demonstrate that is consistent with our observation for the first parameter.</p>
@@ -667,7 +663,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e8ff24e81b98ece7dbcadaee0a5313f700b3dd947ccce3c74d34649927d90141.png" src="../../_images/e8ff24e81b98ece7dbcadaee0a5313f700b3dd947ccce3c74d34649927d90141.png" />
+<img alt="../../_images/71ba7c35e3582ee6df3b069923d2e82796475ef5ba2ed72abd7002123c07f5f6.png" src="../../_images/71ba7c35e3582ee6df3b069923d2e82796475ef5ba2ed72abd7002123c07f5f6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -681,7 +677,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0519480519480308e-08
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.0519480519480308e-08)
 </pre></div>
 </div>
 </div>
@@ -712,7 +708,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.911617807628561e+44
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(4.911617807628561e+44)
 </pre></div>
 </div>
 </div>
@@ -724,7 +720,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.271680468493854e+19
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(8.271680468493854e+19)
 </pre></div>
 </div>
 </div>
@@ -766,7 +762,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0519480519480308e-08
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.0519480519480308e-08)
 </pre></div>
 </div>
 </div>
@@ -782,7 +778,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 4.99902596e-02, -2.97846320e-04,  1.34348484e-06, -3.48484840e-09,
          3.69696954e-12]),
  array([1.05194694e-08]),
- 5,
+ np.int32(5),
  array([9.14856013e+09, 3.79175229e+06, 5.21123386e+03, 2.15423665e+01,
         1.00603128e+00]))
 </pre></div>
@@ -821,7 +817,7 @@ document.write(`
 </div>
 <p>The key points to note are that the rank is equal to the number of parameters we are estimating, which means we have enough information to get pretty good estimates of the parameters.</p>
 <section id="confidence-intervals-on-the-parameters">
-<h2>Confidence intervals on the parameters<a class="headerlink" href="#confidence-intervals-on-the-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Confidence intervals on the parameters<a class="headerlink" href="#confidence-intervals-on-the-parameters" title="Link to this heading">#</a></h2>
 <p>The confidence intervals reflect the range of values we are confident the true parameter lies in. Remember we are only <em>estimating</em> these parameters from a small amount of data.</p>
 <p>The degrees of freedom is roughly equal to the number of data points minus the number of parameters.</p>
 <p>We define <span class="math notranslate nohighlight">\(\sigma^2 = SSE / dof\)</span> where <span class="math notranslate nohighlight">\(SSE\)</span> is the summed squared error, and <span class="math notranslate nohighlight">\(dof\)</span> is the degrees of freedom.</p>
@@ -957,7 +953,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1cc466a8b22fe2eaf81beefa4411b764e5bfe19c77f04831d90b516686a95baf.png" src="../../_images/1cc466a8b22fe2eaf81beefa4411b764e5bfe19c77f04831d90b516686a95baf.png" />
+<img alt="../../_images/1cea8868a1f01476e107ac3387774a611e7fb91d3826147d132856f517131d39.png" src="../../_images/1cea8868a1f01476e107ac3387774a611e7fb91d3826147d132856f517131d39.png" />
 </div>
 </div>
 <p>It is almost certainly not reasonable for the concentration of A to start increasing again after about 350 time units.</p>
@@ -997,7 +993,62 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/acdb147d7f1c7080f6bfaca8aeab3a81d5dcd571711792a937350c891e8c84e0.png" src="../../_images/acdb147d7f1c7080f6bfaca8aeab3a81d5dcd571711792a937350c891e8c84e0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">m</span><span class="p">,</span> <span class="n">mint</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Ca</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">newT</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">Ca</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">newt</span><span class="p">,</span> <span class="n">mint</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;UB&#39;</span><span class="p">,</span> <span class="s1">&#39;LB&#39;</span><span class="p">]);</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/matplotlib/pyplot.py:3829,</span> in <span class="ni">plot</span><span class="nt">(scalex, scaley, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3821</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Axes</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3822</span> <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3823</span>     <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">ArrayLike</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3827</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3828</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Line2D</span><span class="p">]:</span>
+<span class="ne">-&gt; </span><span class="mi">3829</span>     <span class="k">return</span> <span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3830</span>         <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3831</span>         <span class="n">scalex</span><span class="o">=</span><span class="n">scalex</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3832</span>         <span class="n">scaley</span><span class="o">=</span><span class="n">scaley</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3833</span>         <span class="o">**</span><span class="p">({</span><span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span> <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}),</span>
+<span class="g g-Whitespace">   </span><span class="mi">3834</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3835</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1777,</span> in <span class="ni">Axes.plot</span><span class="nt">(self, scalex, scaley, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1534</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1535</span><span class="sd"> Plot y versus x as lines and/or markers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1536</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1774</span><span class="sd"> (``&#39;green&#39;``) or hex strings (``&#39;#008000&#39;``).</span>
+<span class="g g-Whitespace">   </span><span class="mi">1775</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1776</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">normalize_kwargs</span><span class="p">(</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">mlines</span><span class="o">.</span><span class="n">Line2D</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1777</span> <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1778</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1779</span>     <span class="bp">self</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/matplotlib/axes/_base.py:297,</span> in <span class="ni">_process_plot_var_args.__call__</span><span class="nt">(self, axes, data, return_kwargs, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="n">this</span> <span class="o">+=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="ne">--&gt; </span><span class="mi">297</span> <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_args</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>     <span class="n">axes</span><span class="p">,</span> <span class="n">this</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">ambiguous_fmt_datakey</span><span class="o">=</span><span class="n">ambiguous_fmt_datakey</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="n">return_kwargs</span><span class="o">=</span><span class="n">return_kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/matplotlib/axes/_base.py:494,</span> in <span class="ni">_process_plot_var_args._plot_args</span><span class="nt">(self, axes, tup, kwargs, return_kwargs, ambiguous_fmt_datakey)</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">axes</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">update_units</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x and y must have same first dimension, but &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>                      <span class="sa">f</span><span class="s2">&quot;have shapes </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x and y can be no greater than 2D, but have &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span>                      <span class="sa">f</span><span class="s2">&quot;shapes </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: x and y must have same first dimension, but have shapes (50,) and (2, 50)
+</pre></div>
+</div>
+<img alt="../../_images/e6f89b3a4aabcf091937ef794fa8e189ab1c595dfd253881938b4d957d4471f4.png" src="../../_images/e6f89b3a4aabcf091937ef794fa8e189ab1c595dfd253881938b4d957d4471f4.png" />
 </div>
 </div>
 <p><strong>Reflective Questions</strong></p>
@@ -1009,13 +1060,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="grBxdbqomMSR" data-shufflequestions="False"
+<div class="output text_html"><div id="xXrMlRhJsFra" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#grBxdbqomMSR {
+#xXrMlRhJsFra {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1185,7 +1236,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsgrBxdbqomMSR=[{"question": "Which of the following is a linear regression model:", "type": "multiple_choice", "answers": [{"answer": "y = e^x + x", "correct": false}, {"answer": "y = sin(x) + 5", "correct": false}, {"answer": "y = x + x^2", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "regression", "lecture_file": "11_regression"}, {"question": "Regression is a useful method to find a model which generalizes a data set because", "type": "multiple_choice", "answers": [{"answer": "It provides parameters which can have physical significance", "correct": false}, {"answer": "It can help to identify the important variables affecting a system ", "correct": false}, {"answer": "It is not a black-box model", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "regression", "lecture_file": "11_regression"}, {"question": "Which of the following statements are true:<br>Linear regression is limiting beacause:<br>a: It assumes a linear relationship between the variables which may not always be the case<br>b: It is affected by outliers<br>c: It is overly simplistic and would always fit to noisy observations", "type": "multiple_choice", "answers": [{"answer": "a, b", "correct": true}, {"answer": "a, b, c", "correct": false}, {"answer": "a, c", "correct": false}, {"answer": "b, c", "correct": false}], "tag": "regression", "lecture_file": "11_regression"}];
+</style></div><script type="application/javascript">var questionsxXrMlRhJsFra=[{"question": "Which of the following is a linear regression model:", "type": "multiple_choice", "answers": [{"answer": "y = e^x + x", "correct": false}, {"answer": "y = sin(x) + 5", "correct": false}, {"answer": "y = x + x^2", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "regression", "lecture_file": "11_regression"}, {"question": "Regression is a useful method to find a model which generalizes a data set because", "type": "multiple_choice", "answers": [{"answer": "It provides parameters which can have physical significance", "correct": false}, {"answer": "It can help to identify the important variables affecting a system ", "correct": false}, {"answer": "It is not a black-box model", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "regression", "lecture_file": "11_regression"}, {"question": "Which of the following statements are true:<br>Linear regression is limiting beacause:<br>a: It assumes a linear relationship between the variables which may not always be the case<br>b: It is affected by outliers<br>c: It is overly simplistic and would always fit to noisy observations", "type": "multiple_choice", "answers": [{"answer": "a, b", "correct": true}, {"answer": "a, b, c", "correct": false}, {"answer": "a, c", "correct": false}, {"answer": "b, c", "correct": false}], "tag": "regression", "lecture_file": "11_regression"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1934,8 +1985,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("grBxdbqomMSR")) {
-            show_questions(questionsgrBxdbqomMSR,  grBxdbqomMSR); 
+          if(document.getElementById("xXrMlRhJsFra")) {
+            show_questions(questionsxXrMlRhJsFra,  xXrMlRhJsFra); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1944,8 +1995,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("grBxdbqomMSR");
-        // console.log(document.getElementById("grBxdbqomMSR"));
+        //console.log("xXrMlRhJsFra");
+        // console.log(document.getElementById("xXrMlRhJsFra"));
 
         try_show();
         }
@@ -1954,7 +2005,7 @@ if (typeof version == 'undefined') {
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="regularization">
-<h1>Regularization<a class="headerlink" href="#regularization" title="Permalink to this heading">#</a></h1>
+<h1>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h1>
 <p>When we do linear regression we get a coefficient for every function in the model. However, there can be bad behavior with regular regression, especially for certain classes of functions, and when the functions are correlated with each other. To explore why this happens, we will look at some regression models of varying complexity. We start by looking at some data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1974,7 +2025,7 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/619a3360c3697b57c04649f95537b4ddb8a043482a8b4be4d9b1a0dcb8f1c8da.png" src="../../_images/619a3360c3697b57c04649f95537b4ddb8a043482a8b4be4d9b1a0dcb8f1c8da.png" />
+<img alt="../../_images/59226cef6578d0d34969f7e33d22f09921174c477b55fef54c0998eaeb610bce.png" src="../../_images/59226cef6578d0d34969f7e33d22f09921174c477b55fef54c0998eaeb610bce.png" />
 </div>
 </div>
 <p>Our goal is to fit a linear regression model to this data. We want to avoid underfitting and overfitting. If we just fit polynomials to this data, we find some undesirable behavior. Let’s look at fits up to a 12<sup>th</sup> order polynomials.</p>
@@ -2005,13 +2056,13 @@ if (typeof version == 'undefined') {
 12      0.01      -0.21       2.83     -22.43     114.61    -395.70     940.66   -1541.20    1715.97   -1258.64     574.27    -144.86      15.53
 </pre></div>
 </div>
-<img alt="../../_images/c10f42a56c0c23a00588430784faf769316dd6580f5e0cda2065aa263d7f33a6.png" src="../../_images/c10f42a56c0c23a00588430784faf769316dd6580f5e0cda2065aa263d7f33a6.png" />
+<img alt="../../_images/31c93b70c907d7e2ba54d5630f3028406d6c9860e9985609512c61a4a3d4c538.png" src="../../_images/31c93b70c907d7e2ba54d5630f3028406d6c9860e9985609512c61a4a3d4c538.png" />
 </div>
 </div>
 <p>The most undesirable behavior is that the coefficients grow large, which puts a lot of weight in places we might not want. This also leads to <em>wiggles</em> in the fit, which are probably not reasonable. The solution to this issue is called <em>regularization</em>, which means we add a penalty to our objective function that serves to reduce the magnitude of the parameters. There are several approaches to regularization. In <em>ridge regression</em> we add an L<sub>2</sub> penalty to the parameters, i.e. the sum of the parameters squared. In <em>LASSO</em> regression we add an L<sub>1</sub> penalty to the parameters, i.e. the sum of the absolute values of the parameters.</p>
 <p>In <em>ridge regression</em> the parameters are driven by the penalty to become smaller. In <em>LASSO regression</em> as many of the parameters are driven to zero as possible.</p>
 <section id="ridge-regression">
-<h2>Ridge regression<a class="headerlink" href="#ridge-regression" title="Permalink to this heading">#</a></h2>
+<h2>Ridge regression<a class="headerlink" href="#ridge-regression" title="Link to this heading">#</a></h2>
 <p>In ridge regression we define our objective function to minimize the summed squared error as usual, and add a term proportional to the sum of the squared parameters.</p>
 <p>So, if our regression model looks like <span class="math notranslate nohighlight">\(\mathbf{X} \mathbf{p} = \mathbf{y}\)</span> we seek to minimize:</p>
 <p><span class="math notranslate nohighlight">\((\mathbf{y} - \mathbf{X} \mathbf{p})^T (\mathbf{y} - \mathbf{X} \mathbf{p}) + \lambda ||\mathbf{p}||_2^2\)</span></p>
@@ -3591,15 +3642,15 @@ and</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lambda      x^11         x^10         x^9          x^8          x^7          x^6          x^5          x^4          x^3          x^2          x^1          
-       0    -34043.54   190691.01  -464362.98   645651.76  -566688.59   328402.49  -128144.25    33874.94    -6032.60      691.22      -40.28
-   1e-13    -13149.13    64363.30  -129320.28   133383.30   -67613.99     5161.66    12758.58    -7038.91     1606.47     -156.63        4.82
- 3.2e-10     -1054.80     3732.42    -3866.47     -865.34     3642.53     -286.76    -3426.18     3217.32    -1354.26      284.92      -24.21
+       0    -36688.95   206728.05  -507023.31   711096.48  -630687.48   370028.37  -146375.19    39196.61    -7032.00      802.83      -46.25
+   1e-13    -13184.95    64591.77  -129960.88   134421.02   -68687.47     5901.47    12414.79    -6932.34     1585.22     -154.12        4.68
+ 3.2e-10     -1054.80     3732.42    -3866.48     -865.32     3642.54     -286.80    -3426.14     3217.30    -1354.25      284.92      -24.21
    1e-06       -11.38        6.95       17.29        8.03      -18.81      -29.90       13.53       55.80      -61.16       19.93       -1.06
   0.0032        -0.28       -0.10        0.10        0.32        0.54        0.63        0.39       -0.43       -1.76       -2.04        1.87
       10         0.11        0.08        0.04       -0.01       -0.06       -0.11       -0.17       -0.22       -0.25       -0.22       -0.06
 </pre></div>
 </div>
-<img alt="../../_images/caf9d3f09fca1eb429128a228c4b32e76e737e35537c302ed9ece4023219b54a.png" src="../../_images/caf9d3f09fca1eb429128a228c4b32e76e737e35537c302ed9ece4023219b54a.png" />
+<img alt="../../_images/78764ca839f4fcad34d3c8e59e1633e11a9db370d95d65072517d2d798a626d9.png" src="../../_images/78764ca839f4fcad34d3c8e59e1633e11a9db370d95d65072517d2d798a626d9.png" />
 </div>
 </div>
 <p>One way people have evaluated a reasonable value of λ is to look at how the coefficients vary with λ using a <em>ridge plot</em>. In this plot, you look for a range that balances the large swings associated with regular unconstrained regression and the damping caused by large values of λ. Here a value of <span class="math notranslate nohighlight">\(10^{-6} \le \lambda \le 10^{-8}\)</span> would be considered reasonable.</p>
@@ -3620,12 +3671,12 @@ and</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c3b58f57bdc3bf30b5d2dbf29a19a25ca31856c1ced132d8ae53da9d14c0bf24.png" src="../../_images/c3b58f57bdc3bf30b5d2dbf29a19a25ca31856c1ced132d8ae53da9d14c0bf24.png" />
+<img alt="../../_images/5220d49d3c6a9c3bc8e19857cd6d41424058b486f38a893e93e9998e45e57bab.png" src="../../_images/5220d49d3c6a9c3bc8e19857cd6d41424058b486f38a893e93e9998e45e57bab.png" />
 </div>
 </div>
 </section>
 <section id="lasso-regression">
-<h2>LASSO regression<a class="headerlink" href="#lasso-regression" title="Permalink to this heading">#</a></h2>
+<h2>LASSO regression<a class="headerlink" href="#lasso-regression" title="Link to this heading">#</a></h2>
 <p>In LASSO regression, we seek to minimize the summed squared errors <em>plus</em> the sum of the absolute value of the parameters. Unlike linear least squares regression and ridge regression, there is no analytical solution to get the parameters; they can only be obtained numerically using an iterative solver. We again have a parameter λ we have to choose. Setting this parameter to zero will be equivalent to normal linear regression. Setting this parameter to infinity will again cause all coefficients to go to zero. We again have to find a balance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3659,7 +3710,7 @@ and</p>
   0.182]
 </pre></div>
 </div>
-<img alt="../../_images/6cbd093b7edc30dc795c1cec2604dc35f6e0cccf40e96be7d1dbcca0783e1ea4.png" src="../../_images/6cbd093b7edc30dc795c1cec2604dc35f6e0cccf40e96be7d1dbcca0783e1ea4.png" />
+<img alt="../../_images/fcfa683b7ca5ff40eef3194fb0ae3dc6f6a5de1f2f6ab0e93749a99be14dd58b.png" src="../../_images/fcfa683b7ca5ff40eef3194fb0ae3dc6f6a5de1f2f6ab0e93749a99be14dd58b.png" />
 </div>
 </div>
 <p>Now, we can explore the effect of λ more thoroughly.</p>
@@ -3683,25 +3734,15 @@ and</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lambda      x^11         x^10         x^9          x^8          x^7          x^6          x^5          x^4          x^3          x^2          x^1          
+       0       140.67     -307.76       -2.49      302.40      112.17     -335.25     -180.70      529.87     -345.63       94.82       -8.90
+   1e-05       -23.69       29.12       22.18      -10.47      -30.27      -16.13       28.92       34.72      -52.96       18.85       -1.06
+ 0.00032         0.03        0.00       -0.00       -0.04       -0.29       -0.00        2.65        0.71       -4.98       -0.50        1.66
+    0.01        -0.01       -0.16        0.01       -0.00        0.73        0.67        0.01       -0.00       -1.74       -2.14        1.87
+    0.32         0.38        0.19       -0.00        0.00       -0.00       -0.00        0.00       -0.00       -1.96       -0.00        0.59
+      10         0.00        0.00       -0.00       -0.00       -0.00       -0.00       -0.00       -0.20       -0.16       -0.39       -0.00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       0       136.55     -298.38       -4.64      296.91      108.40     -326.21     -179.04      521.01     -339.93       93.29       -8.74
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1e-05        59.02     -135.95       -9.68      179.06       16.04     -162.72      -90.66      298.40     -208.36       59.31       -5.25
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.00032         0.16       -0.13       -0.04       -0.22       -0.08       -0.00        2.72        0.78       -5.27       -0.32        1.63
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    0.01        -0.01       -0.16        0.00       -0.00        0.73        0.68        0.01        0.01       -1.75       -2.16        1.88
-    0.32         0.35        0.17        0.08       -0.00        0.00        0.00       -0.00       -0.00       -1.99       -0.05        0.65
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      10        -0.00       -0.00        0.00        0.00       -0.00       -0.00        0.00       -0.02       -0.64       -0.05       -0.00
-</pre></div>
-</div>
-<img alt="../../_images/6823d460d36d2cc543265952c3e4200620f3fe6041ea132137d9c096ac5c5e5c.png" src="../../_images/6823d460d36d2cc543265952c3e4200620f3fe6041ea132137d9c096ac5c5e5c.png" />
+<img alt="../../_images/0719afc54fc9cfb2375c77c6ef6c2ae24ebaf91be2a6b8a90096ca36c4a30571.png" src="../../_images/0719afc54fc9cfb2375c77c6ef6c2ae24ebaf91be2a6b8a90096ca36c4a30571.png" />
 </div>
 </div>
 <p>You can see that by increasing λ we are making more and more of the parameters go to zero; in other words the functions they correspond to are not part of the model any longer. This is called sparsifying the model. It reduces over-fitting by reducing the model complexity. Finding the most suitable value for λ requires some sophisticated programming and analysis, and it is an important topic in machine learning and data science.</p>
@@ -3709,13 +3750,13 @@ and</p>
 <p>The disadvantages, however, are that we cannot use linear algebra to find the parameters. The penalty imposes a nonlinear behavior to the objective function, so we must use an iterative solver. For features that are correlated, we have no control over which feature is eliminated. Different initial guesses may lead to different feature elimination. If the features are really correlated, this will not affect the fit quality, but it will mean some models favor one feature over another. This is less of a problem in polynomial models, but often a problem in models based on physical properties that are correlated, e.g. high melting points of materials tend to be correlated with how hard they are. With LASSO, one model could favor the melting point and another could favor the hardness.</p>
 </section>
 <section id="advanced-selection-of-lambda">
-<h2>Advanced selection of <span class="math notranslate nohighlight">\(\lambda\)</span><a class="headerlink" href="#advanced-selection-of-lambda" title="Permalink to this heading">#</a></h2>
+<h2>Advanced selection of <span class="math notranslate nohighlight">\(\lambda\)</span><a class="headerlink" href="#advanced-selection-of-lambda" title="Link to this heading">#</a></h2>
 <p>A more advanced way to select a value of λ is called k-fold validation. It is complex to code this, and the standard method to do it is in <a class="reference external" href="https://scikit-learn.org/stable/index.html">scikit-learn</a>, see specifically the <a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression">ridge regression example</a> and the  <a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#lasso">LASSO example</a>. The basic idea is that you split your data set into <span class="math notranslate nohighlight">\(k\)</span> <em>folds</em>, and then you fit <span class="math notranslate nohighlight">\(k-1\)</span> folds to get the paramters. On the remaining fold (which was not used for fitting) you estimate the model errors. Initially with no regularization, the errors will be high due to overfitting. As you add regularization, the errors will begin decrease. Eventually though, the model will start underfitting, and the errors will go back up. The λ that provides the lowest test errors is usually considered the best choice.</p>
 <p>We will not cover these more advanced methods as they rely on learning the scikit-learn API in depth, and some other higher level Python libraries we have not covered like Pandas. These are more appropriate in a data science/machine learning focused course.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <p>In this lecture we introduced the concept of linear regression. In the normal linear regression, we simply solve linear equations that ultimately minimize the summed squared errors between the model and data. With some additional linear algebra, we can also estimate the confidence intervals on the parameters.</p>
 <p>One issue with normal linear regression is that the parameters are unconstrained, which can lead to some functions having undesirably large parameters. We introduced two types of <em>regularization</em> to mitigate this issue: ridge regression and LASSO regression. In both cases, a penalty function is added to the objective function being minimized. In ridge regression the penalty is an L2 norm on the parameters which penalizes large parameters, leading to a reduction in their magnitude. In LASSO reduction the penalty is an L1 norm, which drives parameters towards zero. Both methods rely on a hyperparameter λ that determines how much regularization is applied. With both regularization approaches we have to use some judgment in how much regularization to apply (the magnitude of λ), and we only provided a heuristic approach to doing this.</p>
 <div class="cell docutils container">
@@ -3725,13 +3766,13 @@ and</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="lZgQqWvtciRE" data-shufflequestions="False"
+<div class="output text_html"><div id="buXRirFavBow" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#lZgQqWvtciRE {
+#buXRirFavBow {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3901,7 +3942,7 @@ and</p>
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionslZgQqWvtciRE=[{"question": "For a linear regression model represented as y = b0 + b1.x1 + b2x2; with 10 data points (x, y), what will be the shape of the matrix X in X.b = y.", "type": "multiple_choice", "answers": [{"answer": "(10,3)", "correct": true}, {"answer": "(3, 1)", "correct": false}, {"answer": "(10, 1)", "correct": false}, {"answer": "(10, 10)", "correct": false}], "tag": "regression matrices", "lecture_file": "18_linear_regression"}, {"question": "Determine true or false:<br>Linear regression using numpy.linalg.lstsq() minimizes the errors, which also means it minimizes the residuals.", "type": "multiple_choice", "answers": [{"answer": "False ", "correct": false}, {"answer": "True ", "correct": true}, {"answer": "-", "correct": false}, {"answer": "-", "correct": false}], "tag": "regression numpy error residual", "lecture_file": "18_linear_regression"}, {"question": "Determine true or false:<br>When using numpy.linalg.lstsq(X, y), the X matrix must necessarily be a square matrix.", "type": "multiple_choice", "answers": [{"answer": "True ", "correct": false}, {"answer": "False ", "correct": true}, {"answer": "-", "correct": false}, {"answer": "-", "correct": false}], "tag": "regression numpy matrices", "lecture_file": "18_linear_regression"}, {"question": "For 2 linear regression models for the same data set, R-squared value of model-1 is 95% and that of model-2 is 65%. Which of the following statements are true?", "type": "multiple_choice", "answers": [{"answer": "Model 1 is a better represenation of the data set", "correct": false}, {"answer": "Model 2 is a better representation of the data set", "correct": false}, {"answer": "Both are equally good.", "correct": false}, {"answer": "Cannot say which model is better based on the R-squared values.", "correct": true}], "tag": "R_squared regression", "lecture_file": "18_linear_regression"}, {"question": "What will be the shape of the covariance matrix for a system which has 100 data points and is represented with the model: y = b0 + b1x1 + b2x2 + b3x3", "type": "multiple_choice", "answers": [{"answer": "(4, 4)", "correct": true}, {"answer": "(100, 100)", "correct": false}, {"answer": "(4, 100)", "correct": false}, {"answer": "(100, 4)", "correct": false}], "tag": "regression covariance", "lecture_file": "18_linear_regression"}, {"question": "To eliminate the least contributing independent variables in a linear regression model using regularization, a good choice can be to use", "type": "multiple_choice", "answers": [{"answer": "L2 regularization", "correct": false}, {"answer": "L1 regularization", "correct": true}, {"answer": "Both can work equally efficiently", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "regularization ridge lasso", "lecture_file": "18_linear_regression"}, {"question": "When using L1 regularization, if the value of lambda is extremely large as compared to the sum squared errors, then", "type": "multiple_choice", "answers": [{"answer": "We will get the most accurate model", "correct": false}, {"answer": "All the parameters might get reduced to zero", "correct": true}, {"answer": "It will have no effect on the regularization", "correct": false}, {"answer": "All the parameters will be reduced but never to zero", "correct": false}], "tag": "regularization lasso", "lecture_file": "18_linear_regression"}, {"question": "Standardizing the input variables", "type": "multiple_choice", "answers": [{"answer": "Results in average value of each variable equal to zero", "correct": false}, {"answer": "Eliminates the intercept", "correct": false}, {"answer": "Eliminates the effects of difference in absolute values of the variables", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "standardization", "lecture_file": "18_linear_regression"}, {"question": "Ridge regularization can be useful in", "type": "multiple_choice", "answers": [{"answer": "Eliminating the non-contributing features", "correct": false}, {"answer": "Reducing the errors arising from least-contributing features", "correct": true}, {"answer": "Reducing the penalty on the non-contributing coefficients as compared with Lasso", "correct": false}, {"answer": "All of the above", "correct": false}], "tag": "regularization ridge", "lecture_file": "18_linear_regression"}, {"question": "When using Ridge regularization, if the value of lambda = 0, then", "type": "multiple_choice", "answers": [{"answer": "All the coefficients will go to zero", "correct": false}, {"answer": "All the coefficients will go to infinity", "correct": false}, {"answer": "The final model is the same as a non-regularized linear regression model", "correct": true}, {"answer": "None of the above", "correct": false}], "tag": "regularization ridge", "lecture_file": "18_linear_regression"}];
+</style></div><script type="application/javascript">var questionsbuXRirFavBow=[{"question": "For a linear regression model represented as y = b0 + b1.x1 + b2x2; with 10 data points (x, y), what will be the shape of the matrix X in X.b = y.", "type": "multiple_choice", "answers": [{"answer": "(10,3)", "correct": true}, {"answer": "(3, 1)", "correct": false}, {"answer": "(10, 1)", "correct": false}, {"answer": "(10, 10)", "correct": false}], "tag": "regression matrices", "lecture_file": "18_linear_regression"}, {"question": "Determine true or false:<br>Linear regression using numpy.linalg.lstsq() minimizes the errors, which also means it minimizes the residuals.", "type": "multiple_choice", "answers": [{"answer": "False ", "correct": false}, {"answer": "True ", "correct": true}, {"answer": "-", "correct": false}, {"answer": "-", "correct": false}], "tag": "regression numpy error residual", "lecture_file": "18_linear_regression"}, {"question": "Determine true or false:<br>When using numpy.linalg.lstsq(X, y), the X matrix must necessarily be a square matrix.", "type": "multiple_choice", "answers": [{"answer": "True ", "correct": false}, {"answer": "False ", "correct": true}, {"answer": "-", "correct": false}, {"answer": "-", "correct": false}], "tag": "regression numpy matrices", "lecture_file": "18_linear_regression"}, {"question": "For 2 linear regression models for the same data set, R-squared value of model-1 is 95% and that of model-2 is 65%. Which of the following statements are true?", "type": "multiple_choice", "answers": [{"answer": "Model 1 is a better represenation of the data set", "correct": false}, {"answer": "Model 2 is a better representation of the data set", "correct": false}, {"answer": "Both are equally good.", "correct": false}, {"answer": "Cannot say which model is better based on the R-squared values.", "correct": true}], "tag": "R_squared regression", "lecture_file": "18_linear_regression"}, {"question": "What will be the shape of the covariance matrix for a system which has 100 data points and is represented with the model: y = b0 + b1x1 + b2x2 + b3x3", "type": "multiple_choice", "answers": [{"answer": "(4, 4)", "correct": true}, {"answer": "(100, 100)", "correct": false}, {"answer": "(4, 100)", "correct": false}, {"answer": "(100, 4)", "correct": false}], "tag": "regression covariance", "lecture_file": "18_linear_regression"}, {"question": "To eliminate the least contributing independent variables in a linear regression model using regularization, a good choice can be to use", "type": "multiple_choice", "answers": [{"answer": "L2 regularization", "correct": false}, {"answer": "L1 regularization", "correct": true}, {"answer": "Both can work equally efficiently", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "regularization ridge lasso", "lecture_file": "18_linear_regression"}, {"question": "When using L1 regularization, if the value of lambda is extremely large as compared to the sum squared errors, then", "type": "multiple_choice", "answers": [{"answer": "We will get the most accurate model", "correct": false}, {"answer": "All the parameters might get reduced to zero", "correct": true}, {"answer": "It will have no effect on the regularization", "correct": false}, {"answer": "All the parameters will be reduced but never to zero", "correct": false}], "tag": "regularization lasso", "lecture_file": "18_linear_regression"}, {"question": "Standardizing the input variables", "type": "multiple_choice", "answers": [{"answer": "Results in average value of each variable equal to zero", "correct": false}, {"answer": "Eliminates the intercept", "correct": false}, {"answer": "Eliminates the effects of difference in absolute values of the variables", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "standardization", "lecture_file": "18_linear_regression"}, {"question": "Ridge regularization can be useful in", "type": "multiple_choice", "answers": [{"answer": "Eliminating the non-contributing features", "correct": false}, {"answer": "Reducing the errors arising from least-contributing features", "correct": true}, {"answer": "Reducing the penalty on the non-contributing coefficients as compared with Lasso", "correct": false}, {"answer": "All of the above", "correct": false}], "tag": "regularization ridge", "lecture_file": "18_linear_regression"}, {"question": "When using Ridge regularization, if the value of lambda = 0, then", "type": "multiple_choice", "answers": [{"answer": "All the coefficients will go to zero", "correct": false}, {"answer": "All the coefficients will go to infinity", "correct": false}, {"answer": "The final model is the same as a non-regularized linear regression model", "correct": true}, {"answer": "None of the above", "correct": false}], "tag": "regularization ridge", "lecture_file": "18_linear_regression"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -4650,8 +4691,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("lZgQqWvtciRE")) {
-            show_questions(questionslZgQqWvtciRE,  lZgQqWvtciRE); 
+          if(document.getElementById("buXRirFavBow")) {
+            show_questions(questionsbuXRirFavBow,  buXRirFavBow); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -4660,8 +4701,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("lZgQqWvtciRE");
-        // console.log(document.getElementById("lZgQqWvtciRE"));
+        //console.log("buXRirFavBow");
+        // console.log(document.getElementById("buXRirFavBow"));
 
         try_show();
         }
@@ -4696,8 +4737,8 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../17-linear-algebra-2/17-linear-algebra-2.html"
@@ -4724,7 +4765,9 @@ if (typeof version == 'undefined') {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -4766,9 +4809,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -4792,8 +4836,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

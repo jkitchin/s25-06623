@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Integration in Python &#8212; f23-06623</title>
+    <title>Integration in Python &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/02-integration-1/02-integration-1';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Jupyter Lab" href="../01-jupyter/01-jupyter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/02-integration-1/02-integration-1.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/02-integration-1/02-integration-1.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/02-integration-1/02-integration-1.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/02-integration-1/02-integration-1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/02-integration-1/02-integration-1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/02-integration-1/02-integration-1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -531,11 +527,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="integration-in-python">
-<h1>Integration in Python<a class="headerlink" href="#integration-in-python" title="Permalink to this heading">#</a></h1>
+<h1>Integration in Python<a class="headerlink" href="#integration-in-python" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>KEYWORDS: integration, trapz, cumtrapz, quad</p></li>
 </ul>
@@ -550,7 +546,7 @@ document.write(`
 <p>There are a limited number of known analytical integrals, and for everything else, we have to resort to numerical/computational approaches to evaluate them.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="numerical-integration-of-data">
-<h1>Numerical integration of data<a class="headerlink" href="#numerical-integration-of-data" title="Permalink to this heading">#</a></h1>
+<h1>Numerical integration of data<a class="headerlink" href="#numerical-integration-of-data" title="Link to this heading">#</a></h1>
 <p>Data can be used to represent functions. Suppose we have the function <span class="math notranslate nohighlight">\(y=x^2\)</span>, and 5 <span class="math notranslate nohighlight">\(x\)</span> values evenly spaced from 1 to 4. We can represent this function numerically with data like this.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -572,7 +568,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9bde6b2d4e88f20c8f71e34598f37a2e470fef3f882b11d6b53d325504ec94b5.png" src="../../_images/9bde6b2d4e88f20c8f71e34598f37a2e470fef3f882b11d6b53d325504ec94b5.png" />
+<img alt="../../_images/18a76032b269c8db1d7e4f2d3c7467079e2f62daef2882a28a5b10e5c9d7196f.png" src="../../_images/18a76032b269c8db1d7e4f2d3c7467079e2f62daef2882a28a5b10e5c9d7196f.png" />
 </div>
 </div>
 <p>If we want the area under this curve, it is represented by:</p>
@@ -640,7 +636,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5234375
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.5234375)
 </pre></div>
 </div>
 </div>
@@ -788,7 +784,7 @@ The exact area is 21.0
 <p>Why don’t these agree? The trapezoid method is an approximation of the integral. In this case the straight lines connecting the points <em>overestimate</em> the value of the function, and so the area under this curve is overestimated.</p>
 <p><strong>Exercise</strong>: Increase the number of points slowly and see how the estimate converges to the exact value.</p>
 <section id="numpy-trapz">
-<h2>numpy.trapz<a class="headerlink" href="#numpy-trapz" title="Permalink to this heading">#</a></h2>
+<h2>numpy.trapz<a class="headerlink" href="#numpy-trapz" title="Link to this heading">#</a></h2>
 <p>It is somewhat tedious to write the loop above, making sure you get the indexing right, etc. The trapezoid method is defined in numpy. See the help for how to use it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -809,7 +805,11 @@ The exact area is 21.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21.000202693572362
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2510/2030690521.py:5: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  np.trapz(y, x)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(21.000202693572362)
 </pre></div>
 </div>
 </div>
@@ -828,7 +828,7 @@ The exact area is 21.0
 <p>Practically, we only use this method for integrating data where we do not know the function it represents, so we cannot reliably estimate the error in the integral.</p>
 </section>
 <section id="simpson-s-rule">
-<h2>Simpson’s rule<a class="headerlink" href="#simpson-s-rule" title="Permalink to this heading">#</a></h2>
+<h2>Simpson’s rule<a class="headerlink" href="#simpson-s-rule" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>in scipy 1.4.1, Simpson’s is in scipy.integrate.simps, but as of 1.7.1 it is in scipy.integrate.simpson. (<a class="reference external" href="https://docs.scipy.org/doc/scipy-1.7.1/reference/reference/generated/scipy.integrate.simpson.html#scipy.integrate.simpson">https://docs.scipy.org/doc/scipy-1.7.1/reference/reference/generated/scipy.integrate.simpson.html#scipy.integrate.simpson</a>)</p>
@@ -843,7 +843,7 @@ The exact area is 21.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.11.3&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.14.1&#39;
 </pre></div>
 </div>
 </div>
@@ -860,16 +860,22 @@ The exact area is 21.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20.999999999999996, 21.000202693572362)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simps</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;simps&#39; from &#39;scipy.integrate&#39; (/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/scipy/integrate/__init__.py)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="applications">
-<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this heading">#</a></h2>
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
 <section id="estimating-the-volume-of-a-solid">
-<h3>Estimating the volume of a solid<a class="headerlink" href="#estimating-the-volume-of-a-solid" title="Permalink to this heading">#</a></h3>
+<h3>Estimating the volume of a solid<a class="headerlink" href="#estimating-the-volume-of-a-solid" title="Link to this heading">#</a></h3>
 <p>We can use integrals to compute the volume of solids. If we know how the cross-sectional area of a solid varies in some direction, we simply evaluate the following integral:</p>
 <p><span class="math notranslate nohighlight">\(\int_{x0}^{x1} A(x) dx\)</span></p>
 <p>For a sphere, we can derive:</p>
@@ -900,11 +906,11 @@ Exact volume = 4.1888
 <p>With 50 points, the estimate is pretty good. Try increasing the number of points to improve the estimate.</p>
 </section>
 <section id="estimating-the-volume-of-a-plug-flow-reactor">
-<h3>Estimating the volume of a plug flow reactor<a class="headerlink" href="#estimating-the-volume-of-a-plug-flow-reactor" title="Permalink to this heading">#</a></h3>
+<h3>Estimating the volume of a plug flow reactor<a class="headerlink" href="#estimating-the-volume-of-a-plug-flow-reactor" title="Link to this heading">#</a></h3>
 <p>Adapted from Fogler example 2.7. The volume of a plug flow reactor is defined by this integral:</p>
 <p><span class="math notranslate nohighlight">\(\int_{X_0}^{X_1} \frac{F_{A_0}}{-r_A} dX\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(F_{A_0}\)</span> is the inlet molar flow of species A, <span class="math notranslate nohighlight">\(X\)</span> is the conversion, and <span class="math notranslate nohighlight">\(-r_A\)</span> is the rate of generation of species A per unit volume. <span class="math notranslate nohighlight">\(r_A\)</span>  is a function of conversion. We often do not know what the function is, but we can measure the rate of generation. Below is some tabulated data of the rate of generation of species A as a function of conversion.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>X</p></th>
 <th class="head"><p>-r_A (kmol / m^3 / hr)</p></th>
@@ -928,6 +934,7 @@ Exact volume = 4.1888
 </tr>
 </tbody>
 </table>
+</div>
 <p>Use this data to estimate the volume of the reactor required to achieve a conversion of 0.65.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -961,7 +968,7 @@ Exact volume = 4.1888
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/790992c509fd1574e9659246e75069be3ccf8c4130932e2d1c1d221ccc510ef9.png" src="../../_images/790992c509fd1574e9659246e75069be3ccf8c4130932e2d1c1d221ccc510ef9.png" />
+<img alt="../../_images/56f08cd25c20daba69d47478b31e904a01d09d8e4b2ea8ed07abc3b6603b0476.png" src="../../_images/56f08cd25c20daba69d47478b31e904a01d09d8e4b2ea8ed07abc3b6603b0476.png" />
 </div>
 </div>
 <p>We could iterate over the conversions and print the volume for each value. This is a little wasteful since we recompute the areas in each iteration, but here it is so fast it does not matter.</p>
@@ -1060,7 +1067,7 @@ At X=0.65 V=0.701 m^3
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.22254475, 0.40163014, 0.61795485, 0.70084958])
 </pre></div>
 </div>
-<img alt="../../_images/c685c7292a2c4ce8984a877b0e87ee0577414f9da5ef67c4da8bbf41dd2ee812.png" src="../../_images/c685c7292a2c4ce8984a877b0e87ee0577414f9da5ef67c4da8bbf41dd2ee812.png" />
+<img alt="../../_images/9220554ccc3c6ffc74183bb91a3dc8d2745d65c902e47cd5222c12924cf0c968.png" src="../../_images/9220554ccc3c6ffc74183bb91a3dc8d2745d65c902e47cd5222c12924cf0c968.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1083,12 +1090,24 @@ At X=0.65 V=0.701 m^3
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.22254475, 0.40163014, 0.61795485, 0.70084958])
 </pre></div>
 </div>
-<img alt="../../_images/fa301ae4f5c24d652976131450eb696eccaa5e3347dd36369332d184579356dc.png" src="../../_images/fa301ae4f5c24d652976131450eb696eccaa5e3347dd36369332d184579356dc.png" />
+<img alt="../../_images/647dc4f344b73f0cf84671240f8fcdd6612fa52ad5f73499c2fb3e0c3fc44bde.png" src="../../_images/647dc4f344b73f0cf84671240f8fcdd6612fa52ad5f73499c2fb3e0c3fc44bde.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>sp.integrate.cumtrapz
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> sp<span class=" -Color -Color-Blue">.</span>integrate<span class=" -Color -Color-Blue">.</span>cumtrapz<span class=" -Color -Color-Blue">(</span>y<span class=" -Color -Color-Blue">,</span> x<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span> dx<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1.0</span><span class=" -Color -Color-Blue">,</span> axis<span class=" -Color -Color-Blue">=-</span><span class=" -Color -Color-Cyan">1</span><span class=" -Color -Color-Blue">,</span> initial<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+An alias of `cumulative_trapezoid`.
+
+`cumtrapz` is kept for backwards compatibility. For new code, prefer
+`cumulative_trapezoid` instead.
+<span class=" -Color -Color-Red">File:</span>      /opt/tljh/user/lib/python3.9/site-packages/scipy/integrate/_quadrature.py
+<span class=" -Color -Color-Red">Type:</span>      function
 </pre></div>
 </div>
 </div>
@@ -1098,7 +1117,7 @@ At X=0.65 V=0.701 m^3
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="numerical-quadrature-or-integration-of-functions">
-<h1>Numerical quadrature - or integration of functions<a class="headerlink" href="#numerical-quadrature-or-integration-of-functions" title="Permalink to this heading">#</a></h1>
+<h1>Numerical quadrature - or integration of functions<a class="headerlink" href="#numerical-quadrature-or-integration-of-functions" title="Link to this heading">#</a></h1>
 <p>When you have a function and you know its analytical form we can use quadrature to estimate integrals of it. In quadrature, we approximate the integral as a weighted sum of function values. By increasing the number values used, we can systematically improve the integral estimates.</p>
 <p>To motivate the idea, let’s consider the function integral of <span class="math notranslate nohighlight">\(y(x) = 7 x^3 - 8 x^2 - 3x +3\)</span> from -1 to 1.</p>
 <p>This is a third order polynomial, so we can in this case replace the integral with a sum of two points:</p>
@@ -1127,7 +1146,7 @@ At X=0.65 V=0.701 m^3
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.6666666666666674, (0.6666666666666666, 4.721410046114446e-14))
 </pre></div>
 </div>
-<img alt="../../_images/593ba7585b8eaaeba98c3a09c14990e50979428e17ce23a1a5098871b9693477.png" src="../../_images/593ba7585b8eaaeba98c3a09c14990e50979428e17ce23a1a5098871b9693477.png" />
+<img alt="../../_images/8585873e9d3f3ea053f4af660bb7c8ac4756c239fdcff4f1c22c80c70b344361.png" src="../../_images/8585873e9d3f3ea053f4af660bb7c8ac4756c239fdcff4f1c22c80c70b344361.png" />
 </div>
 </div>
 <p>This example is special in several ways:</p>
@@ -1142,6 +1161,405 @@ For non-polynomial functions, the formula is an approximation to the integral an
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
 
 <span class="o">?</span>quad
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+quad<span class=" -Color -Color-Blue">(</span>
+    func<span class=" -Color -Color-Blue">,</span>
+    a<span class=" -Color -Color-Blue">,</span>
+    b<span class=" -Color -Color-Blue">,</span>
+    args<span class=" -Color -Color-Blue">=(),</span>
+    full_output<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">0</span><span class=" -Color -Color-Blue">,</span>
+    epsabs<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1.49e-08</span><span class=" -Color -Color-Blue">,</span>
+    epsrel<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1.49e-08</span><span class=" -Color -Color-Blue">,</span>
+    limit<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">50</span><span class=" -Color -Color-Blue">,</span>
+    points<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    weight<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    wvar<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    wopts<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    maxp1<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">50</span><span class=" -Color -Color-Blue">,</span>
+    limlst<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">50</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Compute a definite integral.
+
+Integrate func from `a` to `b` (possibly infinite interval) using a
+technique from the Fortran library QUADPACK.
+
+Parameters
+----------
+func : {function, scipy.LowLevelCallable}
+    A Python function or method to integrate. If `func` takes many
+    arguments, it is integrated along the axis corresponding to the
+    first argument.
+
+    If the user desires improved integration performance, then `f` may
+    be a `scipy.LowLevelCallable` with one of the signatures::
+
+        double func(double x)
+        double func(double x, void *user_data)
+        double func(int n, double *xx)
+        double func(int n, double *xx, void *user_data)
+
+    The ``user_data`` is the data contained in the `scipy.LowLevelCallable`.
+    In the call forms with ``xx``,  ``n`` is the length of the ``xx``
+    array which contains ``xx[0] == x`` and the rest of the items are
+    numbers contained in the ``args`` argument of quad.
+
+    In addition, certain ctypes call signatures are supported for
+    backward compatibility, but those should not be used in new code.
+a : float
+    Lower limit of integration (use -numpy.inf for -infinity).
+b : float
+    Upper limit of integration (use numpy.inf for +infinity).
+args : tuple, optional
+    Extra arguments to pass to `func`.
+full_output : int, optional
+    Non-zero to return a dictionary of integration information.
+    If non-zero, warning messages are also suppressed and the
+    message is appended to the output tuple.
+
+Returns
+-------
+y : float
+    The integral of func from `a` to `b`.
+abserr : float
+    An estimate of the absolute error in the result.
+infodict : dict
+    A dictionary containing additional information.
+message
+    A convergence message.
+explain
+    Appended only with &#39;cos&#39; or &#39;sin&#39; weighting and infinite
+    integration limits, it contains an explanation of the codes in
+    infodict[&#39;ierlst&#39;]
+
+Other Parameters
+----------------
+epsabs : float or int, optional
+    Absolute error tolerance. Default is 1.49e-8. `quad` tries to obtain
+    an accuracy of ``abs(i-result) &lt;= max(epsabs, epsrel*abs(i))``
+    where ``i`` = integral of `func` from `a` to `b`, and ``result`` is the
+    numerical approximation. See `epsrel` below.
+epsrel : float or int, optional
+    Relative error tolerance. Default is 1.49e-8.
+    If ``epsabs &lt;= 0``, `epsrel` must be greater than both 5e-29
+    and ``50 * (machine epsilon)``. See `epsabs` above.
+limit : float or int, optional
+    An upper bound on the number of subintervals used in the adaptive
+    algorithm.
+points : (sequence of floats,ints), optional
+    A sequence of break points in the bounded integration interval
+    where local difficulties of the integrand may occur (e.g.,
+    singularities, discontinuities). The sequence does not have
+    to be sorted. Note that this option cannot be used in conjunction
+    with ``weight``.
+weight : float or int, optional
+    String indicating weighting function. Full explanation for this
+    and the remaining arguments can be found below.
+wvar : optional
+    Variables for use with weighting functions.
+wopts : optional
+    Optional input for reusing Chebyshev moments.
+maxp1 : float or int, optional
+    An upper bound on the number of Chebyshev moments.
+limlst : int, optional
+    Upper bound on the number of cycles (&gt;=3) for use with a sinusoidal
+    weighting and an infinite end-point.
+
+See Also
+--------
+dblquad : double integral
+tplquad : triple integral
+nquad : n-dimensional integrals (uses `quad` recursively)
+fixed_quad : fixed-order Gaussian quadrature
+quadrature : adaptive Gaussian quadrature
+odeint : ODE integrator
+ode : ODE integrator
+simpson : integrator for sampled data
+romb : integrator for sampled data
+scipy.special : for coefficients and roots of orthogonal polynomials
+
+Notes
+-----
+
+**Extra information for quad() inputs and outputs**
+
+If full_output is non-zero, then the third output argument
+(infodict) is a dictionary with entries as tabulated below. For
+infinite limits, the range is transformed to (0,1) and the
+optional outputs are given with respect to this transformed range.
+Let M be the input argument limit and let K be infodict[&#39;last&#39;].
+The entries are:
+
+&#39;neval&#39;
+    The number of function evaluations.
+&#39;last&#39;
+    The number, K, of subintervals produced in the subdivision process.
+&#39;alist&#39;
+    A rank-1 array of length M, the first K elements of which are the
+    left end points of the subintervals in the partition of the
+    integration range.
+&#39;blist&#39;
+    A rank-1 array of length M, the first K elements of which are the
+    right end points of the subintervals.
+&#39;rlist&#39;
+    A rank-1 array of length M, the first K elements of which are the
+    integral approximations on the subintervals.
+&#39;elist&#39;
+    A rank-1 array of length M, the first K elements of which are the
+    moduli of the absolute error estimates on the subintervals.
+&#39;iord&#39;
+    A rank-1 integer array of length M, the first L elements of
+    which are pointers to the error estimates over the subintervals
+    with ``L=K`` if ``K&lt;=M/2+2`` or ``L=M+1-K`` otherwise. Let I be the
+    sequence ``infodict[&#39;iord&#39;]`` and let E be the sequence
+    ``infodict[&#39;elist&#39;]``.  Then ``E[I[1]], ..., E[I[L]]`` forms a
+    decreasing sequence.
+
+If the input argument points is provided (i.e., it is not None),
+the following additional outputs are placed in the output
+dictionary. Assume the points sequence is of length P.
+
+&#39;pts&#39;
+    A rank-1 array of length P+2 containing the integration limits
+    and the break points of the intervals in ascending order.
+    This is an array giving the subintervals over which integration
+    will occur.
+&#39;level&#39;
+    A rank-1 integer array of length M (=limit), containing the
+    subdivision levels of the subintervals, i.e., if (aa,bb) is a
+    subinterval of ``(pts[1], pts[2])`` where ``pts[0]`` and ``pts[2]``
+    are adjacent elements of ``infodict[&#39;pts&#39;]``, then (aa,bb) has level l
+    if ``|bb-aa| = |pts[2]-pts[1]| * 2**(-l)``.
+&#39;ndin&#39;
+    A rank-1 integer array of length P+2. After the first integration
+    over the intervals (pts[1], pts[2]), the error estimates over some
+    of the intervals may have been increased artificially in order to
+    put their subdivision forward. This array has ones in slots
+    corresponding to the subintervals for which this happens.
+
+**Weighting the integrand**
+
+The input variables, *weight* and *wvar*, are used to weight the
+integrand by a select list of functions. Different integration
+methods are used to compute the integral with these weighting
+functions, and these do not support specifying break points. The
+possible values of weight and the corresponding weighting functions are.
+
+==========  ===================================   =====================
+``weight``  Weight function used                  ``wvar``
+==========  ===================================   =====================
+&#39;cos&#39;       cos(w*x)                              wvar = w
+&#39;sin&#39;       sin(w*x)                              wvar = w
+&#39;alg&#39;       g(x) = ((x-a)**alpha)*((b-x)**beta)   wvar = (alpha, beta)
+&#39;alg-loga&#39;  g(x)*log(x-a)                         wvar = (alpha, beta)
+&#39;alg-logb&#39;  g(x)*log(b-x)                         wvar = (alpha, beta)
+&#39;alg-log&#39;   g(x)*log(x-a)*log(b-x)                wvar = (alpha, beta)
+&#39;cauchy&#39;    1/(x-c)                               wvar = c
+==========  ===================================   =====================
+
+wvar holds the parameter w, (alpha, beta), or c depending on the weight
+selected. In these expressions, a and b are the integration limits.
+
+For the &#39;cos&#39; and &#39;sin&#39; weighting, additional inputs and outputs are
+available.
+
+For finite integration limits, the integration is performed using a
+Clenshaw-Curtis method which uses Chebyshev moments. For repeated
+calculations, these moments are saved in the output dictionary:
+
+&#39;momcom&#39;
+    The maximum level of Chebyshev moments that have been computed,
+    i.e., if ``M_c`` is ``infodict[&#39;momcom&#39;]`` then the moments have been
+    computed for intervals of length ``|b-a| * 2**(-l)``,
+    ``l=0,1,...,M_c``.
+&#39;nnlog&#39;
+    A rank-1 integer array of length M(=limit), containing the
+    subdivision levels of the subintervals, i.e., an element of this
+    array is equal to l if the corresponding subinterval is
+    ``|b-a|* 2**(-l)``.
+&#39;chebmo&#39;
+    A rank-2 array of shape (25, maxp1) containing the computed
+    Chebyshev moments. These can be passed on to an integration
+    over the same interval by passing this array as the second
+    element of the sequence wopts and passing infodict[&#39;momcom&#39;] as
+    the first element.
+
+If one of the integration limits is infinite, then a Fourier integral is
+computed (assuming w neq 0). If full_output is 1 and a numerical error
+is encountered, besides the error message attached to the output tuple,
+a dictionary is also appended to the output tuple which translates the
+error codes in the array ``info[&#39;ierlst&#39;]`` to English messages. The
+output information dictionary contains the following entries instead of
+&#39;last&#39;, &#39;alist&#39;, &#39;blist&#39;, &#39;rlist&#39;, and &#39;elist&#39;:
+
+&#39;lst&#39;
+    The number of subintervals needed for the integration (call it ``K_f``).
+&#39;rslst&#39;
+    A rank-1 array of length M_f=limlst, whose first ``K_f`` elements
+    contain the integral contribution over the interval
+    ``(a+(k-1)c, a+kc)`` where ``c = (2*floor(|w|) + 1) * pi / |w|``
+    and ``k=1,2,...,K_f``.
+&#39;erlst&#39;
+    A rank-1 array of length ``M_f`` containing the error estimate
+    corresponding to the interval in the same position in
+    ``infodict[&#39;rslist&#39;]``.
+&#39;ierlst&#39;
+    A rank-1 integer array of length ``M_f`` containing an error flag
+    corresponding to the interval in the same position in
+    ``infodict[&#39;rslist&#39;]``.  See the explanation dictionary (last entry
+    in the output tuple) for the meaning of the codes.
+
+
+**Details of QUADPACK level routines**
+
+`quad` calls routines from the FORTRAN library QUADPACK. This section
+provides details on the conditions for each routine to be called and a
+short description of each routine. The routine called depends on
+`weight`, `points` and the integration limits `a` and `b`.
+
+================  ==============  ==========  =====================
+QUADPACK routine  `weight`        `points`    infinite bounds
+================  ==============  ==========  =====================
+qagse             None            No          No
+qagie             None            No          Yes
+qagpe             None            Yes         No
+qawoe             &#39;sin&#39;, &#39;cos&#39;    No          No
+qawfe             &#39;sin&#39;, &#39;cos&#39;    No          either `a` or `b`
+qawse             &#39;alg*&#39;          No          No
+qawce             &#39;cauchy&#39;        No          No
+================  ==============  ==========  =====================
+
+The following provides a short desciption from [1]_ for each
+routine.
+
+qagse
+    is an integrator based on globally adaptive interval
+    subdivision in connection with extrapolation, which will
+    eliminate the effects of integrand singularities of
+    several types.
+qagie
+    handles integration over infinite intervals. The infinite range is
+    mapped onto a finite interval and subsequently the same strategy as
+    in ``QAGS`` is applied.
+qagpe
+    serves the same purposes as QAGS, but also allows the
+    user to provide explicit information about the location
+    and type of trouble-spots i.e. the abscissae of internal
+    singularities, discontinuities and other difficulties of
+    the integrand function.
+qawoe
+    is an integrator for the evaluation of
+    :math:`\int^b_a \cos(\omega x)f(x)dx` or
+    :math:`\int^b_a \sin(\omega x)f(x)dx`
+    over a finite interval [a,b], where :math:`\omega` and :math:`f`
+    are specified by the user. The rule evaluation component is based
+    on the modified Clenshaw-Curtis technique
+
+    An adaptive subdivision scheme is used in connection
+    with an extrapolation procedure, which is a modification
+    of that in ``QAGS`` and allows the algorithm to deal with
+    singularities in :math:`f(x)`.
+qawfe
+    calculates the Fourier transform
+    :math:`\int^\infty_a \cos(\omega x)f(x)dx` or
+    :math:`\int^\infty_a \sin(\omega x)f(x)dx`
+    for user-provided :math:`\omega` and :math:`f`. The procedure of
+    ``QAWO`` is applied on successive finite intervals, and convergence
+    acceleration by means of the :math:`\varepsilon`-algorithm is applied
+    to the series of integral approximations.
+qawse
+    approximate :math:`\int^b_a w(x)f(x)dx`, with :math:`a &lt; b` where
+    :math:`w(x) = (x-a)^{\alpha}(b-x)^{\beta}v(x)` with
+    :math:`\alpha,\beta &gt; -1`, where :math:`v(x)` may be one of the
+    following functions: :math:`1`, :math:`\log(x-a)`, :math:`\log(b-x)`,
+    :math:`\log(x-a)\log(b-x)`.
+
+    The user specifies :math:`\alpha`, :math:`\beta` and the type of the
+    function :math:`v`. A globally adaptive subdivision strategy is
+    applied, with modified Clenshaw-Curtis integration on those
+    subintervals which contain `a` or `b`.
+qawce
+    compute :math:`\int^b_a f(x) / (x-c)dx` where the integral must be
+    interpreted as a Cauchy principal value integral, for user specified
+    :math:`c` and :math:`f`. The strategy is globally adaptive. Modified
+    Clenshaw-Curtis integration is used on those intervals containing the
+    point :math:`x = c`.
+
+References
+----------
+
+.. [1] Piessens, Robert; de Doncker-Kapenga, Elise;
+       Überhuber, Christoph W.; Kahaner, David (1983).
+       QUADPACK: A subroutine package for automatic integration.
+       Springer-Verlag.
+       ISBN 978-3-540-12553-2.
+
+Examples
+--------
+Calculate :math:`\int^4_0 x^2 dx` and compare with an analytic result
+
+&gt;&gt;&gt; from scipy import integrate
+&gt;&gt;&gt; x2 = lambda x: x**2
+&gt;&gt;&gt; integrate.quad(x2, 0, 4)
+(21.333333333333332, 2.3684757858670003e-13)
+&gt;&gt;&gt; print(4**3 / 3.)  # analytical result
+21.3333333333
+
+Calculate :math:`\int^\infty_0 e^{-x} dx`
+
+&gt;&gt;&gt; invexp = lambda x: np.exp(-x)
+&gt;&gt;&gt; integrate.quad(invexp, 0, np.inf)
+(1.0, 5.842605999138044e-11)
+
+Calculate :math:`\int^1_0 a x \,dx` for :math:`a = 1, 3`
+
+&gt;&gt;&gt; f = lambda x, a: a*x
+&gt;&gt;&gt; y, err = integrate.quad(f, 0, 1, args=(1,))
+&gt;&gt;&gt; y
+0.5
+&gt;&gt;&gt; y, err = integrate.quad(f, 0, 1, args=(3,))
+&gt;&gt;&gt; y
+1.5
+
+Calculate :math:`\int^1_0 x^2 + y^2 dx` with ctypes, holding
+y parameter as 1::
+
+    testlib.c =&gt;
+        double func(int n, double args[n]){
+            return args[0]*args[0] + args[1]*args[1];}
+    compile to library testlib.*
+
+::
+
+   from scipy import integrate
+   import ctypes
+   lib = ctypes.CDLL(&#39;/home/.../testlib.*&#39;) #use absolute path
+   lib.func.restype = ctypes.c_double
+   lib.func.argtypes = (ctypes.c_int,ctypes.c_double)
+   integrate.quad(lib.func,0,1,(1))
+   #(1.3333333333333333, 1.4802973661668752e-14)
+   print((1.0**3/3.0 + 1.0) - (0.0**3/3.0 + 0.0)) #Analytic result
+   # 1.3333333333333333
+
+Be aware that pulse shapes and other sharp features as compared to the
+size of the integration interval may not be integrated correctly using
+this method. A simplified example of this limitation is integrating a
+y-axis reflected step function with many zero values within the integrals
+bounds.
+
+&gt;&gt;&gt; y = lambda x: 1 if x&lt;=0 else 0
+&gt;&gt;&gt; integrate.quad(y, -1, 1)
+(1.0, 1.1102230246251565e-14)
+&gt;&gt;&gt; integrate.quad(y, -1, 100)
+(1.0000000002199108, 1.0189464580163188e-08)
+&gt;&gt;&gt; integrate.quad(y, -1, 10000)
+(0.0, 0.0)
+<span class=" -Color -Color-Red">File:</span>      /opt/tljh/user/lib/python3.9/site-packages/scipy/integrate/_quadpack_py.py
+<span class=" -Color -Color-Red">Type:</span>      function
 </pre></div>
 </div>
 </div>
@@ -1249,7 +1667,7 @@ For non-polynomial functions, the formula is an approximation to the integral an
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is 40.996012819169536!!!
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2639/2765388034.py:5: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-34-879f49e62408&gt;:5: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
   If increasing the limit yields no improvement it is advised to analyze 
   the integrand in order to determine the difficulties.  If the position of a 
   local difficulty can be determined (singularity, discontinuity) one will 
@@ -1300,7 +1718,7 @@ For non-polynomial functions, the formula is an approximation to the integral an
 </div>
 </div>
 <section id="find-the-volume-of-a-pfr">
-<h2>Find the volume of a PFR<a class="headerlink" href="#find-the-volume-of-a-pfr" title="Permalink to this heading">#</a></h2>
+<h2>Find the volume of a PFR<a class="headerlink" href="#find-the-volume-of-a-pfr" title="Link to this heading">#</a></h2>
 <p>For a single reaction that consumes a species A at a rate of <span class="math notranslate nohighlight">\(-r_A = k C_A\)</span>, a mole balance leads to an equation for the volume as a function of conversion <span class="math notranslate nohighlight">\(X\)</span> as:</p>
 <p><span class="math notranslate nohighlight">\(V = \int_0^X \frac{F_{A_0}}{-r_A(X)} dX\)</span></p>
 <p><span class="math notranslate nohighlight">\(F_{A_0}\)</span> is the inlet molar flow of species A, which is equal to the inlet concentration times the inlet volumetric flow. The concentration of A in the reactor is a function of the conversion, and is given by  <span class="math notranslate nohighlight">\(C_A = C_{A_0} (1 - X)\)</span>. If <span class="math notranslate nohighlight">\(k = 0.23\)</span> 1/min, <span class="math notranslate nohighlight">\(C_{A_0} = 1\)</span> mol/L, and the volumetric flow is 1 L/min, what is the reactor volume required to achieve a conversion of 50%?</p>
@@ -1354,7 +1772,7 @@ For non-polynomial functions, the formula is an approximation to the integral an
 </div>
 </section>
 <section id="diffusion">
-<h2>Diffusion<a class="headerlink" href="#diffusion" title="Permalink to this heading">#</a></h2>
+<h2>Diffusion<a class="headerlink" href="#diffusion" title="Link to this heading">#</a></h2>
 <p>When the surface concentration of a solute is constant, and the solute diffused into a semi-infinite solid, the concentration of the solute in the solid varies with space and time according to:
 <span class="math notranslate nohighlight">\(C_A(x, t) = C_{As} - (C_{As} - C_{A0}) erf\left(\frac{x}{\sqrt{4 D t}}\right)\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(C_{As}\)</span> is the concentration of the diffusing species at <span class="math notranslate nohighlight">\(x=0\)</span>, and <span class="math notranslate nohighlight">\(C_{A0}\)</span> is the initial concentration of the species in the semi-infinite body.</p>
@@ -1444,7 +1862,7 @@ For non-polynomial functions, the formula is an approximation to the integral an
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <p>The main points of this lecture were on</p>
 <ul class="simple">
 <li><p>Numerical integration of data</p>
@@ -1497,9 +1915,7 @@ For non-polynomial functions, the formula is an approximation to the integral an
 
 
 .flip-container.flip .flipper {
-    box-sizing: content-box;
-	  transform: rotateY(180deg);
-	/* transform: rotateY(180deg)  translateX(-6%);  */
+	transform: rotateY(180deg)  translateX(-10%);
 }
 
 
@@ -1507,23 +1923,21 @@ For non-polynomial functions, the formula is an approximation to the integral an
     filter: brightness(90%);
     position:absolute;
     z-index: -20;
-    /* left: 20px; */
 }
 
 .flip-container.prepare .flipper.backcard {
     opacity:1;
-    transition: display 0s;
     transform:  translateX(20px); 
+    transition: display 0s;
 }
 
 
 .flip-container.slide .flipper.backcard {
     filter: brightness(115%);
-    /* height: 360px; */
+    height: 360px;
     opacity:1;
 	  transform:  rotateY(3deg)  translateX(700px) translateZ(20px) scale(1, 1.05) rotate(3deg);
     z-index: 20;
-    /* left: -20px; */
 }
 
 
@@ -1544,12 +1958,9 @@ For non-polynomial functions, the formula is an approximation to the integral an
 
 
 .flip-container, .front, .back {
-	  height: 200px;
-	  width: 95%;
+	  height: 300px;
+	  width: 640px;
 }
-
-
-
 
 .flipper.frontcard {
     position:absolute;
@@ -1572,31 +1983,13 @@ For non-polynomial functions, the formula is an approximation to the integral an
 .flipper {
     cursor:pointer;
 	  height: 200px;
-    margin-left:10px;
+    margin-left:20px;
 	  position: absolute;
     top: 0;
 	  transform-style: preserve-3d;
 	  transition: 0.6s;
-    /* width: 95%; */
-    width: 100%;
+    width: 600px;
 }
-
-.flashcardtext{
-    color: var(--snow);
-    margin-left:3%;
-    position:absolute;
-    text-align:center;
-    top: 50%;
-    transform: translate(0, -50%);
-    width:90%;
-    font-size: 1.5em;
-}
-
-.back .flashcardtext{
-    font-size: 1.2em;
-}
-
-
 
 /* hide back of pane during swap */
 .front, .back {
@@ -1622,21 +2015,16 @@ For non-polynomial functions, the formula is an approximation to the integral an
 	  transform: rotateY(180deg);
 }
 
-.jp-OutputArea-output .back {
-	  transform: rotateY(180deg) translateX(7.5%);
-}
-
 .next {
     color: var(--rich-black-fogra-39);
     cursor:pointer;
-    font-size: 1.5em;
-    /*left:90%; */
-    margin-left: 70%;
-    width: 55pt;
+    font-size: 16pt;
+    left:442pt;
+    width: 100pt;
     height: 22pt;
     opacity:0.3;
     position:relative; 
-    top:-1em;
+    top:20px;
 }
 
 .next svg {
@@ -1661,79 +2049,23 @@ For non-polynomial functions, the formula is an approximation to the integral an
 
 .flashcard{
     border-radius: 10px;
-    outline: none;
     color: #fafafa;
     display:block;
     padding:10px;
   
 }
+.flashcardtext{
+    color: var(--snow);
+    font-size: 20pt;
+    margin-left:3%;
+    position:absolute;
+    text-align:center;
+    top: 50%;
+    transform: translate(0, -50%);
+    width:90%;
+  }
 
-.flashcardtext li{
-    text-align: left;
-}
-
-@media only screen and (min-width:1000px) {
-
-    .flip-container, .front, .back {
-	      height: 300px;
-	      width: min(95%, 640px);
-    }
-
-    .flipper {
-        margin-left:20px;
-	      height: 300px;
-    }
-
-    .flashcardtext{
-        font-size: 20pt;
-    }
-
-    .next {
-        font-size: 16pt;
-        left:min(80%, 450pt);
-        margin-left: 0;
-        width: 55pt;
-        height: 22pt;
-        top:-0.5em;
-    }
-
-    .back .flashcardtext{
-        font-size: 1.5em;
-    }
-
-}
-
-@media only screen and (min-width:660px) and (max-width:999px) {
-    .next {
-        left:0;
-        margin-left: 80%;
-    }
-
-}
-
-@media only screen and (max-width:680px) and (min-height:376px) {
-    .flip-container, .front, .back {
-	      height: 300px;
-    }
-
-    .flipper {
-	      height: 300px;
-    }
-
-}
-
-@media only screen and (max-width:330px) and (max-height:600px) {
-
-    .back .flashcardtext{
-        font-size: 1em;
-    }
-    .next {
-        margin-left: 65%;
-    }
-
-}
-
-</style></div><div class="output text_html"><div style="height:40px"></div><div class="flip-container" id="ySxrwNoDHEuS" tabindex="0" style="outline:none;"></div><div style="height:40px"></div><div class="next" id="ySxrwNoDHEuS-next" onclick="window.checkFlip('ySxrwNoDHEuS')"> </div> <div style="height:40px"></div></div><script type="application/javascript">/*!
+</style></div><div class="output text_html"><div style="height:40px"></div><div class="flip-container" id="CgiMFYLMgtqV" onclick="window.flipCard(this)"></div><div style="height:40px"></div><div class="next" id="CgiMFYLMgtqV-next" onclick="window.checkFlip('CgiMFYLMgtqV')"> </div> <div style="height:40px"></div></div><script type="application/javascript">/*!
  * swiped-events.js - v1.1.4
  * Pure JavaScript swipe events
  * https://github.com/john-doherty/swiped-events
@@ -1745,7 +2077,7 @@ For non-polynomial functions, the formula is an approximation to the integral an
 
 function jaxify(string) {
     var mystring = string;
-    //console.log(mystring);
+    console.log(mystring);
 
     var count = 0;
     var loc = mystring.search(/([^\\]|^)(\$)/);
@@ -1783,56 +2115,30 @@ function jaxify(string) {
 }
 
 window.flipCard = function flipCard(ths) {
-    //console.log(ths);
-    //console.log(ths.id);
+    console.log(ths);
+    console.log(ths.id);
     ths.classList.toggle("flip"); 
-    ths.focus();
     var next=document.getElementById(ths.id+'-next');
     next.style.pointerEvents='none';
-    /* ths.blur(); */
     next.classList.add('flipped');
     if (typeof MathJax != 'undefined') {
         var version = MathJax.version;
-        //console.log('MathJax version', version);
+        console.log('MathJax version', version);
         if (version[0] == "2") {
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         } else if (version[0] == "3") {
             MathJax.typeset([ths]);
         }
     } else {
-        //console.log('MathJax not detected');
+        console.log('MathJax not detected');
     }
 
 
-    setTimeout(reenableNext, 600, ths, next);
+    setTimeout(reenableNext, 700, next);
 }
 
-window.checkKey = function checkKey(container, event) {
-    event.stopPropagation();
-    /*
-    console.log(container);
-    console.log(event.key);
-    console.log(event.code);
-    */
-    /* JMS:  Working here*/
-    var next=document.getElementById(container.id+'-next');
-    /* Only react if not already sliding */
-    if (! next.classList.contains("hide")) {
-        if ((event.key == "j") || (event.key == "Enter") || (event.key == "ArrowRight")) {
-            window.checkFlip(container.id);
-        }
-        if (event.key == " ") {
-            window.flipCard(container);
-        }
-    }
-    event.preventDefault();
-}
-
-
-function reenableNext(ths, next) {
+function reenableNext(next) {
     next.style.pointerEvents='auto';
-    /* ths.tabIndex= 0;*/
-    /* ths.focus(); */
 }
 
 
@@ -1843,8 +2149,6 @@ function slide2(containerId) {
     var frontcard = container.children[0];
     var backcard = container.children[1];
     container.style.pointerEvents='none';
-    /* container.removeAttribute("tabindex");*/
-    /* container.blur(); */
     //backcard.style.pointerEvents='none';
     next.style.pointerEvents='none';
     next.classList.remove('flipped');
@@ -1876,7 +2180,7 @@ window.checkFlip = function checkFlip(containerId) {
 
 function slideback(container, frontcard, backcard, next) {
     container.className="flip-container slideback";
-    setTimeout(cleanup, 550, container, frontcard, backcard, next);
+    setTimeout(cleanup, 600, container, frontcard, backcard, next);
 }
 
 function cleanup(container, frontcard, backcard, next) {
@@ -1897,14 +2201,14 @@ function cleanup(container, frontcard, backcard, next) {
         next.innerHTML='Reload <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 25 26"> <path d="M7,6a10,10,0,1,0,9,0" style="fill:none;stroke:black;stroke-width:2px" id="e2_circleArc"/> <line id="e3_line" x1="17" y1="6.5" x2="17.5" y2="15" style="stroke:black;fill:none;stroke-width:2px"/> <line id="e4_line" x1="16.5" y1="6.5" x2="26" y2="8" style="stroke:black;fill:none;stroke-width:2px"/> </svg> '
         if (typeof MathJax != 'undefined') {
             var version = MathJax.version;
-            //console.log('MathJax version', version);
+            console.log('MathJax version', version);
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
                 MathJax.typeset([next]);
             }
         } else {
-            //console.log('MathJax not detected');
+            console.log('MathJax not detected');
         }
 
 
@@ -1912,21 +2216,19 @@ function cleanup(container, frontcard, backcard, next) {
 
     if (typeof MathJax != 'undefined') {
         var version = MathJax.version;
-        //console.log('MathJax version', version);
+        console.log('MathJax version', version);
         if (version[0] == "2") {
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         } else if (version[0] == "3") {
             MathJax.typeset();
         }
     } else {
-        //console.log('MathJax not detected');
+        console.log('MathJax not detected');
     }
 
 
     next.style.pointerEvents='auto';
     container.style.pointerEvents='auto';
-    /* container.tabIndex= 0; */
-    /* container.focus(); */
     next.classList.remove('hide');
     container.addEventListener('swiped-left', function(e) {
         /*
@@ -1941,10 +2243,11 @@ function cleanup(container, frontcard, backcard, next) {
 
 
 function createOneCard  (mydiv, frontCard, cards, cardnum) {
-    var colors=eval('frontColors'+mydiv.id);
-    var backColors=eval('backColors'+mydiv.id);
-    var textColors=eval('textColors'+mydiv.id);
-    //console.log(backColors)
+    var colors=[
+        '--asparagus',
+        '--terra-cotta',
+        '--cyan-process'
+    ]
 
     var flipper = document.createElement('div');
     if (frontCard){
@@ -1960,22 +2263,19 @@ function createOneCard  (mydiv, frontCard, cards, cardnum) {
     var frontSpan= document.createElement('span');
     frontSpan.className='flashcardtext';
     frontSpan.innerHTML=jaxify(cards[cardnum]['front']);
-    frontSpan.style.color=textColors[cardnum % textColors.length];
     //frontSpan.textContent=jaxify(cards[cardnum]['front']);
-    //front.style.background='var(' + colors[cardnum % colors.length] + ')';
-    front.style.background=colors[cardnum % colors.length];
+    front.style.background='var(' + colors[cardnum % colors.length] + ')';
+
 
     front.append(frontSpan);
     flipper.append(front);
 
     var back = document.createElement('div');
     back.className='back flashcard';
-    back.style.background=backColors[cardnum % backColors.length];
 
     var backSpan= document.createElement('span');
     backSpan.className='flashcardtext';
     backSpan.innerHTML=jaxify(cards[cardnum]['back']);
-    backSpan.style.color=textColors[cardnum % textColors.length];
     back.append(backSpan);
 
     flipper.append(back);
@@ -1988,25 +2288,11 @@ function createOneCard  (mydiv, frontCard, cards, cardnum) {
 
 
 
-function createCards(id, keyControl, grabFocus) {
+function createCards(id) {
     console.log(id);
-
+    
     var mydiv=document.getElementById(id);
-    /*mydiv.onclick = window.flipCard(mydiv);*/
-    /*
-    mydiv.addEventListener('click', function(){window.flipCard(mydiv);}, false);
-    mydiv.addEventListener('keydown', function(event){window.checkKey(mydiv,event);}, true);
-    */
-    mydiv.onclick = function(){window.flipCard(mydiv);};
-    //console.log(keyControl);
-    if (keyControl == "True"){
-        mydiv.onkeydown = function(event){window.checkKey(mydiv,event);};
-    }
-    /* mydiv.addEventListener('keydown', function(event){event.stopPropagation(); console.log(event); event.preventDefault();}, true); */
-    /*mydiv.onkeypress = function(event){console.log(event); event.preventDefault();};*/
-
-    //console.log(mydiv);
-
+    
     var cards=eval('cards'+id);
     mydiv.dataset.cardnum=0;
     mydiv.dataset.numCards=cards.length;
@@ -2069,9 +2355,6 @@ function createCards(id, keyControl, grabFocus) {
         next.innerHTML="Next >";
     }
 
-    if (grabFocus == "True" )
-        mydiv.focus();
-
     return flipper;
 }
 
@@ -2079,15 +2362,7 @@ function createCards(id, keyControl, grabFocus) {
 
 
 
-        function try_create() {
-          if(document.getElementById("ySxrwNoDHEuS")) {
-            createCards("ySxrwNoDHEuS", "True", "False");
-          } else {
-             setTimeout(try_create, 200);
-          }
-        };
-    
-var cardsySxrwNoDHEuS=[
+var cardsCgiMFYLMgtqV=[
     {
         "front": "np.trapz",
         "back": "Trapezoid method for data integration"
@@ -2105,10 +2380,9 @@ var cardsySxrwNoDHEuS=[
         "back": "Gaussian quadrature to integrate functions<br>Returns integrand, error estimate"
     }
 ];
-var frontColorsySxrwNoDHEuS= ["var(--asparagus)", "var(--terra-cotta)", "var(--cyan-process)" ];
-var backColorsySxrwNoDHEuS= ["var(--dark-blue-gray)" ];
-var textColorsySxrwNoDHEuS= ["var(--snow)" ];
-try_create(); </script></div>
+    
+        createCards("CgiMFYLMgtqV");
+        </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2118,25 +2392,20 @@ try_create(); </script></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="fmVufRZWMKkZ" data-shufflequestions="False"
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><div id="eEXIjfaGnNLX" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
-               data-numquestions="1000000"
-               data-maxwidth="600"
-               style="border-radius: 10px; text-align: left"> <style>
-#fmVufRZWMKkZ {
-   --jq-multiple-choice-bg: #6f78ffff;
-   --jq-mc-button-bg: #fafafa;
-   --jq-mc-button-border: #e0e0e0e0;
-   --jq-mc-button-inset-shadow: #555555;
-   --jq-many-choice-bg: #f75c03ff;
-   --jq-numeric-bg: #392061ff;
-   --jq-numeric-input-bg: #c0c0c0;
-   --jq-numeric-input-label: #101010;
-   --jq-numeric-input-shadow: #999999;
-   --jq-incorrect-color: #c80202;
-   --jq-correct-color: #009113;
-   --jq-text-color: #fafafa;
+               data-numquestions="1000000"> <style>:root {
+    --medium-slate-blue: #6f78ffff;
+    --orange-pantone: #f75c03ff;
+    --russian-violet: #392061ff;
+    --maximum-yellow-red: #ffc857ff;
+    --viridian-green: #119da4ff;
+    --incorrect-red: #c80202;
+    --correct-green: #009113;
 }
 
 .Quiz {
@@ -2149,7 +2418,6 @@ try_create(); </script></div>
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
-    border-radius: inherit;
 }
 
 .QuizCode {
@@ -2166,9 +2434,8 @@ try_create(); </script></div>
 .Answer {
     margin: 10px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     grid-gap: 10px;
-    border-radius: inherit;
 }
 
 .Feedback {
@@ -2187,8 +2454,8 @@ try_create(); </script></div>
     margin: 10px;
     color: inherit;
     width: 140px;
-    background-color: var(--jq-numeric-input-bg);
-    color: var(--jq-text-color);
+    background-color: #c0c0c0;
+    color: #fff;
     padding: 5px;
     padding-left: 10px;
     font-family: inherit;
@@ -2202,21 +2469,18 @@ try_create(); </script></div>
 
 .Input-text:focus {
     outline: none;
-    background-color: var(--jq-numeric-input-bg);
-    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
+    background-color: #c0c0c0;
+    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem #999999;
 }
 
 .MCButton {
-    background: var(--jq-mc-button-bg);
-    border: 1px solid var(--jq-mc-button-border);
-    border-radius: inherit;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 10px;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .MCButton p {
@@ -2225,23 +2489,23 @@ try_create(); </script></div>
 
 .MultipleChoiceQn {
     padding: 10px;
-    background: var(--jq-multiple-choice-bg);
-    color: var(--jq-text-color);
-    border-radius: inherit;
+    background: var(--medium-slate-blue);
+    color: #fafafa;
+    border-radius: 10px;
 }
 
 .ManyChoiceQn {
     padding: 10px;
-    background: var(--jq-many-choice-bg);
-    color: var(--jq-text-color);
-    border-radius: inherit;
+    background: var(--orange-pantone);
+    color: #fafafa;
+    border-radius: 10px;
 }
 
 .NumericQn {
     padding: 10px;
-    background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
-    border-radius: inherit;
+    background: var(--russian-violet);
+    color: #fafafa;
+    border-radius: 10px;
 }
 
 .NumericQn p {
@@ -2252,49 +2516,48 @@ try_create(); </script></div>
     line-height: 34px;
     float: left;
     margin-right: 10px;
-    color: var(--jq-numeric-input-label);
+    color: #101010;
     font-size: 15pt;
 }
 
 .incorrect {
-    color: var(--jq-incorrect-color);
+    color: var(--incorrect-red);
 }
 
 .correct {
-    color: var(--jq-correct-color);
+    color: var(--correct-green);
 }
 
 .correctButton {
     /*
-    background: var(--jq-correct-color);
+    background: var(--correct-green);
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
-    color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
     outline: none;
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
-    color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
     outline: none;
 }
 
 @keyframes incorrect-anim {
     100% {
-        background-color: var(--jq-incorrect-color);
+        background-color: var(--incorrect-red);
     }
 }
 
 @keyframes correct-anim {
     100% {
-        background-color: var(--jq-correct-color);
+        background-color: var(--correct-green);
     }
-}
-</style></div><script type="application/javascript">var questionsfmVufRZWMKkZ=[
+}</style></div><script type="application/javascript">var questionseEXIjfaGnNLX=[
   {
     "question": "Which is the correct argument in matplotlib to plot data using black circles connected with a solid line?",
     "type": "multiple_choice",
@@ -2892,11 +3155,7 @@ function check_numeric(ths, event) {
             // if (answer.type=="value"){
             if ('value' in answer) {
                 if (submission == answer.value) {
-                    if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
-                    } else {
-                        fb.textContent = jaxify("Correct");
-                    }
+                    fb.textContent = jaxify(answer.feedback);
                     correct = answer.correct;
                     //console.log(answer.correct);
                     done = true;
@@ -3137,7 +3396,6 @@ function show_questions(json, mydiv) {
     var shuffle_questions = mydiv.dataset.shufflequestions;
     var num_questions = mydiv.dataset.numquestions;
     var shuffle_answers = mydiv.dataset.shuffleanswers;
-    var max_width = mydiv.dataset.maxwidth;
 
     if (num_questions > json.length) {
         num_questions = json.length;
@@ -3167,23 +3425,21 @@ function show_questions(json, mydiv) {
         iDiv.id = 'quizWrap' + id;
         iDiv.className = 'Quiz';
         iDiv.setAttribute('data-qnum', index);
-        iDiv.style.maxWidth  =max_width+"px";
         mydiv.appendChild(iDiv);
         // iDiv.innerHTML=qa.question;
-        
+
         var outerqDiv = document.createElement('div');
         outerqDiv.id = "OuterquizQn" + id + index;
+
+        iDiv.append(outerqDiv);
+
         // Create div to contain question part
         var qDiv = document.createElement('div');
         qDiv.id = "quizQn" + id + index;
-        
-        if (qa.question) {
-            iDiv.append(outerqDiv);
+        //qDiv.textContent=qa.question;
+        qDiv.innerHTML = jaxify(qa.question);
 
-            //qDiv.textContent=qa.question;
-            qDiv.innerHTML = jaxify(qa.question);
-            outerqDiv.append(qDiv);
-        }
+        outerqDiv.append(qDiv);
 
         // Create div for code inside question
         var codeDiv;
@@ -3210,12 +3466,10 @@ function show_questions(json, mydiv) {
         //console.log(qa.type);
 
         var num_correct;
-        if ((qa.type == "multiple_choice") || (qa.type == "many_choice") ) {
+        if (qa.type == "multiple_choice") {
             num_correct = make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
-            if ("answer_cols" in qa) {
-                //aDiv.style.gridTemplateColumns = 'auto '.repeat(qa.answer_cols);
-                aDiv.style.gridTemplateColumns = 'repeat(' + qa.answer_cols + ', 1fr)';
-            }
+        } else if (qa.type == "many_choice") {
+            num_correct = make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
         } else if (qa.type == "numeric") {
             //console.log("numeric");
             make_numeric(qa, outerqDiv, qDiv, aDiv, id);
@@ -3277,28 +3531,9 @@ if (typeof version == 'undefined') {
     }
     return false;
 }
-/* This is to handle asynchrony issues in loading Jupyter notebooks
-           where the quiz has been previously run. The Javascript was generally
-           being run before the div was added to the DOM. I tried to do this
-           more elegantly using Mutation Observer, but I didn't get it to work.
 
-           Someone more knowledgeable could make this better ;-) */
-
-        function try_show() {
-          if(document.getElementById("fmVufRZWMKkZ")) {
-            show_questions(questionsfmVufRZWMKkZ,  fmVufRZWMKkZ); 
-          } else {
-             setTimeout(try_show, 200);
-          }
-        };
-    
         {
-        // console.log(element);
-
-        //console.log("fmVufRZWMKkZ");
-        // console.log(document.getElementById("fmVufRZWMKkZ"));
-
-        try_show();
+        show_questions(questionseEXIjfaGnNLX,  eEXIjfaGnNLX);
         }
         </script></div>
 </div>
@@ -3331,8 +3566,8 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../01-jupyter/01-jupyter.html"
@@ -3359,7 +3594,9 @@ if (typeof version == 'undefined') {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -3406,9 +3643,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -3432,8 +3670,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

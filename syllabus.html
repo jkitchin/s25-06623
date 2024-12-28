@@ -1,73 +1,74 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Syllabus for 06-623 Mathematical Modeling of Chemical Engineering Processes &#8212; f23-06623</title>
+    <title>Syllabus for 06-623 Mathematical Modeling of Chemical Engineering Processes &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'syllabus';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Fall 2023 - 06-623 Mathematical modeling of chemical engineering processes" href="lectures/toc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,32 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -108,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -116,16 +100,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -138,6 +133,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="#">
@@ -151,12 +149,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -252,10 +257,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="lectures/index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="execution-statistics.html">Build statistics</a></li>
@@ -267,14 +268,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -283,14 +289,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -313,16 +319,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/syllabus.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/syllabus.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -331,16 +337,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/syllabus.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/syllabus.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -362,7 +368,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +385,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Fsyllabus.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Fsyllabus.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -461,26 +467,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -541,19 +541,19 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="syllabus-for-06-623-mathematical-modeling-of-chemical-engineering-processes">
-<h1>Syllabus for  06-623 Mathematical Modeling of Chemical Engineering Processes<a class="headerlink" href="#syllabus-for-06-623-mathematical-modeling-of-chemical-engineering-processes" title="Permalink to this heading">#</a></h1>
+<h1>Syllabus for  06-623 Mathematical Modeling of Chemical Engineering Processes<a class="headerlink" href="#syllabus-for-06-623-mathematical-modeling-of-chemical-engineering-processes" title="Link to this heading">#</a></h1>
 <p>John Kitchin
 Fall 2023</p>
 <p>Read the <a class="reference external" href="https://youtu.be/aL_fP5axQV4">Syllabus</a></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="course-details">
-<h1>Course details<a class="headerlink" href="#course-details" title="Permalink to this heading">#</a></h1>
+<h1>Course details<a class="headerlink" href="#course-details" title="Link to this heading">#</a></h1>
 <p>Instructor: Prof. John Kitchin (<a class="reference external" href="mailto:jkitchin&#37;&#52;&#48;andrew&#46;cmu&#46;edu">jkitchin<span>&#64;</span>andrew<span>&#46;</span>cmu<span>&#46;</span>edu</a>)</p>
 <section id="teaching-assistants">
-<h2>Teaching assistants:<a class="headerlink" href="#teaching-assistants" title="Permalink to this heading">#</a></h2>
+<h2>Teaching assistants:<a class="headerlink" href="#teaching-assistants" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Carolina Colombo (<a class="reference external" href="mailto:ccolomb2&#37;&#52;&#48;andrew&#46;cmu&#46;edu">ccolomb2<span>&#64;</span>andrew<span>&#46;</span>cmu<span>&#46;</span>edu</a>)</p></li>
 <li><p>Abdulhakeem Ahmed (<a class="reference external" href="mailto:abdulhak&#37;&#52;&#48;andrew&#46;cmu&#46;edu">abdulhak<span>&#64;</span>andrew<span>&#46;</span>cmu<span>&#46;</span>edu</a>)</p></li>
@@ -561,8 +561,8 @@ Fall 2023</p>
 <p>Office hours by appointment.</p>
 </section>
 <section id="course-location">
-<h2>Course location<a class="headerlink" href="#course-location" title="Permalink to this heading">#</a></h2>
-<p>Class will be on Monday and Wednesday, 2-3:50pm in <a class="reference external" href="https://miro.com/app/board/uXjVMrCsQck=/?moveToWidget=3458764562280044193&amp;cot=14">Scaife Hall 236</a>. Attendance is expected.</p>
+<h2>Course location<a class="headerlink" href="#course-location" title="Link to this heading">#</a></h2>
+<p>Class will be on Monday and Wednesday, 2-3:50pm in <a class="reference external" href="https://miro.com/app/board/uXjVMrCsQck=/?moveToWidget=3458764562280044193&amp;amp;cot=14">Scaife Hall 236</a>. Attendance is expected.</p>
 <p>We will not be using a textbook. The course notes and materials will be provided through this site, and links to them in <a class="reference external" href="https://canvas.cmu.edu/courses/35946">Canvas</a>.</p>
 <p>Each class will be organized in a Canvas module. You should go to the Module of the day. Everything you need should be there.</p>
 <p>Please consider using NameCoach (<a class="reference external" href="https://www.cmu.edu/canvas/namecoach/namecoachstudent.html">https://www.cmu.edu/canvas/namecoach/namecoachstudent.html</a>) to upload a recording of how your name is pronounced, and to indicate your pronouns.</p>
@@ -570,51 +570,51 @@ Fall 2023</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="course-description">
-<h1>Course description<a class="headerlink" href="#course-description" title="Permalink to this heading">#</a></h1>
+<h1>Course description<a class="headerlink" href="#course-description" title="Link to this heading">#</a></h1>
 <p>Numerical approaches to solving problems relevant to chemical engineering applications.  In this course, advanced mathematical topics relevant to chemical engineering will be used to solve complex problems.  Topics include linear algebra, nonlinear equation solving, initial value and boundary value problems for solution of differential equations, numerical optimization, probability and stochastic methods.  Focus will be placed on numerical rather than analytical solution to problems.  Unlike a typical numerical methods course, we will also focus on modeling problems, choice of appropriate solution technique, and presentation of solution.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="course-objectives">
-<h1>Course objectives<a class="headerlink" href="#course-objectives" title="Permalink to this heading">#</a></h1>
+<h1>Course objectives<a class="headerlink" href="#course-objectives" title="Link to this heading">#</a></h1>
 <p>After completing this course you will able to use Python to solve problems involving the:</p>
 <section id="use-jupyter-notebooks-to-create-and-document-scientific-programming-solutions">
-<h2>Use Jupyter notebooks to create and document scientific programming solutions<a class="headerlink" href="#use-jupyter-notebooks-to-create-and-document-scientific-programming-solutions" title="Permalink to this heading">#</a></h2>
+<h2>Use Jupyter notebooks to create and document scientific programming solutions<a class="headerlink" href="#use-jupyter-notebooks-to-create-and-document-scientific-programming-solutions" title="Link to this heading">#</a></h2>
 <p>Jupyter notebooks are one approach to integrating narrative text with code to solve scientific problems. We will use Jupyter HUB as the notebook implementation in this class.</p>
 </section>
 <section id="mathematical-modeling-of-engineering-systems">
-<h2>Mathematical modeling of engineering systems<a class="headerlink" href="#mathematical-modeling-of-engineering-systems" title="Permalink to this heading">#</a></h2>
+<h2>Mathematical modeling of engineering systems<a class="headerlink" href="#mathematical-modeling-of-engineering-systems" title="Link to this heading">#</a></h2>
 <p>You will be able to generate equations that model an engineering process using principles of conservation laws, and other physical principles.</p>
 </section>
 <section id="computational-solutions-to-ordinary-differential-equations">
-<h2>Computational solutions to ordinary differential equations<a class="headerlink" href="#computational-solutions-to-ordinary-differential-equations" title="Permalink to this heading">#</a></h2>
+<h2>Computational solutions to ordinary differential equations<a class="headerlink" href="#computational-solutions-to-ordinary-differential-equations" title="Link to this heading">#</a></h2>
 <p>You will be able to generate computational solutions to ordinary differential equations, and evaluate them for engineering design problems.</p>
 </section>
 <section id="computational-solutions-to-linear-algebraic-systems">
-<h2>Computational solutions to linear algebraic systems<a class="headerlink" href="#computational-solutions-to-linear-algebraic-systems" title="Permalink to this heading">#</a></h2>
+<h2>Computational solutions to linear algebraic systems<a class="headerlink" href="#computational-solutions-to-linear-algebraic-systems" title="Link to this heading">#</a></h2>
 <p>You will be able to set up and solve linear equations.</p>
 </section>
 <section id="computational-solutions-to-nonlinear-algebraic-systems">
-<h2>Computational solutions to nonlinear algebraic systems<a class="headerlink" href="#computational-solutions-to-nonlinear-algebraic-systems" title="Permalink to this heading">#</a></h2>
+<h2>Computational solutions to nonlinear algebraic systems<a class="headerlink" href="#computational-solutions-to-nonlinear-algebraic-systems" title="Link to this heading">#</a></h2>
 <p>You will be able to set up and solve nonlinear equations, including coupled equations.</p>
 </section>
 <section id="computational-solutions-to-optimization-problems">
-<h2>Computational solutions to optimization problems<a class="headerlink" href="#computational-solutions-to-optimization-problems" title="Permalink to this heading">#</a></h2>
+<h2>Computational solutions to optimization problems<a class="headerlink" href="#computational-solutions-to-optimization-problems" title="Link to this heading">#</a></h2>
 <p>You will be able to use concepts of optimization to find solutions where the goal is to minimize or maximize some quantity.
 Determination of parameters in linear and nonlinear models including uncertainty
 You will be able to fit linear and nonlinear models to data to estimate parameters including estimates of uncertainties on those parameters.</p>
 </section>
 <section id="use-scientific-data-to-build-interpolation-or-regression-models">
-<h2>Use scientific data to build interpolation or regression models<a class="headerlink" href="#use-scientific-data-to-build-interpolation-or-regression-models" title="Permalink to this heading">#</a></h2>
+<h2>Use scientific data to build interpolation or regression models<a class="headerlink" href="#use-scientific-data-to-build-interpolation-or-regression-models" title="Link to this heading">#</a></h2>
 <p>You will be able to interpolate and build models from data to make predictions of new values.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="grading">
-<h1>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h1>
+<h1>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h1>
 <p>Your grade in this class will be based on assignments, participation and a project. Assignments will typically be a single problem, and several of them will be assigned each week.</p>
 <p>Each assignment will receive two grades, one for the technical work, and one for the presentation. The technical grade will account for 2/3 of the grade and the presentation will be the other 1/3.</p>
 <p>Each lecture will have a participation component. This will usually be an assignment in canvas, and may include reflection, quizzes, etc. These will be due within 24 hours of the lecture date.</p>
 <p>We will have a project starting in the second half of the semester. The project will have a written proposal, report at the end of the semester. You will get more information about the project in mid-October.</p>
 <p>We are not planning to have any exams. Instead, the problems we would normally have in exams will be spread out over the semester.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Category</p></th>
 <th class="head"><p>weight</p></th>
@@ -632,8 +632,9 @@ You will be able to fit linear and nonlinear models to data to estimate paramete
 </tr>
 </tbody>
 </table>
+</div>
 <section id="grading-criteria">
-<h2>Grading criteria<a class="headerlink" href="#grading-criteria" title="Permalink to this heading">#</a></h2>
+<h2>Grading criteria<a class="headerlink" href="#grading-criteria" title="Link to this heading">#</a></h2>
 <p>You are transitioning into a young professional at this point. That means assignments are done professionally too. In addition to the technical correctness of your work, we will also be assessing the professionalism with which it is presented. Each assignment will show the rubric it will be graded with at the top of the file.</p>
 <p>There will be a straight scale (no curve) so you will always know exactly what your grade is at all times. Each problem will be graded considering the approach used, the correctness of the answer, the neatness and quality of presentation, etc… Each category of the rubric will be given a letter grade that indicates your level of performance in that category.</p>
 <p>“A” work has the following characteristics: The correct approach is used and the problem is set up correctly. The work is not over-simplified and it is easy to see it is done correctly. Any assumptions made were stated and justified. The answers are correct or only the most trivial errors are present, and were identified by the student. All of the correct units were used. The presentation is complete, clear, logical, neat and in order. Error analysis was performed if appropriate. Any figures used have properly labeled axes with units, and a legend if there is more than one curve. Essentially everything that should have been done was done and done correctly. This is the kind of work an employer wants their employees to do, and the kind of work you will be promoted for doing. You should be proud of this work.</p>
@@ -642,7 +643,7 @@ You will be able to fit linear and nonlinear models to data to estimate paramete
 <p>“D” work is not considered acceptable performance. Repeat offenses could lead to the loss of your job.</p>
 <p>“R” work is totally unacceptable performance. You will be fired.</p>
 <p>The letter grades will map onto these grade multipliers:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>grade</p></th>
 <th class="head"><p>multiplier</p></th>
@@ -672,6 +673,7 @@ You will be able to fit linear and nonlinear models to data to estimate paramete
 </tr>
 </tbody>
 </table>
+</div>
 <p>That means if an assignment is worth 10 points, and you get a B for the technical work and C for the presentation you will earn the following points (rounded for clarity):</p>
 <p>Technical: 2/3 * 10 * 0.8 = 5.33
 Presentation: 1/3 * 10 * 0.6 = 2</p>
@@ -683,14 +685,14 @@ If you earn more than 50% of the points, but less than 70% you will get a C.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="late-policy">
-<h1>Late policy<a class="headerlink" href="#late-policy" title="Permalink to this heading">#</a></h1>
+<h1>Late policy<a class="headerlink" href="#late-policy" title="Link to this heading">#</a></h1>
 <p>The deadlines on assignments are highly recommended times to turn assignments in by, because all of us need a schedule to do our work on, and if you don’t follow them you will fall behind. I am not going to worry if you turn them in late by a few minutes or even hours. If you turn your assignments in late, Canvas will mark them as late, but there is no penalty for that.  At least up until we grade your assignment you can even turn in your assignment again.</p>
 <p>Once the solutions are posted, which usually happens after we grade them, then we will not accept late submissions.
 So there is some flexibility in being late, but it is not infinitely flexible, and the longer you wait, the more likely it is the solution will be posted and your assignment will get a zero for not being turned in.</p>
 <p>Of course, if there are extenuating circumstances like an illness, or emergency, you should reach out to me to find a solution, but otherwise, just do the assignments and turn them in when you finish them.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="take-care-of-yourself">
-<h1>Take care of yourself<a class="headerlink" href="#take-care-of-yourself" title="Permalink to this heading">#</a></h1>
+<h1>Take care of yourself<a class="headerlink" href="#take-care-of-yourself" title="Link to this heading">#</a></h1>
 <p>This semester is going to be a challenge. We are still working through a pandemic among other stressful issues in the country. These are stressful times. I will do my best to keep this class from adding unnecessarily to that.</p>
 <p>Do your best to maintain a healthy lifestyle this semester by eating well, exercising, avoiding drugs and alcohol, getting enough sleep and taking some time to relax. This will help you achieve your goals and cope with stress.</p>
 <p>All of us benefit from support during times of struggle. You are not alone. There are many helpful resources available on campus and an important part of the college experience is learning how to ask for help. Asking for support sooner rather than later is often helpful.</p>
@@ -707,7 +709,7 @@ So there is some flexibility in being late, but it is not infinitely flexible, a
 <p>If you have questions about this or your coursework, please let me know.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="diversity-equity-and-inclusion-at-cmu">
-<h1>Diversity, equity and inclusion at CMU<a class="headerlink" href="#diversity-equity-and-inclusion-at-cmu" title="Permalink to this heading">#</a></h1>
+<h1>Diversity, equity and inclusion at CMU<a class="headerlink" href="#diversity-equity-and-inclusion-at-cmu" title="Link to this heading">#</a></h1>
 <p>We are diverse in many ways, and this diversity is fundamental to building and maintaining an equitable and inclusive campus community. Diversity can refer to multiple ways that we identify ourselves, including but not limited to race, color, national origin, language, sex, disability, age, sexual orientation, gender identity, religion, creed, ancestry, belief, veteran status, or genetic information. Each of these diverse identities shape the perspectives our students, faculty, and staff bring to our campus. We at CMU will work to promote diversity, equity, and inclusion not only because diversity fuels excellence and innovation, but because we want to pursue justice. We acknowledge our imperfections while we also fully commit to the work, inside and outside of our classrooms, of building and sustaining a campus community that increasingly embraces these core values. Each of us is responsible for creating a safer, more inclusive environment.</p>
 <p>Unfortunately, incidents of bias or discrimination do occur, whether intentional or unintentional. They contribute to creating an unwelcoming environment for individuals and groups at the university. Therefore, the university encourages anyone who experiences or observes unfair or hostile treatment on the basis of identity to speak out for justice and support, within the moment of the incident or after the incident has passed. Anyone can share these experiences using the following resources:
 If you are comfortable with it, you may share them with me
@@ -716,7 +718,7 @@ Report-It online anonymous reporting platform: <a class="reference external" hre
 All reports will be documented and deliberated to determine if there should be any following actions. Regardless of incident type, the university will use all shared experiences to transform our campus climate to be more equitable and just.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="academic-honesty">
-<h1>Academic honesty<a class="headerlink" href="#academic-honesty" title="Permalink to this heading">#</a></h1>
+<h1>Academic honesty<a class="headerlink" href="#academic-honesty" title="Link to this heading">#</a></h1>
 <p>All work is expected to be your original work. You may work with class members to solve the homework problems, but you must turn in your own solutions. It is cheating to turn in someone else’s work as your own. If you use code from the internet or the course notes, you should note this in your solution. Duplicated assignments (e.g. two students who turn in the same work) will receive zeros and a warning. Repeat offenses will be reported as academic dishonesty.</p>
 <p>When in doubt, review this website: <a class="reference external" href="https://www.cmu.edu/policies/student-and-student-life/academic-integrity.html">https://www.cmu.edu/policies/student-and-student-life/academic-integrity.html</a>,  and ask if anything is unclear /before/ you get in trouble.</p>
 <p>Here are some examples of acceptable collaboration (adapted from <a class="reference external" href="https://www.cmu.edu/teaching/designteach/syllabus/checklist/integritypolicy.html">https://www.cmu.edu/teaching/designteach/syllabus/checklist/integritypolicy.html</a>) :</p>
@@ -753,15 +755,15 @@ All reports will be documented and deliberated to determine if there should be a
 </ol>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="accommodations">
-<h1>Accommodations<a class="headerlink" href="#accommodations" title="Permalink to this heading">#</a></h1>
+<h1>Accommodations<a class="headerlink" href="#accommodations" title="Link to this heading">#</a></h1>
 <p>If you have a disability and have an accommodations letter from the Disability Resources office, I encourage you to discuss your accommodations and needs with me as early in the semester as possible. I will work with you to ensure that accommodations are provided as appropriate. If you suspect that you may have a disability and would benefit from accommodations but are not yet registered with the Office of Disability Resources, I encourage you to contact them at <a class="reference external" href="mailto:access&#37;&#52;&#48;andrew&#46;cmu&#46;edu">access<span>&#64;</span>andrew<span>&#46;</span>cmu<span>&#46;</span>edu</a>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="religious-holidays">
-<h1>Religious holidays<a class="headerlink" href="#religious-holidays" title="Permalink to this heading">#</a></h1>
+<h1>Religious holidays<a class="headerlink" href="#religious-holidays" title="Link to this heading">#</a></h1>
 <p>We will accommodate religious holidays when possible. If your work will be affected by a religious holiday, you must inform Professor Kitchin as early as possible to work out an accommodation in advance.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="resources">
-<h1>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h1>
+<h1>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h1>
 <p>Student Academic Resource Center: <a class="reference external" href="https://docs.google.com/document/d/1l2MGIkx88u7n7zR9GGg1COax9UUFaOuW/edit">SASC Program Description.docx</a>
 SASC focuses on creating spaces for students to engage in their coursework and approach learning through a variety of group and individual options.</p>
 <div class="toctree-wrapper compound">
@@ -799,8 +801,8 @@ SASC focuses on creating spaces for students to engage in their coursework and a
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="right-next"
        href="lectures/toc.html"
@@ -818,7 +820,9 @@ SASC focuses on creating spaces for students to engage in their coursework and a
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -878,9 +882,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -904,8 +909,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

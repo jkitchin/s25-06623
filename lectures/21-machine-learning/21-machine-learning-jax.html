@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction to machine learning &#8212; f23-06623</title>
+    <title>Introduction to machine learning &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/21-machine-learning/21-machine-learning-jax';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Applications of automatic differentiation" href="../20-autograd-applications/20-jax-applications.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/21-machine-learning/21-machine-learning-jax.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/21-machine-learning/21-machine-learning-jax.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/21-machine-learning/21-machine-learning-jax.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/21-machine-learning/21-machine-learning-jax.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/21-machine-learning/21-machine-learning-jax.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/21-machine-learning/21-machine-learning-jax.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -519,17 +515,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-machine-learning">
-<h1>Introduction to machine learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to machine learning<a class="headerlink" href="#introduction-to-machine-learning" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>KEYWORDS: autograd, jax</p></li>
 </ul>
 <p><img alt="img" src="https://imgs.xkcd.com/comics/machine_learning.png" /></p>
 <section id="flexible-nonlinear-models-for-regression">
-<h2>Flexible nonlinear models for regression<a class="headerlink" href="#flexible-nonlinear-models-for-regression" title="Permalink to this heading">#</a></h2>
+<h2>Flexible nonlinear models for regression<a class="headerlink" href="#flexible-nonlinear-models-for-regression" title="Link to this heading">#</a></h2>
 <p>Today we are going to take a meandering path to using autograd to train a neural network for regression. First let us consider this very general looking nonlinear model that we might fit to data. There are 10 parameters in it, so we should expect we can get it to fit some data pretty well.</p>
 <p><span class="math notranslate nohighlight">\(y = b_1 + w_{10} tanh(w_{00} x + b_{00}) + w_{11} tanh(w_{01} x + b_{01}) + w_{12} tanh(w_{02} x + b_{02})\)</span></p>
 <p>For now let us not concern ourselves with how we chose this particular model. We will return to the choices later.</p>
@@ -543,6 +539,18 @@ document.write(`
 <span class="kn">from</span> <span class="nn">jax</span> <span class="kn">import</span> <span class="n">jacrev</span>
 
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">least_squares</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">jax.config</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;jax_enable_x64&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jax.config&#39;
 </pre></div>
 </div>
 </div>
@@ -563,7 +571,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1260c83ca7d8295ec23732b9c30731f738ef8c4ea8943d9b9efdd0024e38c8d2.png" src="../../_images/1260c83ca7d8295ec23732b9c30731f738ef8c4ea8943d9b9efdd0024e38c8d2.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+</pre></div>
+</div>
+<img alt="../../_images/a1de918f40950c27a061e46d060f97286f7df21b968eb71c4698917f7e296d4c.png" src="../../_images/a1de918f40950c27a061e46d060f97286f7df21b968eb71c4698917f7e296d4c.png" />
 </div>
 </div>
 <p>We have to define a function for our model, and then another one for the residuals. For now, we stick with a syntax we are familiar with, and one that works with <code class="docutils literal notranslate"><span class="pre">least_squares</span></code>.</p>
@@ -634,7 +645,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7640388476050587e-09
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7640380560759626e-09
 </pre></div>
 </div>
 </div>
@@ -671,9 +682,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.000e+02+0.j -5.735e+33+0.j -9.599e+07+0.j -2.139e+04+0.j
-  1.442e+03+0.j -3.283e+03+0.j  5.060e-03+0.j  1.738e-07+0.j
-  1.241e-08+0.j  1.950e-13+0.j]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.000e+02    +0.j    -5.735e+33    +0.j    -9.598e+07    +0.j
+ -5.288e+02+11581.177j -5.288e+02-11581.177j -3.282e+03    +0.j
+  5.411e-03    +0.j     9.269e-07    +0.j     9.217e-09    +0.j
+  1.949e-13    +0.j   ]
 </pre></div>
 </div>
 </div>
@@ -686,7 +698,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(-1.33733746e+11, dtype=float64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray(-1.33724075e+11, dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -703,7 +715,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/378cb6fbd8d9708fee3d157d418cd603076577782b9068777385c0bcee5f6ab5.png" src="../../_images/378cb6fbd8d9708fee3d157d418cd603076577782b9068777385c0bcee5f6ab5.png" />
+<img alt="../../_images/1d4d9818997fa69ccbd70e65ad1bae02f9a3c9a97fad72360280c51bb19019f0.png" src="../../_images/1d4d9818997fa69ccbd70e65ad1bae02f9a3c9a97fad72360280c51bb19019f0.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(y = b_1 + w_{10} tanh(w_{00} x + b_{00}) + w_{11} tanh(w_{01} x + b_{01}) + w_{12} tanh(w_{02} x + b_{02})\)</span></p>
@@ -747,7 +759,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6e147d6ea8b5425a4a4f1d8205049e87e9e411b49db5bc01f7a0b7774e460871.png" src="../../_images/6e147d6ea8b5425a4a4f1d8205049e87e9e411b49db5bc01f7a0b7774e460871.png" />
+<img alt="../../_images/b265fa3be7cf94a7150124761c29b9031d220c492eafab253118aaf8c25f8c5e.png" src="../../_images/b265fa3be7cf94a7150124761c29b9031d220c492eafab253118aaf8c25f8c5e.png" />
 </div>
 </div>
 <p>You can see that this model starts failing at <span class="math notranslate nohighlight">\(x&gt;1\)</span>. At very large <span class="math notranslate nohighlight">\(x\)</span> it will start to level out. What defines large <span class="math notranslate nohighlight">\(x\)</span> is unclear though, in this specific example, it is around 400. That might be anticipated from knowledge of the <code class="docutils literal notranslate"><span class="pre">np.tanh</span></code> function, it also saturates at large values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
@@ -762,7 +774,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/241d4759acc5865e440abace4e04f040347edb332297192f3ce69698623f3262.png" src="../../_images/241d4759acc5865e440abace4e04f040347edb332297192f3ce69698623f3262.png" />
+<img alt="../../_images/f28297546d6e64bc9cd0f36cc19930b6dd4c2d6d00b37b10636e5eff72e30c69.png" src="../../_images/f28297546d6e64bc9cd0f36cc19930b6dd4c2d6d00b37b10636e5eff72e30c69.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(y = b_1 + w_{10} tanh(w_{00} x + b_{00}) + w_{11} tanh(w_{01} x + b_{01}) + w_{12} tanh(w_{02} x + b_{02})\)</span></p>
@@ -789,7 +801,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </ol>
 <p>In machine learning lingo, these choices are called <em>hyperparameters</em>. These are parameters that determine the size of the model, but they are fixed, and not fitted as part of the model. It is mostly <em>art and experience</em> that is how these choices are made. There are many advanced methods for doing this more systematically, but they are computationally expensive and beyond the scope of this class.</p>
 <section id="another-interpretation-of-neural-networks">
-<h3>Another interpretation of neural networks<a class="headerlink" href="#another-interpretation-of-neural-networks" title="Permalink to this heading">#</a></h3>
+<h3>Another interpretation of neural networks<a class="headerlink" href="#another-interpretation-of-neural-networks" title="Link to this heading">#</a></h3>
 <p>In this section we consider another interpretation of what a neural network is. We start with a partial Fourier series expansion of a periodic function (<a class="reference external" href="http://mathworld.wolfram.com/FourierSeries.html">http://mathworld.wolfram.com/FourierSeries.html</a>). This expansion can fit any even periodic function in the infinite limit, and can approximate that function otherwise.</p>
 <p><span class="math notranslate nohighlight">\(f(x) = \frac{1}{2} a_0 + \sum_{n=1}^{\infty} a_n \cos(n x)\)</span></p>
 <p>We use a partial series (leaving out the sin terms) just for simplicity of notation here. Next, we write this in a vector form. In the Fourier series, the <span class="math notranslate nohighlight">\(a_n\)</span> have formal definitions: <span class="math notranslate nohighlight">\(a_n = \int_{-\pi}^{\pi} f(x) cos(n x) dx\)</span>.  Let <span class="math notranslate nohighlight">\(\mathbf{a} = [a_0, a_1, a_2, ..., a_n]\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{n} = [1, 2, .., n]\)</span> Then, we can replace the sum as <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \cos(\mathbf{n} x)\)</span>. We can for now imagine that <span class="math notranslate nohighlight">\(n\)</span> could go to <span class="math notranslate nohighlight">\(\infty\)</span>, but it is not critical; if we truncate the expansion, then we just have an approximate expansion.</p>
@@ -800,7 +812,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </section>
 </section>
 <section id="modern-machine-learning-with-neural-networks">
-<h2>Modern machine learning with neural networks<a class="headerlink" href="#modern-machine-learning-with-neural-networks" title="Permalink to this heading">#</a></h2>
+<h2>Modern machine learning with neural networks<a class="headerlink" href="#modern-machine-learning-with-neural-networks" title="Link to this heading">#</a></h2>
 <p>Modern machine learning does not use the algorithms described above to fit neural networks. Most use a gradient descent based algorithm, which means we need easy access to gradient functions. The standard approaches use automatic differentiation to get these.</p>
 <p>First we define a neural network function. This code is more general than what we described before, and can accommodate multiple layers.</p>
 <div class="cell docutils container">
@@ -851,9 +863,9 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;weights&#39;: [Array([[ 0.075, -0.075, -0.175]], dtype=float64), Array([[ 0.075],
-       [-0.075],
-       [-0.175]], dtype=float64)], &#39;biases&#39;: [Array([ 0.075, -0.075, -0.175], dtype=float64), Array([0.198], dtype=float64)]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;weights&#39;: [DeviceArray([[ 0.075, -0.075, -0.175]], dtype=float64), DeviceArray([[ 0.075],
+             [-0.075],
+             [-0.175]], dtype=float64)], &#39;biases&#39;: [DeviceArray([ 0.075, -0.075, -0.175], dtype=float64), DeviceArray([0.198], dtype=float64)]}
 </pre></div>
 </div>
 </div>
@@ -867,7 +879,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e1043dd62a441b52ada9bdd1572517ea77614426a3d4c35db9753bc3fb62d519.png" src="../../_images/e1043dd62a441b52ada9bdd1572517ea77614426a3d4c35db9753bc3fb62d519.png" />
+<img alt="../../_images/d95d63fb0c07e5c2c50aeed3f4be7741eff0a8b7112be82d5a4583eb8f8f5dfa.png" src="../../_images/d95d63fb0c07e5c2c50aeed3f4be7741eff0a8b7112be82d5a4583eb8f8f5dfa.png" />
 </div>
 </div>
 <p>You can see w0 is a row vector of weights, and there are three biases in b0. W1 in contrast, is a column vector of weights, with one bias. So 10 parameters in total, like we had before. We will create an objective function of the mean squared error again. There is a subtle point here too. The input data will go in with a specific shape of (N, 1) where N is the number of x-points. Our input is from <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> as a 1D array. So, we build a 2D array with the 1D array as the first row, and then transpose it to get it into a column.</p>
@@ -889,7 +901,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(2.7850452, dtype=float64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray(2.7850452, dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -933,7 +945,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10658 9.995249008312393e-05
 </pre></div>
 </div>
-<img alt="../../_images/1fc492000cf6faabfd027ffff357858f0c2f563305f93acf99ea67f1848997b2.png" src="../../_images/1fc492000cf6faabfd027ffff357858f0c2f563305f93acf99ea67f1848997b2.png" />
+<img alt="../../_images/4ac47b4cc5fd5cd007c9819f80b49a6622aa50f2806dc75d16e5b5f71b39df5a.png" src="../../_images/4ac47b4cc5fd5cd007c9819f80b49a6622aa50f2806dc75d16e5b5f71b39df5a.png" />
 </div>
 </div>
 <p>Now we can compare the output of this to our previous fit.</p>
@@ -944,12 +956,12 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;biases&#39;: [Array([ 1.27101631, -0.8207583 ,  0.13323742], dtype=float64),
-  Array([-0.75300183], dtype=float64)],
- &#39;weights&#39;: [Array([[ 4.65819136, -9.19937977, -1.17449071]], dtype=float64),
-  Array([[-0.25078404],
-         [-1.54632765],
-         [-0.58296746]], dtype=float64)]}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;biases&#39;: [DeviceArray([ 1.27101631, -0.8207583 ,  0.13323742], dtype=float64),
+  DeviceArray([-0.75300183], dtype=float64)],
+ &#39;weights&#39;: [DeviceArray([[ 4.65819136, -9.19937977, -1.17449071]], dtype=float64),
+  DeviceArray([[-0.25078404],
+               [-1.54632765],
+               [-0.58296746]], dtype=float64)]}
 </pre></div>
 </div>
 </div>
@@ -961,9 +973,9 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.01916308e-06 4.10822121e-02 5.78960433e-01 2.85594602e-09
- 1.64532928e-05 5.26297401e-01 1.87421242e-08 1.08502500e+00
- 7.05128793e-01 1.04458134e-23]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.01914973e-06 4.10822188e-02 5.78960405e-01 2.85594477e-09
+ 1.64531422e-05 5.26297322e-01 1.87421421e-08 1.08502500e+00
+ 7.05128794e-01 1.04457957e-23]
 </pre></div>
 </div>
 </div>
@@ -985,12 +997,12 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ca5aaf8003f4893fc185e2a55d43978356dac8bafcbaff788fdd8a39d5f9ff29.png" src="../../_images/ca5aaf8003f4893fc185e2a55d43978356dac8bafcbaff788fdd8a39d5f9ff29.png" />
+<img alt="../../_images/129838e9db61b2a0623acd459592e647622e4ca37f1cfdb9110aa5bf26c490fc.png" src="../../_images/129838e9db61b2a0623acd459592e647622e4ca37f1cfdb9110aa5bf26c490fc.png" />
 </div>
 </div>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Today we pulled together many ideas about nonlinear models, regression, and optimization as an introduction to modern machine learning. ML is little more than building computational models from data. It is usually using flexible, universal function approximators, e.g. neural networks, and all modern ML relies on automatic differentiation to do the regression.</p>
 <p>ML code is much more verbose than the simpler regression models we used previously. There is often data scaling that is done in advance, and <em>regularization</em> that is used to reduce overfitting. There are whole courses and now degrees on these topics. You are now at a starting point to study these topics.</p>
 <div class="cell docutils container">
@@ -1001,13 +1013,13 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="OmEwKmyJUqdN" data-shufflequestions="False"
+<div class="output text_html"><div id="LXzkZmrrsHhM" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#OmEwKmyJUqdN {
+#LXzkZmrrsHhM {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1177,7 +1189,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsOmEwKmyJUqdN=[{"question": "Neural networks are", "type": "multiple_choice", "answers": [{"answer": "Linear models", "correct": false}, {"answer": "Non-linear models", "correct": true}, {"answer": "Linear regression models", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "A data set can be represented with only a unique neural network model", "type": "multiple_choice", "answers": [{"answer": "FALSE", "correct": true}, {"answer": "TRUE", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "Neural networks are very useful models because", "type": "multiple_choice", "answers": [{"answer": "They accurately represent biological neurons", "correct": false}, {"answer": "Theoretically, they can fit to any data set", "correct": true}, {"answer": "You don\u2019t need to train them", "correct": false}, {"answer": "They can extrapolate in an accurate manner", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "The nature of extrapolation from a neural network depends a lot on", "type": "multiple_choice", "answers": [{"answer": "the activation functions", "correct": true}, {"answer": "size of the data set", "correct": false}, {"answer": "number of hidden layers", "correct": false}, {"answer": "number of neurons", "correct": false}], "tag": "activation_function hyperparameters", "lecture_file": "21_machine_learning"}, {"question": "The hyperparameters for a neural network are", "type": "multiple_choice", "answers": [{"answer": "The number of neurons in a layer", "correct": false}, {"answer": "The activation function", "correct": false}, {"answer": "Number of hidden layers", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "hyperparameters", "lecture_file": "21_machine_learning"}, {"question": "Gradient descent updates the hyperparameters after each", "type": "multiple_choice", "answers": [{"answer": "Epoch", "correct": true}, {"answer": "layer", "correct": false}, {"answer": "data point", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "gradient_descent algorithm", "lecture_file": "21_machine_learning"}, {"question": "For a neural network with the architecture:<br>Input layer = 3 features<br>first layer = 3 neurons<br>second layer = 5 neurons<br>output layer = 1 output variable<br>How many weights are involved between the first and second layer?", "type": "multiple_choice", "answers": [{"answer": "9", "correct": false}, {"answer": "3", "correct": false}, {"answer": "15", "correct": true}, {"answer": "5", "correct": false}], "tag": "weights_biases algorithm", "lecture_file": "21_machine_learning"}, {"question": "The gradient descent algorithm leads to at least a local minimum of", "type": "multiple_choice", "answers": [{"answer": "weights and biases", "correct": false}, {"answer": "output", "correct": false}, {"answer": "The objective function", "correct": true}, {"answer": "None of the above", "correct": false}], "tag": "gradient_descent algorithm", "lecture_file": "21_machine_learning"}, {"question": "What is the value of the count of total weights and biases for a neural network which has 2 hidden layers (3 neurons in each) between the input (2 inputs) and output (1 output)?", "type": "multiple_choice", "answers": [{"answer": "10", "correct": false}, {"answer": "81", "correct": false}, {"answer": "25", "correct": true}, {"answer": "18", "correct": false}], "tag": "weights_biases algorithm", "lecture_file": "21_machine_learning"}, {"question": "The statement: 'A higher learning rate will result in quickly reaching the optimum parameters of a neural network', is", "type": "multiple_choice", "answers": [{"answer": "Never true", "correct": false}, {"answer": "Always true", "correct": false}, {"answer": "Can be true only for learning rates above a certain threshold", "correct": false}, {"answer": "Can be true, but can also cause the solver to not converge.", "correct": true}], "tag": "learning_rate", "lecture_file": "21_machine_learning"}];
+</style></div><script type="application/javascript">var questionsLXzkZmrrsHhM=[{"question": "Neural networks are", "type": "multiple_choice", "answers": [{"answer": "Linear models", "correct": false}, {"answer": "Non-linear models", "correct": true}, {"answer": "Linear regression models", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "A data set can be represented with only a unique neural network model", "type": "multiple_choice", "answers": [{"answer": "FALSE", "correct": true}, {"answer": "TRUE", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "Neural networks are very useful models because", "type": "multiple_choice", "answers": [{"answer": "They accurately represent biological neurons", "correct": false}, {"answer": "Theoretically, they can fit to any data set", "correct": true}, {"answer": "You don\u2019t need to train them", "correct": false}, {"answer": "They can extrapolate in an accurate manner", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "The nature of extrapolation from a neural network depends a lot on", "type": "multiple_choice", "answers": [{"answer": "the activation functions", "correct": true}, {"answer": "size of the data set", "correct": false}, {"answer": "number of hidden layers", "correct": false}, {"answer": "number of neurons", "correct": false}], "tag": "activation_function hyperparameters", "lecture_file": "21_machine_learning"}, {"question": "The hyperparameters for a neural network are", "type": "multiple_choice", "answers": [{"answer": "The number of neurons in a layer", "correct": false}, {"answer": "The activation function", "correct": false}, {"answer": "Number of hidden layers", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "hyperparameters", "lecture_file": "21_machine_learning"}, {"question": "Gradient descent updates the hyperparameters after each", "type": "multiple_choice", "answers": [{"answer": "Epoch", "correct": true}, {"answer": "layer", "correct": false}, {"answer": "data point", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "gradient_descent algorithm", "lecture_file": "21_machine_learning"}, {"question": "For a neural network with the architecture:<br>Input layer = 3 features<br>first layer = 3 neurons<br>second layer = 5 neurons<br>output layer = 1 output variable<br>How many weights are involved between the first and second layer?", "type": "multiple_choice", "answers": [{"answer": "9", "correct": false}, {"answer": "3", "correct": false}, {"answer": "15", "correct": true}, {"answer": "5", "correct": false}], "tag": "weights_biases algorithm", "lecture_file": "21_machine_learning"}, {"question": "The gradient descent algorithm leads to at least a local minimum of", "type": "multiple_choice", "answers": [{"answer": "weights and biases", "correct": false}, {"answer": "output", "correct": false}, {"answer": "The objective function", "correct": true}, {"answer": "None of the above", "correct": false}], "tag": "gradient_descent algorithm", "lecture_file": "21_machine_learning"}, {"question": "What is the value of the count of total weights and biases for a neural network which has 2 hidden layers (3 neurons in each) between the input (2 inputs) and output (1 output)?", "type": "multiple_choice", "answers": [{"answer": "10", "correct": false}, {"answer": "81", "correct": false}, {"answer": "25", "correct": true}, {"answer": "18", "correct": false}], "tag": "weights_biases algorithm", "lecture_file": "21_machine_learning"}, {"question": "The statement: 'A higher learning rate will result in quickly reaching the optimum parameters of a neural network', is", "type": "multiple_choice", "answers": [{"answer": "Never true", "correct": false}, {"answer": "Always true", "correct": false}, {"answer": "Can be true only for learning rates above a certain threshold", "correct": false}, {"answer": "Can be true, but can also cause the solver to not converge.", "correct": true}], "tag": "learning_rate", "lecture_file": "21_machine_learning"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1926,8 +1938,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("OmEwKmyJUqdN")) {
-            show_questions(questionsOmEwKmyJUqdN,  OmEwKmyJUqdN); 
+          if(document.getElementById("LXzkZmrrsHhM")) {
+            show_questions(questionsLXzkZmrrsHhM,  LXzkZmrrsHhM); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1936,8 +1948,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("OmEwKmyJUqdN");
-        // console.log(document.getElementById("OmEwKmyJUqdN"));
+        //console.log("LXzkZmrrsHhM");
+        // console.log(document.getElementById("LXzkZmrrsHhM"));
 
         try_show();
         }
@@ -1973,8 +1985,8 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../20-autograd-applications/20-jax-applications.html"
@@ -2001,7 +2013,9 @@ if (typeof version == 'undefined') {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2036,9 +2050,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -2062,8 +2077,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

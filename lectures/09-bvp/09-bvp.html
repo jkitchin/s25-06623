@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Boundary Value Problems in differential equations &#8212; f23-06623</title>
+    <title>Boundary Value Problems in differential equations &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/09-bvp/09-bvp';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Advanced topics in nonlinear algebra" href="../08-nla-2/08-nla-2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/09-bvp/09-bvp.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/09-bvp/09-bvp.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/09-bvp/09-bvp.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/09-bvp/09-bvp.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/09-bvp/09-bvp.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/09-bvp/09-bvp.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -523,11 +519,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="boundary-value-problems-in-differential-equations">
-<h1>Boundary Value Problems in differential equations<a class="headerlink" href="#boundary-value-problems-in-differential-equations" title="Permalink to this heading">#</a></h1>
+<h1>Boundary Value Problems in differential equations<a class="headerlink" href="#boundary-value-problems-in-differential-equations" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>KEYWORDS: scipy.integrate.solve_bvp, numpy.polyfit</p></li>
 </ul>
@@ -536,7 +532,7 @@ document.write(`
 <p>Sometimes that is not the case, and the initial conditions are defined at <em>different</em> independent variable values. These problems are called <em>boundary value</em> problems, because we only know part of the solution at different boundaries.</p>
 <p>We cannot solve these directly with <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>, we need some different approaches.</p>
 <section id="solving-nonlinear-bvps-by-finite-differences">
-<h2>Solving nonlinear BVPs by finite differences<a class="headerlink" href="#solving-nonlinear-bvps-by-finite-differences" title="Permalink to this heading">#</a></h2>
+<h2>Solving nonlinear BVPs by finite differences<a class="headerlink" href="#solving-nonlinear-bvps-by-finite-differences" title="Link to this heading">#</a></h2>
 <p>Adapted from Example 8.7 in <span class="underline">Numerical Methods in Engineering with Python</span> by Jaan Kiusalaas.</p>
 <p>We want to solve <span class="math notranslate nohighlight">\(y''(x) = -3 y(x) y'(x)\)</span> with <span class="math notranslate nohighlight">\(y(0) = 0\)</span> and <span class="math notranslate nohighlight">\(y(2) = 1\)</span>.</p>
 <p><img alt="image.png" src="../../_images/bvp-fd.png" /></p>
@@ -544,8 +540,8 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(y''(x) \approx \frac{y_{i-1} - 2 y_i + y_{i+1}}{h^2} \)</span></p>
 <p><span class="math notranslate nohighlight">\(y'(x) \approx \frac{y_{i+1} - y_{i-1}}{2 h} \)</span></p>
 <p>We define a function <span class="math notranslate nohighlight">\(y''(x) = F(x, y, y')\)</span>. At each node in our discretized region, we will have an equation that looks like <span class="math notranslate nohighlight">\(y''(x) - F(x, y, y') = 0\)</span>, which will be nonlinear in the unknown solution <span class="math notranslate nohighlight">\(y\)</span>. The set of equations to solve is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cc0ed20d-4879-44ad-818c-9656afc620d1">
-<span class="eqno">(2)<a class="headerlink" href="#equation-cc0ed20d-4879-44ad-818c-9656afc620d1" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-a183ebae-f190-404f-8bc3-fda2f78d164b">
+<span class="eqno">(2)<a class="headerlink" href="#equation-a183ebae-f190-404f-8bc3-fda2f78d164b" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_0 - \alpha &amp;=&amp; 0 \\
 \frac{y_{i-1} - 2 y_i + y_{i+1}}{h^2} + (3 y_i) \left(\frac{y_{i+1} - y_{i-1}}{2 h}\right) &amp;=&amp; 0 \\
 y_L - \beta &amp;=&amp;0
@@ -581,7 +577,7 @@ y_L - \beta &amp;=&amp;0
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.        , 0.22222222, 0.44444444, 0.66666667, 0.88888889,
         1.11111111, 1.33333333, 1.55555556, 1.77777778, 2.        ]),
- 0.2222222222222222)
+ np.float64(0.2222222222222222))
 </pre></div>
 </div>
 </div>
@@ -644,7 +640,7 @@ y_L - \beta &amp;=&amp;0
        0.55555556, 0.66666667, 0.77777778, 0.88888889, 1.        ])
 </pre></div>
 </div>
-<img alt="../../_images/d7733fff435127874739debf9c00f111f0d5989efa0e0d4a414981b0e64578f0.png" src="../../_images/d7733fff435127874739debf9c00f111f0d5989efa0e0d4a414981b0e64578f0.png" />
+<img alt="../../_images/fa880ce7634938075d2ca13b2795eb4a11afa81cb1fdbf5d8b727e386cfb5cd9.png" src="../../_images/fa880ce7634938075d2ca13b2795eb4a11afa81cb1fdbf5d8b727e386cfb5cd9.png" />
 </div>
 </div>
 <p>We should check our residuals function. We mostly want to see that it runs, and produces the right shaped output.</p>
@@ -677,7 +673,8 @@ y_L - \beta &amp;=&amp;0
             5.304e-10  7.041e-10 -8.994e-10  4.300e-10  0.000e+00]
        x: [-1.779e-24  3.359e-01  6.041e-01  7.824e-01  8.870e-01
             9.438e-01  9.734e-01  9.886e-01  9.962e-01  1.000e+00]
-    nfev: 20
+  method: hybr
+    nfev: 22
     fjac: [[-5.121e-02 -9.987e-01 ...  1.926e-16  0.000e+00]
            [ 1.034e-01 -5.303e-03 ...  7.915e-03  0.000e+00]
            ...
@@ -700,7 +697,7 @@ y_L - \beta &amp;=&amp;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c92394d13f83340c49383c3a18a1ee1fdc61290f24695b3201639f6103c90ac2.png" src="../../_images/c92394d13f83340c49383c3a18a1ee1fdc61290f24695b3201639f6103c90ac2.png" />
+<img alt="../../_images/fd6fe5a24583470efc11c9d1ac868c290c9eea97ee99f7d9fd11befb3933893c.png" src="../../_images/fd6fe5a24583470efc11c9d1ac868c290c9eea97ee99f7d9fd11befb3933893c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -738,7 +735,7 @@ y_L - \beta &amp;=&amp;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.854956632740823e-09
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.854956632740823e-09)
 </pre></div>
 </div>
 </div>
@@ -758,7 +755,7 @@ y_L - \beta &amp;=&amp;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/655b6eedb9446c3cb1c4946fd31911332cc5141732981a80be3cb33aac56f903.png" src="../../_images/655b6eedb9446c3cb1c4946fd31911332cc5141732981a80be3cb33aac56f903.png" />
+<img alt="../../_images/bea978ca9c7c8e849c857a7e6f87fae3984315dc65e1dd1c48d0484419ac8555.png" src="../../_images/bea978ca9c7c8e849c857a7e6f87fae3984315dc65e1dd1c48d0484419ac8555.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -768,7 +765,7 @@ y_L - \beta &amp;=&amp;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.7792817396280564e-24
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-1.7792817396280564e-24)
 </pre></div>
 </div>
 </div>
@@ -783,7 +780,7 @@ y_L - \beta &amp;=&amp;0
 <p>As we have seen before, however, there are functions in <code class="docutils literal notranslate"><span class="pre">scipy</span></code> that can help solve these problems.</p>
 </section>
 <section id="introduction-to-solve-bvp">
-<h2>Introduction to solve_bvp<a class="headerlink" href="#introduction-to-solve-bvp" title="Permalink to this heading">#</a></h2>
+<h2>Introduction to solve_bvp<a class="headerlink" href="#introduction-to-solve-bvp" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_bvp</span>
@@ -794,7 +791,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <section id="a-worked-bvp-problem">
-<h3>A worked bvp problem<a class="headerlink" href="#a-worked-bvp-problem" title="Permalink to this heading">#</a></h3>
+<h3>A worked bvp problem<a class="headerlink" href="#a-worked-bvp-problem" title="Link to this heading">#</a></h3>
 <p>In the pressure driven flow of a fluid with viscosity <span class="math notranslate nohighlight">\(\mu\)</span> between two stationary plates separated by distance <span class="math notranslate nohighlight">\(d\)</span> and driven by a pressure drop <span class="math notranslate nohighlight">\(\Delta P/\Delta x\)</span>, the governing equations on the velocity <span class="math notranslate nohighlight">\(u\)</span> of the fluid are (assuming flow in the x-direction with the velocity varying only in the y-direction):</p>
 <div class="math notranslate nohighlight">
 \[\frac{\Delta P}{\Delta x} = \mu \frac{d^2u}{dy^2}\]</div>
@@ -899,7 +896,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bb194e305c9afe52dd19b0ba128571564f9763e13609d796fc4a31e6dd4b4d63.png" src="../../_images/bb194e305c9afe52dd19b0ba128571564f9763e13609d796fc4a31e6dd4b4d63.png" />
+<img alt="../../_images/10523264bb7d34b48c02925a88ede59a7840769f43be8bc938db9d977c803b9a.png" src="../../_images/10523264bb7d34b48c02925a88ede59a7840769f43be8bc938db9d977c803b9a.png" />
 </div>
 </div>
 <p>We also need a guess for U2, and in this case we know that <span class="math notranslate nohighlight">\(u2 = u1'\)</span>, so we just use that.</p>
@@ -938,7 +935,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/38424dd391cf771a9515de4305f471b1425b01a30e472ca366449bbf17a8c6d3.png" src="../../_images/38424dd391cf771a9515de4305f471b1425b01a30e472ca366449bbf17a8c6d3.png" />
+<img alt="../../_images/d246d2b6d63d63e479df68c869ed6afe96fa0b0b0adb0904878641c071536778.png" src="../../_images/d246d2b6d63d63e479df68c869ed6afe96fa0b0b0adb0904878641c071536778.png" />
 </div>
 </div>
 <p>Now, we are ready to solve the BVP. Let’s check that all the functions work correctly, e.g. they don’t result in errors and return the right things.</p>
@@ -981,7 +978,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3.845925372767128e-16, 3.259501984833874e-16]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(-3.845925372767128e-16), np.float64(3.259501984833874e-16)]
 </pre></div>
 </div>
 </div>
@@ -1002,13 +999,13 @@ solve_bvp<span class="o">?</span>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The algorithm converged to the desired accuracy.
 </pre></div>
 </div>
-<img alt="../../_images/e29d5df389bffe76703c12f9f9b137c98f578518e3169e4b5f9c7fb483c5c995.png" src="../../_images/e29d5df389bffe76703c12f9f9b137c98f578518e3169e4b5f9c7fb483c5c995.png" />
+<img alt="../../_images/9035ae54c745e5d6757157d68536ae73d5861c5b3204f014c8f03b139d302548.png" src="../../_images/9035ae54c745e5d6757157d68536ae73d5861c5b3204f014c8f03b139d302548.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="some-alternate-ways-to-make-initial-guesses">
-<h2>Some alternate ways to make initial guesses<a class="headerlink" href="#some-alternate-ways-to-make-initial-guesses" title="Permalink to this heading">#</a></h2>
+<h2>Some alternate ways to make initial guesses<a class="headerlink" href="#some-alternate-ways-to-make-initial-guesses" title="Link to this heading">#</a></h2>
 <p>There are many ways to approach this. Anything with a smooth hump is likely to work.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1020,7 +1017,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1384c8f4b8ac23ceab26de2cef361e61b847f4ea7354456aa642748fb2b256af.png" src="../../_images/1384c8f4b8ac23ceab26de2cef361e61b847f4ea7354456aa642748fb2b256af.png" />
+<img alt="../../_images/2d6fd78116ac40500dffa4a668cf5e6a859a57093fece1889094fc9ad3ab25b1.png" src="../../_images/2d6fd78116ac40500dffa4a668cf5e6a859a57093fece1889094fc9ad3ab25b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1041,7 +1038,7 @@ solve_bvp<span class="o">?</span>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The algorithm converged to the desired accuracy.
 </pre></div>
 </div>
-<img alt="../../_images/fab2bcdd08e74e9daef7af32640d7ef576d20732c0cf675670f697caa35a3f1b.png" src="../../_images/fab2bcdd08e74e9daef7af32640d7ef576d20732c0cf675670f697caa35a3f1b.png" />
+<img alt="../../_images/3a8bb1fc429c15651c4ec0e253651645cc81deec828b0c2acda007ebfc973600.png" src="../../_images/3a8bb1fc429c15651c4ec0e253651645cc81deec828b0c2acda007ebfc973600.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1066,7 +1063,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/706809b06d77ec9658d169a0b1224339bb2243d68b5b93764f9742c1e734c4f6.png" src="../../_images/706809b06d77ec9658d169a0b1224339bb2243d68b5b93764f9742c1e734c4f6.png" />
+<img alt="../../_images/f119082f5a56bdaca51118072b1b318d473a2a8cccb9ceeb86ef075296c0187a.png" src="../../_images/f119082f5a56bdaca51118072b1b318d473a2a8cccb9ceeb86ef075296c0187a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1087,13 +1084,13 @@ solve_bvp<span class="o">?</span>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The algorithm converged to the desired accuracy.
 </pre></div>
 </div>
-<img alt="../../_images/91207c9ba59b4a62c801afe14407697903bc5aea947168e7cc1f028d229e9514.png" src="../../_images/91207c9ba59b4a62c801afe14407697903bc5aea947168e7cc1f028d229e9514.png" />
+<img alt="../../_images/0c5c8e268f47aecdfabb3de8746a0aba1b67eef120f84bed07bc677bb5463969.png" src="../../_images/0c5c8e268f47aecdfabb3de8746a0aba1b67eef120f84bed07bc677bb5463969.png" />
 </div>
 </div>
 <p><strong>exercise</strong> Try using different guesses, e.g. lines, or triangle shapes, etc. What else looks like this shape? Half a cycle of a sin wave? A semi-circle?</p>
 <p><strong>exercise</strong> How can you show this is a solution to the BVP?</p>
 <section id="concentration-profile-in-a-particle">
-<h3>Concentration profile in a particle<a class="headerlink" href="#concentration-profile-in-a-particle" title="Permalink to this heading">#</a></h3>
+<h3>Concentration profile in a particle<a class="headerlink" href="#concentration-profile-in-a-particle" title="Link to this heading">#</a></h3>
 <p>Another typical boundary value problem in chemical engineering is the concentration profile inside a catalyst particle. Here is the dimensionless equation for a second order reaction in a slab. Note here we have a boundary condition on the derivative at the origin. This kind of condition means either there is no flux at this position, or that the slab is symmetric about this position.</p>
 <p><span class="math notranslate nohighlight">\(\frac{d^2c}{dx^2} = \Phi^2 c^2\)</span></p>
 <p>with <span class="math notranslate nohighlight">\(c'(0)\)</span> = 0 and <span class="math notranslate nohighlight">\(c(1) = 1\)</span></p>
@@ -1140,7 +1137,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ce40592dcd00d6558e9e07c017a0fb7b11f710267b318315cbf9afa4ac05c357.png" src="../../_images/ce40592dcd00d6558e9e07c017a0fb7b11f710267b318315cbf9afa4ac05c357.png" />
+<img alt="../../_images/a9b1b72903b2ed6a126da167d85ceb8441c6f8cff876fe693ac728df23e50ecb.png" src="../../_images/a9b1b72903b2ed6a126da167d85ceb8441c6f8cff876fe693ac728df23e50ecb.png" />
 </div>
 </div>
 <p>Now we solve the system.</p>
@@ -1169,7 +1166,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/68329355a37ae172f7c7890ea2d2e48f3e79c83dc17c6143038ea4215524bedf.png" src="../../_images/68329355a37ae172f7c7890ea2d2e48f3e79c83dc17c6143038ea4215524bedf.png" />
+<img alt="../../_images/8bf2f871a44edc50cdc24b35e12c41ad2b8930233324219cb6af9d5be1589991.png" src="../../_images/8bf2f871a44edc50cdc24b35e12c41ad2b8930233324219cb6af9d5be1589991.png" />
 </div>
 </div>
 <p>You can see the solution looks nothing like our initial guess. In this case, a high thiele modulus means most of the reaction happens near the catalyst surface, and the interior of the slab has hardly any reactant in it. This solution is consistent with that.</p>
@@ -1201,7 +1198,21 @@ solve_bvp<span class="o">?</span>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.016528962860989864
-0.01633462094482092
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2661/1011323283.py:2: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  print(np.trapz(c**2, sol.x))
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">c</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simps</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">simps</span><span class="p">(</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;simps&#39; from &#39;scipy.integrate&#39; (/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/scipy/integrate/__init__.py)
 </pre></div>
 </div>
 </div>
@@ -1234,7 +1245,7 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.016329985883573497, 9.761482252156627e-09)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.016329985883573525, 9.76148225276428e-09)
 </pre></div>
 </div>
 </div>
@@ -1283,7 +1294,7 @@ solve_bvp<span class="o">?</span>
 </section>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Today, we leveraged the ability to solve systems of nonlinear algebraic equations to solve boundary value problems by discretizing them on a grid, approximating them at the grid points, and then solving the resulting nonlinear equations.</p>
 <p>We also learned about the solve_bvp function, which is in scipy.integrate to solve systems of first-order boundary value problems.</p>
 <p>Next time, we will return to nonlinear algebra to see how the algorithms can be used to find minima and maxima.</p>
@@ -1295,13 +1306,13 @@ solve_bvp<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="RMBeLZRSqabe" data-shufflequestions="False"
+<div class="output text_html"><div id="wAZRflpuGVIQ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#RMBeLZRSqabe {
+#wAZRflpuGVIQ {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1471,7 +1482,7 @@ solve_bvp<span class="o">?</span>
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsRMBeLZRSqabe=[
+</style></div><script type="application/javascript">var questionswAZRflpuGVIQ=[
   {
     "question": "Using finite difference method, find the values of y', <br>if y = [3.,  5.,  7.,  9., 11., 13.]<br>h = 0.2, and the end points are at 1, 15.",
     "type": "multiple_choice",
@@ -1502,11 +1513,11 @@ solve_bvp<span class="o">?</span>
     "answers": [
       {
         "answer": "[-0.87, -0.87]",
-        "correct": true
+        "correct": false
       },
       {
         "answer": "[-0.87, -0.98]",
-        "correct": false
+        "correct": true
       },
       {
         "answer": "[-0.98, -0.98]",
@@ -2462,8 +2473,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("RMBeLZRSqabe")) {
-            show_questions(questionsRMBeLZRSqabe,  RMBeLZRSqabe); 
+          if(document.getElementById("wAZRflpuGVIQ")) {
+            show_questions(questionswAZRflpuGVIQ,  wAZRflpuGVIQ); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2472,8 +2483,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("RMBeLZRSqabe");
-        // console.log(document.getElementById("RMBeLZRSqabe"));
+        //console.log("wAZRflpuGVIQ");
+        // console.log(document.getElementById("wAZRflpuGVIQ"));
 
         try_show();
         }
@@ -2509,8 +2520,8 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../08-nla-2/08-nla-2.html"
@@ -2537,7 +2548,9 @@ if (typeof version == 'undefined') {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2576,9 +2589,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -2602,8 +2616,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

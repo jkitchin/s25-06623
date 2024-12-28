@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction to optimization &#8212; f23-06623</title>
+    <title>Introduction to optimization &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/10-min-max/10-min-max';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Boundary Value Problems in differential equations" href="../09-bvp/09-bvp.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/10-min-max/10-min-max.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/10-min-max/10-min-max.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/10-min-max/10-min-max.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/10-min-max/10-min-max.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/10-min-max/10-min-max.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/10-min-max/10-min-max.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -527,11 +523,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-optimization">
-<h1>Introduction to optimization<a class="headerlink" href="#introduction-to-optimization" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to optimization<a class="headerlink" href="#introduction-to-optimization" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>KEYWORDS: scipy.optimize.minimize</p></li>
 </ul>
@@ -539,7 +535,7 @@ document.write(`
 <img alt="map" src="../../_images/06623-roadmap.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="function-extrema">
-<h1>Function extrema<a class="headerlink" href="#function-extrema" title="Permalink to this heading">#</a></h1>
+<h1>Function extrema<a class="headerlink" href="#function-extrema" title="Link to this heading">#</a></h1>
 <p>It is pretty common to need to find extreme values of a function in engineering analysis. An extreme value is often a maximum or minimum in a function, and we seek them when we want to maximize a profit function, or minimize a cost function, identify a maximum safe operating condition, etc.</p>
 <p>Let’s consider an example function with a graphical solution approach. We want a quantitative estimate of the minimum in this function.</p>
 <p>The function is <span class="math notranslate nohighlight">\(f(x) = x^2 + \exp(-5 x^2)\)</span></p>
@@ -563,7 +559,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a7927228c2fec4865a23baf78986e1e7d9fe5cb8db2680eab853ac6b063be11d.png" src="../../_images/a7927228c2fec4865a23baf78986e1e7d9fe5cb8db2680eab853ac6b063be11d.png" />
+<img alt="../../_images/caeb703aaf0729b52c65cd8222602ee025b2de1549a5bc473b1e7f4d8ef7790b.png" src="../../_images/caeb703aaf0729b52c65cd8222602ee025b2de1549a5bc473b1e7f4d8ef7790b.png" />
 </div>
 </div>
 <p>You can see there is a minimum near +/- 0.6. We can find the minimum in a crude kind of way by finding the index of the minimum value in the y-array, and then getting the corresponding value of the x-array. You control the accuracy of this answer by the number of points you discretize the function over.</p>
@@ -596,7 +592,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5262433682550042
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.5262433682550042)
 </pre></div>
 </div>
 </div>
@@ -609,7 +605,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(18)
 </pre></div>
 </div>
 </div>
@@ -621,7 +617,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.5306122448979593, 0.5262433682550042)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(-0.5306122448979593), np.float64(0.5262433682550042))
 </pre></div>
 </div>
 </div>
@@ -634,7 +630,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e82a599126c67843cf932098fe349753aafdba3c3e3c0fe74194650313d84c03.png" src="../../_images/e82a599126c67843cf932098fe349753aafdba3c3e3c0fe74194650313d84c03.png" />
+<img alt="../../_images/096d1be1e1509658de4cbe9b567f74a9f433c50ef94e63b0d6ebb84e79fb59d4.png" src="../../_images/096d1be1e1509658de4cbe9b567f74a9f433c50ef94e63b0d6ebb84e79fb59d4.png" />
 </div>
 </div>
 <p>You can get a more accurate solution by using a finer grid of points.</p>
@@ -652,7 +648,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5673711580772052
 </pre></div>
 </div>
-<img alt="../../_images/f435489bc735aacb44a72686f15da7d11d2b2264983f355e9ba494ef71ff66f2.png" src="../../_images/f435489bc735aacb44a72686f15da7d11d2b2264983f355e9ba494ef71ff66f2.png" />
+<img alt="../../_images/147f2314141f35f95068ec0511a0084b1d03f3812e519630d689f077f49fa017.png" src="../../_images/147f2314141f35f95068ec0511a0084b1d03f3812e519630d689f077f49fa017.png" />
 </div>
 </div>
 <p>What are the pros and cons of this method:</p>
@@ -669,7 +665,7 @@ document.write(`
 <li><p>Not scalable to large problems, your time to do this becomes a limiting factor.</p></li>
 </ol>
 <section id="find-the-derivative-and-solve-for-where-it-is-zero">
-<h2>Find the derivative, and solve for where it is zero<a class="headerlink" href="#find-the-derivative-and-solve-for-where-it-is-zero" title="Permalink to this heading">#</a></h2>
+<h2>Find the derivative, and solve for where it is zero<a class="headerlink" href="#find-the-derivative-and-solve-for-where-it-is-zero" title="Link to this heading">#</a></h2>
 <p>We can also derive the first derivative:</p>
 <p><span class="math notranslate nohighlight">\(f' = 2 * x + e^{-5 x^2} (-10 * x)\)</span></p>
 <p>and solve it for zero using root.</p>
@@ -692,7 +688,8 @@ document.write(`
   status: 1
      fun: [ 0.000e+00]
        x: [ 0.000e+00]
-    nfev: 7
+  method: hybr
+    nfev: 9
     fjac: [[-1.000e+00]]
        r: [ 8.000e+00]
      qtf: [ 2.465e-32]
@@ -722,7 +719,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0f1864fbbdc6ec512683e5f824dc09d3013237e6d5b5f1a4896b3811b6d68a8e.png" src="../../_images/0f1864fbbdc6ec512683e5f824dc09d3013237e6d5b5f1a4896b3811b6d68a8e.png" />
+<img alt="../../_images/c9a2dd0f46dcc9e4772b78eb08ddf1f08ddfc8e07e269b0ce63122df829356df.png" src="../../_images/c9a2dd0f46dcc9e4772b78eb08ddf1f08ddfc8e07e269b0ce63122df829356df.png" />
 </div>
 </div>
 <p>Let us try again with a different guess.</p>
@@ -739,7 +736,8 @@ document.write(`
   status: 1
      fun: [ 2.665e-15]
        x: [ 5.674e-01]
-    nfev: 6
+  method: hybr
+    nfev: 8
     fjac: [[-1.000e+00]]
        r: [-6.438e+00]
      qtf: [-4.850e-09]
@@ -766,7 +764,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f435489bc735aacb44a72686f15da7d11d2b2264983f355e9ba494ef71ff66f2.png" src="../../_images/f435489bc735aacb44a72686f15da7d11d2b2264983f355e9ba494ef71ff66f2.png" />
+<img alt="../../_images/147f2314141f35f95068ec0511a0084b1d03f3812e519630d689f077f49fa017.png" src="../../_images/147f2314141f35f95068ec0511a0084b1d03f3812e519630d689f077f49fa017.png" />
 </div>
 </div>
 <p>This depends on your ability to correctly derive and implement the derivative. It is good to know you can solve this problem by more than one method. Here, we use a numerical derivative in the function instead to check our derivative. You can check the convergence of the derivative by varying the dx.</p>
@@ -817,7 +815,7 @@ The second derivative is [6.43775165]
 <p>These look the same within tolerance. This is not a beautiful solution, but it is hard to argue with success here!</p>
 </section>
 <section id="newton-raphson-method-of-minima-finding">
-<h2>Newton-Raphson method of minima finding<a class="headerlink" href="#newton-raphson-method-of-minima-finding" title="Permalink to this heading">#</a></h2>
+<h2>Newton-Raphson method of minima finding<a class="headerlink" href="#newton-raphson-method-of-minima-finding" title="Link to this heading">#</a></h2>
 <p>Finding a minimum is like finding <span class="math notranslate nohighlight">\(f'(x) = 0)\)</span>. We already know how to use Newton’s method to solve <span class="math notranslate nohighlight">\(g(x) = 0\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(x_{new} = x_{old} + \frac{g(x_{old})}{g'(x_{old})}\)</span>.</p>
 <p>We can substitutue in <span class="math notranslate nohighlight">\(g(x) = f'(x)\)</span> here to a new formula to find the minimum of a function.</p>
@@ -848,7 +846,10 @@ The second derivative is [6.43775165]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5673513747994342, 0.5218875824868201, array(-8.71627422e-12), 5)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.5673513747994342),
+ np.float64(0.5218875824868201),
+ array(-8.71627422e-12),
+ 5)
 </pre></div>
 </div>
 </div>
@@ -858,7 +859,7 @@ The second derivative is [6.43775165]
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="scipy-optimize-minimize">
-<h1>scipy.optimize.minimize<a class="headerlink" href="#scipy-optimize-minimize" title="Permalink to this heading">#</a></h1>
+<h1>scipy.optimize.minimize<a class="headerlink" href="#scipy-optimize-minimize" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
@@ -911,7 +912,7 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8b428dbd5668883b0f8facb11c7e845e18d137533da3de6de38d256173556615.png" src="../../_images/8b428dbd5668883b0f8facb11c7e845e18d137533da3de6de38d256173556615.png" />
+<img alt="../../_images/d028719be17f0138641d843059dd34cb952c44adbccb25fcbcbffd7bdb541641.png" src="../../_images/d028719be17f0138641d843059dd34cb952c44adbccb25fcbcbffd7bdb541641.png" />
 </div>
 </div>
 <p>Note this answer is only the same in the first 4 decimal places. Remember that these iterative approaches stop when a tolerance is met. Check the defaults on minimize!</p>
@@ -920,7 +921,7 @@ minimize<span class="o">?</span>
 <p>There are some legacy minimization functions like <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fmin</span></code> that also work, but they are no longer preferred and are less flexible than <code class="docutils literal notranslate"><span class="pre">minimize</span></code>.</p>
 </div>
 <section id="multiple-minima">
-<h2>Multiple minima<a class="headerlink" href="#multiple-minima" title="Permalink to this heading">#</a></h2>
+<h2>Multiple minima<a class="headerlink" href="#multiple-minima" title="Link to this heading">#</a></h2>
 <p>It is possible for functions to have more than one minimum. In this case, your guess will determine which minimum is found. Here is an example where there is a minimum near 2.2, and one near 4.5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -937,7 +938,7 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cd81a548c9677dbb0a478455571cc4cbeee18fcc402a4d0f209a533742790689.png" src="../../_images/cd81a548c9677dbb0a478455571cc4cbeee18fcc402a4d0f209a533742790689.png" />
+<img alt="../../_images/2aa9d421eb6e2ac3d82d2f37b91b61e3e31cf2bb59c681814fa03e86d1d9e15b.png" src="../../_images/2aa9d421eb6e2ac3d82d2f37b91b61e3e31cf2bb59c681814fa03e86d1d9e15b.png" />
 </div>
 </div>
 <p>This guess finds the one near 2.2:</p>
@@ -1009,7 +1010,7 @@ minimize<span class="o">?</span>
 <p>You have to decide which one is better for the problem at hand. If this were a cost function, the one at the lower cost is probably better! Note that all we can say here is which one is lower in the interval we are looking at. By inspection of the function, you can see it will be periodic, so there will be many other minima that also exist.</p>
 </section>
 <section id="finding-maxima">
-<h2>Finding maxima<a class="headerlink" href="#finding-maxima" title="Permalink to this heading">#</a></h2>
+<h2>Finding maxima<a class="headerlink" href="#finding-maxima" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">minimize</span></code> is for finding <em>minima</em>. We can use it to find maxima though, by finding the <em>minima</em> of <span class="math notranslate nohighlight">\(-f(x)\)</span>. You can see here that when we plot <span class="math notranslate nohighlight">\(-h(x)\)</span> the minima becomes maxima, and vice-versa. Now you can see there are two definite minima, one near zero, and one near 3.5, which correspond to the maxima of <span class="math notranslate nohighlight">\(h(x)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1020,7 +1021,7 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c918607b064b7c4310c86e4907f773282dd59cc9ddd7801b99368cd5d4e946a2.png" src="../../_images/c918607b064b7c4310c86e4907f773282dd59cc9ddd7801b99368cd5d4e946a2.png" />
+<img alt="../../_images/1343a05fd101e1783e8ebdd9e65e81a868ebf057888a3bf7e56a84ca55e85269.png" src="../../_images/1343a05fd101e1783e8ebdd9e65e81a868ebf057888a3bf7e56a84ca55e85269.png" />
 </div>
 </div>
 <p>The standard way to use minimize is to define an optional argument for the sign that defaults to one. Then, when we call minimize, we will pass -1 as the sign to the function, so we find the minimum of -h(x). Then, we evaluate h(x) at that x-value to get the actual value of the maximum. It is not necessary to do this, you can also manually pass around the sign and try to keep it straight.</p>
@@ -1051,7 +1052,7 @@ minimize<span class="o">?</span>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the maximum is 1.56 at x=3.64
 </pre></div>
 </div>
-<img alt="../../_images/bed6e9c6732b7365580005863fb55beececd02bc1279f5024417448801feb900.png" src="../../_images/bed6e9c6732b7365580005863fb55beececd02bc1279f5024417448801feb900.png" />
+<img alt="../../_images/c3cff0f1f3e7f0510407e97f19f0767f527c7330f291405e9b6ef6c783bc5bb0.png" src="../../_images/c3cff0f1f3e7f0510407e97f19f0767f527c7330f291405e9b6ef6c783bc5bb0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1098,7 +1099,7 @@ minimize<span class="o">?</span>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the maximum is 1.56 at x=3.64
 </pre></div>
 </div>
-<img alt="../../_images/febf1d11302e3ceae1eacdd565d3782c0d2bdc304e58ab4cef4fcaa20ea97a79.png" src="../../_images/febf1d11302e3ceae1eacdd565d3782c0d2bdc304e58ab4cef4fcaa20ea97a79.png" />
+<img alt="../../_images/3ed2a4af7f7ee3124388bad47549d4ac7ac46e0e3a4878eed8a5118d8d782233.png" src="../../_images/3ed2a4af7f7ee3124388bad47549d4ac7ac46e0e3a4878eed8a5118d8d782233.png" />
 </div>
 </div>
 <p>The function is periodic though, and depending on your guess you can find some surprising results. Here we make many guesses in the domain. Surprisingly, some solutions are found outside of it! We can visualize the solutions found in a histogram.</p>
@@ -1110,7 +1111,7 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/46f4f6dc00fb6ab6cf02775394064fa58dba78ac6a21b3ed79670f68561a0c46.png" src="../../_images/46f4f6dc00fb6ab6cf02775394064fa58dba78ac6a21b3ed79670f68561a0c46.png" />
+<img alt="../../_images/6773a3f414fb7c6350df763a820a393bb1e28343def11afda29a5ad123103dea.png" src="../../_images/6773a3f414fb7c6350df763a820a393bb1e28343def11afda29a5ad123103dea.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1126,13 +1127,13 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d016113a4ab1ed8e50ff2f5684b7a3df3b3129cd039470d9b0b2baa4aab1af87.png" src="../../_images/d016113a4ab1ed8e50ff2f5684b7a3df3b3129cd039470d9b0b2baa4aab1af87.png" />
+<img alt="../../_images/bd9c2f7c4b8616fb5efd6a175340b2f36f89ca9b3a7b734f03bffa71c52dcdec.png" src="../../_images/bd9c2f7c4b8616fb5efd6a175340b2f36f89ca9b3a7b734f03bffa71c52dcdec.png" />
 </div>
 </div>
 <p>Once again, here you have to decide which maximum is relevant</p>
 </section>
 <section id="application-to-maximizing-profit-in-a-pfr">
-<h2>Application to maximizing profit in a PFR<a class="headerlink" href="#application-to-maximizing-profit-in-a-pfr" title="Permalink to this heading">#</a></h2>
+<h2>Application to maximizing profit in a PFR<a class="headerlink" href="#application-to-maximizing-profit-in-a-pfr" title="Link to this heading">#</a></h2>
 <p>Compound X with concentration of <span class="math notranslate nohighlight">\(C_{X0} = 2.5\)</span> kmol / m<sup>3</sup> at a flow rate of 12 m<sup>3</sup>/min is converted to Y in a first order reaction with a rate constant of 30 1/min in a tubular reactor. The value of Y is $1.5/kmol. The cost of operation is $2.50 per minute per m<sup>3</sup>. Find the reactor length that maximizes the profit (profit is value of products minus operating costs).</p>
 <p>First, consider why there is a maximum. At low volumes the operating cost is low, and the production of Y is low. At high volumes, you maximize production of Y, so you have the most value, but the operating costs go up (to infinity for complete conversion!). Somewhere in the middle is where a maximum is.</p>
 <p>Here are some relevant constants.</p>
@@ -1194,7 +1195,7 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.999999935332582
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(19.999999935332582)
 </pre></div>
 </div>
 </div>
@@ -1213,11 +1214,11 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
- 38.662803773064404,
- 32.49983056415947,
- 26.249999599753814,
- 19.999999935332582]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(0.0),
+ np.float64(38.662803773064404),
+ np.float64(32.49983056415947),
+ np.float64(26.249999599753814),
+ np.float64(19.999999935332582)]
 </pre></div>
 </div>
 </div>
@@ -1254,10 +1255,10 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10.0, 38.662803773064404)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(10.0), np.float64(38.662803773064404))
 </pre></div>
 </div>
-<img alt="../../_images/f035607cf74254f59be87ef40431a1d9cf450175c5773e68315eb99a467d863d.png" src="../../_images/f035607cf74254f59be87ef40431a1d9cf450175c5773e68315eb99a467d863d.png" />
+<img alt="../../_images/5c5958128ca54d5c9a672dd9c808e059662cfb1a1b2e0d51ea037661f5581025.png" src="../../_images/5c5958128ca54d5c9a672dd9c808e059662cfb1a1b2e0d51ea037661f5581025.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1274,7 +1275,7 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d48e88a0abe840f2fe55fe0a122fa7eebe5ebee39563e1021a1b9897c002a41b.png" src="../../_images/d48e88a0abe840f2fe55fe0a122fa7eebe5ebee39563e1021a1b9897c002a41b.png" />
+<img alt="../../_images/cd755513485dfef12b3704955fc12520c6381a8e8432bde35a620490416750f4.png" src="../../_images/cd755513485dfef12b3704955fc12520c6381a8e8432bde35a620490416750f4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1284,7 +1285,7 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5510204081632653
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.5510204081632653)
 </pre></div>
 </div>
 </div>
@@ -1311,7 +1312,7 @@ minimize<span class="o">?</span>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <p>Today we introduced the concept of finding minima/maxima in functions. This is an iterative process, much like finding the roots of a nonlinear function. You can think of it as finding the zeros of the derivative of a nonlinear function! This method is the root of many important optimization problems including regression.</p>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> is the preferred function for doing minimization. There are other more specific ones described at <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">https://docs.scipy.org/doc/scipy/reference/optimize.html</a>, but <code class="docutils literal notranslate"><span class="pre">minimize</span></code> has a more consistent interface and provides almost all the functionality of those other methods.</p>
 <p>Next time, we will look at how to apply minimization to regression problems.</p>
@@ -1323,13 +1324,13 @@ minimize<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="wQeErgSwyyXM" data-shufflequestions="False"
+<div class="output text_html"><div id="OCRTcqbCAqjQ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#wQeErgSwyyXM {
+#OCRTcqbCAqjQ {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1349,8 +1350,8 @@ minimize<span class="o">?</span>
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
@@ -1368,18 +1369,48 @@ minimize<span class="o">?</span>
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -1406,7 +1437,7 @@ minimize<span class="o">?</span>
 }
 
 .Input-text:focus {
-    outline: none;
+    /*outline: none;*/
     background-color: var(--jq-numeric-input-bg);
     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
@@ -1415,6 +1446,7 @@ minimize<span class="o">?</span>
     background: var(--jq-mc-button-bg);
     border: 1px solid var(--jq-mc-button-border);
     border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -1443,10 +1475,10 @@ minimize<span class="o">?</span>
 }
 
 .NumericQn {
-    padding: 10px;
     background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
     border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
 }
 
 .NumericQn p {
@@ -1454,11 +1486,11 @@ minimize<span class="o">?</span>
 }
 
 .InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
     color: var(--jq-numeric-input-label);
+    float: left;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
@@ -1475,17 +1507,17 @@ minimize<span class="o">?</span>
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
@@ -1499,7 +1531,7 @@ minimize<span class="o">?</span>
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionswQeErgSwyyXM=[
+</style></div><script type="application/javascript">var questionsOCRTcqbCAqjQ=[
   {
     "question": "What will be the output of <br>a = [1, 2, 3]; b = 5<br>print(max(*a, b))",
     "type": "multiple_choice",
@@ -1777,6 +1809,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -1798,17 +1833,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -1830,7 +1864,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -1842,9 +1876,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -1853,9 +1887,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -1863,7 +1897,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -1952,9 +1986,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -1974,7 +2008,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -1986,8 +2025,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -2070,9 +2107,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -2082,12 +2117,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -2098,9 +2133,9 @@ function check_numeric(ths, event) {
             if ('value' in answer) {
                 if (submission == answer.value) {
                     if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
+                        fb.innerHTML = jaxify(answer.feedback);
                     } else {
-                        fb.textContent = jaxify("Correct");
+                        fb.innerHTML = jaxify("Correct");
                     }
                     correct = answer.correct;
                     //console.log(answer.correct);
@@ -2108,15 +2143,18 @@ function check_numeric(ths, event) {
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -2124,6 +2162,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -2262,7 +2301,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -2330,6 +2369,10 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
+
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
 
     //console.log(mystring);
     return mystring;
@@ -2465,7 +2508,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -2474,12 +2536,40 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
 /* This is to handle asynchrony issues in loading Jupyter notebooks
@@ -2490,8 +2580,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("wQeErgSwyyXM")) {
-            show_questions(questionswQeErgSwyyXM,  wQeErgSwyyXM); 
+          if(document.getElementById("OCRTcqbCAqjQ")) {
+            show_questions(questionsOCRTcqbCAqjQ,  OCRTcqbCAqjQ); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2500,8 +2590,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("wQeErgSwyyXM");
-        // console.log(document.getElementById("wQeErgSwyyXM"));
+        //console.log("OCRTcqbCAqjQ");
+        // console.log(document.getElementById("OCRTcqbCAqjQ"));
 
         try_show();
         }
@@ -2536,8 +2626,8 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../09-bvp/09-bvp.html"
@@ -2564,7 +2654,9 @@ if (typeof version == 'undefined') {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2607,9 +2699,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -2633,8 +2726,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,67 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Jupyter Lab &#8212; f23-06623</title>
+    <title>Jupyter Lab &#8212; s23-06623</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/01-jupyter/01-jupyter';</script>
@@ -71,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Introduction to 06-623 and Jupyter Lab" href="../00-intro/00-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../syllabus.html">
@@ -154,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="f23-06623 - Home"/>
-    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="f23-06623 - Home"/>`);</script>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s23-06623 - Home"/>
+    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s23-06623 - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -255,10 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Index</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../assignments/get-solutions.html">Getting to the solutions</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the book</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../execution-statistics.html">Build statistics</a></li>
@@ -270,14 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +288,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -316,16 +318,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/f23-06623&urlpath=lab/tree/f23-06623/f23-06623/lectures/01-jupyter/01-jupyter.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/01-jupyter/01-jupyter.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -334,16 +336,16 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jkitchin/f23-06623/blob/main/f23-06623/lectures/01-jupyter/01-jupyter.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jkitchin/s25-06623/blob/main/s25-06623/lectures/01-jupyter/01-jupyter.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -365,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623" target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jkitchin/f23-06623/issues/new?title=Issue%20on%20page%20%2Flectures/01-jupyter/01-jupyter.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jkitchin/s25-06623/issues/new?title=Issue%20on%20page%20%2Flectures/01-jupyter/01-jupyter.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,26 +466,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -539,11 +535,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+  <p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="jupyter-lab">
-<h1>Jupyter Lab<a class="headerlink" href="#jupyter-lab" title="Permalink to this heading">#</a></h1>
+<h1>Jupyter Lab<a class="headerlink" href="#jupyter-lab" title="Link to this heading">#</a></h1>
 <p><img alt="roadmap" src="../../_images/06623-roadmap.png" /></p>
 <p>Goals today:</p>
 <ul class="simple">
@@ -556,7 +552,7 @@ document.write(`
 <p>If you have this cell selected you can either press shift-enter to go to the next cell, or the down arrow key.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="markdown">
-<h1>Markdown<a class="headerlink" href="#markdown" title="Permalink to this heading">#</a></h1>
+<h1>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">#</a></h1>
 <p>#Markdown is a lightweight markup language for text that is meant for humans to read. Select this cell and either double-click on it, or press Enter to see the source.</p>
 <p>Double click on this cell to see how to make:</p>
 <ol class="arabic simple">
@@ -598,7 +594,7 @@ document.write(`
 <p>You do not need to learn all of these right now. It will be useful to pay attention to what is in the notes. It will help you express your ideas more clearly.</p>
 <p>Try it here. Double click on this cell and add some text.</p>
 <section id="headings-and-subheadings">
-<h2>Headings and subheadings<a class="headerlink" href="#headings-and-subheadings" title="Permalink to this heading">#</a></h2>
+<h2>Headings and subheadings<a class="headerlink" href="#headings-and-subheadings" title="Link to this heading">#</a></h2>
 <p>It can be helpful to organize your notebook into sections. You can use headings and subheadings to make logical sections. This makes it easier to read. Double click on the headings to see the syntax for making a heading.</p>
 <p>Headings are lines that start with one or more #. The number of # determines the level of the heading.</p>
 <p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">heading</span> <span class="pre">1</span></code></p>
@@ -607,7 +603,7 @@ document.write(`
 <p>Checkout the Table of Contents on the left.</p>
 <p><img alt="image.png" src="../../_images/toc.png" /></p>
 <section id="subsubheadings">
-<h3>Subsubheadings<a class="headerlink" href="#subsubheadings" title="Permalink to this heading">#</a></h3>
+<h3>Subsubheadings<a class="headerlink" href="#subsubheadings" title="Link to this heading">#</a></h3>
 <p>This heading is <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Subsubheadings</span></code>.</p>
 <p>This video goes over several of these topics.</p>
 <div class="cell docutils container">
@@ -656,10 +652,10 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="participation-break">
-<h1>Participation break<a class="headerlink" href="#participation-break" title="Permalink to this heading">#</a></h1>
-<p>For fun, open this <a class="reference internal" href="markdown_practice.html"><span class="doc std std-doc">file</span></a>, run the cell and answer the questions. I will check that you have done this later.</p>
+<h1>Participation break<a class="headerlink" href="#participation-break" title="Link to this heading">#</a></h1>
+<p>For fun, open this <a class="reference internal" href="markdown_practice.html"><span class="std std-doc">file</span></a>, run the cell and answer the questions. I will check that you have done this later.</p>
 <section id="keyboard-shortcuts">
-<h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this heading">#</a></h2>
+<h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Link to this heading">#</a></h2>
 <p>You can do most things by clicking in cells and typing, or clicking on the menus. Eventually, you may want to learn some keyboard shortcuts to speed up your work.</p>
 <div class="alert alert-warning">
 You can access a list of keyboard shortcuts in the following ways:
@@ -670,7 +666,7 @@ Settings -&gt; Advanced Settings Editor</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="running-code">
-<h1>Running code<a class="headerlink" href="#running-code" title="Permalink to this heading">#</a></h1>
+<h1>Running code<a class="headerlink" href="#running-code" title="Link to this heading">#</a></h1>
 <p>Jupyter notebooks serve two purposes:</p>
 <ol class="arabic simple">
 <li><p>To document your work</p></li>
@@ -679,9 +675,9 @@ Settings -&gt; Advanced Settings Editor</p>
 <p>It is important to have a basic understanding of how the notebooks work. The browser displays the notebook. The actual computations are run on a server on your computer. When you “run” a code cell, the code is sent to the server, and the server sends the results back to the browser where they are rendered.</p>
 <p>When you first open a notebook, <em>nothing</em> has been executed. If you try to execute cells out of order, you will get errors if anything in the cell depends on a previous cell. You should run the cells in order. Here are some ways to do that.</p>
 <ol class="arabic simple">
-<li><p>Starting in the first cell, type shift-Enter to run each cell and move to the next one, or in the <a class="reference external" href="https://miro.com/app/board/uXjVMrCsQck=/?moveToWidget=3458764562505789659&amp;cot=14">tab toolbar, click ▸</a>.</p></li>
-<li><p>Click the <a class="reference external" href="https://miro.com/app/board/uXjVMrCsQck=/?moveToWidget=3458764562506057193&amp;cot=14">Kernel menu and Restart Kernel and Run all item</a>.</p></li>
-<li><p>In the <a class="reference external" href="https://miro.com/app/board/uXjVMrCsQck=/?moveToWidget=3458764562505948643&amp;cot=14">tab toolbar, click the ▸▸ button</a>.</p></li>
+<li><p>Starting in the first cell, type shift-Enter to run each cell and move to the next one, or in the <a class="reference external" href="https://miro.com/app/board/uXjVMrCsQck=/?moveToWidget=3458764562505789659&amp;amp;cot=14">tab toolbar, click ▸</a>.</p></li>
+<li><p>Click the <a class="reference external" href="https://miro.com/app/board/uXjVMrCsQck=/?moveToWidget=3458764562506057193&amp;amp;cot=14">Kernel menu and Restart Kernel and Run all item</a>.</p></li>
+<li><p>In the <a class="reference external" href="https://miro.com/app/board/uXjVMrCsQck=/?moveToWidget=3458764562505948643&amp;amp;cot=14">tab toolbar, click the ▸▸ button</a>.</p></li>
 </ol>
 <p>Occasionally while working, you may want to restart the server and rerun all the cells. Use the Kernel menu: Kernel -&gt; Restart Kernel, or one of the other options. If you run cells out of order, or something seems messed up for some reason, sometimes this fixes it. It also makes sure the output of each cell is consistent with running them in order from scratch.</p>
 <p>These cells are used to show what happens when you run things out of order.</p>
@@ -713,7 +709,7 @@ Settings -&gt; Advanced Settings Editor</p>
 </div>
 </div>
 <section id="debugging-getting-help">
-<h2>Debugging/getting help<a class="headerlink" href="#debugging-getting-help" title="Permalink to this heading">#</a></h2>
+<h2>Debugging/getting help<a class="headerlink" href="#debugging-getting-help" title="Link to this heading">#</a></h2>
 <p>See the Help menu to access general documentation about the notebook and the main libraries we will be using. I would get familiar with their contents, but I would not try to read them all at once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,10 +743,10 @@ Settings -&gt; Advanced Settings Editor</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h1>
+<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
 <p>Functions are an important part of any programming language. They allow you to reuse code, and make programs more readable.</p>
 <section id="minimal-definition-of-a-function-with-one-input">
-<h2>Minimal definition of a function with one input<a class="headerlink" href="#minimal-definition-of-a-function-with-one-input" title="Permalink to this heading">#</a></h2>
+<h2>Minimal definition of a function with one input<a class="headerlink" href="#minimal-definition-of-a-function-with-one-input" title="Link to this heading">#</a></h2>
 <p>Functions are defined with the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. You specify a name, and the arguments in parentheses, and end the line with a colon. The body of the function must be indented (conventionally by 4 spaces). The function ends when the indentation goes back down one level. You have to define what is returned from the function using the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword.</p>
 <p>Here is a minimal function definition that simply multiplies the input by two and returns it.  #function</p>
 <div class="cell docutils container">
@@ -949,7 +945,7 @@ f(x)
 </div>
 </section>
 <section id="functions-with-multiple-arguments">
-<h2>Functions with multiple arguments<a class="headerlink" href="#functions-with-multiple-arguments" title="Permalink to this heading">#</a></h2>
+<h2>Functions with multiple arguments<a class="headerlink" href="#functions-with-multiple-arguments" title="Link to this heading">#</a></h2>
 <p>Suppose you want a function where you can multiply the argument by a user-specified value, that defaults to 2. We can define a function with two arguments, where one is optional with a default value. The optional argument is sometimes called a parameter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1154,7 +1150,7 @@ f(x)
 </div>
 </section>
 <section id="functions-that-return-multiple-values">
-<h2>Functions that return multiple values<a class="headerlink" href="#functions-that-return-multiple-values" title="Permalink to this heading">#</a></h2>
+<h2>Functions that return multiple values<a class="headerlink" href="#functions-that-return-multiple-values" title="Link to this heading">#</a></h2>
 <p>A function can return multiple values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1370,7 +1366,7 @@ None
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="strings">
-<h1>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h1>
+<h1>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h1>
 <p>We will use strings a lot to present the output of our work. Suppose Amy has 10 apples, and she gives Bob 3 apples. How many apples does Amy have left?</p>
 <p>You could solve it like this:</p>
 <div class="cell docutils container">
@@ -1512,7 +1508,7 @@ She has 7 left.
 <p>We will see many examples of this in the class. For complete reference on the formatting codes see <a class="reference external" href="https://docs.python.org/3.6/library/string.html#format-specification-mini-language">https://docs.python.org/3.6/library/string.html#format-specification-mini-language</a>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="printing-arrays">
-<h1>Printing arrays<a class="headerlink" href="#printing-arrays" title="Permalink to this heading">#</a></h1>
+<h1>Printing arrays<a class="headerlink" href="#printing-arrays" title="Link to this heading">#</a></h1>
 <p>Arrays are printed in full accuracy by default. This often results in hard to read outputs. Consider this array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1555,7 +1551,7 @@ She has 7 left.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1e-15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1e-15)
 </pre></div>
 </div>
 </div>
@@ -1596,9 +1592,7 @@ She has 7 left.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.      3.3333  6.6667 10.    ]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.00000000e-15 3.33333333e+00 6.66666667e+00 1.00000000e+01]
+[1.00000000e-15 3.33333333e+00 6.66666667e+00 1.00000000e+01]
 </pre></div>
 </div>
 </div>
@@ -1611,7 +1605,7 @@ She has 7 left.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1e-15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1e-15)
 </pre></div>
 </div>
 </div>
@@ -1623,7 +1617,7 @@ She has 7 left.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>999999999999999.9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(999999999999999.9)
 </pre></div>
 </div>
 </div>
@@ -1647,7 +1641,7 @@ She has 7 left.
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <p>You should get comfortable with:</p>
 <ul class="simple">
 <li><p>Creating markdown cells in Jupyter notebooks that express the problem you are solving, and your approach to it.</p></li>
@@ -1702,7 +1696,7 @@ We will start using functions to solve integrals and differential equations.</p>
         ></iframe>
         </div></div>
 </div>
-<p><a class="reference internal" href="../toc.html"><span class="doc std std-doc">TOC</span></a></p>
+<p><a class="reference internal" href="../toc.html"><span class="std std-doc">TOC</span></a></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1732,8 +1726,8 @@ We will start using functions to solve integrals and differential equations.</p>
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../00-intro/00-intro.html"
@@ -1760,7 +1754,9 @@ We will start using functions to solve integrals and differential equations.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1815,9 +1811,10 @@ By John Kitchin
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -1841,8 +1838,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
