@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title                       : s23-06623  # The title of the book. Will be placed in the left navbar.
+title                       : s25-06623  # The title of the book. Will be placed in the left navbar.
 author                      : John Kitchin  # The author of the book
 copyright                   : "2025"  # Copyright year to be placed in the footer
 logo                        : lectures/06623-roadmap.png  # A path to the book logo
