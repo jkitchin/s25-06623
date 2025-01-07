@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -318,7 +318,7 @@
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/11-regression/11-regression.ipynb&branch=main" target="_blank"
+      <li><a href="https://jh-01.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/11-regression/11-regression.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -535,8 +535,8 @@
 <p>Suppose we have the following data that shows how the energy of a material depends on the volume of the material.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">volumes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">13.71</span><span class="p">,</span> <span class="mf">14.82</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">,</span> <span class="mf">17.23</span><span class="p">,</span> <span class="mf">18.52</span><span class="p">])</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">56.29</span><span class="p">,</span> <span class="o">-</span><span class="mf">56.41</span><span class="p">,</span> <span class="o">-</span><span class="mf">56.46</span><span class="p">,</span> <span class="o">-</span><span class="mf">56.463</span><span class="p">,</span> <span class="o">-</span><span class="mf">56.41</span><span class="p">])</span>
@@ -580,7 +580,7 @@
 <p>First we need a function that will use the parameters and return the energy for a given volume.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Murnaghan</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span> <span class="n">vol</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Murnaghan</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span> <span class="n">vol</span><span class="p">):</span>
     <span class="s2">&quot;From PRB 28,5480 (1983)&quot;</span>
     <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span> <span class="o">=</span> <span class="n">parameters</span>
     <span class="c1"># \ is a line continuation character</span>
@@ -641,7 +641,7 @@
 <p>Next, we need a function that computes the summed squared errors for a set of parameters. The use of squared errors is preferable in many cases to the absolute values because it has a continuous derivative. We will learn more about this later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">pars</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span><span class="n">pars</span><span class="p">):</span>
     <span class="n">err</span> <span class="o">=</span> <span class="n">energies</span> <span class="o">-</span> <span class="n">Murnaghan</span><span class="p">(</span><span class="n">pars</span><span class="p">,</span> <span class="n">volumes</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">err</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># we return the summed squared error directly</span>
 
@@ -701,7 +701,7 @@
 <p>Finally, we are ready to fit our function. As usual, we also plot the data and the fit for visual inspection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
 
 <span class="n">sol</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
@@ -797,7 +797,7 @@
 <p>Now that we have a model though we can also define properties of it, e.g. <em>in this case</em> we have from thermodynamics that <span class="math notranslate nohighlight">\(P = -dE/dV\)</span>. We can use our model to define this derivative. I use <code class="docutils literal notranslate"><span class="pre">numdifftools.Derivative</span></code> for this for convenience. The only issue with it is that the energy function has arguments that are not in the right order for the derivative, so I make a proxy function here that just reverses the order of the arguments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numdifftools</span> <span class="kn">import</span> <span class="n">Derivative</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numdifftools</span><span class="w"> </span><span class="kn">import</span> <span class="n">Derivative</span>
 <span class="o">?</span>Derivative
 </pre></div>
 </div>
@@ -809,8 +809,8 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pars</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">x</span>
 
 
-<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">proxy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">pars</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">P</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">proxy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">pars</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Murnaghan</span><span class="p">(</span><span class="n">pars</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 
     <span class="n">dEdV</span> <span class="o">=</span> <span class="n">Derivative</span><span class="p">(</span><span class="n">proxy</span><span class="p">)(</span><span class="n">V</span><span class="p">,</span> <span class="n">pars</span><span class="p">)</span>
@@ -846,7 +846,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">t</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats.distributions</span><span class="w"> </span><span class="kn">import</span> <span class="n">t</span>
 <span class="o">?</span>t.ppf
 </pre></div>
 </div>
@@ -882,8 +882,8 @@
 <p>To consider the uncertainty in model parameters, we need some way to estimate the standard deviation of the parameters. <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> does not provide much help with that. We will instead turn to <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>. This function will return information that is helpful in estimating the uncertainty. It is like <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> in the sense that it minimizes the summed squared errors between a model described in a function, and data defined in variables. Note in particular the docstring for the output variable pcov, which tells you how to compute the standard deviation errors on the parameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
 
 curve_fit<span class="o">?</span>
 </pre></div>
@@ -897,7 +897,7 @@ curve_fit<span class="o">?</span>
 <p>That means, estimate the values of <span class="math notranslate nohighlight">\(a, b\)</span> that best fit the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.387</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">,</span> <span class="mf">0.136</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.011</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.255</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.189</span><span class="p">,</span> <span class="mf">1.124</span><span class="p">,</span> <span class="mf">0.783</span><span class="p">,</span> <span class="mf">0.402</span><span class="p">])</span>
@@ -933,7 +933,7 @@ curve_fit<span class="o">?</span>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is the function we want to fit to our data</span>
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
 
 
@@ -986,7 +986,7 @@ curve_fit<span class="o">?</span>
 <p>We can use these to estimate confidence intervals on the two parameters. Note that here we still use the student-t multipliers to account for the uncertainty caused by having a small data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">t</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats.distributions</span><span class="w"> </span><span class="kn">import</span> <span class="n">t</span>
 
 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># 95% confidence interval = 100*(1-alpha)</span>
 
@@ -1029,7 +1029,7 @@ p1: 0.026 [0.024  0.029]
 <p>After that, you can import the nlinfit command and use it to get confidence intervals directly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycse</span> <span class="kn">import</span> <span class="n">nlinfit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pycse</span><span class="w"> </span><span class="kn">import</span> <span class="n">nlinfit</span>
 
 nlinfit<span class="o">??</span>
 </pre></div>
@@ -1074,7 +1074,7 @@ nlinfit<span class="o">??</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.3205427044923441)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.3205427042624864)
 </pre></div>
 </div>
 <img alt="../../_images/c42961d1fc7dfbe1caa66f11d335afb77234a83037c9c1c6d9dcf101ceca76ec.png" src="../../_images/c42961d1fc7dfbe1caa66f11d335afb77234a83037c9c1c6d9dcf101ceca76ec.png" />
@@ -1092,7 +1092,7 @@ nlinfit<span class="o">??</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c6bedff9e9118c442cda42ddb561d5220cb699d4c63eb545d1d92d008deccf54.png" src="../../_images/c6bedff9e9118c442cda42ddb561d5220cb699d4c63eb545d1d92d008deccf54.png" />
+<img alt="../../_images/c60a04176a370d2b7f4858ea7f786f2b955eb00052dc7b06866946983ab2440c.png" src="../../_images/c60a04176a370d2b7f4858ea7f786f2b955eb00052dc7b06866946983ab2440c.png" />
 </div>
 </div>
 <p>So the idea is we can generate a distribution of the parameters</p>
@@ -1108,10 +1108,10 @@ nlinfit<span class="o">??</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(1.3205784201922495), np.float64(0.009611497210853198))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(1.3205642143969663), np.float64(0.009669702753490196))
 </pre></div>
 </div>
-<img alt="../../_images/7ced4707df0430072903eda6f2023cc6331aa6a77b2b9873ec2a8e543873f019.png" src="../../_images/7ced4707df0430072903eda6f2023cc6331aa6a77b2b9873ec2a8e543873f019.png" />
+<img alt="../../_images/43b9094bf1b10613ff854339a431775192a2d9f17607b03708082869970f3b79.png" src="../../_images/43b9094bf1b10613ff854339a431775192a2d9f17607b03708082869970f3b79.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1145,7 +1145,7 @@ nlinfit<span class="o">??</span>
 <p>This method of error propagation is not perfect as it assumes the errors between the parameters are independent, and that they are normally distributed. However, the method is very simple to do, and simply relies on sampling the parameters from their respective distributions, and letting the results propagate naturally through the model. You do need to check for convergence with the sample size. This method is called a Monte Carlo propagation of errors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycse</span> <span class="kn">import</span> <span class="n">nlpredict</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pycse</span><span class="w"> </span><span class="kn">import</span> <span class="n">nlpredict</span>
 nlpredict<span class="o">?</span>
 </pre></div>
 </div>
@@ -1154,11 +1154,11 @@ nlpredict<span class="o">?</span>
 <p>To use this we have to define the loss function. It is just the summed squared error, so we define it in a funciton, and pass it to <code class="docutils literal notranslate"><span class="pre">nlpredict</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
                   
 <span class="n">m</span><span class="p">,</span> <span class="n">mint</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">nlpredict</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">sse</span><span class="p">,</span> <span class="n">pars</span><span class="p">,</span> <span class="n">xnew</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;at x=5 the value is </span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">1.3g</span><span class="si">}</span><span class="s1"> +\- </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">se</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">1.3g</span><span class="si">}</span><span class="s1"> at the 95% confidence level&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;at x=5 the value is </span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">1.3g</span><span class="si">}</span><span class="s1"> +</span><span class="se">\\</span><span class="s1">- </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">se</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">1.3g</span><span class="si">}</span><span class="s1"> at the 95% confidence level&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1181,19 +1181,19 @@ nlpredict<span class="o">?</span>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
 <span class="n">display_quiz</span><span class="p">(</span><span class="s1">&#39;.quiz.json&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="lpJyUzCeOqGA" data-shufflequestions="False"
+<div class="output text_html"><div id="KVWVsoeBlIqL" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#lpJyUzCeOqGA {
+#KVWVsoeBlIqL {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1394,7 +1394,7 @@ nlpredict<span class="o">?</span>
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionslpJyUzCeOqGA=[
+</style></div><script type="application/javascript">var questionsKVWVsoeBlIqL=[
   {
     "question": "When using minimize() for regression, which of the following objective functions would cause the model to shift towards the outliers to a greater extent than the rest:<br>a: (y_pred - y)^2<br>b: (y_pred - y)<br>c: |ypred - y|",
     "type": "multiple_choice",
@@ -2443,8 +2443,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("lpJyUzCeOqGA")) {
-            show_questions(questionslpJyUzCeOqGA,  lpJyUzCeOqGA); 
+          if(document.getElementById("KVWVsoeBlIqL")) {
+            show_questions(questionsKVWVsoeBlIqL,  KVWVsoeBlIqL); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2453,8 +2453,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("lpJyUzCeOqGA");
-        // console.log(document.getElementById("lpJyUzCeOqGA"));
+        //console.log("KVWVsoeBlIqL");
+        // console.log(document.getElementById("KVWVsoeBlIqL"));
 
         try_show();
         }

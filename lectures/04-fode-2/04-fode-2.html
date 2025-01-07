@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -318,7 +318,7 @@
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/04-fode-2/04-fode-2.ipynb&branch=main" target="_blank"
+      <li><a href="https://jh-01.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/04-fode-2/04-fode-2.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -543,7 +543,7 @@
 <p>We want to generate the x, y arrays. We use <code class="docutils literal notranslate"><span class="pre">np.meshgrid</span></code> for this. The simplest way to do it is to use <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> to create 1-D arrays with the spacing we want, and then use <code class="docutils literal notranslate"><span class="pre">np.meshgrid</span></code> to generate the 2D arrays. Let’s say we want a uniform grid over the range of x from 0 to 1, and over the range of y from 0 to 3, with 5 points in each direction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -624,7 +624,7 @@
 <p>Now we are ready to compute a distance field for the FODE. We will consider the range from -1 to 1 in both x and y, and then plot the results with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.quiver</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -640,7 +640,7 @@
 <p>We define the ode function, create the grids, and then make the plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">yprime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">yprime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
 
 
@@ -671,7 +671,7 @@
 <p>Let us use a numerical solver to see how it works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span>
     <span class="n">yprime</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -765,19 +765,19 @@
 <p><strong>Reflective Questions</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
 <span class="n">display_quiz</span><span class="p">(</span><span class="s1">&#39;.quiz.json&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="nrYwCeDheuei" data-shufflequestions="False"
+<div class="output text_html"><div id="knptvKeiVfsO" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#nrYwCeDheuei {
+#knptvKeiVfsO {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -978,7 +978,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsnrYwCeDheuei=[
+</style></div><script type="application/javascript">var questionsknptvKeiVfsO=[
   {
     "question": "Which is the correct argument in matplotlib to plot data using black circles connected with a solid line?",
     "type": "multiple_choice",
@@ -1883,8 +1883,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("nrYwCeDheuei")) {
-            show_questions(questionsnrYwCeDheuei,  nrYwCeDheuei); 
+          if(document.getElementById("knptvKeiVfsO")) {
+            show_questions(questionsknptvKeiVfsO,  knptvKeiVfsO); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1893,8 +1893,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("nrYwCeDheuei");
-        // console.log(document.getElementById("nrYwCeDheuei"));
+        //console.log("knptvKeiVfsO");
+        // console.log(document.getElementById("knptvKeiVfsO"));
 
         try_show();
         }
@@ -1967,7 +1967,7 @@ Net flow into B = 0.0 gal/min
 <p>At some point, the two tanks will reach a steady state, but it is not evident how we will approach that steady state. Since the concentration of one stream is higher than all the other concentrations, it is possible for the concentration to go up and then down.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dSdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>  <span class="c1"># S is an array of values [SA, SB]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dSdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>  <span class="c1"># S is an array of values [SA, SB]</span>
     <span class="n">S_A</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">S_B</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">dSadt</span> <span class="o">=</span> <span class="p">(</span><span class="n">f_A</span> <span class="o">*</span> <span class="n">C_A</span> <span class="o">-</span> <span class="n">f_AB</span> <span class="o">*</span> <span class="n">S_A</span> <span class="o">+</span> <span class="n">f_BA</span> <span class="o">*</span> <span class="n">S_B</span><span class="p">)</span> <span class="o">/</span> <span class="n">V_A</span>
@@ -1979,7 +1979,7 @@ Net flow into B = 0.0 gal/min
 <span class="c1">#   return [(f_A * C_A - f_AB * S[0] + f_BA * S[1]) / V_A,</span>
 <span class="c1">#          (f_B * C_B + f_AB * S[0] - f_BA * S[1] - f_Bexit * S[1]) / V_B]</span>
 
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="n">S0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">S_A0</span><span class="p">,</span> <span class="n">S_B0</span><span class="p">])</span>  <span class="c1"># We need two initial conditions</span>
 <span class="n">tspan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
@@ -1997,7 +1997,7 @@ Net flow into B = 0.0 gal/min
         t: [ 0.000e+00  1.606e-01 ...  1.972e+02  2.000e+02]
         y: [[ 1.833e+00  1.823e+00 ...  1.401e+00  1.400e+00]
             [ 1.300e+00  1.326e+00 ...  1.798e+00  1.799e+00]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7f5b5cf5ca50&gt;
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7f8594247a10&gt;
  t_events: None
  y_events: None
      nfev: 134
@@ -2023,7 +2023,7 @@ Net flow into B = 0.0 gal/min
 <p>One way to plot these solutions is this, where we extract out each row of the solution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;r-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tank A&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;b-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tank B&quot;</span><span class="p">)</span>
@@ -2102,7 +2102,7 @@ Net flow into B = 0.0 gal/min
 <p>How would you find the maximum concentration of salt in tank B? One way is with an event. We look for an event where <span class="math notranslate nohighlight">\(dSb/dt = 0\)</span>, and we can get that value from the system of ODEs that we defined like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">event</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">event</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>
     <span class="n">dSadt</span><span class="p">,</span> <span class="n">dSbdt</span> <span class="o">=</span> <span class="n">dSdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dSbdt</span>
 
@@ -2172,14 +2172,14 @@ Net flow into B = 0.0 gal/min
 <span class="n">teval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">tspan</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
     <span class="n">rabbits</span><span class="p">,</span> <span class="n">foxes</span> <span class="o">=</span> <span class="n">X</span>
     <span class="n">drabbitdt</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">rabbits</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">rabbits</span> <span class="o">*</span> <span class="n">foxes</span>
     <span class="n">dfoxesdt</span> <span class="o">=</span> <span class="o">-</span><span class="n">c</span> <span class="o">*</span> <span class="n">foxes</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">rabbits</span> <span class="o">*</span> <span class="n">foxes</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">drabbitdt</span><span class="p">,</span> <span class="n">dfoxesdt</span><span class="p">])</span>
 
 
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">teval</span><span class="p">)</span>
 <span class="n">sol</span><span class="o">.</span><span class="n">message</span>
@@ -2261,13 +2261,13 @@ Net flow into B = 0.0 gal/min
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="twEhtNvvkRLV" data-shufflequestions="False"
+<div class="output text_html"><div id="QUtmLaaFmYdi" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#twEhtNvvkRLV {
+#QUtmLaaFmYdi {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2468,7 +2468,7 @@ Net flow into B = 0.0 gal/min
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionstwEhtNvvkRLV=[
+</style></div><script type="application/javascript">var questionsQUtmLaaFmYdi=[
   {
     "question": "<p>Given</p><br><pre><code>a = np.linspace(0, 5, 2)<br>b = np.linspace(5, 10, 3)<br>c = np.linspace(10, 15, 5)<br><br>A, _,  _ = np.meshgrid(a, b, c)<br></code></pre><br><p>What is the shape of the array A?</p>",
     "type": "multiple_choice",
@@ -3517,8 +3517,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("twEhtNvvkRLV")) {
-            show_questions(questionstwEhtNvvkRLV,  twEhtNvvkRLV); 
+          if(document.getElementById("QUtmLaaFmYdi")) {
+            show_questions(questionsQUtmLaaFmYdi,  QUtmLaaFmYdi); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3527,8 +3527,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("twEhtNvvkRLV");
-        // console.log(document.getElementById("twEhtNvvkRLV"));
+        //console.log("QUtmLaaFmYdi");
+        // console.log(document.getElementById("QUtmLaaFmYdi"));
 
         try_show();
         }

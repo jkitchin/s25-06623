@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -318,7 +318,7 @@
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/13-constrained-optimization/13-constrained-optimization.ipynb&branch=main" target="_blank"
+      <li><a href="https://jh-01.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/13-constrained-optimization/13-constrained-optimization.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -537,15 +537,15 @@
 <p>The key to solving this problem is recognizing that the equality constraint means the can length and diameter are not independent because of the equation for the volume. This allows us to solve for one, and then use it in the cost function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
 
 <span class="n">V</span> <span class="o">=</span> <span class="mi">355</span>  <span class="c1"># cm^3</span>
 <span class="n">ct</span> <span class="o">=</span> <span class="mf">0.025</span>  <span class="c1"># Cost of the top $/cm**2</span>
 <span class="n">cs</span> <span class="o">=</span> <span class="mf">0.043</span>  <span class="c1"># Cost of the side $/cm**2</span>
 
 
-<span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cost</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
     <span class="n">radius</span> <span class="o">=</span> <span class="n">D</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">top_area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
     <span class="n">top_bottom_cost</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ct</span> <span class="o">*</span> <span class="n">top_area</span>
@@ -557,7 +557,7 @@
 <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Diameter&quot;</span><span class="p">)</span>
@@ -607,7 +607,7 @@ The optimal diameter is 9.20 cm. The optimal length is 5.35 cm. The cost is $9.9
 <p>A dictionary, also known as a lookup or hash table, is a data structure that allows you to look up values by a key. A dictionary is created with curly brackets {} that contain <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> pairs. You can use anything that is “hashable” as a key, and anything as a value. Things that are hashable are: strings, numbers, tuples. You cannot use a list or array; they are mutable and not hashable. Here is an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
 
@@ -728,7 +728,7 @@ The optimal diameter is 9.20 cm. The optimal length is 5.35 cm. The cost is $9.9
 <p>The reason we have to consider dictionaries is that <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> uses dictionaries to specify constraints. See the constraints arg here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
 <span class="o">?</span>minimize
 </pre></div>
 </div>
@@ -743,10 +743,10 @@ The optimal diameter is 9.20 cm. The optimal length is 5.35 cm. The cost is $9.9
 <p>We have two variables to modify: <span class="math notranslate nohighlight">\(D, L\)</span>, but there is an equality constraint in this problem that is described in the volume equation. We codify this in a function that returns zero when the constraint is satisfied. We also define a variable for the constraints dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 
-<span class="k">def</span> <span class="nf">equality_constraint</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">equality_constraint</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">D</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">radius</span> <span class="o">=</span> <span class="n">D</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">L</span>
@@ -779,7 +779,7 @@ The optimal diameter is 9.20 cm. The optimal length is 5.35 cm. The cost is $9.9
 <span class="n">cost_side</span> <span class="o">=</span> <span class="mf">0.043</span>  <span class="c1"># $/cm^2</span>
 
 
-<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">D</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">x</span>  <span class="c1"># Now we vary both variables.</span>
     <span class="n">radius</span> <span class="o">=</span> <span class="n">D</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">top_area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
@@ -839,17 +839,17 @@ The optimal diameter is 9.20 cm. The optimal length is 5.35 cm. The cost is $9.9
 <p>Here we can set this up as a minimization problem:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">return</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span><span class="o">**</span><span class="mi">2</span>
 
 
-<span class="k">def</span> <span class="nf">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">eq1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">return</span> <span class="n">x1</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># x1 = 1</span>
 
 
-<span class="k">def</span> <span class="nf">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">eq2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">return</span> <span class="n">x1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x2</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># x1**2 + x2**2 = 1</span>
 
@@ -885,11 +885,11 @@ The optimal diameter is 9.20 cm. The optimal length is 5.35 cm. The cost is $9.9
 <p>Maximize <span class="math notranslate nohighlight">\(x^3 - 3x\)</span> subject to <span class="math notranslate nohighlight">\(x \le 2.5\)</span>. First, recall we can rewrite the inequality as <span class="math notranslate nohighlight">\(-x \ge -2.5\)</span>, and again as <span class="math notranslate nohighlight">\(-x + 2.5 \ge 0\)</span>. That means for our solution we require <span class="math notranslate nohighlight">\(-x+2.5\)</span> to be positive. Also, since we are maximizing the function, our objective is multiplied by -1. When possible, it is always a good idea to visualize the problem:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># minimum of -obj</span>
 
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">objective</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -904,7 +904,7 @@ The optimal diameter is 9.20 cm. The optimal length is 5.35 cm. The cost is $9.9
 <p>You can see by inspection there is a minimum around x=-1, and at x=2.5. Note the one at x=2.5 is not a minimum in the sense that the derivative=0 there, it is just the smallest value that also satisfies the constraint. To solve this problem, we set up the following code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bill</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bill</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">x</span> <span class="o">+</span> <span class="mf">2.5</span>  <span class="c1"># must be greater than or equal to zero at solution</span>
 
 
@@ -975,35 +975,35 @@ The optimal diameter is 9.20 cm. The optimal length is 5.35 cm. The cost is $9.9
 <p>Note we use inequality constraints here. You could put some as equality, e.g. if you want to make sure you spend all $15000, or if you want to ensure you fill up your storage. It could be a mistake to require both of those though, as it may be infeasible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">c1</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">c1</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="s2">&quot;Constraint on total cost to plant.&quot;</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mi">120</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">210</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">15000</span><span class="p">)</span>  <span class="c1"># gte 0</span>
 
 
-<span class="k">def</span> <span class="nf">c2</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">c2</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="s2">&quot;Storage constraint&quot;</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mi">110</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">4000</span><span class="p">)</span>  <span class="c1"># gte 0</span>
 
 
-<span class="k">def</span> <span class="nf">c3</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">c3</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="s2">&quot;Land area constraint&quot;</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">75</span><span class="p">)</span>  <span class="c1"># gte 0</span>
 
 
-<span class="k">def</span> <span class="nf">c4</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">c4</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="s2">&quot;positivity constraint&quot;</span>
     <span class="k">return</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># gte 0</span>
 
 
-<span class="k">def</span> <span class="nf">c5</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">c5</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="s2">&quot;positivity constraint&quot;</span>
     <span class="k">return</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">profit</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">profit</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="s2">&quot;Profit function&quot;</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mi">143</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
@@ -1079,19 +1079,19 @@ We will store 4000 bushels.
 <p><code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> provides a convenient interface to solving a broad set of optimization problems both unconstrained and constrained. There is a significant body of knowledge hidden from us under this interface. For example there are 14 choices for different optimization algorithms in the interface, and the default one is chosen for you depending on arguments passed to it. It is easy to tell if the defaults are suitable; if you get a solution they are. If you don’t get a solution, then you have to assess whether there is a solution, and whether a better algorithm would be appropriate. The details of these algorithms are the subject of dedicated courses in optimization.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
 <span class="n">display_quiz</span><span class="p">(</span><span class="s1">&#39;.quiz.json&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ClkldBuqXSqk" data-shufflequestions="False"
+<div class="output text_html"><div id="bjfaXOwdFXkL" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#ClkldBuqXSqk {
+#bjfaXOwdFXkL {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1292,7 +1292,7 @@ We will store 4000 bushels.
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsClkldBuqXSqk=[{"question": "What will be the output of:<br>a = dict()<br>a['one'] = 1<br>print(a)", "type": "multiple_choice", "answers": [{"answer": "Error", "correct": false}, {"answer": "['one': 1]", "correct": false}, {"answer": "{'one': 1}", "correct": true}, {"answer": "{'one': '1'}", "correct": false}], "tag": "dictionary", "lecture_file": "13_constrained_optimization"}, {"question": "Which of the following is not a correct entry in a python dictionary", "type": "multiple_choice", "answers": [{"answer": "{1:'1'}", "correct": false}, {"answer": "{'a': 1}", "correct": false}, {"answer": "{5.23: 5}", "correct": false}, {"answer": "{[1, 2]: 'ab'}", "correct": true}], "tag": "dictionary", "lecture_file": "13_constrained_optimization"}, {"question": "Which of the following can be a way of printing the 'n'-th key in a dictionary 'dict'", "type": "multiple_choice", "answers": [{"answer": "dict.keys()[n]", "correct": false}, {"answer": "dict.keys(n)", "correct": false}, {"answer": "list(dict.keys())[n]", "correct": true}, {"answer": "dict.items()[n]", "correct": false}], "tag": "dictionary", "lecture_file": "13_constrained_optimization"}, {"question": "What can be a way of accessing the 'n'-th key and value separately from a dictionary", "type": "multiple_choice", "answers": [{"answer": "dict.keys()[n], dict.values()[n]", "correct": false}, {"answer": "d.items()[n]", "correct": false}, {"answer": "dict.keys(n), dict.values(n)", "correct": false}, {"answer": "for key, value in dict.items():<br>    print(key, value)", "correct": true}], "tag": "dictionary", "lecture_file": "13_constrained_optimization"}, {"question": "Constraints in scipy.optimize.minimize need to be functions which", "type": "multiple_choice", "answers": [{"answer": "always return zero when satisfied", "correct": false}, {"answer": "can return zero or are greater than zero when satisfied", "correct": true}, {"answer": "can return zero or are less than zero when satisfied", "correct": false}, {"answer": "can only return values which are less than zero", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "For multiple constraints, the argument 'constraints' in scipy.optimize.minimize needs to be", "type": "multiple_choice", "answers": [{"answer": "a dictionary", "correct": false}, {"answer": "a list", "correct": false}, {"answer": "a list of dictionaries", "correct": true}, {"answer": "a dictionary of lists", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "<pre><code class=\"language-python\">def f(X):\n    return -X[0]\n\nconstraints = {'type':'ineq', 'fun': f}\n</code></pre>\n<p>is a </p>", "type": "multiple_choice", "answers": [{"answer": "negativity constraint", "correct": true}, {"answer": "positivity constraint", "correct": false}, {"answer": "equality constraint", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "Which equation from the options can be expressed as the following constraint function:<br><br>def f(X):<br>    x, y = X<br>    return -(2x + 3y - 11)<br>constraints = {'type':'ineq', 'fun':f}", "type": "multiple_choice", "answers": [{"answer": "2x + 3y + 11 <= 0", "correct": false}, {"answer": "2x + 3y <= 11", "correct": true}, {"answer": "2x + 3y >=11", "correct": false}, {"answer": "-2x-3y <=11", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "Which of the following solvers cannot be used with constraints in scipy.optimize.minimize", "type": "multiple_choice", "answers": [{"answer": "BFGS", "correct": true}, {"answer": "SLSQP", "correct": false}, {"answer": "trust-constr", "correct": false}, {"answer": "COBYLA", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "The default solver in scipy.optimize.minimize when using constraints is", "type": "multiple_choice", "answers": [{"answer": "BFGS", "correct": false}, {"answer": "SLSQP", "correct": true}, {"answer": "trust-constr", "correct": false}, {"answer": "COBYLA", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}];
+</style></div><script type="application/javascript">var questionsbjfaXOwdFXkL=[{"question": "What will be the output of:<br>a = dict()<br>a['one'] = 1<br>print(a)", "type": "multiple_choice", "answers": [{"answer": "Error", "correct": false}, {"answer": "['one': 1]", "correct": false}, {"answer": "{'one': 1}", "correct": true}, {"answer": "{'one': '1'}", "correct": false}], "tag": "dictionary", "lecture_file": "13_constrained_optimization"}, {"question": "Which of the following is not a correct entry in a python dictionary", "type": "multiple_choice", "answers": [{"answer": "{1:'1'}", "correct": false}, {"answer": "{'a': 1}", "correct": false}, {"answer": "{5.23: 5}", "correct": false}, {"answer": "{[1, 2]: 'ab'}", "correct": true}], "tag": "dictionary", "lecture_file": "13_constrained_optimization"}, {"question": "Which of the following can be a way of printing the 'n'-th key in a dictionary 'dict'", "type": "multiple_choice", "answers": [{"answer": "dict.keys()[n]", "correct": false}, {"answer": "dict.keys(n)", "correct": false}, {"answer": "list(dict.keys())[n]", "correct": true}, {"answer": "dict.items()[n]", "correct": false}], "tag": "dictionary", "lecture_file": "13_constrained_optimization"}, {"question": "What can be a way of accessing the 'n'-th key and value separately from a dictionary", "type": "multiple_choice", "answers": [{"answer": "dict.keys()[n], dict.values()[n]", "correct": false}, {"answer": "d.items()[n]", "correct": false}, {"answer": "dict.keys(n), dict.values(n)", "correct": false}, {"answer": "for key, value in dict.items():<br>    print(key, value)", "correct": true}], "tag": "dictionary", "lecture_file": "13_constrained_optimization"}, {"question": "Constraints in scipy.optimize.minimize need to be functions which", "type": "multiple_choice", "answers": [{"answer": "always return zero when satisfied", "correct": false}, {"answer": "can return zero or are greater than zero when satisfied", "correct": true}, {"answer": "can return zero or are less than zero when satisfied", "correct": false}, {"answer": "can only return values which are less than zero", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "For multiple constraints, the argument 'constraints' in scipy.optimize.minimize needs to be", "type": "multiple_choice", "answers": [{"answer": "a dictionary", "correct": false}, {"answer": "a list", "correct": false}, {"answer": "a list of dictionaries", "correct": true}, {"answer": "a dictionary of lists", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "<pre><code class=\"language-python\">def f(X):\n    return -X[0]\n\nconstraints = {'type':'ineq', 'fun': f}\n</code></pre>\n<p>is a </p>", "type": "multiple_choice", "answers": [{"answer": "negativity constraint", "correct": true}, {"answer": "positivity constraint", "correct": false}, {"answer": "equality constraint", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "Which equation from the options can be expressed as the following constraint function:<br><br>def f(X):<br>    x, y = X<br>    return -(2x + 3y - 11)<br>constraints = {'type':'ineq', 'fun':f}", "type": "multiple_choice", "answers": [{"answer": "2x + 3y + 11 <= 0", "correct": false}, {"answer": "2x + 3y <= 11", "correct": true}, {"answer": "2x + 3y >=11", "correct": false}, {"answer": "-2x-3y <=11", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "Which of the following solvers cannot be used with constraints in scipy.optimize.minimize", "type": "multiple_choice", "answers": [{"answer": "BFGS", "correct": true}, {"answer": "SLSQP", "correct": false}, {"answer": "trust-constr", "correct": false}, {"answer": "COBYLA", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}, {"question": "The default solver in scipy.optimize.minimize when using constraints is", "type": "multiple_choice", "answers": [{"answer": "BFGS", "correct": false}, {"answer": "SLSQP", "correct": true}, {"answer": "trust-constr", "correct": false}, {"answer": "COBYLA", "correct": false}], "tag": "scipy constraints", "lecture_file": "13_constrained_optimization"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -2099,8 +2099,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("ClkldBuqXSqk")) {
-            show_questions(questionsClkldBuqXSqk,  ClkldBuqXSqk); 
+          if(document.getElementById("bjfaXOwdFXkL")) {
+            show_questions(questionsbjfaXOwdFXkL,  bjfaXOwdFXkL); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2109,8 +2109,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("ClkldBuqXSqk");
-        // console.log(document.getElementById("ClkldBuqXSqk"));
+        //console.log("bjfaXOwdFXkL");
+        // console.log(document.getElementById("bjfaXOwdFXkL"));
 
         try_show();
         }

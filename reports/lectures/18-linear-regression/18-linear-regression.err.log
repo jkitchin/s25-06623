@@ -39,7 +39,7 @@ Cell [0;32mIn[29], line 7[0m
 
 File [0;32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/matplotlib/pyplot.py:3829[0m, in [0;36mplot[0;34m(scalex, scaley, data, *args, **kwargs)[0m
 [1;32m   3821[0m [38;5;129m@_copy_docstring_and_deprecators[39m(Axes[38;5;241m.[39mplot)
-[1;32m   3822[0m [38;5;28;01mdef[39;00m [38;5;21mplot[39m(
+[1;32m   3822[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mplot[39m(
 [1;32m   3823[0m     [38;5;241m*[39margs: [38;5;28mfloat[39m [38;5;241m|[39m ArrayLike [38;5;241m|[39m [38;5;28mstr[39m,
 [0;32m   (...)[0m
 [1;32m   3827[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,

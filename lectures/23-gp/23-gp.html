@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -318,7 +318,7 @@
       
       
       
-      <li><a href="https://jupyterhub-dev.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/23-gp/23-gp.ipynb&branch=main" target="_blank"
+      <li><a href="https://jh-01.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/s25-06623/lectures/23-gp/23-gp.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -577,7 +577,7 @@
 <p>In this equation, <span class="math notranslate nohighlight">\(\sigma_f\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> are called <em>hyperparameters</em> and we have to determine what are good values for them. <span class="math notranslate nohighlight">\(\sigma_f\)</span> is a scale factor, and <span class="math notranslate nohighlight">\(\lambda\)</span> is a length scale. With this formula, data points with a distance of <span class="math notranslate nohighlight">\(2\lambda\)</span> away from the point of interest have low (near zero) covariance with that point. In other words, only data points within <span class="math notranslate nohighlight">\(2\lambda\)</span> distance units of a point will contribute to our estimate for that point.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">sigmaf</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">_lambda</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -585,7 +585,7 @@
 <span class="n">x0</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sigmaf</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">x0</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">_lambda</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
@@ -605,7 +605,7 @@
 
 <span class="n">Xp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">])</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;ro&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">Xp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -614,7 +614,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e809e68cf5bf41df2789b70b29f676a00c3a90aa4f7ed0c60052af7ff487e8af.png" src="../../_images/e809e68cf5bf41df2789b70b29f676a00c3a90aa4f7ed0c60052af7ff487e8af.png" />
+<img alt="../../_images/4676a78f31c68101b9b90f1395444c98fcbf96c45aa4143d2d1dd26ce4b8594b.png" src="../../_images/4676a78f31c68101b9b90f1395444c98fcbf96c45aa4143d2d1dd26ce4b8594b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -738,7 +738,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.00767805,  0.8047845 ,  0.98182016])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.00860706, 0.77838497, 0.99607034])
 </pre></div>
 </div>
 </div>
@@ -751,7 +751,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.75873675, 0.76853689])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.73385329, 0.74363327])
 </pre></div>
 </div>
 </div>
@@ -759,7 +759,7 @@
 <p>Let’s see how well we did.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="s2">&quot;r*&quot;</span><span class="p">)</span>
@@ -768,7 +768,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9e72be69fe1a054c030d1fed08be1996314ea0f0010285771cf7b4055e33716e.png" src="../../_images/9e72be69fe1a054c030d1fed08be1996314ea0f0010285771cf7b4055e33716e.png" />
+<img alt="../../_images/233eb8d336b40ab0197a2e572cfe8a2cd2770e9551bb57594bb373cb6f4f7a48.png" src="../../_images/233eb8d336b40ab0197a2e572cfe8a2cd2770e9551bb57594bb373cb6f4f7a48.png" />
 </div>
 </div>
 <p>That is not bad, but clearly not great. With a <span class="math notranslate nohighlight">\(\lambda=0.15\)</span>, only one data point is contributing to the estimate, the other points have only small contributions because they are far from points we are estimating. This is a feature of the <em>assumption</em> we made about the covariance with <span class="math notranslate nohighlight">\(\lambda\)</span>. This means we do not have enough data to make a very good estimate. We can see this if we try this with a much more dense data set.</p>
@@ -790,7 +790,7 @@
 
 <span class="n">yp</span> <span class="o">=</span> <span class="n">Kp</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">K1</span><span class="p">)</span> <span class="o">@</span> <span class="n">y</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="s2">&quot;r-&quot;</span><span class="p">)</span>
@@ -803,7 +803,7 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Known data step size is 0.05
 </pre></div>
 </div>
-<img alt="../../_images/a0ca56ec1df5e00c53eaeb58680e16c75f7a9d451eb9657149f1047c35597016.png" src="../../_images/a0ca56ec1df5e00c53eaeb58680e16c75f7a9d451eb9657149f1047c35597016.png" />
+<img alt="../../_images/1ed26d1bb4be06d49f946e0e363044c1a2836e431e927b6baec536ec276e9e1f.png" src="../../_images/1ed26d1bb4be06d49f946e0e363044c1a2836e431e927b6baec536ec276e9e1f.png" />
 </div>
 </div>
 <p>Now you can see that we do very well in estimating the values. The length scale here might even be considered too short, since it is evident we are fitting trends in the noise.</p>
@@ -822,7 +822,7 @@
 
 <span class="n">yp</span> <span class="o">=</span> <span class="n">Kp</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">K1</span><span class="p">)</span> <span class="o">@</span> <span class="n">y</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="s2">&quot;r-&quot;</span><span class="p">)</span>
@@ -835,7 +835,7 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Known data step size is 0.05
 </pre></div>
 </div>
-<img alt="../../_images/eaceeec803e1173686e204f4ff9b58e6997af8b91a9845ce366a7deb81904e60.png" src="../../_images/eaceeec803e1173686e204f4ff9b58e6997af8b91a9845ce366a7deb81904e60.png" />
+<img alt="../../_images/d4275286b3a5d908e8c108bbd89c208b8c11c6c5548aae335365eb68da35bea1.png" src="../../_images/d4275286b3a5d908e8c108bbd89c208b8c11c6c5548aae335365eb68da35bea1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -867,7 +867,7 @@
 
 <span class="n">yp</span> <span class="o">=</span> <span class="n">Kp</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">K1</span><span class="p">)</span> <span class="o">@</span> <span class="n">y</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="s2">&quot;r-&quot;</span><span class="p">)</span>
@@ -876,7 +876,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e9322ccfab5079c13e843b021198fc5a52a3e30c90bba559b8e9c19e1d762bba.png" src="../../_images/e9322ccfab5079c13e843b021198fc5a52a3e30c90bba559b8e9c19e1d762bba.png" />
+<img alt="../../_images/de146f8c475dedfe732c9fc983e263711f160401f2ca650eb2922cd0e03da277.png" src="../../_images/de146f8c475dedfe732c9fc983e263711f160401f2ca650eb2922cd0e03da277.png" />
 </div>
 </div>
 </section>
@@ -896,7 +896,7 @@
 <span class="n">yp</span> <span class="o">=</span> <span class="n">Kp</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">K1</span><span class="p">)</span> <span class="o">@</span> <span class="n">y</span>
 
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="s2">&quot;r-&quot;</span><span class="p">)</span>
@@ -905,7 +905,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/141e2b491fa37d967967ef767f351640f1adcce9e2cdfcf1880be4fb54101b9b.png" src="../../_images/141e2b491fa37d967967ef767f351640f1adcce9e2cdfcf1880be4fb54101b9b.png" />
+<img alt="../../_images/fc017564ef0ecd7151a9e3a7fa8d3db1be064b56d2d7800490650180a4f2e817.png" src="../../_images/fc017564ef0ecd7151a9e3a7fa8d3db1be064b56d2d7800490650180a4f2e817.png" />
 </div>
 </div>
 </section>
@@ -917,14 +917,14 @@
 <p>Given the original data, we now estimate the best hyperparameters and then predict other values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">log_likelihood</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">log_likelihood</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
     <span class="n">sigmaf</span><span class="p">,</span> <span class="n">lam</span> <span class="o">=</span> <span class="n">params</span>
     <span class="n">sigma_n</span> <span class="o">=</span> <span class="mf">0.01</span>
     <span class="n">K</span> <span class="o">=</span> <span class="n">sigma_f</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
@@ -945,7 +945,7 @@
 
 <span class="n">yp</span> <span class="o">=</span> <span class="n">Kp</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">K1</span><span class="p">)</span> <span class="o">@</span> <span class="n">y</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="s2">&quot;r-&quot;</span><span class="p">)</span>
@@ -956,10 +956,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.        , 0.07220267])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.        , 0.07786021])
 </pre></div>
 </div>
-<img alt="../../_images/e93e48746c48d034501d7a9a354c23e1fa9a34cc24e4ea4bd010af0827d1cbbf.png" src="../../_images/e93e48746c48d034501d7a9a354c23e1fa9a34cc24e4ea4bd010af0827d1cbbf.png" />
+<img alt="../../_images/63e828e1267108909b32fe403fdaff15a885931b1fc1b0e3e49b988a06e805fa.png" src="../../_images/63e828e1267108909b32fe403fdaff15a885931b1fc1b0e3e49b988a06e805fa.png" />
 </div>
 </div>
 <p>Note that we still see some wiggles in the fit, indicating some minor degree of overfitting with the optimal hyperparameters. That is happening because we fit to all the data, and do not use any to estimate how good our fits are. You can use train/test data splits for GPR for this purpose as well, but it is out of the scope of the lecture today.</p>
@@ -994,20 +994,20 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07daefa5ac1523793bdf487efdfe79da57a46cde267620730f14d34c427789e4.png" src="../../_images/07daefa5ac1523793bdf487efdfe79da57a46cde267620730f14d34c427789e4.png" />
+<img alt="../../_images/143ec1500725d215a751678fc16acc70f4a0a80a92635c01ae18d9676d750cc6.png" src="../../_images/143ec1500725d215a751678fc16acc70f4a0a80a92635c01ae18d9676d750cc6.png" />
 </div>
 </div>
 <p>As before, we setup a log likelihood function and maximize it to get estimates for the parameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">LL</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">LL</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
     <span class="n">sb</span><span class="p">,</span> <span class="n">sv</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">params</span>
     <span class="n">K</span> <span class="o">=</span> <span class="n">sb</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sv</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">c</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">c</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
     <span class="n">K</span> <span class="o">+=</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>  <span class="c1"># white noise kernel</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">y</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">K</span><span class="p">)</span> <span class="o">@</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">K</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
 
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">LL</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="n">p</span>
@@ -1018,15 +1018,15 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  message: Optimization terminated successfully.
   success: True
    status: 0
-      fun: 7.666636882523213
-        x: [ 4.023e-05  6.468e-01 -1.482e+00]
+      fun: 7.468272484833203
+        x: [ 1.552e-05  6.480e-01 -1.477e+00]
       nit: 27
-      jac: [ 8.047e-06 -1.848e-06  3.636e-06]
- hess_inv: [[ 5.273e+00  3.370e-02  3.088e-03]
-            [ 3.370e-02  2.573e-02  1.533e-02]
-            [ 3.088e-03  1.533e-02  4.837e-02]]
-     nfev: 140
-     njev: 35
+      jac: [ 1.132e-06  6.676e-06  2.563e-06]
+ hess_inv: [[ 5.866e+00  4.985e-03  3.037e-02]
+            [ 4.985e-03  2.552e-02  1.570e-02]
+            [ 3.037e-02  1.570e-02  5.050e-02]]
+     nfev: 144
+     njev: 36
 </pre></div>
 </div>
 </div>
@@ -1054,7 +1054,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/68094eaaaa4c9864c4de24f8c999b7fd3e95c4f0f30b5e3f01ac2be6b2c90679.png" src="../../_images/68094eaaaa4c9864c4de24f8c999b7fd3e95c4f0f30b5e3f01ac2be6b2c90679.png" />
+<img alt="../../_images/816cad8c1a54204f417ee1189b8b4be8a47bceec76723370227a9d5eb1ee5914.png" src="../../_images/816cad8c1a54204f417ee1189b8b4be8a47bceec76723370227a9d5eb1ee5914.png" />
 </div>
 </div>
 <p>Note that now, we get linear extrapolation, <em>because we are using a linear kernel</em>. Note also that the hyperparameters do not mean anything in particular to us. They do not include the slope or intercept. We can work those out pretty easily though. The intercept is just a prediction at <span class="math notranslate nohighlight">\(x=0\)</span>:</p>
@@ -1067,7 +1067,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.9821188])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.97760537])
 </pre></div>
 </div>
 </div>
@@ -1080,7 +1080,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(2.012485650324868)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(2.016119669465089)
 </pre></div>
 </div>
 </div>
@@ -1092,7 +1092,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.0064906 , 2.99756184])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.01010488, 2.99306762])
 </pre></div>
 </div>
 </div>
@@ -1128,7 +1128,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/54130af77845874acb90a667e607b1632975775755a1a5647ed8853cbaa60c13.png" src="../../_images/54130af77845874acb90a667e607b1632975775755a1a5647ed8853cbaa60c13.png" />
+<img alt="../../_images/c76bfa9aaba2e51a81fef31dac3771619be74f2ab07fa83e66e2963ba8ac20f8.png" src="../../_images/c76bfa9aaba2e51a81fef31dac3771619be74f2ab07fa83e66e2963ba8ac20f8.png" />
 </div>
 </div>
 </section>
@@ -1146,7 +1146,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/82153da072c60d5e73a59c8e22c3311f6cfd906ad7d28297643dac869106ae92.png" src="../../_images/82153da072c60d5e73a59c8e22c3311f6cfd906ad7d28297643dac869106ae92.png" />
+<img alt="../../_images/ac6a3556ae0401ec670a72e949abd677b82403db879e1cb9bf5642501671ec31.png" src="../../_images/ac6a3556ae0401ec670a72e949abd677b82403db879e1cb9bf5642501671ec31.png" />
 </div>
 </div>
 <p>This looks like a sin wave superimposed on a line. A periodic kernel is defined as</p>
@@ -1155,7 +1155,7 @@
 <p>As before we use the log likelihood to find the hyperparameters that best fit this data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">LL</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">LL</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
     <span class="n">sb</span><span class="p">,</span> <span class="n">sv</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sp</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">params</span>
     <span class="n">K1</span> <span class="o">=</span> <span class="n">sb</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sv</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">c</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">c</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># linear kernel</span>
     <span class="n">K2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
@@ -1174,19 +1174,19 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  message: Optimization terminated successfully.
   success: True
    status: 0
-      fun: 30.86744004265765
-        x: [-2.767e-07 -3.939e-01 -1.798e+00  6.340e-01  1.000e+00
-            -4.358e-04]
-      nit: 54
-      jac: [ 9.537e-07 -3.338e-06  4.768e-07  2.384e-07 -2.861e-06
-            -2.384e-06]
- hess_inv: [[ 1.636e+00 -1.104e-02 ... -3.807e-02 -9.692e-02]
-            [-1.104e-02  1.715e-02 ... -1.498e-03 -4.152e-03]
+      fun: 25.2672626444408
+        x: [-2.081e-06  3.995e-01 -1.655e+00  6.105e-01  9.282e-01
+            -3.467e-01]
+      nit: 42
+      jac: [-2.623e-06  2.623e-06 -1.431e-06 -1.192e-06  3.576e-06
+            -2.623e-06]
+ hess_inv: [[ 2.030e+00 -3.176e-03 ...  1.186e-03 -1.319e-03]
+            [-3.176e-03  2.273e-02 ...  3.412e-03 -1.764e-03]
             ...
-            [-3.807e-02 -1.498e-03 ...  6.848e-02  1.932e-01]
-            [-9.692e-02 -4.152e-03 ...  1.932e-01  5.453e-01]]
-     nfev: 476
-     njev: 68
+            [ 1.186e-03  3.412e-03 ...  1.867e-03 -1.220e-04]
+            [-1.319e-03 -1.764e-03 ... -1.220e-04  1.356e-02]]
+     nfev: 350
+     njev: 50
 </pre></div>
 </div>
 </div>
@@ -1217,7 +1217,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4eac9c1c2e472fcdd8a362effc6bb822b120941e0b0bf44eb97062284974f5b9.png" src="../../_images/4eac9c1c2e472fcdd8a362effc6bb822b120941e0b0bf44eb97062284974f5b9.png" />
+<img alt="../../_images/38beeda34d5ee26434bd1e61e4124332ebf0f5d155229bd1fec59adfc935f8f6.png" src="../../_images/38beeda34d5ee26434bd1e61e4124332ebf0f5d155229bd1fec59adfc935f8f6.png" />
 </div>
 </div>
 <p>Note that we get oscillatory + linear extrapolation behavior! That is again <em>because of properties of the kernel</em> and <em>not because the model learned anything</em>.</p>
@@ -1245,19 +1245,19 @@
 <p>This lecture introduced GPR in a practical, by example way. There are formal ways to derive the equations we introduced, but they rely on a deep understanding of statistics that is beyond the scope of this class. These approaches provide a variety of insights to understand why GPR works, how it is related to other types of machine learning, etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
 <span class="n">display_quiz</span><span class="p">(</span><span class="s1">&#39;.quiz.json&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="KYmYUmYOHAUJ" data-shufflequestions="False"
+<div class="output text_html"><div id="OVYMEUXpPdSC" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#KYmYUmYOHAUJ {
+#OVYMEUXpPdSC {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1458,7 +1458,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsKYmYUmYOHAUJ=[{"question": "A smaller lengthscale than the optimum will result in", "type": "multiple_choice", "answers": [{"answer": "A more accurate model", "correct": false}, {"answer": "Overfitting", "correct": true}, {"answer": "Underfitting", "correct": false}, {"answer": "A linear model", "correct": false}], "tag": "hyperparameters lengthscale", "lecture_file": "23_gp"}, {"question": "When using a gaussian kernel, a point has near-zero covariance with another point if it is x distance away. x = ?", "type": "multiple_choice", "answers": [{"answer": "Lengthscale", "correct": false}, {"answer": "0.5*Lengthscale", "correct": false}, {"answer": "2*Lengthscale", "correct": true}, {"answer": "4*Lengthscale", "correct": false}], "tag": "hyperparameters lengthscale", "lecture_file": "23_gp"}, {"question": "To calculate the weights of a GPR model, we would need", "type": "multiple_choice", "answers": [{"answer": "The x-values of the train data set", "correct": false}, {"answer": "The x-values of the test data set", "correct": false}, {"answer": "Noise in the data", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "hyperparameters", "lecture_file": "23_gp"}, {"question": "We can use multiple covariance functions in a single model", "type": "multiple_choice", "answers": [{"answer": "TRUE", "correct": true}, {"answer": "FALSE", "correct": false}, {"answer": "-", "correct": false}, {"answer": "-", "correct": false}], "tag": "kernel", "lecture_file": "23_gp"}, {"question": "A kernel is analogous to", "type": "multiple_choice", "answers": [{"answer": "a change of basis", "correct": true}, {"answer": "activation functions", "correct": false}, {"answer": "Both of the above", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "kernel", "lecture_file": "23_gp"}, {"question": "Which of the following are hyperparameters of a GPR model?", "type": "multiple_choice", "answers": [{"answer": "Lengthscale", "correct": false}, {"answer": "Noise", "correct": false}, {"answer": "Kernel", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "hyperparameters", "lecture_file": "23_gp"}, {"question": "Gaussian Process Regression is", "type": "multiple_choice", "answers": [{"answer": "Deterministic and parametric", "correct": false}, {"answer": "Probabilistic and non-parametric", "correct": true}, {"answer": "Probabilistic and parametric", "correct": false}, {"answer": "Deterministic and non-parametric", "correct": false}], "tag": "kernel", "lecture_file": "23_gp"}, {"question": "The sum of two independent gaussian distribution functions is", "type": "multiple_choice", "answers": [{"answer": "a constant", "correct": false}, {"answer": "linear", "correct": false}, {"answer": "gaussian", "correct": true}, {"answer": "Periodic", "correct": false}], "tag": "kernel", "lecture_file": "23_gp"}, {"question": "The nature of extrapolation of a GPR model beyond the training data range would be determined by", "type": "multiple_choice", "answers": [{"answer": "The kernel", "correct": true}, {"answer": "The number of data points", "correct": false}, {"answer": "Noise", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "kernel extrapolation", "lecture_file": "23_gp"}, {"question": "What would be the result if we use a linear kernal for a dataset that roughly follows a sinusoidal trend.", "type": "multiple_choice", "answers": [{"answer": "We will get a coding error", "correct": false}, {"answer": "the model will still perfectly fit", "correct": false}, {"answer": "the model will have a low uncertainty", "correct": false}, {"answer": "The model will have a high uncertainty ", "correct": true}], "tag": "kernel uncertainty", "lecture_file": "23_gp"}];
+</style></div><script type="application/javascript">var questionsOVYMEUXpPdSC=[{"question": "A smaller lengthscale than the optimum will result in", "type": "multiple_choice", "answers": [{"answer": "A more accurate model", "correct": false}, {"answer": "Overfitting", "correct": true}, {"answer": "Underfitting", "correct": false}, {"answer": "A linear model", "correct": false}], "tag": "hyperparameters lengthscale", "lecture_file": "23_gp"}, {"question": "When using a gaussian kernel, a point has near-zero covariance with another point if it is x distance away. x = ?", "type": "multiple_choice", "answers": [{"answer": "Lengthscale", "correct": false}, {"answer": "0.5*Lengthscale", "correct": false}, {"answer": "2*Lengthscale", "correct": true}, {"answer": "4*Lengthscale", "correct": false}], "tag": "hyperparameters lengthscale", "lecture_file": "23_gp"}, {"question": "To calculate the weights of a GPR model, we would need", "type": "multiple_choice", "answers": [{"answer": "The x-values of the train data set", "correct": false}, {"answer": "The x-values of the test data set", "correct": false}, {"answer": "Noise in the data", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "hyperparameters", "lecture_file": "23_gp"}, {"question": "We can use multiple covariance functions in a single model", "type": "multiple_choice", "answers": [{"answer": "TRUE", "correct": true}, {"answer": "FALSE", "correct": false}, {"answer": "-", "correct": false}, {"answer": "-", "correct": false}], "tag": "kernel", "lecture_file": "23_gp"}, {"question": "A kernel is analogous to", "type": "multiple_choice", "answers": [{"answer": "a change of basis", "correct": true}, {"answer": "activation functions", "correct": false}, {"answer": "Both of the above", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "kernel", "lecture_file": "23_gp"}, {"question": "Which of the following are hyperparameters of a GPR model?", "type": "multiple_choice", "answers": [{"answer": "Lengthscale", "correct": false}, {"answer": "Noise", "correct": false}, {"answer": "Kernel", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "hyperparameters", "lecture_file": "23_gp"}, {"question": "Gaussian Process Regression is", "type": "multiple_choice", "answers": [{"answer": "Deterministic and parametric", "correct": false}, {"answer": "Probabilistic and non-parametric", "correct": true}, {"answer": "Probabilistic and parametric", "correct": false}, {"answer": "Deterministic and non-parametric", "correct": false}], "tag": "kernel", "lecture_file": "23_gp"}, {"question": "The sum of two independent gaussian distribution functions is", "type": "multiple_choice", "answers": [{"answer": "a constant", "correct": false}, {"answer": "linear", "correct": false}, {"answer": "gaussian", "correct": true}, {"answer": "Periodic", "correct": false}], "tag": "kernel", "lecture_file": "23_gp"}, {"question": "The nature of extrapolation of a GPR model beyond the training data range would be determined by", "type": "multiple_choice", "answers": [{"answer": "The kernel", "correct": true}, {"answer": "The number of data points", "correct": false}, {"answer": "Noise", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "kernel extrapolation", "lecture_file": "23_gp"}, {"question": "What would be the result if we use a linear kernal for a dataset that roughly follows a sinusoidal trend.", "type": "multiple_choice", "answers": [{"answer": "We will get a coding error", "correct": false}, {"answer": "the model will still perfectly fit", "correct": false}, {"answer": "the model will have a low uncertainty", "correct": false}, {"answer": "The model will have a high uncertainty ", "correct": true}], "tag": "kernel uncertainty", "lecture_file": "23_gp"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -2265,8 +2265,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("KYmYUmYOHAUJ")) {
-            show_questions(questionsKYmYUmYOHAUJ,  KYmYUmYOHAUJ); 
+          if(document.getElementById("OVYMEUXpPdSC")) {
+            show_questions(questionsOVYMEUXpPdSC,  OVYMEUXpPdSC); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2275,8 +2275,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("KYmYUmYOHAUJ");
-        // console.log(document.getElementById("KYmYUmYOHAUJ"));
+        //console.log("OVYMEUXpPdSC");
+        // console.log(document.getElementById("OVYMEUXpPdSC"));
 
         try_show();
         }
