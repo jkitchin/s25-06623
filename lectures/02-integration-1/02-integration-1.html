@@ -805,7 +805,7 @@ The exact area is 21.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2476/2030690521.py:5: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2513/2030690521.py:5: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
   np.trapz(y, x)
 </pre></div>
 </div>
@@ -853,20 +853,18 @@ The exact area is 21.0
 <p>Note in this case, since we integrate a parabola, the result is exact. It will not be exact in general, but this method is generally expected to be more accurate than the trapezoid method for well-behaved data because it represents the local curvature better than lines do.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">simps</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">simpson</span>
 
-<span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">simpson</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">simps</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;simps&#39; from &#39;scipy.integrate&#39; (/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/scipy/integrate/__init__.py)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2513/2831700677.py:3: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  simpson(y, x), np.trapz(y, x)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(20.999999999999996), np.float64(21.000202693572362))
 </pre></div>
 </div>
 </div>
@@ -899,6 +897,10 @@ The exact area is 21.0
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Approximate volume = 4.1870
 Exact volume = 4.1888
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2513/1257460721.py:5: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  approx_V = np.trapz(A, x)
 </pre></div>
 </div>
 </div>
@@ -954,6 +956,10 @@ Exact volume = 4.1888
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The required volume is 0.701 m^3.
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2513/3292621573.py:7: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  V = np.trapz(Fa0 / -ra, X)
+</pre></div>
+</div>
 </div>
 </div>
 <p>How does the volume depend on conversion? Let’s plot the integrand first so we can get a sense for how the area might change with conversion.</p>
@@ -968,7 +974,7 @@ Exact volume = 4.1888
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d4ed02789c616e1c1653d765a69cf8dab2e224e957cfac7c0cc5e6ae046e8f71.png" src="../../_images/d4ed02789c616e1c1653d765a69cf8dab2e224e957cfac7c0cc5e6ae046e8f71.png" />
+<img alt="../../_images/7d76e28ab683edfe8230c8c478d9927fb3a39d06c02a15e050f795294f42049c.png" src="../../_images/7d76e28ab683edfe8230c8c478d9927fb3a39d06c02a15e050f795294f42049c.png" />
 </div>
 </div>
 <p>We could iterate over the conversions and print the volume for each value. This is a little wasteful since we recompute the areas in each iteration, but here it is so fast it does not matter.</p>
@@ -1039,11 +1045,15 @@ At X=0.60 V=0.618 m^3
 At X=0.65 V=0.701 m^3
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
- 0.22254475084663766,
- 0.40163013620001153,
- 0.617954846280297,
- 0.7008495831224023]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2513/4281580529.py:6: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  vol = np.trapz(y[0 : i + 1], X[0 : i + 1])
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(0.0),
+ np.float64(0.22254475084663766),
+ np.float64(0.40163013620001153),
+ np.float64(0.617954846280297),
+ np.float64(0.7008495831224023)]
 </pre></div>
 </div>
 </div>
@@ -1064,14 +1074,17 @@ At X=0.65 V=0.701 m^3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/gq/k1kgbl7n539_4dl1md8x3jt80000gn/T/ipykernel_31669/3512106109.py:3: DeprecationWarning: &#39;scipy.integrate.cumtrapz&#39; is deprecated in favour of &#39;scipy.integrate.cumulative_trapezoid&#39; and will be removed in SciPy 1.14.0
-  cumV = sp.integrate.cumtrapz(Fa0 / -ra, X)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">cumV</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">cumtrapz</span><span class="p">(</span><span class="n">Fa0</span> <span class="o">/</span> <span class="o">-</span><span class="n">ra</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">cumV</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Conversion&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;scipy.integrate&#39; has no attribute &#39;cumtrapz&#39;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.22254475, 0.40163014, 0.61795485, 0.70084958])
-</pre></div>
-</div>
-<img alt="../../_images/c577e2e0336297a47d4634c13dd57861958986d19ba6aeeb9ae2e727664381c4.png" src="../../_images/c577e2e0336297a47d4634c13dd57861958986d19ba6aeeb9ae2e727664381c4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1091,14 +1104,14 @@ At X=0.65 V=0.701 m^3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/gq/k1kgbl7n539_4dl1md8x3jt80000gn/T/ipykernel_31669/375828065.py:3: DeprecationWarning: &#39;scipy.integrate.cumtrapz&#39; is deprecated in favour of &#39;scipy.integrate.cumulative_trapezoid&#39; and will be removed in SciPy 1.14.0
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/gq/k1kgbl7n539_4dl1md8x3jt80000gn/T/ipykernel_14761/375828065.py:3: DeprecationWarning: &#39;scipy.integrate.cumtrapz&#39; is deprecated in favour of &#39;scipy.integrate.cumulative_trapezoid&#39; and will be removed in SciPy 1.14.0
   cumV = sp.integrate.cumtrapz(
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.22254475, 0.40163014, 0.61795485, 0.70084958])
 </pre></div>
 </div>
-<img alt="../../_images/cc3740accd288e40010c2c81f035e282cd90fd23a8c43f480ca379360ffb08ee.png" src="../../_images/cc3740accd288e40010c2c81f035e282cd90fd23a8c43f480ca379360ffb08ee.png" />
+<img alt="../../_images/38ae9ca675b98174772bd4b0b0a9dabeade145b427bb127c6fd309192bb911fd.png" src="../../_images/38ae9ca675b98174772bd4b0b0a9dabeade145b427bb127c6fd309192bb911fd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1154,7 +1167,7 @@ An alias of `cumulative_trapezoid`.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.6666666666666674, (0.6666666666666666, 4.721410046114446e-14))
 </pre></div>
 </div>
-<img alt="../../_images/9ce663d748b36ed96febf93a200ecaa1a8000ede30d84507895862f4369459f9.png" src="../../_images/9ce663d748b36ed96febf93a200ecaa1a8000ede30d84507895862f4369459f9.png" />
+<img alt="../../_images/bb9dcecf3bb5e6b1d66a9519a712216cb86c533668da849859f9605ef8d52aa1.png" src="../../_images/bb9dcecf3bb5e6b1d66a9519a712216cb86c533668da849859f9605ef8d52aa1.png" />
 </div>
 </div>
 <p>This example is special in several ways:</p>
@@ -1706,7 +1719,7 @@ bounds.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is 40.996012819169536!!!
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/gq/k1kgbl7n539_4dl1md8x3jt80000gn/T/ipykernel_31669/2765388034.py:5: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/gq/k1kgbl7n539_4dl1md8x3jt80000gn/T/ipykernel_14761/2765388034.py:5: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
   If increasing the limit yields no improvement it is advised to analyze 
   the integrand in order to determine the difficulties.  If the position of a 
   local difficulty can be determined (singularity, discontinuity) one will 
@@ -2190,7 +2203,7 @@ bounds.
 
 }
 
-</style></div><div class="output text_html"><div style="height:40px"></div><div class="flip-container" id="NDRkJGqCzOWn" tabindex="0" style="outline:none;"></div><div style="height:40px"></div><div class="next" id="NDRkJGqCzOWn-next" onclick="window.checkFlip('NDRkJGqCzOWn')"> </div> <div style="height:40px"></div></div><script type="application/javascript">/*!
+</style></div><div class="output text_html"><div style="height:40px"></div><div class="flip-container" id="kuQjKNWSrOuB" tabindex="0" style="outline:none;"></div><div style="height:40px"></div><div class="next" id="kuQjKNWSrOuB-next" onclick="window.checkFlip('kuQjKNWSrOuB')"> </div> <div style="height:40px"></div></div><script type="application/javascript">/*!
  * swiped-events.js - v1.1.4
  * Pure JavaScript swipe events
  * https://github.com/john-doherty/swiped-events
@@ -2537,14 +2550,14 @@ function createCards(id, keyControl, grabFocus) {
 
 
         function try_create() {
-          if(document.getElementById("NDRkJGqCzOWn")) {
-            createCards("NDRkJGqCzOWn", "True", "False");
+          if(document.getElementById("kuQjKNWSrOuB")) {
+            createCards("kuQjKNWSrOuB", "True", "False");
           } else {
              setTimeout(try_create, 200);
           }
         };
     
-var cardsNDRkJGqCzOWn=[
+var cardskuQjKNWSrOuB=[
     {
         "front": "np.trapz",
         "back": "Trapezoid method for data integration"
@@ -2562,9 +2575,9 @@ var cardsNDRkJGqCzOWn=[
         "back": "Gaussian quadrature to integrate functions<br>Returns integrand, error estimate"
     }
 ];
-var frontColorsNDRkJGqCzOWn= ["var(--asparagus)", "var(--terra-cotta)", "var(--cyan-process)" ];
-var backColorsNDRkJGqCzOWn= ["var(--dark-blue-gray)" ];
-var textColorsNDRkJGqCzOWn= ["var(--snow)" ];
+var frontColorskuQjKNWSrOuB= ["var(--asparagus)", "var(--terra-cotta)", "var(--cyan-process)" ];
+var backColorskuQjKNWSrOuB= ["var(--dark-blue-gray)" ];
+var textColorskuQjKNWSrOuB= ["var(--snow)" ];
 try_create(); </script></div>
 </div>
 <div class="cell docutils container">
@@ -2575,13 +2588,13 @@ try_create(); </script></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="GFRJCAJWJEwu" data-shufflequestions="False"
+<div class="output text_html"><div id="XaocRZFHOHkE" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#GFRJCAJWJEwu {
+#XaocRZFHOHkE {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2782,7 +2795,7 @@ try_create(); </script></div>
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsGFRJCAJWJEwu=[
+</style></div><script type="application/javascript">var questionsXaocRZFHOHkE=[
   {
     "question": "Which is the correct argument in matplotlib to plot data using black circles connected with a solid line?",
     "type": "multiple_choice",
@@ -3831,8 +3844,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("GFRJCAJWJEwu")) {
-            show_questions(questionsGFRJCAJWJEwu,  GFRJCAJWJEwu); 
+          if(document.getElementById("XaocRZFHOHkE")) {
+            show_questions(questionsXaocRZFHOHkE,  XaocRZFHOHkE); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3841,8 +3854,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("GFRJCAJWJEwu");
-        // console.log(document.getElementById("GFRJCAJWJEwu"));
+        //console.log("XaocRZFHOHkE");
+        // console.log(document.getElementById("XaocRZFHOHkE"));
 
         try_show();
         }
