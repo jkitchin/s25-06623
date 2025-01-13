@@ -20,7 +20,8 @@ import shlex
 from IPython.core.magic import register_line_magic
 
 from IPython.display import HTML, Markdown
-
+import warnings
+warnings.filterwarnings("ignore")
 
 def get_notebook_path():
     """Returns the absolute path of the Notebook or None if it cannot be determined
