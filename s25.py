@@ -4,13 +4,12 @@
 import os
 import requests
 import ipykernel
-from notebook import notebookapp
+from jupyter_server import serverapp
 
 import urllib, json, ipykernel
 
+from nbconvert import WebPDFExporter
 
-from nbconvert import HTMLExporter
-from notebook_as_pdf import PDFExporter
 import nbformat
 import re
 import tempfile
@@ -30,17 +29,18 @@ def get_notebook_path():
     connection_file = os.path.basename(ipykernel.get_connection_file())
     kernel_id = connection_file.split('-', 1)[1].split('.')[0]
 
-    payload = {'token': os.environ['JUPYTERHUB_API_TOKEN']}
+    headers = {'Authorization': f'token {os.environ["JUPYTERHUB_API_TOKEN"]}'}
     
-    for srv in notebookapp.list_running_servers():
-        result = requests.get(srv['url'] + 'api/sessions', params=payload)
-        sessions = result.json()
-
-        for sess in sessions:
-            if sess['kernel']['id'] == kernel_id:
-                return os.path.join(srv['notebook_dir'],sess['notebook']['path'])
+    for srv in serverapp.list_running_servers():
+        result = requests.get(srv['url'] + 'api/sessions', headers=headers)
+        if result.status_code == 200:
+            sessions = result.json()
+            for sess in sessions:
+                if sess['kernel']['id'] == kernel_id:
+                    return os.path.join(srv['root_dir'], sess['path'])
+        else:
+            print(f"Error: {result.status_code} - {result.text}")
     return None
-
 
 
 
@@ -54,6 +54,7 @@ def pdf_from_html(pdf=None, verbose=False):
 
     fname = get_notebook_path() # absolute path to notebook
     root, fn = os.path.split(fname)
+   
     
     p = fname.replace(os.environ['HOME'] + '/', '')
     url =  ('https://jupyterhub-dev.cheme.cmu.edu' + 
@@ -67,7 +68,7 @@ def pdf_from_html(pdf=None, verbose=False):
     with open(fname) as f:
         ipynb = f.read()
 
-    exporter = PDFExporter()
+    exporter = WebPDFExporter()
 
     nb = nbformat.reads(ipynb, as_version=4)
     
@@ -127,9 +128,14 @@ except:
     pass
 
 
+# install chromium if necessary
+import os
+if not os.path.exists(os.path.expanduser('~/.cache/ms-playwright/')):
+    os.system('playwright install chromium')
+
 
 # Update environment
-import os
-if not os.path.exists(os.path.expanduser('~/share')):
-    os.symlink('/usr/local/share/s25-06623',os.path.expanduser('~/share'), target_is_directory=True)
+# import os
+# if not os.path.exists(os.path.expanduser('~/share')):
+#    os.symlink('/usr/local/share/s25-06623',os.path.expanduser('~/share'), target_is_directory=True)
     
