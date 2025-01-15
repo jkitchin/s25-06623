@@ -15,7 +15,7 @@ import re
 import tempfile
 import subprocess
 import time
-
+import json
 import shlex
 from IPython.core.magic import register_line_magic
 import argparse
@@ -174,11 +174,25 @@ if not os.path.exists(dbfile):
     for fullpath in tqdm(glob.glob(pattern, recursive=True)):
         if 'assignment' in fullpath:
             continue
-            
-        path = os.path.relpath(fullpath, start=root)
-        url = f'[{path}](https://jh-01.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/{path}&branch=main)'
-        markdown_string = notebook_to_markdown(fullpath)
-        collection.add(documents=[markdown_string], ids=[url])
+
+        mdcounter, codecounter = 0, 0
+        with open(fullpath) as f:
+            ipynb = json.loads(f.read())
+            for cell in ipynb['cells']:
+                if cell["cell_type"] == "markdown":
+                    text = ''.join(cell['source'])
+                    path = os.path.relpath(fullpath, start=root)
+                    url = f'[{path} :markdown: {mdcounter}](https://jh-01.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/{path}&branch=main)'
+                    # markdown_string = notebook_to_markdown(fullpath)
+                    collection.add(documents=[text], ids=[url])
+                    mdcounter += 1
+                elif cell["cell_type"] == "code":
+                    text = ''.join(cell['source'])
+                    path = os.path.relpath(fullpath, start=root)
+                    url = f'[{path} :code: {codecounter}](https://jh-01.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/{path}&branch=main)'
+                    # markdown_string = notebook_to_markdown(fullpath)
+                    collection.add(documents=[text], ids=[url])
+                    codecounter += 1
 else:
     db = chromadb.PersistentClient(path=dbfile)
     collection = db.get_or_create_collection(collection_name)
@@ -195,9 +209,17 @@ def search(line, cell):
     
     prompt = cell
     results = collection.query(query_texts=[prompt], n_results=args.n)
+
     print('The closest notebooks are:')
-    for i, result in enumerate(results['ids'][0], 1):
-        display(Markdown(f'{i}. ' + result))
+    for i, (url, doc) in enumerate(zip(results['ids'][0], results['documents'][0]), 1):
+        display(Markdown(f'{i}. ' + url))
+        if ':markdown:' in url:
+            display(Markdown(doc))
+        elif ':code:' in url:
+            display(Markdown(f'```python\n{doc}\n```'))
+        
+            
+        
 
 try:
     search = register_cell_magic(search)
