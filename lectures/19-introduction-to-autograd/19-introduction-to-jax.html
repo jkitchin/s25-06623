@@ -185,6 +185,7 @@
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../02-integration-1/02-integration-1.html">Integration in Python</a></li>
 
 
@@ -772,7 +773,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.63404222, 0.7048188 ]), array(-27.46406289))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.63336511, 0.70755861]), array(-80.51347035))
 </pre></div>
 </div>
 </div>
@@ -785,7 +786,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ceb2e23cb8a719c6471c8d326c710156b29cbe2742deeafef3a9788e6c250393.png" src="../../_images/ceb2e23cb8a719c6471c8d326c710156b29cbe2742deeafef3a9788e6c250393.png" />
+<img alt="../../_images/6ad67b61925bd3040fce4958d145b4b16467dd86edab9fe09cceee9418a084dc.png" src="../../_images/6ad67b61925bd3040fce4958d145b4b16467dd86edab9fe09cceee9418a084dc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -800,7 +801,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6b869f1e56d0109a32a5dc8f7eded825274835bd73b1941b410e2a6ee887ad8d.png" src="../../_images/6b869f1e56d0109a32a5dc8f7eded825274835bd73b1941b410e2a6ee887ad8d.png" />
+<img alt="../../_images/ff25bbcb01723ec9aa718d231e32ea172d6b510c5fc25348e5790d9f8868f799.png" src="../../_images/ff25bbcb01723ec9aa718d231e32ea172d6b510c5fc25348e5790d9f8868f799.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -810,7 +811,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e5c059733e6fc391fea84b968e2ed7ad5defc72ae0da4fb78a1413dbcdf1565d.png" src="../../_images/e5c059733e6fc391fea84b968e2ed7ad5defc72ae0da4fb78a1413dbcdf1565d.png" />
+<img alt="../../_images/967b50f9982fc5aae57127e3f045999fbabf162b0aa85b016be5cdae87b0a61e.png" src="../../_images/967b50f9982fc5aae57127e3f045999fbabf162b0aa85b016be5cdae87b0a61e.png" />
 </div>
 </div>
 </section>
@@ -1132,8 +1133,8 @@ example:</p>
 <p><span class="math notranslate nohighlight">\(f_1(x, y) = x^2 y\)</span></p>
 <p><span class="math notranslate nohighlight">\(f_2(x, y) = 5 x + \sin(y)\)</span></p>
 <p>The Jacobian of this system is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2362cd75-6857-4fcf-b3db-29df4ebc495a">
-<span class="eqno">(4)<a class="headerlink" href="#equation-2362cd75-6857-4fcf-b3db-29df4ebc495a" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
+<div class="amsmath math notranslate nohighlight" id="equation-2cadacb2-d7fa-464b-a217-644ba3e9e450">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2cadacb2-d7fa-464b-a217-644ba3e9e450" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
 \end{array}\right] \end{equation}\]</div>
 <p>There are two Jacobian functions, <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> and <code class="docutils literal notranslate"><span class="pre">jacref</span></code>. In theory they do the same thing, but one of them will usually be faster for some systems. <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> uses a forward pass through the code to compute the Jacobian, while <code class="docutils literal notranslate"><span class="pre">jacrev</span></code> uses a reverse pass. The <a class="reference external" href="https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html#jacobians-and-hessians-using-jacfwd-and-jacrev">documentation</a> recommends using jacfwd for “tall” Jacobians and jacref for “wide” jacobians. For square jacobians, it does not matter. It is fine to be practical, and try both to see if one is faster than other.</p>
 <div class="cell docutils container">
