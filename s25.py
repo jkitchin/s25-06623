@@ -188,7 +188,7 @@ from IPython.core.magic import register_cell_magic
 from IPython.display import HTML
 
 
-def helpme(line, cell):
+def search(line, cell):
     parser = argparse.ArgumentParser()
     parser.add_argument('-n', type=int, default=3, help='Number of documents to repeat')
     args = parser.parse_args(line.split())
@@ -200,12 +200,11 @@ def helpme(line, cell):
         display(Markdown(f'{i}. ' + result))
 
 try:
-    helpme = register_cell_magic(helpme)
+    search = register_cell_magic(search)
 except:
     pass
 
 
-print('s25 is loaded')
 # Update environment
 # import os
 # if not os.path.exists(os.path.expanduser('~/share')):
