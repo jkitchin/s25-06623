@@ -19,7 +19,6 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 %run ~/s25-06623/s25.py
-%pdf
 ------------------
 
 
@@ -41,7 +40,6 @@ The above exception was the direct cause of the following exception:
 [0;31mException[0m                                 Traceback (most recent call last)
 Cell [0;32mIn[72], line 1[0m
 [0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_line_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mrun[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m~/s25-06623/s25.py[39;49m[38;5;124;43m'[39;49m[43m)[49m
-[1;32m      2[0m get_ipython()[38;5;241m.[39mrun_line_magic([38;5;124m'[39m[38;5;124mpdf[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124m'[39m)
 
 File [0;32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/IPython/core/interactiveshell.py:2480[0m, in [0;36mInteractiveShell.run_line_magic[0;34m(self, magic_name, line, _stack_depth)[0m
 [1;32m   2478[0m     kwargs[[38;5;124m'[39m[38;5;124mlocal_ns[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mget_local_scope(stack_depth)
