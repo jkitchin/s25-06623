@@ -18,11 +18,18 @@ import time
 
 import shlex
 from IPython.core.magic import register_line_magic
+import argparse
 
 from IPython.display import HTML, Markdown
 import warnings
 warnings.filterwarnings("ignore")
 
+# install chromium if necessary
+import os
+if not os.path.exists(os.path.expanduser('~/.cache/ms-playwright/')):
+    os.system('playwright install chromium')
+
+    
 def get_notebook_path():
     """Returns the absolute path of the Notebook or None if it cannot be determined
     NOTE: works only when the security is token-based or there is also no password
@@ -129,12 +136,76 @@ except:
     pass
 
 
-# install chromium if necessary
+###################### SEARCH
+
+
+import chromadb
 import os
-if not os.path.exists(os.path.expanduser('~/.cache/ms-playwright/')):
-    os.system('playwright install chromium')
+import glob
+from tqdm import tqdm
+
+from nbconvert import MarkdownExporter
+
+def notebook_to_markdown(notebook_path):
+    # Load the notebook
+    with open(notebook_path, 'r', encoding='utf-8') as f:
+        notebook = nbformat.read(f, as_version=4)
+    
+    # Create a Markdown exporter
+    markdown_exporter = MarkdownExporter()
+    
+    # Convert the notebook to a markdown string
+    markdown_string, _ = markdown_exporter.from_notebook_node(notebook)
+    
+    return markdown_string
+
+dbfile = os.path.expanduser('~/db.chromadb')
+collection_name = 'ipynb'
+
+if not os.path.exists(dbfile):
+    db = chromadb.PersistentClient(path=dbfile)
+    if collection_name in db.list_collections():
+        db.delete_collection(collection_name)
+
+    collection = db.get_or_create_collection(collection_name)
+    print('Indexing files. It should not take long, and it should only happen once.')
+    root = os.path.expanduser('~/s25-06623')
+    pattern = os.path.expanduser('~/s25-06623/**/*.ipynb')
+    for fullpath in tqdm(glob.glob(pattern, recursive=True)):
+        if 'assignment' in fullpath:
+            continue
+            
+        path = os.path.relpath(fullpath, start=root)
+        url = f'[{path}](https://jh-01.cheme.cmu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/jkitchin/s25-06623&urlpath=lab/tree/s25-06623/{path}&branch=main)'
+        markdown_string = notebook_to_markdown(fullpath)
+        collection.add(documents=[markdown_string], ids=[url])
+else:
+    db = chromadb.PersistentClient(path=dbfile)
+    collection = db.get_or_create_collection(collection_name)
 
 
+from IPython.core.magic import register_cell_magic
+from IPython.display import HTML
+
+
+def helpme(line, cell):
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-n', type=int, default=3, help='Number of documents to repeat')
+    args = parser.parse_args(line.split())
+    
+    prompt = cell
+    results = collection.query(query_texts=[prompt], n_results=args.n)
+    print('The closest notebooks are:')
+    for i, result in enumerate(results['ids'][0], 1):
+        display(Markdown(f'{i}. ' + result))
+
+try:
+    helpme = register_cell_magic(helpme)
+except:
+    pass
+
+
+print('s25 is loaded')
 # Update environment
 # import os
 # if not os.path.exists(os.path.expanduser('~/share')):
