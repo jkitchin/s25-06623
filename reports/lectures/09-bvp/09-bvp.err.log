@@ -29,7 +29,7 @@ print(simps(c**2, sol.x))
 ----- stdout -----
 0.016528962860989864
 ----- stderr -----
-/tmp/ipykernel_2719/1011323283.py:2: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+/tmp/ipykernel_2686/1011323283.py:2: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
   print(np.trapz(c**2, sol.x))
 ------------------
 
