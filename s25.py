@@ -26,9 +26,13 @@ warnings.filterwarnings("ignore")
 
 # install chromium if necessary
 import os
-if not os.path.exists(os.path.expanduser('~/.cache/ms-playwright/')):
-    os.system('playwright install chromium')
 
+try:
+    ex = WebPDFExporter()
+    ex.run_playwright('')
+except:
+    os.system('playwright install chromium')
+    
     
 def get_notebook_path():
     """Returns the absolute path of the Notebook or None if it cannot be determined
@@ -217,10 +221,7 @@ def search(line, cell):
             display(Markdown(doc))
         elif ':code:' in url:
             display(Markdown(f'```python\n{doc}\n```'))
-        
             
-        
-
 try:
     search = register_cell_magic(search)
 except:
@@ -228,7 +229,8 @@ except:
 
 
 # Update environment
-# import os
-# if not os.path.exists(os.path.expanduser('~/share')):
-#    os.symlink('/usr/local/share/s25-06623',os.path.expanduser('~/share'), target_is_directory=True)
+import os
+if not os.path.exists(os.path.expanduser('~/solutions')):
+    os.symlink('/usr/local/share/s25-06623',
+               os.path.expanduser('~/solutions'), target_is_directory=True)
     
