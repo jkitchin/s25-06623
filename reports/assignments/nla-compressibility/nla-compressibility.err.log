@@ -18,28 +18,31 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-c = sol.y[0]
-print(np.trapz(c**2, sol.x))
+import tabulate
 
-from scipy.integrate import simps
+data = [['P (atm)', 'V (L/mol)',   'Z']]
 
-print(simps(c**2, sol.x))
+for p in [56, 111.3, 222.6, 445.2, 1113, 2226]:
+    sol = root(vdw_zero, 0.5, args=(p,))
+    
+    V = sol.x[0]
+    Z = p * V / R / T
+    data += [[p, V, Z]]
+    
+print(tabulate.tabulate(data, headers='firstrow'))
+
+
 ------------------
 
------ stdout -----
-0.016528962860989864
------ stderr -----
-/tmp/ipykernel_2724/1011323283.py:2: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  print(np.trapz(c**2, sol.x))
-------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mImportError[0m                               Traceback (most recent call last)
-Cell [0;32mIn[36], line 4[0m
-[1;32m      1[0m c [38;5;241m=[39m sol[38;5;241m.[39my[[38;5;241m0[39m]
-[1;32m      2[0m [38;5;28mprint[39m(np[38;5;241m.[39mtrapz(c[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m, sol[38;5;241m.[39mx))
-[0;32m----> 4[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mintegrate[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m simps
-[1;32m      6[0m [38;5;28mprint[39m(simps(c[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m, sol[38;5;241m.[39mx))
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 6[0m
+[1;32m      3[0m data [38;5;241m=[39m [[[38;5;124m'[39m[38;5;124mP (atm)[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mV (L/mol)[39m[38;5;124m'[39m,   [38;5;124m'[39m[38;5;124mZ[39m[38;5;124m'[39m]]
+[1;32m      5[0m [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m [[38;5;241m56[39m, [38;5;241m111.3[39m, [38;5;241m222.6[39m, [38;5;241m445.2[39m, [38;5;241m1113[39m, [38;5;241m2226[39m]:
+[0;32m----> 6[0m     sol [38;5;241m=[39m [43mroot[49m(vdw_zero, [38;5;241m0.5[39m, args[38;5;241m=[39m(p,))
+[1;32m      8[0m     V [38;5;241m=[39m sol[38;5;241m.[39mx[[38;5;241m0[39m]
+[1;32m      9[0m     Z [38;5;241m=[39m p [38;5;241m*[39m V [38;5;241m/[39m R [38;5;241m/[39m T
 
-[0;31mImportError[0m: cannot import name 'simps' from 'scipy.integrate' (/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/scipy/integrate/__init__.py)
+[0;31mNameError[0m: name 'root' is not defined
 

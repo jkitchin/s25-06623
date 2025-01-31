@@ -523,6 +523,7 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
 <p>The van der Waals equation of state for a gas is defined by:</p>
 <p><span class="math notranslate nohighlight">\(\left(P + \frac{a}{V^2}\right)(V - b) = RT\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are defined by:</p>
@@ -537,15 +538,127 @@ the gas, and <span class="math notranslate nohighlight">\(T_c\)</span> is the cr
 <p>P = 56, 111.3, 222.6, 445.2, 1113, 2226 atm.</p>
 <p>For each pressure, print the following quantities in a roughly tabular form:</p>
 <p>P, V, Z</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You should `scipy.optimize.root for this. It might be possible to solve this problem analytically, and if you want to do that to check your answer that is fine.</p>
-</div>
-<hr class="docutils" />
-<p>When you are done, download a PDF and turn it in on Canvas. Make sure to save your notebook, then run this cell and click on the download link.</p>
-<div class="cell tag_raises-exception tag_remove-output docutils container">
+<p>Here are some alternative approaches to getting a reasonable looking tabular output.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> ~/f23-06623/f23.py
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tabulate</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;P (atm)&#39;</span><span class="p">,</span> <span class="s1">&#39;V (L/mol)&#39;</span><span class="p">,</span>   <span class="s1">&#39;Z&#39;</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">56</span><span class="p">,</span> <span class="mf">111.3</span><span class="p">,</span> <span class="mf">222.6</span><span class="p">,</span> <span class="mf">445.2</span><span class="p">,</span> <span class="mi">1113</span><span class="p">,</span> <span class="mi">2226</span><span class="p">]:</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">root</span><span class="p">(</span><span class="n">vdw_zero</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,))</span>
+    
+    <span class="n">V</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">V</span> <span class="o">/</span> <span class="n">R</span> <span class="o">/</span> <span class="n">T</span>
+    <span class="n">data</span> <span class="o">+=</span> <span class="p">[[</span><span class="n">p</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">Z</span><span class="p">]]</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;firstrow&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;P (atm)&#39;</span><span class="p">,</span> <span class="s1">&#39;V (L/mol)&#39;</span><span class="p">,</span>   <span class="s1">&#39;Z&#39;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">56</span><span class="p">,</span> <span class="mf">111.3</span><span class="p">,</span> <span class="mf">222.6</span><span class="p">,</span> <span class="mf">445.2</span><span class="p">,</span> <span class="mi">1113</span><span class="p">,</span> <span class="mi">2226</span><span class="p">]:</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">sol</span> <span class="o">=</span> <span class="n">root</span><span class="p">(</span><span class="n">vdw_zero</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,))</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">V</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">Z</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">V</span> <span class="o">/</span> <span class="n">R</span> <span class="o">/</span> <span class="n">T</span>
+
+<span class="ne">NameError</span>: name &#39;root&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">56</span><span class="p">,</span> <span class="mf">111.3</span><span class="p">,</span> <span class="mf">222.6</span><span class="p">,</span> <span class="mf">445.2</span><span class="p">,</span> <span class="mi">1113</span><span class="p">,</span> <span class="mi">2226</span><span class="p">]:</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">root</span><span class="p">(</span><span class="n">vdw_zero</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,))</span>
+    
+    <span class="n">V</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">V</span> <span class="o">/</span> <span class="n">R</span> <span class="o">/</span> <span class="n">T</span>
+    <span class="n">data</span> <span class="o">+=</span> <span class="p">[[</span><span class="n">p</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">Z</span><span class="p">]]</span>
+    
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P (atm)&#39;</span><span class="p">,</span> <span class="s1">&#39;V (L/mol)&#39;</span><span class="p">,</span>   <span class="s1">&#39;Z&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>P (atm)</th>
+      <th>V (L/mol)</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>56.0</td>
+      <td>0.574892</td>
+      <td>0.871827</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>111.3</td>
+      <td>0.233509</td>
+      <td>0.703808</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>222.6</td>
+      <td>0.077268</td>
+      <td>0.465777</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>445.2</td>
+      <td>0.060654</td>
+      <td>0.731261</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1113.0</td>
+      <td>0.050875</td>
+      <td>1.533409</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2226.0</td>
+      <td>0.046175</td>
+      <td>2.783482</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this cell to generate a pdf from this notebook</span>
+<span class="c1"># Click the generated links to preview and download it.</span>
+<span class="c1"># Report errors to Professor Kitchin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">f22_06623</span><span class="w"> </span><span class="kn">import</span> <span class="n">pdf</span>
 <span class="o">%</span><span class="k">pdf</span>
 </pre></div>
 </div>
