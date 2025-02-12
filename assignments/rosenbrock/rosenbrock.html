@@ -525,39 +525,6 @@
 </div>
 <p>The modified Rosenbrock equation:</p>
 <p><span class="math notranslate nohighlight">\(f(x_1, x_2) = 100 (x_2 - x_1^2)^2 + (6.4 (x_2 - 0.5)^2 - x_1 -0.6)^2\)</span> has three minima in the range of <span class="math notranslate nohighlight">\(-2 &lt; x_1 &lt; 2\)</span> and <span class="math notranslate nohighlight">\(-2 &lt; x_2 &lt; 2\)</span>. Find these minima and their values. Plot them and show they are minima.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nbi-prompt: Solve that equation with root an initial guess of (-0.5, 0.5), (0.3, 0.3) and (1.1, 1.0). for each one print the solution jacobian.</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">objective_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">equation</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">6.4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x1</span> <span class="o">-</span> <span class="mf">0.6</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">return</span> <span class="n">equation</span>
-
-<span class="n">initial_guesses</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]</span>
-<span class="n">solutions</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">guess</span> <span class="ow">in</span> <span class="n">initial_guesses</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">objective_function</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
-    <span class="n">solutions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Root:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jacobian:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">jac</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Root: [-0.66369999  0.44114456]
-Jacobian: [-1.37020834e-07 -9.59262252e-08]
-Root: [0.34130744 0.11649077]
-Jacobian: [-1.23943916e-07 -2.61971639e-07]
-Root: [0.99999995 0.99999992]
-Jacobian: [-1.04437070e-07  8.92229661e-09]
-</pre></div>
-</div>
-</div>
-</div>
 <p>When you are done, download a PDF and turn it in on Canvas. Make sure to save your notebook, then run this cell and click on the download link.</p>
 <div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
