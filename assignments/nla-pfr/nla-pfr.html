@@ -536,6 +536,45 @@
 <p>The reactor operates at steady state with:</p>
 <ul class="simple">
 <li><p>Inlet concentration:  <span class="math notranslate nohighlight">\(C_{A0}\)</span> = 1.0  mol/L</p></li>
+<li><p>Inlet molar flow rate:  <span class="math notranslate nohighlight">\(F_{A0}\)</span> = 2.0  mol/s</p></li>
+<li><p>Desired conversion:  <span class="math notranslate nohighlight">\(X = 0.80\)</span></p></li>
+</ul>
+<p>Using the design equation for a PFR:</p>
+<p><span class="math notranslate nohighlight">\(V = \int_0^X \frac{F_{A0} \, dX}{-r_A}\)</span></p>
+<p>Find the required reactor volume (V in L) using Python.</p>
+<hr class="docutils" />
+<p>When you are done, download a PDF and turn it in on Canvas. Make sure to save your notebook, then run this cell and click on the download link.</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> ~/s25-06623/s25.py
+<span class="o">%</span><span class="k">pdf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before you turn this problem in, make sure everything runs as expected. First, <strong>restart the kernel</strong> (in the menubar, select Kernel<span class="math notranslate nohighlight">\(\rightarrow\)</span>Restart) and then <strong>run all cells</strong> (in the menubar, select Cell<span class="math notranslate nohighlight">\(\rightarrow\)</span>Run All).</p>
+<p>Make sure you fill in any place that says <code class="docutils literal notranslate"><span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> or “YOUR ANSWER HERE”, as well as your name and collaborators below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">COLLABORATORS</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A first-order irreversible liquid-phase reaction:</p>
+<p><span class="math notranslate nohighlight">\(A \rightarrow B\)</span></p>
+<p>takes place in a Plug Flow Reactor (PFR). The rate of reaction is given by:</p>
+<p><span class="math notranslate nohighlight">\(-r_A = k C_A\)</span></p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(-r_A\)</span>  is the rate of disappearance of  A  (mol/L·s)</p></li>
+<li><p><span class="math notranslate nohighlight">\(k = 0.2  s^{-1}\)</span> is the reaction rate constant</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_A\)</span>  is the concentration of reactant  A  at any point in the reactor (mol/L)</p></li>
+</ul>
+<p>The reactor operates at steady state with:</p>
+<ul class="simple">
+<li><p>Inlet concentration:  <span class="math notranslate nohighlight">\(C_{A0}\)</span> = 1.0  mol/L</p></li>
 <li><p>Inlet volumetric flow rate:  <span class="math notranslate nohighlight">\(F_{A0}\)</span> = 2.0  L/s</p></li>
 <li><p>Desired conversion:  <span class="math notranslate nohighlight">\(X = 0.80\)</span></p></li>
 </ul>
