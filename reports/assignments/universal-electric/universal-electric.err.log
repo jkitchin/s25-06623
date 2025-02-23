@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+# plot contour of the objective
+nx1, nx2 = (50, 50)
+x1 = np.linspace(0, 500, nx1)
+x2 = np.linspace(0, 500, nx2)
+x1v, x2v = np.meshgrid(x1, x2)
+plt.contourf(x1v, x2v, profit([x1v, x2v]))
+plt.colorbar()
+plt.ylim([0,500])
+plt.xlabel('L1 [lamps/month]')
+plt.ylabel('L2 [lamps/month]')
+
+# plot lines of inequality constraints
+L2_w1 = -2 / 3 * x1 + 200
+L2_w2 = -2 * x1 + 480
+plt.plot(x1, L2_w1, '--k', label='W1')
+plt.plot(x1, L2_w2, '-k', label='W2')
+
+
+# fill feasible region
+eddge = np.minimum(L2_w1,L2_w2) #upper edge of the feasible region
+plt.fill_between(x1, eddge, 0, facecolor='gray', alpha = 0.8)
+
+# Plot the solution
+plt.plot(sol.x[0],sol.x[1],'or',label='optimal')
+plt.legend();
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 9[0m
+[1;32m      7[0m x2 [38;5;241m=[39m np[38;5;241m.[39mlinspace([38;5;241m0[39m, [38;5;241m500[39m, nx2)
+[1;32m      8[0m x1v, x2v [38;5;241m=[39m np[38;5;241m.[39mmeshgrid(x1, x2)
+[0;32m----> 9[0m plt[38;5;241m.[39mcontourf(x1v, x2v, [43mprofit[49m([x1v, x2v]))
+[1;32m     10[0m plt[38;5;241m.[39mcolorbar()
+[1;32m     11[0m plt[38;5;241m.[39mylim([[38;5;241m0[39m,[38;5;241m500[39m])
+
+[0;31mNameError[0m: name 'profit' is not defined
+

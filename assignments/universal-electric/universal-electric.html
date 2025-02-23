@@ -542,7 +542,7 @@ document.write(`
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="universal-electric-inc">
 <h1>Universal Electric, Inc<a class="headerlink" href="#universal-electric-inc" title="Link to this heading">#</a></h1>
-<p>Universal Electric, Inc manufactures and sells two types of lamps: L1 and L2. They make a profit of $150 on L1 and $100 on L2. There are two workers that can make the lamps, W1 and W2. W1 works for 100 hours a month, and W2 works for 80 hours a month.</p>
+<p>Universal Electric, Inc manufactures and sells two types of lamps: L1 and L2. They make a profit of <span class="math notranslate nohighlight">\(150 on L1 and \)</span>100 on L2. There are two workers that can make the lamps, W1 and W2. W1 works for 100 hours a month, and W2 works for 80 hours a month.</p>
 <p>W1 assembles L1 in 20 minutes, and L2 in 30 minutes. W2 paints L1 in 20 min and L2 in 10 minutes. Assuming that all lamps that are made can be sold, how many of each kind of lamp should the workers make to maximize the profit, and how much profit will be made?</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="show-that-the-constraints-are-satisfied">
@@ -551,10 +551,58 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="visualize-the-solution">
 <h1>Visualize the solution<a class="headerlink" href="#visualize-the-solution" title="Link to this heading">#</a></h1>
 <p>Make a contour plot that shows the profit as a function of L1 and L2. Plot the constraints and your solution on this figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># plot contour of the objective</span>
+<span class="n">nx1</span><span class="p">,</span> <span class="n">nx2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">nx1</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">nx2</span><span class="p">)</span>
+<span class="n">x1v</span><span class="p">,</span> <span class="n">x2v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x1v</span><span class="p">,</span> <span class="n">x2v</span><span class="p">,</span> <span class="n">profit</span><span class="p">([</span><span class="n">x1v</span><span class="p">,</span> <span class="n">x2v</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;L1 [lamps/month]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;L2 [lamps/month]&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot lines of inequality constraints</span>
+<span class="n">L2_w1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">+</span> <span class="mi">200</span>
+<span class="n">L2_w2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">+</span> <span class="mi">480</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">L2_w1</span><span class="p">,</span> <span class="s1">&#39;--k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;W1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">L2_w2</span><span class="p">,</span> <span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;W2&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># fill feasible region</span>
+<span class="n">eddge</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">L2_w1</span><span class="p">,</span><span class="n">L2_w2</span><span class="p">)</span> <span class="c1">#upper edge of the feasible region</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">eddge</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">)</span>
+
+<span class="c1"># Plot the solution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">sol</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;or&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;optimal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">nx2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">x1v</span><span class="p">,</span> <span class="n">x2v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x1v</span><span class="p">,</span> <span class="n">x2v</span><span class="p">,</span> <span class="n">profit</span><span class="p">([</span><span class="n">x1v</span><span class="p">,</span> <span class="n">x2v</span><span class="p">]))</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;profit&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p>When you are done, download a PDF and turn it in on Canvas. Make sure to save your notebook, then run this cell and click on the download link.</p>
 <div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> ~/f23-06623/f23.py
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> ~/s25-06623/s25.py
 <span class="o">%</span><span class="k">pdf</span>
 </pre></div>
 </div>
