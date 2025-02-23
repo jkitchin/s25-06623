@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="Constrained minimization" href="../13-constrained-optimization/13-constrained-optimization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s25-06623 - Home"/>
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s25-06623 - Home"/>
+    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="s25-06623 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -268,14 +279,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -468,16 +474,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -1352,13 +1366,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="YTrgWIEialzD" data-shufflequestions="False"
+<div class="output text_html"><div id="KpACiMDFozcH" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#YTrgWIEialzD {
+#KpACiMDFozcH {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1559,7 +1573,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsYTrgWIEialzD=[
+</style></div><script type="application/javascript">var questionsKpACiMDFozcH=[
   {
     "question": "<p>What will be the output of the following code:</p><br><p><code>x = np.array([4, 3, 2, 1])<br>for I in x:<br>    print(I)</code></p>",
     "type": "multiple_choice",
@@ -2608,8 +2622,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("YTrgWIEialzD")) {
-            show_questions(questionsYTrgWIEialzD,  YTrgWIEialzD); 
+          if(document.getElementById("KpACiMDFozcH")) {
+            show_questions(questionsKpACiMDFozcH,  KpACiMDFozcH); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2618,8 +2632,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("YTrgWIEialzD");
-        // console.log(document.getElementById("YTrgWIEialzD"));
+        //console.log("KpACiMDFozcH");
+        // console.log(document.getElementById("KpACiMDFozcH"));
 
         try_show();
         }
@@ -3046,8 +3060,8 @@ if (typeof version == 'undefined') {
 <h1>Solving linear algebraic equations<a class="headerlink" href="#solving-linear-algebraic-equations" title="Link to this heading">#</a></h1>
 <p>One of the key reasons to develop the tools above is for solving linear equations. Let’s consider an example.</p>
 <p>Given these equations, find [x1, x2, x3]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c69a6de-dfd0-4db4-a8f1-416f2b5314cd">
-<span class="eqno">(3)<a class="headerlink" href="#equation-8c69a6de-dfd0-4db4-a8f1-416f2b5314cd" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-ad0253a8-8b23-4c6d-9b3d-eb2e54795860">
+<span class="eqno">(3)<a class="headerlink" href="#equation-ad0253a8-8b23-4c6d-9b3d-eb2e54795860" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 10 x_2 + 25 x_3 &amp;=&amp; 90 \\
 20 x_1 + 10 x_2 &amp;=&amp; 80
@@ -3225,7 +3239,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/65186f0bf131e45b1d1e74eda0e16ffcd394e7c7bf195112050c4a9ab969ebd2.png" src="../../_images/65186f0bf131e45b1d1e74eda0e16ffcd394e7c7bf195112050c4a9ab969ebd2.png" />
+<img alt="../../_images/4879e1e5069eefa2a9536de532351bb240adf0e9445c834e71d0afc32eb4c6e4.png" src="../../_images/4879e1e5069eefa2a9536de532351bb240adf0e9445c834e71d0afc32eb4c6e4.png" />
 </div>
 </div>
 <p>As usual, there is a function we can use to solve this.</p>
@@ -3268,7 +3282,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f2edc1aa9640f7fbdf88df0ffe1901de50bd1dd8155f781ffee635ea5d47eaac.png" src="../../_images/f2edc1aa9640f7fbdf88df0ffe1901de50bd1dd8155f781ffee635ea5d47eaac.png" />
+<img alt="../../_images/2a35756b2210e1ac52803122e8c419e91d9dab394304431ac443f6e7a7c26c4d.png" src="../../_images/2a35756b2210e1ac52803122e8c419e91d9dab394304431ac443f6e7a7c26c4d.png" />
 </div>
 </div>
 <p>You can see by inspection that solve must not be using an inverse to solve these equations; if it did, it would take much longer to solve them. It is remarkable that we can solve ~5000 simultaneous equations here in about 1-2 seconds!</p>
@@ -3282,13 +3296,13 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="RtWAhPxFrpEn" data-shufflequestions="False"
+<div class="output text_html"><div id="xOieldimGhQe" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#RtWAhPxFrpEn {
+#xOieldimGhQe {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3489,7 +3503,7 @@ x_1 - x_2 + x_3 &amp;=&amp; 0 \\
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsRtWAhPxFrpEn=[
+</style></div><script type="application/javascript">var questionsxOieldimGhQe=[
   {
     "question": "A = np.array([[1, 2, 3], [3, 2, 1]])<br>B = np.array([4, 5, 6])<br>A @ B  = C<br>We can say that",
     "type": "multiple_choice",
@@ -4442,8 +4456,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("RtWAhPxFrpEn")) {
-            show_questions(questionsRtWAhPxFrpEn,  RtWAhPxFrpEn); 
+          if(document.getElementById("xOieldimGhQe")) {
+            show_questions(questionsxOieldimGhQe,  xOieldimGhQe); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -4452,8 +4466,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("RtWAhPxFrpEn");
-        // console.log(document.getElementById("RtWAhPxFrpEn"));
+        //console.log("xOieldimGhQe");
+        // console.log(document.getElementById("xOieldimGhQe"));
 
         try_show();
         }
@@ -4471,13 +4485,13 @@ if (typeof version == 'undefined') {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="lVVLRSqyEnwT" data-shufflequestions="False"
+<div class="output text_html"><div id="TemirwyWnYQb" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#lVVLRSqyEnwT {
+#TemirwyWnYQb {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -4678,7 +4692,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionslVVLRSqyEnwT=[
+</style></div><script type="application/javascript">var questionsTemirwyWnYQb=[
   {
     "question": "np.tri(2, k = 1) + np.diag([1, 2]) = ?",
     "type": "multiple_choice",
@@ -5727,8 +5741,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("lVVLRSqyEnwT")) {
-            show_questions(questionslVVLRSqyEnwT,  lVVLRSqyEnwT); 
+          if(document.getElementById("TemirwyWnYQb")) {
+            show_questions(questionsTemirwyWnYQb,  TemirwyWnYQb); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -5737,8 +5751,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("lVVLRSqyEnwT");
-        // console.log(document.getElementById("lVVLRSqyEnwT"));
+        //console.log("TemirwyWnYQb");
+        // console.log(document.getElementById("TemirwyWnYQb"));
 
         try_show();
         }
@@ -5817,8 +5831,7 @@ if (typeof version == 'undefined') {
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -5897,8 +5910,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

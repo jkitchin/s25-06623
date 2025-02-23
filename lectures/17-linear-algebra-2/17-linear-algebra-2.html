@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="Linear algebraic equations" href="../16-linear-algebra/16-linear-algebra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/06623-roadmap.png" class="logo__image only-light" alt="s25-06623 - Home"/>
-    <img src="../../_static/06623-roadmap.png" class="logo__image only-dark pst-js-only" alt="s25-06623 - Home"/>
+    <script>document.write(`<img src="../../_static/06623-roadmap.png" class="logo__image only-dark" alt="s25-06623 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -268,14 +279,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -468,16 +474,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -1359,13 +1373,13 @@ True [-1.77022954 -1.68275159 -1.73736055] [-1.77022954 -1.68275159 -1.73736055]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="WydXOItZXjYb" data-shufflequestions="False"
+<div class="output text_html"><div id="KZllGZemfcxW" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#WydXOItZXjYb {
+#KZllGZemfcxW {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1566,7 +1580,7 @@ True [-1.77022954 -1.68275159 -1.73736055] [-1.77022954 -1.68275159 -1.73736055]
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsWydXOItZXjYb=[{"question": "Which of the following matrices can be solved using np.linalg.solve(A, B)", "type": "multiple_choice", "answers": [{"answer": "A = np.array([[a1, a2, a3], [a2, a3, a4]])<br>B = np.array([b1, b2, b3])", "correct": false}, {"answer": "A = np.array([[a1, a2, a3], [a2, a3, a4], [a3, a4 ,a5]])<br>B = np.array([b1, b2])", "correct": false}, {"answer": "A = np.array([[a1, a2, a3], [a2, a3, a4], [a3, a4, a5]])<br>B = np.array([b1, b2, b3])", "correct": true}, {"answer": "A = np.array([[a1, a2], [a2, a3], [a3, a4]])<br>B = np.array([b1, b2])", "correct": false}], "tag": "numpy applications", "lecture_file": "17_linear_algebra_2"}, {"question": "If B and X are row vectors, then the expression $b_1 x_1 + b_2 x_2 + b_3 x_3$ can be expressed as", "type": "multiple_choice", "answers": [{"answer": "B.T . X.T", "correct": false}, {"answer": "B . X", "correct": false}, {"answer": "B.T . X", "correct": false}, {"answer": "B . X.T", "correct": true}], "tag": "vectors applications", "lecture_file": "17_linear_algebra_2"}, {"question": "x = np.linspace(1, 5, 3); y = np.array([3, 9, 27])<br>Y = interp1d(x, y, kind='quadratic', bounds_error=False)<br>xfit = np.linspace(-1, 8)<br>print(Y(xfit))<br><br>The above code will", "type": "multiple_choice", "answers": [{"answer": "Raise an error", "correct": false}, {"answer": "Print Y() values for the x-range (-1, 8)", "correct": false}, {"answer": "Print Y() values for the x-range (1, 5) and NaN for the rest", "correct": true}, {"answer": "None of the above", "correct": false}], "tag": "scipy applications", "lecture_file": "17_linear_algebra_2"}, {"question": "If the eigenvalues of matrix A are complex, then we can be certain that the matrix A", "type": "multiple_choice", "answers": [{"answer": "is symmetric", "correct": false}, {"answer": "is a non-square matrix", "correct": false}, {"answer": "has all the elements as complex numbers", "correct": false}, {"answer": "is non-symmetric", "correct": true}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "For a 2 x 2 matrix with all values being real, and having 2 eigenvalues, if 1-2j is one of the eigenvalues, what is the other eigenvalue", "type": "multiple_choice", "answers": [{"answer": "1 + 2j", "correct": true}, {"answer": "-2j", "correct": false}, {"answer": "-1 -2j", "correct": false}, {"answer": "-1+2j", "correct": false}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "For an N x N matrix, the number of eigenvalues", "type": "multiple_choice", "answers": [{"answer": "will always be equal to N", "correct": false}, {"answer": "can never be more than N", "correct": true}, {"answer": "can be less or more than N", "correct": false}, {"answer": "will always be less than N", "correct": false}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "Find the product of the eigenvalues for the matrix:<br>np.array([[1, 2, 3], [3, 2, 1], [2, 1, 0]])", "type": "multiple_choice", "answers": [{"answer": "-8", "correct": false}, {"answer": "Need more information", "correct": false}, {"answer": "0", "correct": true}, {"answer": "1", "correct": false}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "Find the sum of all the eigenvalues of the matrix:<br>np.array([[1, 2, 3], [3, 2, 1], [2, 0, 1]])", "type": "multiple_choice", "answers": [{"answer": "0", "correct": false}, {"answer": "4", "correct": true}, {"answer": "Need more information", "correct": false}, {"answer": "6", "correct": false}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "If the eigenvalues of the Hessian matrix for a function are all negative, then we are at a", "type": "multiple_choice", "answers": [{"answer": "minimum", "correct": false}, {"answer": "saddle point", "correct": false}, {"answer": "maximum", "correct": true}, {"answer": "Need more information", "correct": false}], "tag": "eigenvalues hessian eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "If the eigenvectors of a matrix A are orthogonal, then we can be certain  that matrix A is a ", "type": "multiple_choice", "answers": [{"answer": "symmetric matrix", "correct": true}, {"answer": "asymmetric matrix", "correct": false}, {"answer": "lower triangular matrix", "correct": false}, {"answer": "There is no inference", "correct": false}], "tag": "eigenvectors eigen", "lecture_file": "17_linear_algebra_2"}];
+</style></div><script type="application/javascript">var questionsKZllGZemfcxW=[{"question": "Which of the following matrices can be solved using np.linalg.solve(A, B)", "type": "multiple_choice", "answers": [{"answer": "A = np.array([[a1, a2, a3], [a2, a3, a4]])<br>B = np.array([b1, b2, b3])", "correct": false}, {"answer": "A = np.array([[a1, a2, a3], [a2, a3, a4], [a3, a4 ,a5]])<br>B = np.array([b1, b2])", "correct": false}, {"answer": "A = np.array([[a1, a2, a3], [a2, a3, a4], [a3, a4, a5]])<br>B = np.array([b1, b2, b3])", "correct": true}, {"answer": "A = np.array([[a1, a2], [a2, a3], [a3, a4]])<br>B = np.array([b1, b2])", "correct": false}], "tag": "numpy applications", "lecture_file": "17_linear_algebra_2"}, {"question": "If B and X are row vectors, then the expression $b_1 x_1 + b_2 x_2 + b_3 x_3$ can be expressed as", "type": "multiple_choice", "answers": [{"answer": "B.T . X.T", "correct": false}, {"answer": "B . X", "correct": false}, {"answer": "B.T . X", "correct": false}, {"answer": "B . X.T", "correct": true}], "tag": "vectors applications", "lecture_file": "17_linear_algebra_2"}, {"question": "x = np.linspace(1, 5, 3); y = np.array([3, 9, 27])<br>Y = interp1d(x, y, kind='quadratic', bounds_error=False)<br>xfit = np.linspace(-1, 8)<br>print(Y(xfit))<br><br>The above code will", "type": "multiple_choice", "answers": [{"answer": "Raise an error", "correct": false}, {"answer": "Print Y() values for the x-range (-1, 8)", "correct": false}, {"answer": "Print Y() values for the x-range (1, 5) and NaN for the rest", "correct": true}, {"answer": "None of the above", "correct": false}], "tag": "scipy applications", "lecture_file": "17_linear_algebra_2"}, {"question": "If the eigenvalues of matrix A are complex, then we can be certain that the matrix A", "type": "multiple_choice", "answers": [{"answer": "is symmetric", "correct": false}, {"answer": "is a non-square matrix", "correct": false}, {"answer": "has all the elements as complex numbers", "correct": false}, {"answer": "is non-symmetric", "correct": true}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "For a 2 x 2 matrix with all values being real, and having 2 eigenvalues, if 1-2j is one of the eigenvalues, what is the other eigenvalue", "type": "multiple_choice", "answers": [{"answer": "1 + 2j", "correct": true}, {"answer": "-2j", "correct": false}, {"answer": "-1 -2j", "correct": false}, {"answer": "-1+2j", "correct": false}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "For an N x N matrix, the number of eigenvalues", "type": "multiple_choice", "answers": [{"answer": "will always be equal to N", "correct": false}, {"answer": "can never be more than N", "correct": true}, {"answer": "can be less or more than N", "correct": false}, {"answer": "will always be less than N", "correct": false}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "Find the product of the eigenvalues for the matrix:<br>np.array([[1, 2, 3], [3, 2, 1], [2, 1, 0]])", "type": "multiple_choice", "answers": [{"answer": "-8", "correct": false}, {"answer": "Need more information", "correct": false}, {"answer": "0", "correct": true}, {"answer": "1", "correct": false}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "Find the sum of all the eigenvalues of the matrix:<br>np.array([[1, 2, 3], [3, 2, 1], [2, 0, 1]])", "type": "multiple_choice", "answers": [{"answer": "0", "correct": false}, {"answer": "4", "correct": true}, {"answer": "Need more information", "correct": false}, {"answer": "6", "correct": false}], "tag": "eigenvalues eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "If the eigenvalues of the Hessian matrix for a function are all negative, then we are at a", "type": "multiple_choice", "answers": [{"answer": "minimum", "correct": false}, {"answer": "saddle point", "correct": false}, {"answer": "maximum", "correct": true}, {"answer": "Need more information", "correct": false}], "tag": "eigenvalues hessian eigen", "lecture_file": "17_linear_algebra_2"}, {"question": "If the eigenvectors of a matrix A are orthogonal, then we can be certain  that matrix A is a ", "type": "multiple_choice", "answers": [{"answer": "symmetric matrix", "correct": true}, {"answer": "asymmetric matrix", "correct": false}, {"answer": "lower triangular matrix", "correct": false}, {"answer": "There is no inference", "correct": false}], "tag": "eigenvectors eigen", "lecture_file": "17_linear_algebra_2"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -2373,8 +2387,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("WydXOItZXjYb")) {
-            show_questions(questionsWydXOItZXjYb,  WydXOItZXjYb); 
+          if(document.getElementById("KZllGZemfcxW")) {
+            show_questions(questionsKZllGZemfcxW,  KZllGZemfcxW); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2383,8 +2397,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("WydXOItZXjYb");
-        // console.log(document.getElementById("WydXOItZXjYb"));
+        //console.log("KZllGZemfcxW");
+        // console.log(document.getElementById("KZllGZemfcxW"));
 
         try_show();
         }
@@ -2447,8 +2461,7 @@ if (typeof version == 'undefined') {
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2515,8 +2528,8 @@ By John Kitchin
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
