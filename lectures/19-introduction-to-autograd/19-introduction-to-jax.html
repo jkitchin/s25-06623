@@ -787,7 +787,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.63797757, 0.71361892]), array(-116.95127408))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.63297845, 0.70500561]), array(62.07428048))
 </pre></div>
 </div>
 </div>
@@ -800,7 +800,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/44a84bb20e555667ebf913248ea9942454288b672676ae08e0a8a8ac4680dbcd.png" src="../../_images/44a84bb20e555667ebf913248ea9942454288b672676ae08e0a8a8ac4680dbcd.png" />
+<img alt="../../_images/d0aaa80febb3355810c1b9447204da3fd3640d2c6716f550228e843c18b4d7fa.png" src="../../_images/d0aaa80febb3355810c1b9447204da3fd3640d2c6716f550228e843c18b4d7fa.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -815,7 +815,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fc2486685ecbd3d31438c8ae4486bde1cc74fded6ae983b34b9a86b969223c67.png" src="../../_images/fc2486685ecbd3d31438c8ae4486bde1cc74fded6ae983b34b9a86b969223c67.png" />
+<img alt="../../_images/3089a5d51691817d3b412cde7d0dde354cd5a9ae7b2589e67c8d075e1eda68a4.png" src="../../_images/3089a5d51691817d3b412cde7d0dde354cd5a9ae7b2589e67c8d075e1eda68a4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -825,7 +825,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b6d1dadc4510d3e956dbddbc2ce5e9ead635d5f342ba29ee09c562c7866edc1a.png" src="../../_images/b6d1dadc4510d3e956dbddbc2ce5e9ead635d5f342ba29ee09c562c7866edc1a.png" />
+<img alt="../../_images/e007387a5f1f0b74ae827e590995176f83a6f40b49ea56cfe469f23ce11c587c.png" src="../../_images/e007387a5f1f0b74ae827e590995176f83a6f40b49ea56cfe469f23ce11c587c.png" />
 </div>
 </div>
 </section>
@@ -1147,8 +1147,8 @@ example:</p>
 <p><span class="math notranslate nohighlight">\(f_1(x, y) = x^2 y\)</span></p>
 <p><span class="math notranslate nohighlight">\(f_2(x, y) = 5 x + \sin(y)\)</span></p>
 <p>The Jacobian of this system is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3f9536d-200c-46a7-8806-6f63bc6fabae">
-<span class="eqno">(4)<a class="headerlink" href="#equation-b3f9536d-200c-46a7-8806-6f63bc6fabae" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
+<div class="amsmath math notranslate nohighlight" id="equation-bd3555eb-dc12-4202-9d4a-ab68645692fc">
+<span class="eqno">(4)<a class="headerlink" href="#equation-bd3555eb-dc12-4202-9d4a-ab68645692fc" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
 \end{array}\right] \end{equation}\]</div>
 <p>There are two Jacobian functions, <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> and <code class="docutils literal notranslate"><span class="pre">jacref</span></code>. In theory they do the same thing, but one of them will usually be faster for some systems. <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> uses a forward pass through the code to compute the Jacobian, while <code class="docutils literal notranslate"><span class="pre">jacrev</span></code> uses a reverse pass. The <a class="reference external" href="https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html#jacobians-and-hessians-using-jacfwd-and-jacrev">documentation</a> recommends using jacfwd for “tall” Jacobians and jacref for “wide” jacobians. For square jacobians, it does not matter. It is fine to be practical, and try both to see if one is faster than other.</p>
 <div class="cell docutils container">
