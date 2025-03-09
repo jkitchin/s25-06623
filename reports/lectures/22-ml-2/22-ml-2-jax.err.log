@@ -54,13 +54,13 @@ def init_params(scale, layers, seed=19):
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 2[0m
-[1;32m      1[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mjax[39;00m
-[0;32m----> 2[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mjax[39;00m[38;5;21;01m.[39;00m[38;5;21;01mconfig[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m config
-[1;32m      3[0m config[38;5;241m.[39mupdate([38;5;124m"[39m[38;5;124mjax_enable_x64[39m[38;5;124m"[39m, [38;5;28;01mTrue[39;00m)
-[1;32m      5[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mjax[39;00m[38;5;21;01m.[39;00m[38;5;21;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mnp[39;00m
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 2[39m
+[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mjax[39;00m
+[32m----> [39m[32m2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mjax[39;00m[34;01m.[39;00m[34;01mconfig[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m config
+[32m      3[39m config.update([33m"[39m[33mjax_enable_x64[39m[33m"[39m, [38;5;28;01mTrue[39;00m)
+[32m      5[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mjax[39;00m[34;01m.[39;00m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'jax.config'
+[31mModuleNotFoundError[39m: No module named 'jax.config'
 
