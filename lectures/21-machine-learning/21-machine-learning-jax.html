@@ -547,25 +547,13 @@ document.write(`
 <p>We will use it to fit data that is generated from <span class="math notranslate nohighlight">\(y = x^\frac{1}{3}\)</span>. First, we just do a least_squares fit. This function is similar to <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jax.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
 <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;jax_enable_x64&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">jacrev</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">least_squares</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jax.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;jax_enable_x64&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;jax.config&#39;
 </pre></div>
 </div>
 </div>
@@ -586,10 +574,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
-</pre></div>
-</div>
-<img alt="../../_images/a1de918f40950c27a061e46d060f97286f7df21b968eb71c4698917f7e296d4c.png" src="../../_images/a1de918f40950c27a061e46d060f97286f7df21b968eb71c4698917f7e296d4c.png" />
+<img alt="../../_images/3bed2862ed3fdaa5e5b328c25ab71483b3daa3bcd9e1e772569b13ffa044fadf.png" src="../../_images/3bed2862ed3fdaa5e5b328c25ab71483b3daa3bcd9e1e772569b13ffa044fadf.png" />
 </div>
 </div>
 <p>We have to define a function for our model, and then another one for the residuals. For now, we stick with a syntax we are familiar with, and one that works with <code class="docutils literal notranslate"><span class="pre">least_squares</span></code>.</p>
@@ -660,12 +645,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7640380560759626e-09
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.7019882149491532e-10)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Also, it looks like many of the gradients at the end-point are all close to zero.</p>
+<p>Also, it looks like many of the gradients at the end-point are all close to zero, but not all of them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -674,7 +659,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.     0.    -0.     0.195  0.    -0.     0.    -0.    -0.    10.639]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.    -0.    -0.     1.945  0.    -0.     0.     0.    -0.     0.   ]
 </pre></div>
 </div>
 </div>
@@ -697,15 +682,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.000e+02    +0.j    -5.735e+33    +0.j    -9.598e+07    +0.j
- -5.288e+02+11581.177j -5.288e+02-11581.177j -3.282e+03    +0.j
-  5.411e-03    +0.j     9.269e-07    +0.j     9.217e-09    +0.j
-  1.949e-13    +0.j   ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-4.159e+17+0.j  3.934e+02+0.j -8.830e+01+0.j  6.887e+00+0.j
+ -4.153e+00+0.j  5.332e-01+0.j  5.886e-02+0.j -1.544e-08+0.j
+  3.648e-16+0.j  7.726e-17+0.j]
 </pre></div>
 </div>
 </div>
 </div>
-<p>The zeros suggest our model is too complex, that it has more parameters than are required. We leave this point for future consideration. Also note that the Hessian is singular:</p>
+<p>The zeros suggest our model is too complex, that it has more parameters than are required. We leave this point for future consideration. Also note that the Hessian is nearly singular:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="n">pars</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
@@ -713,7 +697,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray(-1.33724075e+11, dtype=float64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(-1.83829468e-19, dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -730,7 +714,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1d4d9818997fa69ccbd70e65ad1bae02f9a3c9a97fad72360280c51bb19019f0.png" src="../../_images/1d4d9818997fa69ccbd70e65ad1bae02f9a3c9a97fad72360280c51bb19019f0.png" />
+<img alt="../../_images/75dbd050d3a7615bc2085c9acc2642a07e2efd23e745a3b7eab44c7e9d0397fa.png" src="../../_images/75dbd050d3a7615bc2085c9acc2642a07e2efd23e745a3b7eab44c7e9d0397fa.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(y = b_1 + w_{10} tanh(w_{00} x + b_{00}) + w_{11} tanh(w_{01} x + b_{01}) + w_{12} tanh(w_{02} x + b_{02})\)</span></p>
@@ -746,7 +730,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.    0.041 0.579 0.    0.    0.526 0.    1.085 0.705 0.   ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.    0.661 3.465 0.    0.    1.676 0.    0.    1.459 0.   ]
 </pre></div>
 </div>
 </div>
@@ -774,7 +758,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b265fa3be7cf94a7150124761c29b9031d220c492eafab253118aaf8c25f8c5e.png" src="../../_images/b265fa3be7cf94a7150124761c29b9031d220c492eafab253118aaf8c25f8c5e.png" />
+<img alt="../../_images/17236d0b77eebb5dee816793d71d6b8dd5750617a9bdd754dd9468b8e6d408f8.png" src="../../_images/17236d0b77eebb5dee816793d71d6b8dd5750617a9bdd754dd9468b8e6d408f8.png" />
 </div>
 </div>
 <p>You can see that this model starts failing at <span class="math notranslate nohighlight">\(x&gt;1\)</span>. At very large <span class="math notranslate nohighlight">\(x\)</span> it will start to level out. What defines large <span class="math notranslate nohighlight">\(x\)</span> is unclear though, in this specific example, it is around 400. That might be anticipated from knowledge of the <code class="docutils literal notranslate"><span class="pre">np.tanh</span></code> function, it also saturates at large values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
@@ -789,7 +773,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f28297546d6e64bc9cd0f36cc19930b6dd4c2d6d00b37b10636e5eff72e30c69.png" src="../../_images/f28297546d6e64bc9cd0f36cc19930b6dd4c2d6d00b37b10636e5eff72e30c69.png" />
+<img alt="../../_images/3391eaf171dde47308be632deeed53bdd69a9cc83973c5a33c09defc733498da.png" src="../../_images/3391eaf171dde47308be632deeed53bdd69a9cc83973c5a33c09defc733498da.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(y = b_1 + w_{10} tanh(w_{00} x + b_{00}) + w_{11} tanh(w_{01} x + b_{01}) + w_{12} tanh(w_{02} x + b_{02})\)</span></p>
@@ -878,9 +862,9 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;weights&#39;: [DeviceArray([[ 0.075, -0.075, -0.175]], dtype=float64), DeviceArray([[ 0.075],
-             [-0.075],
-             [-0.175]], dtype=float64)], &#39;biases&#39;: [DeviceArray([ 0.075, -0.075, -0.175], dtype=float64), DeviceArray([0.198], dtype=float64)]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;weights&#39;: [Array([[ 0.066,  0.198, -0.041]], dtype=float64), Array([[ 0.066],
+       [ 0.198],
+       [-0.041]], dtype=float64)], &#39;biases&#39;: [Array([ 0.066,  0.198, -0.041], dtype=float64), Array([0.066], dtype=float64)]}
 </pre></div>
 </div>
 </div>
@@ -894,7 +878,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d95d63fb0c07e5c2c50aeed3f4be7741eff0a8b7112be82d5a4583eb8f8f5dfa.png" src="../../_images/d95d63fb0c07e5c2c50aeed3f4be7741eff0a8b7112be82d5a4583eb8f8f5dfa.png" />
+<img alt="../../_images/9f4e9650246fbc200234ab7abc318fc84e9da4d0fc7897a3ad6b742dad48abfb.png" src="../../_images/9f4e9650246fbc200234ab7abc318fc84e9da4d0fc7897a3ad6b742dad48abfb.png" />
 </div>
 </div>
 <p>You can see w0 is a row vector of weights, and there are three biases in b0. W1 in contrast, is a column vector of weights, with one bias. So 10 parameters in total, like we had before. We will create an objective function of the mean squared error again. There is a subtle point here too. The input data will go in with a specific shape of (N, 1) where N is the number of x-points. Our input is from <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> as a 1D array. So, we build a 2D array with the 1D array as the first row, and then transpose it to get it into a column.</p>
@@ -916,7 +900,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray(2.7850452, dtype=float64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(4.10360272, dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -957,10 +941,10 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10658 9.995249008312393e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11246 9.998451245900336e-05
 </pre></div>
 </div>
-<img alt="../../_images/4ac47b4cc5fd5cd007c9819f80b49a6622aa50f2806dc75d16e5b5f71b39df5a.png" src="../../_images/4ac47b4cc5fd5cd007c9819f80b49a6622aa50f2806dc75d16e5b5f71b39df5a.png" />
+<img alt="../../_images/caf855d7cc520aab25178d0616b36413a72604eb81e9d8f73fb30247206b637d.png" src="../../_images/caf855d7cc520aab25178d0616b36413a72604eb81e9d8f73fb30247206b637d.png" />
 </div>
 </div>
 <p>Now we can compare the output of this to our previous fit.</p>
@@ -971,12 +955,12 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;biases&#39;: [DeviceArray([ 1.27101631, -0.8207583 ,  0.13323742], dtype=float64),
-  DeviceArray([-0.75300183], dtype=float64)],
- &#39;weights&#39;: [DeviceArray([[ 4.65819136, -9.19937977, -1.17449071]], dtype=float64),
-  DeviceArray([[-0.25078404],
-               [-1.54632765],
-               [-0.58296746]], dtype=float64)]}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;biases&#39;: [Array([ 1.21659658, -0.08018829, -0.84779774], dtype=float64),
+  Array([-0.55436672], dtype=float64)],
+ &#39;weights&#39;: [Array([[ 1.32897733,  1.18349124, -9.31414556]], dtype=float64),
+  Array([[-0.55232226],
+         [ 0.67674023],
+         [-1.55364748]], dtype=float64)]}
 </pre></div>
 </div>
 </div>
@@ -988,9 +972,9 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.01914973e-06 4.10822188e-02 5.78960405e-01 2.85594477e-09
- 1.64531422e-05 5.26297322e-01 1.87421421e-08 1.08502500e+00
- 7.05128794e-01 1.04457957e-23]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.44410109e-06 6.60829337e-01 3.46519298e+00 1.30338349e-14
+ 3.76728022e-07 1.67634327e+00 8.31914233e-09 5.86207185e-08
+ 1.45909324e+00 1.85371173e-08]
 </pre></div>
 </div>
 </div>
@@ -1012,7 +996,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/129838e9db61b2a0623acd459592e647622e4ca37f1cfdb9110aa5bf26c490fc.png" src="../../_images/129838e9db61b2a0623acd459592e647622e4ca37f1cfdb9110aa5bf26c490fc.png" />
+<img alt="../../_images/f682be2f24511686c6b0fbb254afceb35a534ad10cb02f22651e6b2f18d3033b.png" src="../../_images/f682be2f24511686c6b0fbb254afceb35a534ad10cb02f22651e6b2f18d3033b.png" />
 </div>
 </div>
 </section>
@@ -1028,13 +1012,13 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="LXzkZmrrsHhM" data-shufflequestions="False"
+<div class="output text_html"><div id="aAoCeNNTplon" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#LXzkZmrrsHhM {
+#aAoCeNNTplon {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1054,8 +1038,8 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
@@ -1073,18 +1057,48 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -1111,7 +1125,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 }
 
 .Input-text:focus {
-    outline: none;
+    /*outline: none;*/
     background-color: var(--jq-numeric-input-bg);
     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
@@ -1120,6 +1134,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
     background: var(--jq-mc-button-bg);
     border: 1px solid var(--jq-mc-button-border);
     border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -1148,10 +1163,10 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 }
 
 .NumericQn {
-    padding: 10px;
     background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
     border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
 }
 
 .NumericQn p {
@@ -1159,11 +1174,11 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
 }
 
 .InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
     color: var(--jq-numeric-input-label);
+    float: left;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
@@ -1180,17 +1195,17 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
@@ -1204,7 +1219,7 @@ y = [w10, w11, w12] @ np.tanh([w01 * x + b01]) + b1
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsLXzkZmrrsHhM=[{"question": "Neural networks are", "type": "multiple_choice", "answers": [{"answer": "Linear models", "correct": false}, {"answer": "Non-linear models", "correct": true}, {"answer": "Linear regression models", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "A data set can be represented with only a unique neural network model", "type": "multiple_choice", "answers": [{"answer": "FALSE", "correct": true}, {"answer": "TRUE", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "Neural networks are very useful models because", "type": "multiple_choice", "answers": [{"answer": "They accurately represent biological neurons", "correct": false}, {"answer": "Theoretically, they can fit to any data set", "correct": true}, {"answer": "You don\u2019t need to train them", "correct": false}, {"answer": "They can extrapolate in an accurate manner", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "The nature of extrapolation from a neural network depends a lot on", "type": "multiple_choice", "answers": [{"answer": "the activation functions", "correct": true}, {"answer": "size of the data set", "correct": false}, {"answer": "number of hidden layers", "correct": false}, {"answer": "number of neurons", "correct": false}], "tag": "activation_function hyperparameters", "lecture_file": "21_machine_learning"}, {"question": "The hyperparameters for a neural network are", "type": "multiple_choice", "answers": [{"answer": "The number of neurons in a layer", "correct": false}, {"answer": "The activation function", "correct": false}, {"answer": "Number of hidden layers", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "hyperparameters", "lecture_file": "21_machine_learning"}, {"question": "Gradient descent updates the hyperparameters after each", "type": "multiple_choice", "answers": [{"answer": "Epoch", "correct": true}, {"answer": "layer", "correct": false}, {"answer": "data point", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "gradient_descent algorithm", "lecture_file": "21_machine_learning"}, {"question": "For a neural network with the architecture:<br>Input layer = 3 features<br>first layer = 3 neurons<br>second layer = 5 neurons<br>output layer = 1 output variable<br>How many weights are involved between the first and second layer?", "type": "multiple_choice", "answers": [{"answer": "9", "correct": false}, {"answer": "3", "correct": false}, {"answer": "15", "correct": true}, {"answer": "5", "correct": false}], "tag": "weights_biases algorithm", "lecture_file": "21_machine_learning"}, {"question": "The gradient descent algorithm leads to at least a local minimum of", "type": "multiple_choice", "answers": [{"answer": "weights and biases", "correct": false}, {"answer": "output", "correct": false}, {"answer": "The objective function", "correct": true}, {"answer": "None of the above", "correct": false}], "tag": "gradient_descent algorithm", "lecture_file": "21_machine_learning"}, {"question": "What is the value of the count of total weights and biases for a neural network which has 2 hidden layers (3 neurons in each) between the input (2 inputs) and output (1 output)?", "type": "multiple_choice", "answers": [{"answer": "10", "correct": false}, {"answer": "81", "correct": false}, {"answer": "25", "correct": true}, {"answer": "18", "correct": false}], "tag": "weights_biases algorithm", "lecture_file": "21_machine_learning"}, {"question": "The statement: 'A higher learning rate will result in quickly reaching the optimum parameters of a neural network', is", "type": "multiple_choice", "answers": [{"answer": "Never true", "correct": false}, {"answer": "Always true", "correct": false}, {"answer": "Can be true only for learning rates above a certain threshold", "correct": false}, {"answer": "Can be true, but can also cause the solver to not converge.", "correct": true}], "tag": "learning_rate", "lecture_file": "21_machine_learning"}];
+</style></div><script type="application/javascript">var questionsaAoCeNNTplon=[{"question": "Neural networks are", "type": "multiple_choice", "answers": [{"answer": "Linear models", "correct": false}, {"answer": "Non-linear models", "correct": true}, {"answer": "Linear regression models", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "A data set can be represented with only a unique neural network model", "type": "multiple_choice", "answers": [{"answer": "FALSE", "correct": true}, {"answer": "TRUE", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "Neural networks are very useful models because", "type": "multiple_choice", "answers": [{"answer": "They accurately represent biological neurons", "correct": false}, {"answer": "Theoretically, they can fit to any data set", "correct": true}, {"answer": "You don\u2019t need to train them", "correct": false}, {"answer": "They can extrapolate in an accurate manner", "correct": false}], "tag": "neural_network", "lecture_file": "21_machine_learning"}, {"question": "The nature of extrapolation from a neural network depends a lot on", "type": "multiple_choice", "answers": [{"answer": "the activation functions", "correct": true}, {"answer": "size of the data set", "correct": false}, {"answer": "number of hidden layers", "correct": false}, {"answer": "number of neurons", "correct": false}], "tag": "activation_function hyperparameters", "lecture_file": "21_machine_learning"}, {"question": "The hyperparameters for a neural network are", "type": "multiple_choice", "answers": [{"answer": "The number of neurons in a layer", "correct": false}, {"answer": "The activation function", "correct": false}, {"answer": "Number of hidden layers", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "hyperparameters", "lecture_file": "21_machine_learning"}, {"question": "Gradient descent updates the hyperparameters after each", "type": "multiple_choice", "answers": [{"answer": "Epoch", "correct": true}, {"answer": "layer", "correct": false}, {"answer": "data point", "correct": false}, {"answer": "None of the above", "correct": false}], "tag": "gradient_descent algorithm", "lecture_file": "21_machine_learning"}, {"question": "For a neural network with the architecture:<br>Input layer = 3 features<br>first layer = 3 neurons<br>second layer = 5 neurons<br>output layer = 1 output variable<br>How many weights are involved between the first and second layer?", "type": "multiple_choice", "answers": [{"answer": "9", "correct": false}, {"answer": "3", "correct": false}, {"answer": "15", "correct": true}, {"answer": "5", "correct": false}], "tag": "weights_biases algorithm", "lecture_file": "21_machine_learning"}, {"question": "The gradient descent algorithm leads to at least a local minimum of", "type": "multiple_choice", "answers": [{"answer": "weights and biases", "correct": false}, {"answer": "output", "correct": false}, {"answer": "The objective function", "correct": true}, {"answer": "None of the above", "correct": false}], "tag": "gradient_descent algorithm", "lecture_file": "21_machine_learning"}, {"question": "What is the value of the count of total weights and biases for a neural network which has 2 hidden layers (3 neurons in each) between the input (2 inputs) and output (1 output)?", "type": "multiple_choice", "answers": [{"answer": "10", "correct": false}, {"answer": "81", "correct": false}, {"answer": "25", "correct": true}, {"answer": "18", "correct": false}], "tag": "weights_biases algorithm", "lecture_file": "21_machine_learning"}, {"question": "The statement: 'A higher learning rate will result in quickly reaching the optimum parameters of a neural network', is", "type": "multiple_choice", "answers": [{"answer": "Never true", "correct": false}, {"answer": "Always true", "correct": false}, {"answer": "Can be true only for learning rates above a certain threshold", "correct": false}, {"answer": "Can be true, but can also cause the solver to not converge.", "correct": true}], "tag": "learning_rate", "lecture_file": "21_machine_learning"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1240,6 +1255,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -1261,17 +1279,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -1293,7 +1310,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -1305,9 +1322,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -1316,9 +1333,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -1326,7 +1343,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -1415,9 +1432,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -1437,7 +1454,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -1449,8 +1471,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -1533,9 +1553,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -1545,12 +1563,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -1561,9 +1579,9 @@ function check_numeric(ths, event) {
             if ('value' in answer) {
                 if (submission == answer.value) {
                     if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
+                        fb.innerHTML = jaxify(answer.feedback);
                     } else {
-                        fb.textContent = jaxify("Correct");
+                        fb.innerHTML = jaxify("Correct");
                     }
                     correct = answer.correct;
                     //console.log(answer.correct);
@@ -1571,15 +1589,18 @@ function check_numeric(ths, event) {
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -1587,6 +1608,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -1725,7 +1747,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -1793,6 +1815,10 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
+
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
 
     //console.log(mystring);
     return mystring;
@@ -1928,7 +1954,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -1937,12 +1982,40 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
 /* This is to handle asynchrony issues in loading Jupyter notebooks
@@ -1953,8 +2026,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("LXzkZmrrsHhM")) {
-            show_questions(questionsLXzkZmrrsHhM,  LXzkZmrrsHhM); 
+          if(document.getElementById("aAoCeNNTplon")) {
+            show_questions(questionsaAoCeNNTplon,  aAoCeNNTplon); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1963,8 +2036,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("LXzkZmrrsHhM");
-        // console.log(document.getElementById("LXzkZmrrsHhM"));
+        //console.log("aAoCeNNTplon");
+        // console.log(document.getElementById("aAoCeNNTplon"));
 
         try_show();
         }

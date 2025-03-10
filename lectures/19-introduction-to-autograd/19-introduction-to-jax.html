@@ -787,7 +787,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.62673602, 0.71024915]), array(5.80762519))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.62363072, 0.69575899]), array(55.33138368))
 </pre></div>
 </div>
 </div>
@@ -800,7 +800,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a62155caddab70142988a5bdfc4a9eb6e6e742a4d7db34f1694db1c2a8cb2cda.png" src="../../_images/a62155caddab70142988a5bdfc4a9eb6e6e742a4d7db34f1694db1c2a8cb2cda.png" />
+<img alt="../../_images/ae9caac994244e0446603101e514e4883aaa6e15c591bc526b76864dfa99fedb.png" src="../../_images/ae9caac994244e0446603101e514e4883aaa6e15c591bc526b76864dfa99fedb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -815,7 +815,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9a7eb0b1404567e9871440041a46e8029eab437ed1a722076f2d62fa3bae7def.png" src="../../_images/9a7eb0b1404567e9871440041a46e8029eab437ed1a722076f2d62fa3bae7def.png" />
+<img alt="../../_images/9f5719703727ba2f11dde17138a08bfa571d6be2ea649d8dd421cb5710545ec0.png" src="../../_images/9f5719703727ba2f11dde17138a08bfa571d6be2ea649d8dd421cb5710545ec0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -825,7 +825,7 @@ there are big changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/82e65415da5758dc3ffe991d862c5677a0a7553b4de5622b51ef21db7a6ac462.png" src="../../_images/82e65415da5758dc3ffe991d862c5677a0a7553b4de5622b51ef21db7a6ac462.png" />
+<img alt="../../_images/c24c2aacd9b6054336d2e6c28631c22a05d55b07ab15cae6d662fb3ff80fc9c3.png" src="../../_images/c24c2aacd9b6054336d2e6c28631c22a05d55b07ab15cae6d662fb3ff80fc9c3.png" />
 </div>
 </div>
 </section>
@@ -940,23 +940,11 @@ automatically computed.</p>
 version of numpy. Not doing this will lead to errors eventually. We also configure jax to use 64-bit floats (32-bit is the default, and that is not usually sufficient for pycse calculations.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jax.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
 
 <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;jax_enable_x64&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jax.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;jax_enable_x64&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;jax.config&#39;
 </pre></div>
 </div>
 </div>
@@ -988,6 +976,11 @@ example, it could be an objective function.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(20., dtype=float64, weak_type=True)
+</pre></div>
+</div>
+</div>
 </div>
 <p>There are a few points to note in the output. First you get the WARNING, which is annoying, but something to ignore. You only see it the first time you run the code, if you run it again you won’t see it.</p>
 <p>Second, the output shows we do not get a “number” that is returned, but a <code class="docutils literal notranslate"><span class="pre">DeviceArray</span></code> object. If you print the object, you will see something that looks like a number.</p>
@@ -996,6 +989,31 @@ differentiable</em>.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfdx</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfdx</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">4</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jax/_src/api.py:509,</span> in <span class="ni">_check_input_dtype_revderiv</span><span class="nt">(name, holomorphic, allow_int, x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="k">if</span> <span class="p">(</span><span class="n">dtypes</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">aval</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">dtypes</span><span class="o">.</span><span class="n">extended</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>     <span class="n">dtypes</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">aval</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span>     <span class="n">dtypes</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">aval</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>   <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_int</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">509</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> requires real- or complex-valued inputs (input dtype &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>                     <span class="sa">f</span><span class="s2">&quot;that is a sub-dtype of np.inexact), but got </span><span class="si">{</span><span class="n">aval</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">. &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>                     <span class="s2">&quot;If you want to use Boolean- or integer-valued inputs, use vjp &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span>                     <span class="s2">&quot;or set allow_int to True.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span> <span class="k">elif</span> <span class="ow">not</span> <span class="n">dtypes</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">aval</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inexact</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>   <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> requires numerical-valued inputs (input dtype that is a &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span>                   <span class="sa">f</span><span class="s2">&quot;sub-dtype of np.bool_ or np.number), but got </span><span class="si">{</span><span class="n">aval</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: grad requires real- or complex-valued inputs (input dtype that is a sub-dtype of np.inexact), but got int64. If you want to use Boolean- or integer-valued inputs, use vjp or set allow_int to True.
 </pre></div>
 </div>
 </div>
@@ -1010,11 +1028,46 @@ in the jax.numpy library.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfdx</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>  <span class="c1"># This is an error because lists do not support the operations required to evaluate the derivative.</span>
+
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">18</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="nn">Cell In[18], line 2,</span> in <span class="ni">f</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for ** or pow(): &#39;list&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Here is another error, because when you pass an array, the function no longer has a scalar output.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfdx</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfdx</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]))</span>
+
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">4</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jax/_src/api.py:494,</span> in <span class="ni">_check_scalar</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aval</span><span class="p">,</span> <span class="n">ShapedArray</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>   <span class="k">if</span> <span class="n">aval</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;had shape: </span><span class="si">{</span><span class="n">aval</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>   <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;had abstract value </span><span class="si">{</span><span class="n">aval</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+
+<span class="ne">TypeError</span>: Gradient only defined for scalar-output functions. Output had shape: (2,).
 </pre></div>
 </div>
 </div>
@@ -1024,6 +1077,11 @@ outputs an array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([2.25, 4.  ], dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -1050,10 +1108,23 @@ input produces one element in the output.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([ 3.,  4., -4., 10.], dtype=float64)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">dfdx</span><span class="p">(</span><span class="n">_x</span><span class="p">)</span> <span class="k">for</span> <span class="n">_x</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]]</span>  <span class="c1"># equivalent to vmap, but probably slower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Array(3., dtype=float64, weak_type=True),
+ Array(4., dtype=float64, weak_type=True),
+ Array(-4., dtype=float64, weak_type=True),
+ Array(10., dtype=float64, weak_type=True)]
 </pre></div>
 </div>
 </div>
@@ -1077,11 +1148,22 @@ input produces one element in the output.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(True, dtype=bool)
+</pre></div>
+</div>
+<img alt="../../_images/e1968b13e7fc52a4e2d3a4205cac781539003b11ed41fcc29b240c9ca989b938.png" src="../../_images/e1968b13e7fc52a4e2d3a4205cac781539003b11ed41fcc29b240c9ca989b938.png" />
+</div>
 </div>
 <p>AD is not magical, if a derivative is not defined, AD will not compute it. Here the derivative at x=0 is infinity, which is what jax reports.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([inf], dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -1123,6 +1205,12 @@ doing this through all the operations and loops!</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(True, dtype=bool)
+</pre></div>
+</div>
+<img alt="../../_images/e1968b13e7fc52a4e2d3a4205cac781539003b11ed41fcc29b240c9ca989b938.png" src="../../_images/e1968b13e7fc52a4e2d3a4205cac781539003b11ed41fcc29b240c9ca989b938.png" />
+</div>
 </div>
 <p>Of course, autograd cannot make derivatives where they are not defined.
 The derivative of the square root function is not defined at <span class="math notranslate nohighlight">\(x=0\)</span>, and
@@ -1130,6 +1218,11 @@ we get warnings and a <code class="docutils literal notranslate"><span class="pr
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([nan], dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -1147,8 +1240,8 @@ example:</p>
 <p><span class="math notranslate nohighlight">\(f_1(x, y) = x^2 y\)</span></p>
 <p><span class="math notranslate nohighlight">\(f_2(x, y) = 5 x + \sin(y)\)</span></p>
 <p>The Jacobian of this system is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a762c559-0075-4237-b021-6f6eccd140ad">
-<span class="eqno">(4)<a class="headerlink" href="#equation-a762c559-0075-4237-b021-6f6eccd140ad" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
+<div class="amsmath math notranslate nohighlight" id="equation-ecfab3d7-d3a1-4eb9-aeb2-c372e06bc585">
+<span class="eqno">(4)<a class="headerlink" href="#equation-ecfab3d7-d3a1-4eb9-aeb2-c372e06bc585" title="Permalink to this equation">#</a></span>\[\begin{equation} \left[\begin{array}{cc} 2 x y &amp; x^2 \\ 5 &amp; \cos y \\
 \end{array}\right] \end{equation}\]</div>
 <p>There are two Jacobian functions, <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> and <code class="docutils literal notranslate"><span class="pre">jacref</span></code>. In theory they do the same thing, but one of them will usually be faster for some systems. <code class="docutils literal notranslate"><span class="pre">jacfwd</span></code> uses a forward pass through the code to compute the Jacobian, while <code class="docutils literal notranslate"><span class="pre">jacrev</span></code> uses a reverse pass. The <a class="reference external" href="https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html#jacobians-and-hessians-using-jacfwd-and-jacrev">documentation</a> recommends using jacfwd for “tall” Jacobians and jacref for “wide” jacobians. For square jacobians, it does not matter. It is fine to be practical, and try both to see if one is faster than other.</p>
 <div class="cell docutils container">
@@ -1169,6 +1262,17 @@ example:</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)]]))</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">Jf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jf:  [[0.5        0.25      ]
+ [5.         0.87758256]]
+An:  [[0.5        0.25      ]
+ [5.         0.87758256]]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(True, dtype=bool)
 </pre></div>
 </div>
 </div>
@@ -1229,6 +1333,11 @@ a..b`` and ``y = gfun(x)..hfun(x)``.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.141592653589793, 3.487868498008632e-14)
+</pre></div>
+</div>
+</div>
 </div>
 <p>And the expected answer. Compare that to the cartesian coordinate
 system:</p>
@@ -1248,6 +1357,11 @@ system:</p>
 
 
 <span class="n">dblquad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">yl</span><span class="p">,</span> <span class="n">yu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.1415926535897967, 2.000470900043183e-09)
 </pre></div>
 </div>
 </div>
@@ -1277,6 +1391,12 @@ function.</p>
 <span class="n">H</span> <span class="o">=</span> <span class="n">hessian</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="n">H</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([[2., 0.],
+       [0., 2.]], dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -1313,6 +1433,21 @@ standard optimization approach is shown here for comparison.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  message: Optimization terminated successfully.
+  success: True
+   status: 0
+      fun: 2.111180088069277e-11
+        x: [ 1.000e+00  1.000e+00]
+      nit: 32
+      jac: [-2.897e-07  2.844e-08]
+ hess_inv: [[ 4.939e-01  9.877e-01]
+            [ 9.877e-01  1.980e+00]]
+     nfev: 111
+     njev: 37
+</pre></div>
+</div>
+</div>
 </div>
 <p>Next, we look at how to imporve the performance by providing the Jacobian and Hessian via AD functions.</p>
 <div class="cell docutils container">
@@ -1332,6 +1467,11 @@ this. We do it in one like with jax. Since we have a scalar function, the Jacobi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([ 400., -200.], dtype=float64)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1339,6 +1479,21 @@ this. We do it in one like with jax. Since we have a scalar function, the Jacobi
 
 <span class="n">sol_j</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">rosenbrock</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">jac</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sol_j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  message: Optimization terminated successfully.
+  success: True
+   status: 0
+      fun: 1.929228318427838e-14
+        x: [ 1.000e+00  1.000e+00]
+      nit: 32
+      jac: [-2.941e-07  8.157e-09]
+ hess_inv: [[ 4.929e-01  9.858e-01]
+            [ 9.858e-01  1.977e+00]]
+     nfev: 37
+     njev: 37
 </pre></div>
 </div>
 </div>
@@ -1361,6 +1516,22 @@ and use an algorithm that uses the Hessian (most of them do not).</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> message: Optimization terminated successfully.
+ success: True
+  status: 0
+     fun: 4.930380657631324e-30
+       x: [ 1.000e+00  1.000e+00]
+     nit: 1
+     jac: [-8.882e-14  4.441e-14]
+    nfev: 2
+    njev: 2
+    nhev: 1
+    hess: [[ 8.020e+02 -4.000e+02]
+           [-4.000e+02  2.000e+02]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note we get an almost exact answer, with only two function evaluations!</p>
 <p>You can see that the Hessian returned by this solver is identical to the
@@ -1371,6 +1542,12 @@ Hessian we would compute.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([[ 802., -400.],
+       [-400.,  200.]], dtype=float64)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note that in the example where we just provided the Jacobian that the
 Hessian is approximated. You can see that here. It is pretty close, but
@@ -1378,6 +1555,12 @@ not exact.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">sol_j</span><span class="o">.</span><span class="n">hess_inv</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 802.02588665 -399.99966532]
+ [-399.99966532  200.00039681]]
 </pre></div>
 </div>
 </div>
@@ -1400,13 +1583,13 @@ regression and conclude with an introduction to machine learning.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="cTLErsxjRvGi" data-shufflequestions="False"
+<div class="output text_html"><div id="SIFIgVFFnGZd" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#cTLErsxjRvGi {
+#SIFIgVFFnGZd {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1426,8 +1609,8 @@ regression and conclude with an introduction to machine learning.</p>
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
@@ -1445,18 +1628,48 @@ regression and conclude with an introduction to machine learning.</p>
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -1483,7 +1696,7 @@ regression and conclude with an introduction to machine learning.</p>
 }
 
 .Input-text:focus {
-    outline: none;
+    /*outline: none;*/
     background-color: var(--jq-numeric-input-bg);
     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
@@ -1492,6 +1705,7 @@ regression and conclude with an introduction to machine learning.</p>
     background: var(--jq-mc-button-bg);
     border: 1px solid var(--jq-mc-button-border);
     border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -1520,10 +1734,10 @@ regression and conclude with an introduction to machine learning.</p>
 }
 
 .NumericQn {
-    padding: 10px;
     background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
     border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
 }
 
 .NumericQn p {
@@ -1531,11 +1745,11 @@ regression and conclude with an introduction to machine learning.</p>
 }
 
 .InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
     color: var(--jq-numeric-input-label);
+    float: left;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
@@ -1552,17 +1766,17 @@ regression and conclude with an introduction to machine learning.</p>
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
     color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
@@ -1576,7 +1790,7 @@ regression and conclude with an introduction to machine learning.</p>
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionscTLErsxjRvGi=[
+</style></div><script type="application/javascript">var questionsSIFIgVFFnGZd=[
   {
     "question": "Derivatives have useful applications in determining",
     "type": "multiple_choice",
@@ -1854,6 +2068,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -1875,17 +2092,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -1907,7 +2123,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -1919,9 +2135,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -1930,9 +2146,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -1940,7 +2156,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -2029,9 +2245,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -2051,7 +2267,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -2063,8 +2284,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -2147,9 +2366,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -2159,12 +2376,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -2175,9 +2392,9 @@ function check_numeric(ths, event) {
             if ('value' in answer) {
                 if (submission == answer.value) {
                     if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
+                        fb.innerHTML = jaxify(answer.feedback);
                     } else {
-                        fb.textContent = jaxify("Correct");
+                        fb.innerHTML = jaxify("Correct");
                     }
                     correct = answer.correct;
                     //console.log(answer.correct);
@@ -2185,15 +2402,18 @@ function check_numeric(ths, event) {
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -2201,6 +2421,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -2339,7 +2560,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -2407,6 +2628,10 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
+
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
 
     //console.log(mystring);
     return mystring;
@@ -2542,7 +2767,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -2551,12 +2795,40 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
 /* This is to handle asynchrony issues in loading Jupyter notebooks
@@ -2567,8 +2839,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("cTLErsxjRvGi")) {
-            show_questions(questionscTLErsxjRvGi,  cTLErsxjRvGi); 
+          if(document.getElementById("SIFIgVFFnGZd")) {
+            show_questions(questionsSIFIgVFFnGZd,  SIFIgVFFnGZd); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2577,8 +2849,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("cTLErsxjRvGi");
-        // console.log(document.getElementById("cTLErsxjRvGi"));
+        //console.log("SIFIgVFFnGZd");
+        // console.log(document.getElementById("SIFIgVFFnGZd"));
 
         try_show();
         }

@@ -560,23 +560,11 @@ document.write(`
 <p>The first example is the evaluation of  a line integral in the plane. We want to evaluate the integral of <span class="math notranslate nohighlight">\(\mathbf{F(r)}=[-y, -xy]\)</span> on the curve <span class="math notranslate nohighlight">\(\mathbf{r(t)}=[-sin(t), cos(t)]\)</span> from t=0 to t = π/2. The answer in the book is given as 0.4521. Here we evaluate this numerically, using jax for the relevant derivative. Since the curve has multiple outputs, we have to use the jacobian function to get the derivatives. After that, it is a simple bit of matrix multiplication, and a call to the quad function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jax.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
 
 <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;jax_enable_x64&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jax.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;jax_enable_x64&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;jax.config&#39;
 </pre></div>
 </div>
 </div>
@@ -595,10 +583,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:jax._src.lib.xla_bridge:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
-</pre></div>
-</div>
-<img alt="../../_images/a4e6b51b2e5a82a12a600ac87b98654e2dbc9368327e922478f6d1ef3f4ff19b.png" src="../../_images/a4e6b51b2e5a82a12a600ac87b98654e2dbc9368327e922478f6d1ef3f4ff19b.png" />
+<img alt="../../_images/b5df644dc4dded5c9d5820719abff44deb3e6cfcf4cfe44649cd52b6de25a091.png" src="../../_images/b5df644dc4dded5c9d5820719abff44deb3e6cfcf4cfe44649cd52b6de25a091.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -641,9 +626,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(DeviceArray([-0.,  1.], dtype=float64),
- DeviceArray([-1., -0.], dtype=float64, weak_type=True),
- DeviceArray([-1.,  0.], dtype=float64))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Array([-0.,  1.], dtype=float64),
+ Array([-1., -0.], dtype=float64, weak_type=True),
+ Array([-1.,  0.], dtype=float64))
 </pre></div>
 </div>
 </div>
@@ -655,7 +640,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray(-0.09064712, dtype=float64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(-0.09064712, dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -687,15 +672,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.5000000006671164
-     jac: array([ 2.00002983, -0.99997018,  0.99997017])
- message: &#39;Optimization terminated successfully&#39;
-    nfev: 22
-     nit: 5
-    njev: 5
-  status: 0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> message: Optimization terminated successfully
  success: True
-       x: array([ 1.00001491, -0.4999851 ,  0.49998508])
+  status: 0
+     fun: 1.5000000006671164
+       x: [ 1.000e+00 -5.000e-01  5.000e-01]
+     nit: 5
+     jac: [ 2.000e+00 -1.000e+00  1.000e+00]
+    nfev: 22
+    njev: 5
 </pre></div>
 </div>
 </div>
@@ -738,7 +723,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray([-2.,  1., -1.,  3.], dtype=float64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([-2.,  1., -1.,  3.], dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -760,7 +745,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is at (1.0, -0.5, 0.5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is at (np.float64(1.0), np.float64(-0.5), np.float64(0.5))
 </pre></div>
 </div>
 </div>
@@ -772,7 +757,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.0)
 </pre></div>
 </div>
 </div>
@@ -784,10 +769,10 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DeviceArray(0., dtype=float64),
- DeviceArray(0., dtype=float64),
- DeviceArray(0., dtype=float64),
- 0.0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Array(0., dtype=float64),
+ Array(0., dtype=float64),
+ Array(0., dtype=float64),
+ np.float64(0.0)]
 </pre></div>
 </div>
 </div>
@@ -804,9 +789,9 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray([[2., 0., 0.],
-             [0., 2., 0.],
-             [0., 0., 2.]], dtype=float64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([[2., 0., 0.],
+       [0., 2., 0.],
+       [0., 0., 2.]], dtype=float64)
 </pre></div>
 </div>
 </div>
@@ -819,7 +804,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray([2.+0.j, 2.+0.j, 2.+0.j], dtype=complex128)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([2.+0.j, 2.+0.j, 2.+0.j], dtype=complex128)
 </pre></div>
 </div>
 </div>
@@ -873,7 +858,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray(True, dtype=bool)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(True, dtype=bool)
 </pre></div>
 </div>
 </div>
@@ -887,7 +872,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0dbbf3701fe6cebc1973f387ae9072f63145609842df1a0c35cfce1ca9826a09.png" src="../../_images/0dbbf3701fe6cebc1973f387ae9072f63145609842df1a0c35cfce1ca9826a09.png" />
+<img alt="../../_images/1d50e841ed621788451ec5f83d60667e2fe40799aa2fcefb7651c8cc264ddd6d.png" src="../../_images/1d50e841ed621788451ec5f83d60667e2fe40799aa2fcefb7651c8cc264ddd6d.png" />
 </div>
 </div>
 <p>The output of True means the jax results and the analytical results are “all close”, i.e. within a tolerance the results are the same.</p>
@@ -984,7 +969,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The solver successfully reached the end of the integration interval.
 </pre></div>
 </div>
-<img alt="../../_images/b5ba70810a46c5f73b0141bdb4bb6a50606f9b337fa7707a2ded80eb492fbd66.png" src="../../_images/b5ba70810a46c5f73b0141bdb4bb6a50606f9b337fa7707a2ded80eb492fbd66.png" />
+<img alt="../../_images/d21e5aa5d96470a06e2803ee80f6cf0eae9cbd7714c88fa8bcedcdd18c1ec4dc.png" src="../../_images/d21e5aa5d96470a06e2803ee80f6cf0eae9cbd7714c88fa8bcedcdd18c1ec4dc.png" />
 </div>
 </div>
 <p>There are several advantages of doing this over iteratively solving with root. The biggest one is no initial guesses! It is also faster. What do you think would happen if there were multiple roots in the equation?</p>
@@ -1035,7 +1020,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7829b5f9e21de7e29da8f8a2f4900ac9770821086892f884fc5fca116658201a.png" src="../../_images/7829b5f9e21de7e29da8f8a2f4900ac9770821086892f884fc5fca116658201a.png" />
+<img alt="../../_images/af82cdd4448cb185921312e77581aa231d94d3c26cfe8fff6fb8f831c78d7aa1.png" src="../../_images/af82cdd4448cb185921312e77581aa231d94d3c26cfe8fff6fb8f831c78d7aa1.png" />
 </div>
 </div>
 <p>So it takes positive pressure to compress the system, as expected, and at the minimum the pressure is equal to zero. Seems pretty clear jax is better than deriving the required pressure derivative.</p>
@@ -1067,7 +1052,7 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f596bd323acaf841721c6297fe82e347aa15049380c5851644e285a56cdce9d1.png" src="../../_images/f596bd323acaf841721c6297fe82e347aa15049380c5851644e285a56cdce9d1.png" />
+<img alt="../../_images/26918f1c2dbf5b8e84eb8ac3069032f5254e5399e5337a08e4ebc523b6ddca8f.png" src="../../_images/26918f1c2dbf5b8e84eb8ac3069032f5254e5399e5337a08e4ebc523b6ddca8f.png" />
 </div>
 </div>
 <p>The figure above reproduces Fig. 1 from the paper referenced above.  Next, we use jax to get the derivatives. We need the derivative of the function with respect to the second and third arguments; the default is the first argument. Second, we want to evaluate this derivative at each time value.  Finally, to reproduce Figure 2a, we plot the absolute value of the sensitivities.</p>
@@ -1084,12 +1069,12 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;$S_</span><span class="si">{k1}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="s2">&quot;$S_{k\_1}$&quot;</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;$S_</span><span class="si">{k1}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="s2">&quot;$S_</span><span class="si">{k_1}</span><span class="s2">$&quot;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bf6229151bd3dcf888e9dd9ee980d69a83156de447904e26fab4cb5b752b1ccb.png" src="../../_images/bf6229151bd3dcf888e9dd9ee980d69a83156de447904e26fab4cb5b752b1ccb.png" />
+<img alt="../../_images/1df0beb6c3b49a6421d69c35e7b27b774db2061480fe03d6430f10f89044ee22.png" src="../../_images/1df0beb6c3b49a6421d69c35e7b27b774db2061480fe03d6430f10f89044ee22.png" />
 </div>
 </div>
 <p>That looks like the figure in the paper. To summarize the main takeaway, jax enabled us to readily compute derivatives without having to derive them manually.</p>
@@ -1106,20 +1091,25 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output text_html"><div id="btbXZoZBIqDi" data-shufflequestions="False"
+<div class="output text_html"><div id="xFEnGrCOzlPh" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
-               data-numquestions="1000000"> <style>:root {
-    --medium-slate-blue: #6f78ffff;
-    --orange-pantone: #f75c03ff;
-    --russian-violet: #392061ff;
-    --maximum-yellow-red: #ffc857ff;
-    --viridian-green: #119da4ff;
-    --incorrect-red: #c80202;
-    --correct-green: #009113;
+               data-numquestions="1000000"
+               data-maxwidth="600"
+               style="border-radius: 10px; text-align: left"> <style>
+#xFEnGrCOzlPh {
+   --jq-multiple-choice-bg: #6f78ffff;
+   --jq-mc-button-bg: #fafafa;
+   --jq-mc-button-border: #e0e0e0e0;
+   --jq-mc-button-inset-shadow: #555555;
+   --jq-many-choice-bg: #f75c03ff;
+   --jq-numeric-bg: #392061ff;
+   --jq-numeric-input-bg: #c0c0c0;
+   --jq-numeric-input-label: #101010;
+   --jq-numeric-input-shadow: #999999;
+   --jq-incorrect-color: #c80202;
+   --jq-correct-color: #009113;
+   --jq-text-color: #fafafa;
 }
 
 .Quiz {
@@ -1127,11 +1117,12 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
     padding-top: 4px;
     line-height: 1.1;
     font-size: 16pt;
+    border-radius: inherit;
 }
 
 .QuizCode {
@@ -1145,17 +1136,48 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
     padding: 4px;
 }
 
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
 .Answer {
-    margin: 10px 0;
+    border-radius: inherit;
     display: grid;
-    grid-template-columns: auto auto;
     grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .Feedback {
     font-size: 16pt;
     text-align: center;
-    min-height: 2em;
+/*    min-height: 2em;*/
 }
 
 .Input {
@@ -1168,8 +1190,8 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
     margin: 10px;
     color: inherit;
     width: 140px;
-    background-color: #c0c0c0;
-    color: #fff;
+    background-color: var(--jq-numeric-input-bg);
+    color: var(--jq-text-color);
     padding: 5px;
     padding-left: 10px;
     font-family: inherit;
@@ -1182,19 +1204,23 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 }
 
 .Input-text:focus {
-    outline: none;
-    background-color: #c0c0c0;
-    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem #999999;
+    /*outline: none;*/
+    background-color: var(--jq-numeric-input-bg);
+    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
 }
 
 .MCButton {
-    background: #fafafa;
-    border: 1px solid #eee;
-    border-radius: 10px;
+    background: var(--jq-mc-button-bg);
+    border: 1px solid var(--jq-mc-button-border);
+    border-radius: inherit;
+    color: #333333;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .MCButton p {
@@ -1203,23 +1229,23 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 
 .MultipleChoiceQn {
     padding: 10px;
-    background: var(--medium-slate-blue);
-    color: #fafafa;
-    border-radius: 10px;
+    background: var(--jq-multiple-choice-bg);
+    color: var(--jq-text-color);
+    border-radius: inherit;
 }
 
 .ManyChoiceQn {
     padding: 10px;
-    background: var(--orange-pantone);
-    color: #fafafa;
-    border-radius: 10px;
+    background: var(--jq-many-choice-bg);
+    color: var(--jq-text-color);
+    border-radius: inherit;
 }
 
 .NumericQn {
+    background: var(--jq-numeric-bg);
+    border-radius: inherit;
+    color: var(--jq-text-color);
     padding: 10px;
-    background: var(--russian-violet);
-    color: #fafafa;
-    border-radius: 10px;
 }
 
 .NumericQn p {
@@ -1227,51 +1253,52 @@ Sometimes, it might be desirable to go back to basics though, especially if you 
 }
 
 .InpLabel {
-    line-height: 34px;
+    color: var(--jq-numeric-input-label);
     float: left;
-    margin-right: 10px;
-    color: #101010;
     font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
 }
 
 .incorrect {
-    color: var(--incorrect-red);
+    color: var(--jq-incorrect-color);
 }
 
 .correct {
-    color: var(--correct-green);
+    color: var(--jq-correct-color);
 }
 
 .correctButton {
     /*
-    background: var(--correct-green);
+    background: var(--jq-correct-color);
    */
     animation: correct-anim 0.6s ease;
     animation-fill-mode: forwards;
-    color: #fafafa;
-    box-shadow: inset 0px 0px 5px #555555;
-    outline: none;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
+    color: var(--jq-text-color);
+    /*outline: none;*/
 }
 
 .incorrectButton {
     animation: incorrect-anim 0.8s ease;
     animation-fill-mode: forwards;
-    color: #fafafa;
-    box-shadow: inset 0px 0px 5px #555555;
-    outline: none;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
+    color: var(--jq-text-color);
+    /*outline: none;*/
 }
 
 @keyframes incorrect-anim {
     100% {
-        background-color: var(--incorrect-red);
+        background-color: var(--jq-incorrect-color);
     }
 }
 
 @keyframes correct-anim {
     100% {
-        background-color: var(--correct-green);
+        background-color: var(--jq-correct-color);
     }
-}</style></div><script type="application/javascript">var questionsbtbXZoZBIqDi=[{"question": "The dot product of 2 vectors will be ", "type": "multiple_choice", "answers": [{"answer": "a scalar", "correct": true}, {"answer": "a vector", "correct": false}, {"answer": "2 vectors", "correct": false}, {"answer": "2 scalars", "correct": false}], "tag": "dot_product applications", "lecture_file": "20_autograd_applications"}, {"question": "When evaluating line integrals, we need to be cautious of choosing the parameterization of the curve in order to get the right solution", "type": "multiple_choice", "answers": [{"answer": "Yes, the solution to a line integral will depend on the curve parameterization.", "correct": false}, {"answer": "No, we can choose any form of parameterization and will reach the same solution.", "correct": true}, {"answer": "-", "correct": false}, {"answer": "-", "correct": false}], "tag": "line_integral applications", "lecture_file": "20_autograd_applications"}, {"question": "Using lagrange multipliers to find a local optimum ", "type": "multiple_choice", "answers": [{"answer": "Eliminates constraint equations", "correct": false}, {"answer": "Uses gradients to locate the optimum", "correct": false}, {"answer": "Modifies the objective function", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "lagrange_multipliers applications", "lecture_file": "20_autograd_applications"}, {"question": "What is the relation between a Jacobian J and a Hessian H of a function f(x)", "type": "multiple_choice", "answers": [{"answer": "J = H( gradient(f(x)))", "correct": false}, {"answer": "H = gradient (J(f(x))", "correct": false}, {"answer": "H = J( gradient (f(x)))", "correct": true}, {"answer": "There is no relation", "correct": false}], "tag": "jacobian hessian derivative", "lecture_file": "20_autograd_applications"}, {"question": "Which of the following is not an implicit function", "type": "multiple_choice", "answers": [{"answer": "sin(x)  + sin^2(y) = 0.75", "correct": false}, {"answer": "3x^2 - 10 = y", "correct": true}, {"answer": "y^4 + x^3 = 8", "correct": false}, {"answer": "x^2 = y^2 - 10", "correct": false}], "tag": "implicit_function applications", "lecture_file": "20_autograd_applications"}, {"question": "<p>The correct function call to grad() for evaluating the partial derivative with respect to x2 is:</p>\n<pre><code class=\"language-python\">def f(x1, x2, x3):\n    return x1^2 + x2^2 -x3^3\n</code></pre>", "type": "multiple_choice", "answers": [{"answer": "grad(f, x2)", "correct": false}, {"answer": "grad(f, 0)", "correct": false}, {"answer": "grad(f, 1)", "correct": true}, {"answer": "grad(f, 2)", "correct": false}], "tag": "autograd derivative", "lecture_file": "20_autograd_applications"}, {"question": "Automatic differentiation can be used for", "type": "multiple_choice", "answers": [{"answer": "Constrained Optimization", "correct": false}, {"answer": "Line integrals", "correct": false}, {"answer": "Sensitivity Analysis", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "automatic_differentiation derivative", "lecture_file": "20_autograd_applications"}, {"question": "Which of the following is not an implicit function", "type": "multiple_choice", "answers": [{"answer": "x^2 + 2x - 5 - y^2 = 0", "correct": false}, {"answer": "x^2 - 5 = y^2", "correct": false}, {"answer": "xy = x + y", "correct": true}, {"answer": "sin(x)  + sin^2(y) = 0.75", "correct": false}], "tag": "implicit_function applications", "lecture_file": "20_autograd_applications"}, {"question": "To calculate how a variable changes with respect to a certain parameter, we can use", "type": "multiple_choice", "answers": [{"answer": "Partial derivative of the variable with respect to the parameter", "correct": true}, {"answer": "There are only experimental approaches to achieve this", "correct": false}, {"answer": "A change of basis", "correct": false}, {"answer": "A total derivative with respect to time", "correct": false}], "tag": "derivative", "lecture_file": "20_autograd_applications"}, {"question": "What is the partial derivative of the function f(x, y, z) = x^2 * e^z * cos(y) + 2*z*x*y, with respect to z.", "type": "multiple_choice", "answers": [{"answer": "x^2 * cos(y) + 2*y*x", "correct": false}, {"answer": "x^2 * e^z * cos(y) + 2*y*x", "correct": true}, {"answer": "2*y*x", "correct": false}, {"answer": "x^2 * e^z * cos(y) + 2*x*y*z", "correct": false}], "tag": "derivative", "lecture_file": "20_autograd_applications"}];
+}
+</style></div><script type="application/javascript">var questionsxFEnGrCOzlPh=[{"question": "The dot product of 2 vectors will be ", "type": "multiple_choice", "answers": [{"answer": "a scalar", "correct": true}, {"answer": "a vector", "correct": false}, {"answer": "2 vectors", "correct": false}, {"answer": "2 scalars", "correct": false}], "tag": "dot_product applications", "lecture_file": "20_autograd_applications"}, {"question": "When evaluating line integrals, we need to be cautious of choosing the parameterization of the curve in order to get the right solution", "type": "multiple_choice", "answers": [{"answer": "Yes, the solution to a line integral will depend on the curve parameterization.", "correct": false}, {"answer": "No, we can choose any form of parameterization and will reach the same solution.", "correct": true}, {"answer": "-", "correct": false}, {"answer": "-", "correct": false}], "tag": "line_integral applications", "lecture_file": "20_autograd_applications"}, {"question": "Using lagrange multipliers to find a local optimum ", "type": "multiple_choice", "answers": [{"answer": "Eliminates constraint equations", "correct": false}, {"answer": "Uses gradients to locate the optimum", "correct": false}, {"answer": "Modifies the objective function", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "lagrange_multipliers applications", "lecture_file": "20_autograd_applications"}, {"question": "What is the relation between a Jacobian J and a Hessian H of a function f(x)", "type": "multiple_choice", "answers": [{"answer": "J = H( gradient(f(x)))", "correct": false}, {"answer": "H = gradient (J(f(x))", "correct": false}, {"answer": "H = J( gradient (f(x)))", "correct": true}, {"answer": "There is no relation", "correct": false}], "tag": "jacobian hessian derivative", "lecture_file": "20_autograd_applications"}, {"question": "Which of the following is not an implicit function", "type": "multiple_choice", "answers": [{"answer": "sin(x)  + sin^2(y) = 0.75", "correct": false}, {"answer": "3x^2 - 10 = y", "correct": true}, {"answer": "y^4 + x^3 = 8", "correct": false}, {"answer": "x^2 = y^2 - 10", "correct": false}], "tag": "implicit_function applications", "lecture_file": "20_autograd_applications"}, {"question": "<p>The correct function call to grad() for evaluating the partial derivative with respect to x2 is:</p>\n<pre><code class=\"language-python\">def f(x1, x2, x3):\n    return x1^2 + x2^2 -x3^3\n</code></pre>", "type": "multiple_choice", "answers": [{"answer": "grad(f, x2)", "correct": false}, {"answer": "grad(f, 0)", "correct": false}, {"answer": "grad(f, 1)", "correct": true}, {"answer": "grad(f, 2)", "correct": false}], "tag": "autograd derivative", "lecture_file": "20_autograd_applications"}, {"question": "Automatic differentiation can be used for", "type": "multiple_choice", "answers": [{"answer": "Constrained Optimization", "correct": false}, {"answer": "Line integrals", "correct": false}, {"answer": "Sensitivity Analysis", "correct": false}, {"answer": "All of the above", "correct": true}], "tag": "automatic_differentiation derivative", "lecture_file": "20_autograd_applications"}, {"question": "Which of the following is not an implicit function", "type": "multiple_choice", "answers": [{"answer": "x^2 + 2x - 5 - y^2 = 0", "correct": false}, {"answer": "x^2 - 5 = y^2", "correct": false}, {"answer": "xy = x + y", "correct": true}, {"answer": "sin(x)  + sin^2(y) = 0.75", "correct": false}], "tag": "implicit_function applications", "lecture_file": "20_autograd_applications"}, {"question": "To calculate how a variable changes with respect to a certain parameter, we can use", "type": "multiple_choice", "answers": [{"answer": "Partial derivative of the variable with respect to the parameter", "correct": true}, {"answer": "There are only experimental approaches to achieve this", "correct": false}, {"answer": "A change of basis", "correct": false}, {"answer": "A total derivative with respect to time", "correct": false}], "tag": "derivative", "lecture_file": "20_autograd_applications"}, {"question": "What is the partial derivative of the function f(x, y, z) = x^2 * e^z * cos(y) + 2*z*x*y, with respect to z.", "type": "multiple_choice", "answers": [{"answer": "x^2 * cos(y) + 2*y*x", "correct": false}, {"answer": "x^2 * e^z * cos(y) + 2*y*x", "correct": true}, {"answer": "2*y*x", "correct": false}, {"answer": "x^2 * e^z * cos(y) + 2*x*y*z", "correct": false}], "tag": "derivative", "lecture_file": "20_autograd_applications"}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1307,6 +1334,9 @@ function printResponses(responsesContainer) {
     });
     responsesContainer.innerHTML=stringResponses;
 }
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
 function check_mc() {
     var id = this.id.split('-')[0];
     //var response = this.id.split('-')[1];
@@ -1328,17 +1358,16 @@ function check_mc() {
 
 
     var answers = label.parentElement.children;
-
     //console.log(answers);
-
 
     // Split behavior based on multiple choice vs many choice:
     var fb = document.getElementById("fb" + id);
 
 
 
-
-    if (fb.dataset.numcorrect == 1) {
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
         // What follows is for the saved responses stuff
         var outerContainer = fb.parentElement.parentElement;
         var responsesContainer = document.getElementById("responses" + outerContainer.id);
@@ -1360,7 +1389,7 @@ function check_mc() {
             printResponses(responsesContainer);
         }
         // End code to preserve responses
-        
+
         for (var i = 0; i < answers.length; i++) {
             var child = answers[i];
             //console.log(child);
@@ -1372,9 +1401,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -1383,9 +1412,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -1393,7 +1422,7 @@ function check_mc() {
             fb.classList.add("incorrect");
         }
     }
-    else {
+    else { /* Many choice (more than 1 correct answer) */
         var reset = false;
         var feedback;
          if (label.dataset.correct == "true") {
@@ -1482,9 +1511,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
@@ -1504,7 +1533,12 @@ function check_mc() {
 
 }
 
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
 function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
     var shuffled;
     if (shuffle_answers == "True") {
         //console.log(shuffle_answers+" read as true");
@@ -1516,8 +1550,6 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
 
 
     var num_correct = 0;
-
-
 
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
@@ -1600,9 +1632,7 @@ function check_numeric(ths, event) {
 
         if ("precision" in ths.dataset) {
             var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
+            submission = Number(Number(submission).toPrecision(precision));
         }
 
 
@@ -1612,12 +1642,12 @@ function check_numeric(ths, event) {
 
         var fb = document.getElementById("fb" + id);
         fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
+        fb.innerHTML = "Incorrect -- try again.";
 
         var answers = JSON.parse(ths.dataset.answers);
         //console.log(answers);
 
-        var defaultFB = "";
+        var defaultFB = "Incorrect. Try again.";
         var correct;
         var done = false;
         answers.every(answer => {
@@ -1627,22 +1657,29 @@ function check_numeric(ths, event) {
             // if (answer.type=="value"){
             if ('value' in answer) {
                 if (submission == answer.value) {
-                    fb.textContent = jaxify(answer.feedback);
+                    if ("feedback" in answer) {
+                        fb.innerHTML = jaxify(answer.feedback);
+                    } else {
+                        fb.innerHTML = jaxify("Correct");
+                    }
                     correct = answer.correct;
                     //console.log(answer.correct);
                     done = true;
                 }
                 // } else if (answer.type=="range") {
             } else if ('range' in answer) {
-                //console.log(answer.range);
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
                 if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
+                    fb.innerHTML = jaxify(answer.feedback);
                     correct = answer.correct;
-                    //console.log(answer.correct);
+                    console.log(answer.correct);
                     done = true;
                 }
             } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
             }
             if (done) {
                 return false; // Break out of loop if this has been marked correct
@@ -1650,6 +1687,7 @@ function check_numeric(ths, event) {
                 return true; // Keep looking for case that includes this as a correct answer
             }
         });
+        console.log("done:", done);
 
         if ((!done) && (defaultFB != "")) {
             fb.innerHTML = jaxify(defaultFB);
@@ -1788,7 +1826,7 @@ function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
 
     var lab = document.createElement("label");
     lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
+    lab.innerHTML = "Type numeric answer here:";
     aDiv.append(lab);
 
     var inp = document.createElement("input");
@@ -1857,6 +1895,10 @@ function jaxify(string) {
         //console.log(mystring,", loc:",loc,", loc2:",loc2);
     }
 
+    // repace markdown style links with actual links
+    mystring = mystring.replace(/<(.*?)>/, '<a href="$1" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/, '<a href="$2" target="_blank" class="Link">$1</a>');
+
     //console.log(mystring);
     return mystring;
 }
@@ -1868,6 +1910,7 @@ function show_questions(json, mydiv) {
     var shuffle_questions = mydiv.dataset.shufflequestions;
     var num_questions = mydiv.dataset.numquestions;
     var shuffle_answers = mydiv.dataset.shuffleanswers;
+    var max_width = mydiv.dataset.maxwidth;
 
     if (num_questions > json.length) {
         num_questions = json.length;
@@ -1897,21 +1940,23 @@ function show_questions(json, mydiv) {
         iDiv.id = 'quizWrap' + id;
         iDiv.className = 'Quiz';
         iDiv.setAttribute('data-qnum', index);
+        iDiv.style.maxWidth  =max_width+"px";
         mydiv.appendChild(iDiv);
         // iDiv.innerHTML=qa.question;
-
+        
         var outerqDiv = document.createElement('div');
         outerqDiv.id = "OuterquizQn" + id + index;
-
-        iDiv.append(outerqDiv);
-
         // Create div to contain question part
         var qDiv = document.createElement('div');
         qDiv.id = "quizQn" + id + index;
-        //qDiv.textContent=qa.question;
-        qDiv.innerHTML = jaxify(qa.question);
+        
+        if (qa.question) {
+            iDiv.append(outerqDiv);
 
-        outerqDiv.append(qDiv);
+            //qDiv.textContent=qa.question;
+            qDiv.innerHTML = jaxify(qa.question);
+            outerqDiv.append(qDiv);
+        }
 
         // Create div for code inside question
         var codeDiv;
@@ -1938,10 +1983,12 @@ function show_questions(json, mydiv) {
         //console.log(qa.type);
 
         var num_correct;
-        if (qa.type == "multiple_choice") {
+        if ((qa.type == "multiple_choice") || (qa.type == "many_choice") ) {
             num_correct = make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
-        } else if (qa.type == "many_choice") {
-            num_correct = make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+            if ("answer_cols" in qa) {
+                //aDiv.style.gridTemplateColumns = 'auto '.repeat(qa.answer_cols);
+                aDiv.style.gridTemplateColumns = 'repeat(' + qa.answer_cols + ', 1fr)';
+            }
         } else if (qa.type == "numeric") {
             //console.log("numeric");
             make_numeric(qa, outerqDiv, qDiv, aDiv, id);
@@ -1986,7 +2033,26 @@ function show_questions(json, mydiv) {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             }
         }, 500);
 if (typeof version == 'undefined') {
@@ -1995,17 +2061,64 @@ if (typeof version == 'undefined') {
             if (version[0] == "2") {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([mydiv]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
             } else {
                 console.log("MathJax not found");
             }
         }
     }
+
+    // stop event propagation for the .Link class
+    var links = document.getElementsByClassName('Link')
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
+    }
+
     return false;
 }
+/* This is to handle asynchrony issues in loading Jupyter notebooks
+           where the quiz has been previously run. The Javascript was generally
+           being run before the div was added to the DOM. I tried to do this
+           more elegantly using Mutation Observer, but I didn't get it to work.
 
+           Someone more knowledgeable could make this better ;-) */
+
+        function try_show() {
+          if(document.getElementById("xFEnGrCOzlPh")) {
+            show_questions(questionsxFEnGrCOzlPh,  xFEnGrCOzlPh); 
+          } else {
+             setTimeout(try_show, 200);
+          }
+        };
+    
         {
-        show_questions(questionsbtbXZoZBIqDi,  btbXZoZBIqDi);
+        // console.log(element);
+
+        //console.log("xFEnGrCOzlPh");
+        // console.log(document.getElementById("xFEnGrCOzlPh"));
+
+        try_show();
         }
         </script></div>
 </div>
